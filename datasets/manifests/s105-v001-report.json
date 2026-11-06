@@ -1,0 +1,23 @@
+{
+  "collection": "S105 金属转动碰撞音效",
+  "files": 566,
+  "bytes": 11793885690,
+  "duration_seconds": 20155.675,
+  "sample_rates": {
+    "96000": 566
+  },
+  "channels": {
+    "2": 566
+  },
+  "bit_depths": {
+    "24": 566
+  },
+  "folders": {
+    "机械_ ck_01_03": 237,
+    "机械_ ck_02_03": 139,
+    "机械_ ck_03_03": 190
+  },
+  "duplicate_groups": [],
+  "errors": [],
+  "limitations": "PCM structural read and byte-identical duplicate check only. No listening, clipping/silence analysis, perceptual duplicate detection, or license verification."
+}

@@ -1,0 +1,278 @@
+[
+  {
+    "asset_id": "FOREST-0001",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1486.wav",
+    "relative_path": "forest_ambience/night_forest_a.wav",
+    "sha256": "671f44a19705caba689437f3b13d1a1ac0257871be20b2cea6a337664782339f"
+  },
+  {
+    "asset_id": "FOREST-0002",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1757.wav",
+    "relative_path": "forest_ambience/night_forest_b.wav",
+    "sha256": "bec9f2aeaf248779ab32e96737514476d973a5da56b2f9994e53ede71a3eb74f"
+  },
+  {
+    "asset_id": "FOREST-0003",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1758.wav",
+    "relative_path": "forest_ambience/night_forest_c.wav",
+    "sha256": "7956dbd225ecd1cc081bcbbe9701a7c78706517c1e3c78b92125db2ee24f9f71"
+  },
+  {
+    "asset_id": "FOREST-0004",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1759.wav",
+    "relative_path": "forest_ambience/night_forest_d.wav",
+    "sha256": "183972890001844b2702e35fcc988a9e2cdb38dfea1a9011918916ca87d12c80"
+  },
+  {
+    "asset_id": "FOREST-0005",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1760.wav",
+    "relative_path": "forest_ambience/night_forest_e.wav",
+    "sha256": "669110cda0e37e5507948488cb6d649a691a3d543bf60e3b19ce44ed2d39e2b9"
+  },
+  {
+    "asset_id": "FOREST-0006",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.1761.wav",
+    "relative_path": "forest_ambience/night_forest_f.wav",
+    "sha256": "0e4ebd9079d759c4f110d8ec306074d61505e7a75d1ed2c7257920773a6cb3e5"
+  },
+  {
+    "asset_id": "FOREST-0007",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林_BW.60986.wav",
+    "relative_path": "forest_ambience/night_forest_g.wav",
+    "sha256": "cc3026937d9387989a52af39f22fae53e59d126257a567849e1579990709cdad"
+  },
+  {
+    "asset_id": "FOREST-0008",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林河流_BW.60987.wav",
+    "relative_path": "forest_ambience/night_forest_river_a.wav",
+    "sha256": "94cd62c8bcd1033ad9686a3d11abf3dfd0904dde2b808df1e3d7c55514726dcc"
+  },
+  {
+    "asset_id": "FOREST-0009",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚森林河流_BW.60988.wav",
+    "relative_path": "forest_ambience/night_forest_river_b.wav",
+    "sha256": "9643bda06aafd6270000e572006fda279b64590ebcff808e766009ffd1955d9e"
+  },
+  {
+    "asset_id": "FOREST-0010",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/夜晚蟋蟀声_SFXB.77.wav",
+    "relative_path": "forest_ambience/night_crickets.wav",
+    "sha256": "30bcb46a1eff12021f1b315fbdbc0ca0339eda0d672a89c6545dc4292a7fb98f"
+  },
+  {
+    "asset_id": "FOREST-0011",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/小溪鸟鸣_SFXB.74.wav",
+    "relative_path": "forest_ambience/stream_birdsong.wav",
+    "sha256": "b6dd57e3ab32c01cfb5a5b44c229d7b6853d82e7b43e674a41dfbef24ee59f9d"
+  },
+  {
+    "asset_id": "FOREST-0012",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/小雨森林_SEU02.18.wav",
+    "relative_path": "forest_ambience/forest_light_rain.wav",
+    "sha256": "e1dc66ea15ae13c1c7fcac3c435dbf25c1777995317ce1c7637a0c6871c824a1"
+  },
+  {
+    "asset_id": "FOREST-0013",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林河流_BW.61021.wav",
+    "relative_path": "forest_ambience/forest_river.wav",
+    "sha256": "1944e0e84aae9399ce5a36478eb92ffb576deaa233278cb7283dcf1bfbc7bfcf"
+  },
+  {
+    "asset_id": "FOREST-0014",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林环境音_BWU.8.wav",
+    "relative_path": "forest_ambience/forest_ambience.wav",
+    "sha256": "87434beebad3c8b3fb38786646ed8d88776f35127c46e150842d783c061af196"
+  },
+  {
+    "asset_id": "FOREST-0015",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.26.wav",
+    "relative_path": "forest_ambience/forest_nature_a.wav",
+    "sha256": "6cced48ff68165812c339b826a18bef1b8b77bde58d8cdbffbb05cc260bd6922"
+  },
+  {
+    "asset_id": "FOREST-0016",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.27.wav",
+    "relative_path": "forest_ambience/forest_nature_b.wav",
+    "sha256": "8f81a29f460f020cc2613093fcd3b0d8b7f03a1f29d41504b2f264acc2a2d0d4"
+  },
+  {
+    "asset_id": "FOREST-0017",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.28.wav",
+    "relative_path": "forest_ambience/forest_nature_c.wav",
+    "sha256": "2dbdb206a7cacc252e1a3bd8d3865a766540c6e4b0de7b563171a8b1cd3dc1b3"
+  },
+  {
+    "asset_id": "FOREST-0018",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.29.wav",
+    "relative_path": "forest_ambience/forest_nature_d.wav",
+    "sha256": "ecaf8dc04993025a70c4b3a705d61986633cc96b254229f756c950964d301ef1"
+  },
+  {
+    "asset_id": "FOREST-0019",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.30.wav",
+    "relative_path": "forest_ambience/forest_nature_e.wav",
+    "sha256": "e25629fbfd79fc512a0a1d5950154b894c7706dc3fafdefec26a48851bc796fe"
+  },
+  {
+    "asset_id": "FOREST-0020",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.31.wav",
+    "relative_path": "forest_ambience/forest_nature_f.wav",
+    "sha256": "05c6aee5da9c39c8fbe0c8a9358ea85f6823ae9b4d1476d0b874d19c563144e3"
+  },
+  {
+    "asset_id": "FOREST-0021",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_S08AM.32.wav",
+    "relative_path": "forest_ambience/forest_nature_g.wav",
+    "sha256": "a5bdf2b23302a7a203cfc0aed5a1b22b6a8b91229185b0771a50afa820c772be"
+  },
+  {
+    "asset_id": "FOREST-0022",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_蟋蟀与鸟鸣.wav",
+    "relative_path": "forest_ambience/forest_crickets_birdsong.wav",
+    "sha256": "2cf52057de4cf4379658d372d7fa199999c0fb6e777b80ff8ab4a9ab15a3368b"
+  },
+  {
+    "asset_id": "FOREST-0023",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林自然音_风、树叶与鸟鸣.wav",
+    "relative_path": "forest_ambience/forest_wind_leaves_birdsong.wav",
+    "sha256": "e4f13a3798edf1e456693cdd5473f00b01ad2bcb022157bbd4657d6d6416330d"
+  },
+  {
+    "asset_id": "FOREST-0024",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林雨声_S08AM.35.wav",
+    "relative_path": "forest_ambience/forest_rain_a.wav",
+    "sha256": "e3ea78d22d2020e0b132978823453511e8e386d20bfb8dc0144335dd1bc2f234"
+  },
+  {
+    "asset_id": "FOREST-0025",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林雨声_S08AM.36.wav",
+    "relative_path": "forest_ambience/forest_rain_b.wav",
+    "sha256": "97b1e672bb2d892c7fe0e92e6cca176115329b372fe763db346853be14aab026"
+  },
+  {
+    "asset_id": "FOREST-0026",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林雨声_S08AM.37.wav",
+    "relative_path": "forest_ambience/forest_rain_c.wav",
+    "sha256": "0b1840991914ff272be037d2242d7f65eef6786a1dccea7586e59ddae09ba664"
+  },
+  {
+    "asset_id": "FOREST-0027",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林雨声_S08AM.39.wav",
+    "relative_path": "forest_ambience/forest_rain_d.wav",
+    "sha256": "2f3300218d0b76dd7a3b74f62cab04c98636fff997a0cb2e783945a36bb8d27b"
+  },
+  {
+    "asset_id": "FOREST-0028",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林雨声循环_S08AM.38.wav",
+    "relative_path": "forest_ambience/forest_rain_loop.wav",
+    "sha256": "c680005f1705ecf5daf4dd738843d4686278a130e67ed3370ead477826a860e4"
+  },
+  {
+    "asset_id": "FOREST-0029",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/森林鸟鸣_SEU02.2.wav",
+    "relative_path": "forest_ambience/forest_birdsong.wav",
+    "sha256": "2b29b372c5ec760d10ff4ddf121b6924d38fb18ba69b82ecf68cce777bd1852e"
+  },
+  {
+    "asset_id": "FOREST-0030",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/清晨森林_BW.1756.wav",
+    "relative_path": "forest_ambience/dawn_forest.wav",
+    "sha256": "afe0d47e73410adc25558f135dada50b35bc1eca53f8f52ecc8f4b2e6612e42b"
+  },
+  {
+    "asset_id": "FOREST-0031",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/清晨鸟鸣_SFXB.75.wav",
+    "relative_path": "forest_ambience/dawn_birdsong_a.wav",
+    "sha256": "e921a117ee675a6c9f7acc1b382b74c016af19f694e61685b871823bc0385ef7"
+  },
+  {
+    "asset_id": "FOREST-0032",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/清晨鸟鸣_SFXB.76.wav",
+    "relative_path": "forest_ambience/dawn_birdsong_b.wav",
+    "sha256": "3ab996fbdd88b5a828077cab4378a2e437654dff77bef1d064c5548b4916e24a"
+  },
+  {
+    "asset_id": "FOREST-0033",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/白天森林_BW.60985.wav",
+    "relative_path": "forest_ambience/daytime_forest.wav",
+    "sha256": "e1ca99f7c1ca5a1072312898693b9066faeb7ed66aa795b74268edd97bc78180"
+  },
+  {
+    "asset_id": "FOREST-0034",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/蜜蜂与鸟鸣_BWU.570.wav",
+    "relative_path": "forest_ambience/bees_birdsong.wav",
+    "sha256": "e58a180c38fd0dff6cebcb873138804836cda8a466e59887c0c58f14dc76fb53"
+  },
+  {
+    "asset_id": "FOREST-0035",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/雨后森林_BW.1752.wav",
+    "relative_path": "forest_ambience/forest_after_rain.wav",
+    "sha256": "964a441f371d1b409c817ab4b16e1db69877c5ba74b2dfbc1c23155e11855f7a"
+  },
+  {
+    "asset_id": "FOREST-0036",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/风吹树叶声_ZA01.310.wav",
+    "relative_path": "forest_ambience/wind_leaves.wav",
+    "sha256": "cae234a9a0aff86d8b63fe802a56998cf05bdf5a95c5bfce2413040f20226238"
+  },
+  {
+    "asset_id": "FOREST-0037",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/风声_BW.1753.wav",
+    "relative_path": "forest_ambience/wind.wav",
+    "sha256": "8b4a901c26b0e836450187ceeb6848aeaf3167f80ab8a738014fb5b95a40c8a5"
+  },
+  {
+    "asset_id": "FOREST-0038",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟啼声_SFXB.69.wav",
+    "relative_path": "forest_ambience/bird_calls_a.wav",
+    "sha256": "d3a6c26e862d2a103ca42e277a0330285be5dce61b5432df5fd41fd88371ddd9"
+  },
+  {
+    "asset_id": "FOREST-0039",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟啼声_SFXB.70.wav",
+    "relative_path": "forest_ambience/bird_calls_b.wav",
+    "sha256": "7798bb11dc618ec8f15fab730287de768b0c453f1e4224e72343c14314e2acd7"
+  },
+  {
+    "asset_id": "FOREST-0040",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣_BW.1755.wav",
+    "relative_path": "forest_ambience/birdsong_a.wav",
+    "sha256": "cbd88e914c5bcc8e039647d402c5d1c9c6557f7ec817df73152833b3165d9a16"
+  },
+  {
+    "asset_id": "FOREST-0041",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣_S08AM.33.wav",
+    "relative_path": "forest_ambience/birdsong_b.wav",
+    "sha256": "6020677b2b837d0beeae8f0deb2ba10a2d989f79636fee8c2169057a8ed0db2a"
+  },
+  {
+    "asset_id": "FOREST-0042",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣_S08AM.34.wav",
+    "relative_path": "forest_ambience/birdsong_c.wav",
+    "sha256": "d9cc2d8a5d5ea2ed2289572b21a6169b1263ad8411a9b040f24f97e36aa1eef2"
+  },
+  {
+    "asset_id": "FOREST-0043",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣_SFXB.72.wav",
+    "relative_path": "forest_ambience/birdsong_d.wav",
+    "sha256": "d50340d2cdfaac0c6df251ed99ecdc6d23d5bfb425d0e97d2eeb9de0e4dbfc87"
+  },
+  {
+    "asset_id": "FOREST-0044",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣_SFXB.73.wav",
+    "relative_path": "forest_ambience/birdsong_e.wav",
+    "sha256": "2c6125419d6665e53cb62c2961ad215aa56093f5ce6e2945f71c383538caca3e"
+  },
+  {
+    "asset_id": "FOREST-0045",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣与昆虫声_ZA01.309.wav",
+    "relative_path": "forest_ambience/birdsong_insects.wav",
+    "sha256": "63594fff38cfa4877888c3d6716213df42073cf57d2bd86f90c46582f7470172"
+  },
+  {
+    "asset_id": "FOREST-0046",
+    "original_relative_path": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】/鸟鸣与蟋蟀_SFXB.71.wav",
+    "relative_path": "forest_ambience/birdsong_crickets.wav",
+    "sha256": "6ffbcb6f60dbf8c4eeda25dffc988d5d144084531b59eca21e5789114f67cdad"
+  }
+]

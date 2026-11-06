@@ -2,6 +2,9 @@
 
 ## 仓库外数据目录
 
+当前用户指定的例外：森林自然素材另复制至项目内 `datasets/raw/nature/forest-v001/`，音频不进入 Git，原下载目录保留。详见 [本地素材目录](../datasets/README.md)。其余数据目录仍遵循下述约定。
+机械素材也已按用户要求移入 `datasets/raw/machine/s105-v001/`，下载目录不再保留这一份素材；标签清理前元数据备份同样位于被 Git 忽略的 `datasets/raw/` 下。
+
 ```text
 nature-machine-latent-data/
   raw/          原始录音，保留原件

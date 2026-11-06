@@ -1,0 +1,3398 @@
+[
+  {
+    "asset_id": "S105-0001",
+    "original_relative_path": "机械_ ck_01_03/Ball in Metal Pot Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/ball_in_metal_pot_turning_sequence.wav",
+    "sha256": "dd4637ecf8f71751d68699d48b2488984a51cbdf308ed9c6155805ab130983d7"
+  },
+  {
+    "asset_id": "S105-0002",
+    "original_relative_path": "机械_ ck_01_03/Bell Damped Typewriter Calligraph.wav",
+    "relative_path": "机械_ ck_01_03/bell_damped_typewriter_calligraph.wav",
+    "sha256": "c45335401e83b459b9fd0012d381651fd8cb64bbdf6077593718e5067103fdff"
+  },
+  {
+    "asset_id": "S105-0003",
+    "original_relative_path": "机械_ ck_01_03/Bell Sawing Ringing Up and Down.wav",
+    "relative_path": "机械_ ck_01_03/bell_sawing_ringing_up_and_down.wav",
+    "sha256": "d1336d8fb75445b7e4d3d789b9fba095860bd49febc5013a471245d85fad5153"
+  },
+  {
+    "asset_id": "S105-0004",
+    "original_relative_path": "机械_ ck_01_03/Bench Vise Single Turn.wav",
+    "relative_path": "机械_ ck_01_03/bench_vise_single_turn.wav",
+    "sha256": "d04857f4550203794fb9e3274ab2d59b2241c97c6a21c40059986616828e5e0a"
+  },
+  {
+    "asset_id": "S105-0005",
+    "original_relative_path": "机械_ ck_01_03/Bench Vise Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/bench_vise_turning_sequence.wav",
+    "sha256": "2181f206dee22b134f23a25782f82ddd261c818ef7cf65676fee9a43d7f94acd"
+  },
+  {
+    "asset_id": "S105-0006",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Gear Shift Sequence Pedaling 01.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_gear_shift_sequence_pedaling_a.wav",
+    "sha256": "774af28447b998da9fcae200a3ae4c6b9576dff43011c909a306adad84f3f413"
+  },
+  {
+    "asset_id": "S105-0007",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Gear Shift Sequence Pedaling 02.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_gear_shift_sequence_pedaling_b.wav",
+    "sha256": "c0becd001c1564aba4349a2d12d79459a831a5344959b40f4e8c18b5c6e59b9f"
+  },
+  {
+    "asset_id": "S105-0008",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Spokes.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_spokes.wav",
+    "sha256": "4cc8fb8efaccbe07061bae51c99832c6c4114213b43c76c15b69ef02c5d79cbb"
+  },
+  {
+    "asset_id": "S105-0009",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Wheels Fast.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_wheels_fast.wav",
+    "sha256": "00e789d954cd030f4a2a0e59193897f730a9eb762d2258413878a52c4d68c339"
+  },
+  {
+    "asset_id": "S105-0010",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Wheels Sequence.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_wheels_sequence.wav",
+    "sha256": "3ede75e638ec8ffebc1b3e5f4262253171cabc5e10a1959cc7805bc9c6bebf4c"
+  },
+  {
+    "asset_id": "S105-0011",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Wheels Short To Long.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_wheels_short_to_long.wav",
+    "sha256": "8f54e24d13b8d5b59e3c6fbd1e895d7082e622fa775faf399955785d468e395f"
+  },
+  {
+    "asset_id": "S105-0012",
+    "original_relative_path": "机械_ ck_01_03/Bicycle Wheels Slow.wav",
+    "relative_path": "机械_ ck_01_03/bicycle_wheels_slow.wav",
+    "sha256": "86db817561239df3158f83697d0171aac43bb6d9cd2d8c7aae546374af4d452f"
+  },
+  {
+    "asset_id": "S105-0013",
+    "original_relative_path": "机械_ ck_01_03/Bike Shoe Closure System.wav",
+    "relative_path": "机械_ ck_01_03/bike_shoe_closure_system.wav",
+    "sha256": "40e0d3c1198f136e6e3f6761493946d726866e8ccc87d0b66988a4c9c7b04ecd"
+  },
+  {
+    "asset_id": "S105-0014",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machien Multiple Felix B3.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_multiple_felix.wav",
+    "sha256": "fd349e7510e7d4aabbcdd841ef276ec2330717b9004b5f0b1b1fc78c4778ed50"
+  },
+  {
+    "asset_id": "S105-0015",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Brunsviga.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_brunsviga.wav",
+    "sha256": "97ca720523c1649f6a6288ce01436c384fd101fbfbda0c19ac61f7de4ba474be"
+  },
+  {
+    "asset_id": "S105-0016",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Hamann.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_hamann.wav",
+    "sha256": "a11faa3d04febd5f350089b53626a7bf1a3944e2a7321ebf0d5719dc2c56fdd3"
+  },
+  {
+    "asset_id": "S105-0017",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine HD Seven.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_hd_seven.wav",
+    "sha256": "bdce9bcfa327c9da6c30acc404eecbc32fc40ca235e8a11911cbfc7397591723"
+  },
+  {
+    "asset_id": "S105-0018",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Mech Accountant.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_mech_accountant.wav",
+    "sha256": "52252f7be240b2d019667457c44173671a4f94f557aa34f7d0535011622104d2"
+  },
+  {
+    "asset_id": "S105-0019",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Resulta BS.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_resulta_bs.wav",
+    "sha256": "d6b7eafe81d4f2e48f6859bec42a8205e17d1c90310de8c87c6f622b82c2586c"
+  },
+  {
+    "asset_id": "S105-0020",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Resulta.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_resulta.wav",
+    "sha256": "f7d014ba16c29693a5458e147679b5ce58ba9a6be70f34ffee339b64377e7bb6"
+  },
+  {
+    "asset_id": "S105-0021",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Rogli.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_rogli.wav",
+    "sha256": "f91e926c4382cbf2e6f4b8620e0fe34c7d3bf855c583a9ea13e1c4079e00a8df"
+  },
+  {
+    "asset_id": "S105-0022",
+    "original_relative_path": "机械_ ck_01_03/Calculating Machine Single Sequence Felix B3.wav",
+    "relative_path": "机械_ ck_01_03/calculating_machine_single_sequence_felix.wav",
+    "sha256": "01f87e4b879708c9649ba8f93e580a9ea1a06274ec735f0435845b9b1347dc98"
+  },
+  {
+    "asset_id": "S105-0023",
+    "original_relative_path": "机械_ ck_01_03/Cash Register Old School.wav",
+    "relative_path": "机械_ ck_01_03/cash_register_old_school.wav",
+    "sha256": "9750217419375bd2dd1fe1db535d5608876c35d0838f324b809a0593ce834fe4"
+  },
+  {
+    "asset_id": "S105-0024",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Chequepunch.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_chequepunch.wav",
+    "sha256": "5bbc2d7406f3bc5ee428cf529a17ca06f7dd57390d5b3dc71d036b59d5630818"
+  },
+  {
+    "asset_id": "S105-0025",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Chicago.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_chicago.wav",
+    "sha256": "f7935d2824858ca53adc7a3fcd15b4e0f736a8f510b9e0aabee194e0880d45d2"
+  },
+  {
+    "asset_id": "S105-0026",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Headman.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_headman.wav",
+    "sha256": "55538004786ebee3cf6e434f48712280b1fb4f48bb67c58da69bfd9ef392a9d2"
+  },
+  {
+    "asset_id": "S105-0027",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Multiple Chicago.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_multiple_chicago.wav",
+    "sha256": "613eb245f2f8e19e705afc9235ba2f1401c46c130f23e4be9e43332f4a2b8478"
+  },
+  {
+    "asset_id": "S105-0028",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Single and Multiple Defiance.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_single_and_multiple_defiance.wav",
+    "sha256": "091aa6f210c47278cb49bcad0cb2e43a775c08a2ce7ad2602fd1aafba2b34eaa"
+  },
+  {
+    "asset_id": "S105-0029",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Single Chicago.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_single_chicago.wav",
+    "sha256": "d28c0b66fd988265bd1cd6d8b1e98e37e03af072a8e253a39b688968c41572b2"
+  },
+  {
+    "asset_id": "S105-0030",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Chequepunch.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_chequepunch.wav",
+    "sha256": "098f331814a50dc8db997250a4f152ae09b916854cab7dacf3b7ace8c31c4c9c"
+  },
+  {
+    "asset_id": "S105-0031",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Defiance.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_defiance.wav",
+    "sha256": "eabbeb193426bc00b445fa0ecdfa13668607889e4279a932bb23f9fd547a0fe3"
+  },
+  {
+    "asset_id": "S105-0032",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Headman.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_headman.wav",
+    "sha256": "a8f7ebd278acc1565b233fab6c36213336b266a816b9e7e4744a5311bd7b09be"
+  },
+  {
+    "asset_id": "S105-0033",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Lightning.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_lightning.wav",
+    "sha256": "a702992df526243892b5d3071079d8d918f1b72dd62e3db86e5179180c4cb29b"
+  },
+  {
+    "asset_id": "S105-0034",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Safeguard.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_safeguard.wav",
+    "sha256": "8ee15e5e890f6ac2ebf939381d617a116fc1b41e2be1f9cee730c561e22effa3"
+  },
+  {
+    "asset_id": "S105-0035",
+    "original_relative_path": "机械_ ck_01_03/Checkwriter Up Down Unknown.wav",
+    "relative_path": "机械_ ck_01_03/checkwriter_up_down_unknown.wav",
+    "sha256": "cbd5d240488675fbefb7a4480c46d0a280738eaf2f0ba53edae17ab31f7a76c0"
+  },
+  {
+    "asset_id": "S105-0036",
+    "original_relative_path": "机械_ ck_01_03/Clack Checkwriter Unknown.wav",
+    "relative_path": "机械_ ck_01_03/clack_checkwriter_unknown.wav",
+    "sha256": "e76f18b96285c73687e9e4074ee4c40090175c5135acea96022d4fd4d085c9a1"
+  },
+  {
+    "asset_id": "S105-0037",
+    "original_relative_path": "机械_ ck_01_03/Constant Air Gun Fast.wav",
+    "relative_path": "机械_ ck_01_03/constant_air_gun_fast.wav",
+    "sha256": "81289b2b8caa7656f0c588d001dc272207d0f4aff7b62563c99765763b14d05a"
+  },
+  {
+    "asset_id": "S105-0038",
+    "original_relative_path": "机械_ ck_01_03/Constant Air Gun Slow.wav",
+    "relative_path": "机械_ ck_01_03/constant_air_gun_slow.wav",
+    "sha256": "b9eb1ec8a8ecb589a06e46f6d0089a0c265350922c90b97adcb6c37ec01e6480"
+  },
+  {
+    "asset_id": "S105-0039",
+    "original_relative_path": "机械_ ck_01_03/Constant Bell Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/constant_bell_typewriter_the_oliver.wav",
+    "sha256": "32c39d7abd5e0d35215fcaf626adf84e3a2f9bf4e5ef69b3da83ba2145bb8c1d"
+  },
+  {
+    "asset_id": "S105-0040",
+    "original_relative_path": "机械_ ck_01_03/Constant Calculating Machine Brunsviga.wav",
+    "relative_path": "机械_ ck_01_03/constant_calculating_machine_brunsviga.wav",
+    "sha256": "3999c5a2f0eba4375e9c2820b4edbb449d78b03318d0b0b3e83c73338c9da466"
+  },
+  {
+    "asset_id": "S105-0041",
+    "original_relative_path": "机械_ ck_01_03/Constant Calculating Machine Felix B3 Low.wav",
+    "relative_path": "机械_ ck_01_03/constant_calculating_machine_felix_low.wav",
+    "sha256": "3501605aa603b8d818f8d53996a18431c8bba3cbb020c6c896cce9547d2af035"
+  },
+  {
+    "asset_id": "S105-0042",
+    "original_relative_path": "机械_ ck_01_03/Constant Calculating Machine Hamann.wav",
+    "relative_path": "机械_ ck_01_03/constant_calculating_machine_hamann.wav",
+    "sha256": "49a6296584ba8d224ce014d55f484d71e97ede336cab422c0db720f0a9045b05"
+  },
+  {
+    "asset_id": "S105-0043",
+    "original_relative_path": "机械_ ck_01_03/Constant Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/constant_calculating_machine_triumphator.wav",
+    "sha256": "c6d456a6f0094c88ab6098f94585c26077862fcb3993da57784278bc567197ea"
+  },
+  {
+    "asset_id": "S105-0044",
+    "original_relative_path": "机械_ ck_01_03/Constant Calculating Machine VEB.wav",
+    "relative_path": "机械_ ck_01_03/constant_calculating_machine_veb.wav",
+    "sha256": "9032aeae114b5b2a7f3d3073fa839c88dbbf435f5bc24e945a5462bbedc24d1b"
+  },
+  {
+    "asset_id": "S105-0045",
+    "original_relative_path": "机械_ ck_01_03/Constant Fast Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/constant_fast_typewriter_adler.wav",
+    "sha256": "d57b57784bea1388696e4db997a3ba02520ee2961f5bfd656b4cce3af728a69b"
+  },
+  {
+    "asset_id": "S105-0046",
+    "original_relative_path": "机械_ ck_01_03/Constant Slow Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/constant_slow_typewriter_adler.wav",
+    "sha256": "3ba2ba9e7b4af55d352a1f48f19b88c071720b6778055ae320cf157a335422a4"
+  },
+  {
+    "asset_id": "S105-0047",
+    "original_relative_path": "机械_ ck_01_03/Constant Small Typewriter Remington.wav",
+    "relative_path": "机械_ ck_01_03/constant_small_typewriter_remington.wav",
+    "sha256": "b7ea3615f31227dfee3b2f3fdc6e9aee4e5bc074da1a0a1549b443ec3949da8c"
+  },
+  {
+    "asset_id": "S105-0048",
+    "original_relative_path": "机械_ ck_01_03/Constant Toy Air Gun High.wav",
+    "relative_path": "机械_ ck_01_03/constant_toy_air_gun_high.wav",
+    "sha256": "b9e0a94262d41ee7918a49b49f78761fbbeebffb7ae9278a0b5bcbb1ad30169b"
+  },
+  {
+    "asset_id": "S105-0049",
+    "original_relative_path": "机械_ ck_01_03/Constant Toy Air Gun Resonant.wav",
+    "relative_path": "机械_ ck_01_03/constant_toy_air_gun_resonant.wav",
+    "sha256": "b961bb67b0b9fcf439ed6482617f5cdaeab74ce108c77000a068aa60ac42f8fd"
+  },
+  {
+    "asset_id": "S105-0050",
+    "original_relative_path": "机械_ ck_01_03/Constant Toy Air Gun.wav",
+    "relative_path": "机械_ ck_01_03/constant_toy_air_gun.wav",
+    "sha256": "03ba79ab8776a968c7ace6aa377d63ec335c2471a4bf7e77e5b0a35b97400b27"
+  },
+  {
+    "asset_id": "S105-0051",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Carriage The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_carriage_the_oliver.wav",
+    "sha256": "ac5bac293aee8fa0fc6fc5748bead475161883c0d31373134674841826b254b6"
+  },
+  {
+    "asset_id": "S105-0052",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_kanzler.wav",
+    "sha256": "69181dfd19ccedb962247d495c1c060c5816ec30a38c8b8b1909085787a21bbd"
+  },
+  {
+    "asset_id": "S105-0053",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Lambert.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_lambert.wav",
+    "sha256": "5cfb9592d582f9cc341300b8d9d19c8867574d10e6960434723b3c74740019aa"
+  },
+  {
+    "asset_id": "S105-0054",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_remington_noiseless.wav",
+    "sha256": "7f79eb708f9bac88dcc3db5b719fe6af742c90e1b81470e95ebde891f6882686"
+  },
+  {
+    "asset_id": "S105-0055",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Remington.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_remington.wav",
+    "sha256": "f4f12dbab3df8f9cd65ae8a97133243f18c29311838b241d9e36d57ed753d68a"
+  },
+  {
+    "asset_id": "S105-0056",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Standard.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_standard.wav",
+    "sha256": "2932850615219bbaaed479f14ba1ff9fea81e5e5538d553928c38a5fa079b190"
+  },
+  {
+    "asset_id": "S105-0057",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_the_oliver.wav",
+    "sha256": "831b351b9e6ea205a82f313b6c88b3ffc91f4d82017c95d4297fa05a97ec50cc"
+  },
+  {
+    "asset_id": "S105-0058",
+    "original_relative_path": "机械_ ck_01_03/Constant Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_01_03/constant_typewriter_valentine.wav",
+    "sha256": "62407ffd597ef9b2101b83a8d435a10d3a3845d35092948b9e0c46486e398abf"
+  },
+  {
+    "asset_id": "S105-0059",
+    "original_relative_path": "机械_ ck_01_03/Corking Machine.wav",
+    "relative_path": "机械_ ck_01_03/corking_machine.wav",
+    "sha256": "9d343a05d1147edc82a5735a83f03960f4e9da170c68e59c6468609f1a5e26b3"
+  },
+  {
+    "asset_id": "S105-0060",
+    "original_relative_path": "机械_ ck_01_03/Counter Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/counter_calculating_machine_triumphator.wav",
+    "sha256": "e0c13a32cc826446adce6ed70b283f416bfc01a4ba9f54d8f660d2ea532744f9"
+  },
+  {
+    "asset_id": "S105-0061",
+    "original_relative_path": "机械_ ck_01_03/Counter Reset Calculating Machine VEB.wav",
+    "relative_path": "机械_ ck_01_03/counter_reset_calculating_machine_veb.wav",
+    "sha256": "82e32a781ad3e7804afbfcea1adbd3dec4ef9c84d857b9a9945f020dfb58b42f"
+  },
+  {
+    "asset_id": "S105-0062",
+    "original_relative_path": "机械_ ck_01_03/Dial Chunky Metal Multiple Fast Turns.wav",
+    "relative_path": "机械_ ck_01_03/dial_chunky_metal_multiple_fast_turns.wav",
+    "sha256": "a1b6b806a9321f424f5ea3d1ea48033ef1e6415c6497e4542b076fbf50680387"
+  },
+  {
+    "asset_id": "S105-0063",
+    "original_relative_path": "机械_ ck_01_03/Dial Chunky Metal Multiple Slow Turns.wav",
+    "relative_path": "机械_ ck_01_03/dial_chunky_metal_multiple_slow_turns.wav",
+    "sha256": "0acf6f645106fb39631e521b6ddc5d4f0902f1335408c3600ff36b2b62414368"
+  },
+  {
+    "asset_id": "S105-0064",
+    "original_relative_path": "机械_ ck_01_03/Dial Metal Multiple Fast Turns Light.wav",
+    "relative_path": "机械_ ck_01_03/dial_metal_multiple_fast_turns_light.wav",
+    "sha256": "a45589674bdd31108a9c03a55bb292e4f143e0902f57246e5a3c39a2d89fb9da"
+  },
+  {
+    "asset_id": "S105-0065",
+    "original_relative_path": "机械_ ck_01_03/Dial Metal Multiple Fast Turns.wav",
+    "relative_path": "机械_ ck_01_03/dial_metal_multiple_fast_turns.wav",
+    "sha256": "9a227e8ee9c5fc8394f3d5dad31e03855b90ab439112a5c99e41924154afd5c2"
+  },
+  {
+    "asset_id": "S105-0066",
+    "original_relative_path": "机械_ ck_01_03/Dial Metal Single Slow Turns.wav",
+    "relative_path": "机械_ ck_01_03/dial_metal_single_slow_turns.wav",
+    "sha256": "15724f524055c05c8206aaa206e17e3160b638e4f3a8ffd556bfa9c65724832e"
+  },
+  {
+    "asset_id": "S105-0067",
+    "original_relative_path": "机械_ ck_01_03/Dictation Machine Stenorette.wav",
+    "relative_path": "机械_ ck_01_03/dictation_machine_stenorette.wav",
+    "sha256": "ad7608c68ae246d622b771ac0ae5fb31a01784f1a31db5f0e82d2e62a7a4da5c"
+  },
+  {
+    "asset_id": "S105-0068",
+    "original_relative_path": "机械_ ck_01_03/Double Constant Typewriter Ceta.wav",
+    "relative_path": "机械_ ck_01_03/double_constant_typewriter_ceta.wav",
+    "sha256": "e46ef3daa8e18c9dd008e5e578af1b8cbf77f144bc914752de30328abde091a1"
+  },
+  {
+    "asset_id": "S105-0069",
+    "original_relative_path": "机械_ ck_01_03/Double Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/double_typewriter_adler.wav",
+    "sha256": "c47e4ff5de14bcbc05f5f404ac8d2eae8aafa3076a8618d6d56c25bd8db3f7ec"
+  },
+  {
+    "asset_id": "S105-0070",
+    "original_relative_path": "机械_ ck_01_03/Double Typewriter Ceta.wav",
+    "relative_path": "机械_ ck_01_03/double_typewriter_ceta.wav",
+    "sha256": "59c63fa8e4e9f02f32813e8681d3225c1a62c1ae9ceb85a2318e0833312ef7f0"
+  },
+  {
+    "asset_id": "S105-0071",
+    "original_relative_path": "机械_ ck_01_03/Double Typewriter Remington.wav",
+    "relative_path": "机械_ ck_01_03/double_typewriter_remington.wav",
+    "sha256": "65378631ff1985599436d2c1a25106904010a84f366ee09ed91ba71d810ba6b6"
+  },
+  {
+    "asset_id": "S105-0072",
+    "original_relative_path": "机械_ ck_01_03/Garden Shears Snap Scrape Sequence.wav",
+    "relative_path": "机械_ ck_01_03/garden_shears_snap_scrape_sequence.wav",
+    "sha256": "c16545f9eeea91d395df1e0638ff796c884798a14905ccddd8695a2273c40ba3"
+  },
+  {
+    "asset_id": "S105-0073",
+    "original_relative_path": "机械_ ck_01_03/Gramophon Case Open.wav",
+    "relative_path": "机械_ ck_01_03/gramophon_case_open.wav",
+    "sha256": "3d590a09547487811c9aaf3274cf3473c582c8e089897cde123ac98fdb4c5918"
+  },
+  {
+    "asset_id": "S105-0074",
+    "original_relative_path": "机械_ ck_01_03/Knife Grinder Large.wav",
+    "relative_path": "机械_ ck_01_03/knife_grinder_large.wav",
+    "sha256": "4d8286416c664c3b3bf94aad74938dc8cd43ef25834713d1cc10ced8de68bc77"
+  },
+  {
+    "asset_id": "S105-0075",
+    "original_relative_path": "机械_ ck_01_03/Knife Grinder Medium.wav",
+    "relative_path": "机械_ ck_01_03/knife_grinder_medium.wav",
+    "sha256": "b2076d3023a433aca8becb64339b3a51bc096380c8208e2141f7d69a666172bf"
+  },
+  {
+    "asset_id": "S105-0076",
+    "original_relative_path": "机械_ ck_01_03/Knife Grinder Small.wav",
+    "relative_path": "机械_ ck_01_03/knife_grinder_small.wav",
+    "sha256": "c9a8ef6ec90b6403230f23b27afeb2c6d0e2c6113d01d07c5f6d4e32594b8cdf"
+  },
+  {
+    "asset_id": "S105-0077",
+    "original_relative_path": "机械_ ck_01_03/Letter Broken Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/letter_broken_typewriter_the_oliver.wav",
+    "sha256": "e6ae86be33e04ecf24eff5cc744b18ae135eedf2d7e12ea5d3193270e0b97359"
+  },
+  {
+    "asset_id": "S105-0078",
+    "original_relative_path": "机械_ ck_01_03/Letter Constant Broken Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/letter_constant_broken_typewriter_the_oliver.wav",
+    "sha256": "30e83fcf75a0198ab7845e2817d84c85b8c5da7a77fd8b9e30e63a040b1360ef"
+  },
+  {
+    "asset_id": "S105-0079",
+    "original_relative_path": "机械_ ck_01_03/Letter Constant Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/letter_constant_typewriter_mercedes_five.wav",
+    "sha256": "07efa6ccb8bd08f830f523bf2ea77b0a7eb8e0fd72089aabb86245d085754ab3"
+  },
+  {
+    "asset_id": "S105-0080",
+    "original_relative_path": "机械_ ck_01_03/Letter Constant Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_01_03/letter_constant_typewriter_valentine.wav",
+    "sha256": "2887e13b403ba46e4dfc3f4056a0879890e9870ba304fbbbdd88aebd5103ba69"
+  },
+  {
+    "asset_id": "S105-0081",
+    "original_relative_path": "机械_ ck_01_03/Letter Typewriter Ceta.wav",
+    "relative_path": "机械_ ck_01_03/letter_typewriter_ceta.wav",
+    "sha256": "e68a84ad028c1aef98be66aa97868b8810e90de744c27e9ad2da95220b52fd03"
+  },
+  {
+    "asset_id": "S105-0082",
+    "original_relative_path": "机械_ ck_01_03/Letter Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/letter_typewriter_mercedes_five.wav",
+    "sha256": "72655d3352d5eb72fbfe00af6dfbbd34510c1ff6a610345f4d382c103fc5ea25"
+  },
+  {
+    "asset_id": "S105-0083",
+    "original_relative_path": "机械_ ck_01_03/Letter Typewriter Remington.wav",
+    "relative_path": "机械_ ck_01_03/letter_typewriter_remington.wav",
+    "sha256": "e2197dee9dcccf7281dc2877ae6f2ac18eb2000192c823bdaa0964d137e59ab6"
+  },
+  {
+    "asset_id": "S105-0084",
+    "original_relative_path": "机械_ ck_01_03/Letter Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_01_03/letter_typewriter_valentine.wav",
+    "sha256": "eb50af44a3258d3a5efdf17e2b074d8844ceb25e89b815120da6d111f6781a4d"
+  },
+  {
+    "asset_id": "S105-0085",
+    "original_relative_path": "机械_ ck_01_03/Lever Constant Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_01_03/lever_constant_typewriter_remington_noiseless.wav",
+    "sha256": "dc11fca0aeff6b34137a78cff0278bc86199e3b4db50cea116694da565c88a1e"
+  },
+  {
+    "asset_id": "S105-0086",
+    "original_relative_path": "机械_ ck_01_03/Light Metal Clatter Grinding Resonating Long.wav",
+    "relative_path": "机械_ ck_01_03/light_metal_clatter_grinding_resonating_long.wav",
+    "sha256": "aa64ade62e7082f6fa6148d82974c685e78ebb3ae14ea2ca050f848d4e8355f8"
+  },
+  {
+    "asset_id": "S105-0087",
+    "original_relative_path": "机械_ ck_01_03/Light Metal Clatter Grinding Resonating Short.wav",
+    "relative_path": "机械_ ck_01_03/light_metal_clatter_grinding_resonating_short.wav",
+    "sha256": "ce8a0b64a215c0beaf997dce26b7b8cff0ef89b8bb3557620ee8995adc21f0cf"
+  },
+  {
+    "asset_id": "S105-0088",
+    "original_relative_path": "机械_ ck_01_03/Low Snap Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_01_03/low_snap_typewriter_kanzler.wav",
+    "sha256": "2e677e553eaf271bd7f85f3b5677cb704a1d32bb8e09ddb9c53c85da9a2682d2"
+  },
+  {
+    "asset_id": "S105-0089",
+    "original_relative_path": "机械_ ck_01_03/MECK CLICK Slot Machine Lever Hermes Stollwerck.wav",
+    "relative_path": "机械_ ck_01_03/click_slot_machine_lever_hermes_stollwerck.wav",
+    "sha256": "1743da7fa1e8f7db736827a7d16fb7378572c37f0c9245ab406b208f6fb07785"
+  },
+  {
+    "asset_id": "S105-0090",
+    "original_relative_path": "机械_ ck_01_03/MECK CLICK Snap Checkwriter Abbot.wav",
+    "relative_path": "机械_ ck_01_03/click_snap_checkwriter_abbot.wav",
+    "sha256": "7861dde4a6794053d48dc35af4bb243baed8c9b8cc211c7a2a625bba372dd11e"
+  },
+  {
+    "asset_id": "S105-0091",
+    "original_relative_path": "机械_ ck_01_03/MECK COMPLEX Checkwriter Up Down Unknown.wav",
+    "relative_path": "机械_ ck_01_03/complex_checkwriter_up_down_unknown.wav",
+    "sha256": "1f2a70251a82737d33a09572f95b9edcef074c77ea822092ee9269b2c6d31621"
+  },
+  {
+    "asset_id": "S105-0092",
+    "original_relative_path": "机械_ ck_01_03/Metal Gear Rattling Long.wav",
+    "relative_path": "机械_ ck_01_03/metal_gear_rattling_long.wav",
+    "sha256": "9025e538535b350f4cd2fe8eb5f1d3618436f1b3c9774dca8e1229e43332ee1d"
+  },
+  {
+    "asset_id": "S105-0093",
+    "original_relative_path": "机械_ ck_01_03/Metal Gear Rattling Short.wav",
+    "relative_path": "机械_ ck_01_03/metal_gear_rattling_short.wav",
+    "sha256": "ce26ffe8ed9763c3dcdf119a8561a706b31867502855fe6b886335d0ef072b0f"
+  },
+  {
+    "asset_id": "S105-0094",
+    "original_relative_path": "机械_ ck_01_03/Metal Guide Roller Long.wav",
+    "relative_path": "机械_ ck_01_03/metal_guide_roller_long.wav",
+    "sha256": "2a86ca354e2729961b7f9fe0c14f0d98e701f1a1d0991ef54ca449441627fe81"
+  },
+  {
+    "asset_id": "S105-0095",
+    "original_relative_path": "机械_ ck_01_03/Metal Guide Roller Short.wav",
+    "relative_path": "机械_ ck_01_03/metal_guide_roller_short.wav",
+    "sha256": "638868db4f2487ea6aeed4ebd72b61f6f3bfd848384a791cd8be490cacc9e4bc"
+  },
+  {
+    "asset_id": "S105-0096",
+    "original_relative_path": "机械_ ck_01_03/Metal Latch Clunk.wav",
+    "relative_path": "机械_ ck_01_03/metal_latch_clunk.wav",
+    "sha256": "ecaa736520456fa34ae568e463b051ece46eb23aef52476d263801a881fd66e4"
+  },
+  {
+    "asset_id": "S105-0097",
+    "original_relative_path": "机械_ ck_01_03/Metal Latch Lock Clunk.wav",
+    "relative_path": "机械_ ck_01_03/metal_latch_lock_clunk.wav",
+    "sha256": "a0435bdc31411147ef147d23ece8c2c33036341f2c60b9069a3b5865831b7606"
+  },
+  {
+    "asset_id": "S105-0098",
+    "original_relative_path": "机械_ ck_01_03/Metal Nasty High Screech.wav",
+    "relative_path": "机械_ ck_01_03/metal_nasty_high_screech.wav",
+    "sha256": "676360acea5ba22331511a756e1dfa9678c97b34e86d75aaf8445551a6f9ec80"
+  },
+  {
+    "asset_id": "S105-0099",
+    "original_relative_path": "机械_ ck_01_03/Metal On Spokes With Pedaling.wav",
+    "relative_path": "机械_ ck_01_03/metal_on_spokes_with_pedaling.wav",
+    "sha256": "d5a509b72b409b446fe37d544357ef2715511e9626ff6e4c271129868cbcc156"
+  },
+  {
+    "asset_id": "S105-0100",
+    "original_relative_path": "机械_ ck_01_03/Metal On Spokes Without Pedaling.wav",
+    "relative_path": "机械_ ck_01_03/metal_on_spokes_without_pedaling.wav",
+    "sha256": "4c4bdf137990d62f3815bad7d7661018f9957e5392794a9f6f432b2c2d00a0d2"
+  },
+  {
+    "asset_id": "S105-0101",
+    "original_relative_path": "机械_ ck_01_03/Metal Pot Clattering Ringing.wav",
+    "relative_path": "机械_ ck_01_03/metal_pot_clattering_ringing.wav",
+    "sha256": "160077e072a06523340fe324fd4989d70f446e828115f6d07a7e40a70d78effe"
+  },
+  {
+    "asset_id": "S105-0102",
+    "original_relative_path": "机械_ ck_01_03/Metal Punch Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_01_03/metal_punch_typewriter_kanzler.wav",
+    "sha256": "036ed3039ad782cde331a06ea7b752ff2d6277370cf80d460a44b2b17ee46ff2"
+  },
+  {
+    "asset_id": "S105-0103",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Small Handling Open Close Fast.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_small_handling_open_close_fast.wav",
+    "sha256": "670589fcfdc97b2f1dc5196aeab072608287e16d21a7a47ab8bcc4522854a655"
+  },
+  {
+    "asset_id": "S105-0104",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Small Handling Open Close Slow.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_small_handling_open_close_slow.wav",
+    "sha256": "de08df5bd74224b742ee5334774b7734f919a06dfaf0aafe0cb4ca6e2952ece3"
+  },
+  {
+    "asset_id": "S105-0105",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Small Handling.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_small_handling.wav",
+    "sha256": "75bd9ccf1e33ed16ced835f9238a79155bbfbcd880da988d9ac43fabf8e5e285"
+  },
+  {
+    "asset_id": "S105-0106",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Small Turn Sequence.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_small_turn_sequence.wav",
+    "sha256": "6c22f87cce58b97532dbe01771f3076658b238640d6e915aaf5f2779e03fee9e"
+  },
+  {
+    "asset_id": "S105-0107",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Wrench Fast.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_wrench_fast.wav",
+    "sha256": "438005fe306c1fb8a76421c6250b5769e5700cb723c19543e7747af0e5f5a4f4"
+  },
+  {
+    "asset_id": "S105-0108",
+    "original_relative_path": "机械_ ck_01_03/Metal Ratchet Wrench Slow.wav",
+    "relative_path": "机械_ ck_01_03/metal_ratchet_wrench_slow.wav",
+    "sha256": "270e44639ee51ae631d771702be4cc4cbab2884e95120102b434dfe43e3f20b4"
+  },
+  {
+    "asset_id": "S105-0109",
+    "original_relative_path": "机械_ ck_01_03/Metal Roller Shutter Handling.wav",
+    "relative_path": "机械_ ck_01_03/metal_roller_shutter_handling.wav",
+    "sha256": "a6e3a856b2597ce8411d9ce6302743c8b6a9d01533ee5ff5ae2de0d4d015d6d6"
+  },
+  {
+    "asset_id": "S105-0110",
+    "original_relative_path": "机械_ ck_01_03/Metal Roller Shutter.wav",
+    "relative_path": "机械_ ck_01_03/metal_roller_shutter.wav",
+    "sha256": "7fc6a62618847a76e44f98972d8f145c0fcb04b086a5b5cbedd30b6beeafec12"
+  },
+  {
+    "asset_id": "S105-0111",
+    "original_relative_path": "机械_ ck_01_03/Metal Scissors Scrape Long Slow.wav",
+    "relative_path": "机械_ ck_01_03/metal_scissors_scrape_long_slow.wav",
+    "sha256": "62eed76c2a912f81efb9a3debc60e5524ceda22bb1aa7d1eb2fad8805b2c3730"
+  },
+  {
+    "asset_id": "S105-0112",
+    "original_relative_path": "机械_ ck_01_03/Metal Scissors Scrape Sequence Long.wav",
+    "relative_path": "机械_ ck_01_03/metal_scissors_scrape_sequence_long.wav",
+    "sha256": "fcd1d1ba19310d15de1d7da4bbe3df4bafb4a2e18fb8546704871f0953ea5cdb"
+  },
+  {
+    "asset_id": "S105-0113",
+    "original_relative_path": "机械_ ck_01_03/Metal Suitcase Pulling Bar Slide.wav",
+    "relative_path": "机械_ ck_01_03/metal_suitcase_pulling_bar_slide.wav",
+    "sha256": "f90e728b927599a854c64212f404967aefa192c9524cd3ab71d2bf521ab9e17b"
+  },
+  {
+    "asset_id": "S105-0114",
+    "original_relative_path": "机械_ ck_01_03/Metal Tea Strainer Multiple.wav",
+    "relative_path": "机械_ ck_01_03/metal_tea_strainer_multiple.wav",
+    "sha256": "c33c14cbc6c3c9bd40edb54c93a4655fe0b1c0c578097595e522122a1476026d"
+  },
+  {
+    "asset_id": "S105-0115",
+    "original_relative_path": "机械_ ck_01_03/Metal Tea Strainer Single.wav",
+    "relative_path": "机械_ ck_01_03/metal_tea_strainer_single.wav",
+    "sha256": "f9d85a03c3bd708fe0850f5cbc7b3e031097f13d527bd889b495ba55bcf51230"
+  },
+  {
+    "asset_id": "S105-0116",
+    "original_relative_path": "机械_ ck_01_03/Metal Tool Slide Clink.wav",
+    "relative_path": "机械_ ck_01_03/metal_tool_slide_clink.wav",
+    "sha256": "ad9d781558823c3d3982395ed001c39233eb78eca656ded3e874d4a35aa032e9"
+  },
+  {
+    "asset_id": "S105-0117",
+    "original_relative_path": "机械_ ck_01_03/Metal Turn Squeak Large Agricultural Tool.wav",
+    "relative_path": "机械_ ck_01_03/metal_turn_squeak_large_agricultural_tool.wav",
+    "sha256": "0b84f530a1e1214edbe7d54900b81f3725128ad4b8836bcb8d1b39fbdf8d7bb1"
+  },
+  {
+    "asset_id": "S105-0118",
+    "original_relative_path": "机械_ ck_01_03/Metal Turn Squeak Large Short Agricultural Tool.wav",
+    "relative_path": "机械_ ck_01_03/metal_turn_squeak_large_short_agricultural_tool.wav",
+    "sha256": "fdea4d2455152231025ff70c5712de3acb7dd769e016bafc54756fda86d63d84"
+  },
+  {
+    "asset_id": "S105-0119",
+    "original_relative_path": "机械_ ck_01_03/Nut Runner Single Turns Fast.wav",
+    "relative_path": "机械_ ck_01_03/nut_runner_single_turns_fast.wav",
+    "sha256": "9fd73d37ccb89836b1a165bbd9751a80317f66979e8a2da291ba1ba518bde268"
+  },
+  {
+    "asset_id": "S105-0120",
+    "original_relative_path": "机械_ ck_01_03/Nut Runner Single Turns Slow.wav",
+    "relative_path": "机械_ ck_01_03/nut_runner_single_turns_slow.wav",
+    "sha256": "2ce735f1c7fa76a622aeeb285c6958c849acbecbd179b7b298ef87cdacd4c16a"
+  },
+  {
+    "asset_id": "S105-0121",
+    "original_relative_path": "机械_ ck_01_03/Nut Runner Small Single Turn.wav",
+    "relative_path": "机械_ ck_01_03/nut_runner_small_single_turn.wav",
+    "sha256": "86c4b46b3eb5ea8166bec95acabb3671ba7b6d43f6e1f427226f09c7fb6b663d"
+  },
+  {
+    "asset_id": "S105-0122",
+    "original_relative_path": "机械_ ck_01_03/Nut Runner Small Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/nut_runner_small_turning_sequence.wav",
+    "sha256": "4be38d9fcfdf26172c5145eaecb076ecaf7493f2472fba2867f822a8afbd86a7"
+  },
+  {
+    "asset_id": "S105-0123",
+    "original_relative_path": "机械_ ck_01_03/Nut Runner Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/nut_runner_turning_sequence.wav",
+    "sha256": "caf4e8932521172d4ad3f56ef4bca9d618917cc94aef0bbbdf3c49acfdace4aa"
+  },
+  {
+    "asset_id": "S105-0124",
+    "original_relative_path": "机械_ ck_01_03/Pagination Stamp Handling.wav",
+    "relative_path": "机械_ ck_01_03/pagination_stamp_handling.wav",
+    "sha256": "daf3ddb4a534cd9f2a18fcd52e6f5cc7eb9248349282cfc8d472fad728165be9"
+  },
+  {
+    "asset_id": "S105-0125",
+    "original_relative_path": "机械_ ck_01_03/Pagination Stamp Sequence.wav",
+    "relative_path": "机械_ ck_01_03/pagination_stamp_sequence.wav",
+    "sha256": "ca3987662dfbec61e81bef1e66825d6fd1e4e245ac82e070f1b46d9faa0423cb"
+  },
+  {
+    "asset_id": "S105-0126",
+    "original_relative_path": "机械_ ck_01_03/Pagination Stamp Single 01.wav",
+    "relative_path": "机械_ ck_01_03/pagination_stamp_single_a.wav",
+    "sha256": "476de3055bb174decfc3606172fb7258e747b0e8e4e212663eceb94786f9747f"
+  },
+  {
+    "asset_id": "S105-0127",
+    "original_relative_path": "机械_ ck_01_03/Pagination Stamp Single 02.wav",
+    "relative_path": "机械_ ck_01_03/pagination_stamp_single_b.wav",
+    "sha256": "feef745c8f725ced8df95b1f5569e2c3e2693f2bf0a24306068e3d3c059df6ad"
+  },
+  {
+    "asset_id": "S105-0128",
+    "original_relative_path": "机械_ ck_01_03/Photo Camera Tensioning Lever Handling.wav",
+    "relative_path": "机械_ ck_01_03/photo_camera_tensioning_lever_handling.wav",
+    "sha256": "18a1cedf0c27728bb484b616cda3c30fe1bf0bc0ca73523f74a72c9093c9ed85"
+  },
+  {
+    "asset_id": "S105-0129",
+    "original_relative_path": "机械_ ck_01_03/Plastic Hinge Squeak Open Close.wav",
+    "relative_path": "机械_ ck_01_03/plastic_hinge_squeak_open_close.wav",
+    "sha256": "7d3b14e1c66cefd2df02ec11b5ce16577812e5375bb76701054db92c2423934a"
+  },
+  {
+    "asset_id": "S105-0130",
+    "original_relative_path": "机械_ ck_01_03/Plastic Hinge Squeak Vibrato.wav",
+    "relative_path": "机械_ ck_01_03/plastic_hinge_squeak_vibrato.wav",
+    "sha256": "e39edee11f0fd7a73ee79a406276493a783bd8bcd4c2582e910331a2eaa671fa"
+  },
+  {
+    "asset_id": "S105-0131",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Big Open Close Short Resonant.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_big_open_close_short_resonant.wav",
+    "sha256": "c95d8b6609c413c116fab92f118a221102576938110e199fa02b8934f0387913"
+  },
+  {
+    "asset_id": "S105-0132",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Big Open Close Short.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_big_open_close_short.wav",
+    "sha256": "27814fda7561c800cc9832efc52b6efd7e816053b0d2dc42a9b8078c1e45c37d"
+  },
+  {
+    "asset_id": "S105-0133",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Big Resonant Short.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_big_resonant_short.wav",
+    "sha256": "0d5d3646b00300d54b43470002c4ae3763ae543b1c7a01c121ba5fcba11edad8"
+  },
+  {
+    "asset_id": "S105-0134",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Hoist Big Handling.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_hoist_big_handling.wav",
+    "sha256": "08d5f385c3eded308964d608f013b2b72bede67517cce41d7752bde2c0de6e1e"
+  },
+  {
+    "asset_id": "S105-0135",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Hoist Big Roll Freewheel.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_hoist_big_roll_freewheel.wav",
+    "sha256": "d327fa8ae01ef7cef65e35459929e02f371a2762dae7cdbec9b898be8148f559"
+  },
+  {
+    "asset_id": "S105-0136",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Loose Open Close Rolling.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_loose_open_close_rolling.wav",
+    "sha256": "28014fd239bb220cf8c4e4b91726c632e3be785e83a9dcf12b8720efa7e56480"
+  },
+  {
+    "asset_id": "S105-0137",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Loose Open Close Sequence Fast.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_loose_open_close_sequence_fast.wav",
+    "sha256": "cecfb9a1eb43e523086d0e75e6b5840b015e719f40dc46e88d19eee2ff8345e2"
+  },
+  {
+    "asset_id": "S105-0138",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Loose Open Close Sequence.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_loose_open_close_sequence.wav",
+    "sha256": "f3096ae736095fea0a449fe4c0ebf2e84e7b6dc2bb8ea23ce568eb505eab4af4"
+  },
+  {
+    "asset_id": "S105-0139",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Loose Open Close.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_loose_open_close.wav",
+    "sha256": "8c88ca73b16a4a29455810e876ab4b56ead9987abd87a586698fecfb57289ce8"
+  },
+  {
+    "asset_id": "S105-0140",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Snap Open Close Sequence Slow.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_snap_open_close_sequence_slow.wav",
+    "sha256": "3aec0a626ed869d2ebafd8612581d981434517d9cb01c1d76e202f774a9bd2ed"
+  },
+  {
+    "asset_id": "S105-0141",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Lever Snap Open Close.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_lever_snap_open_close.wav",
+    "sha256": "cbfb2abb0353b901352cd8bb0de170d4321ab0f7cadaeffb784b7aa7790cb837"
+  },
+  {
+    "asset_id": "S105-0142",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Loose Rattle Sequence.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_loose_rattle_sequence.wav",
+    "sha256": "612b6b897a53aa1fca066c91d1fae9ce8c36be807e8b71290cf6dcfddc6eadef"
+  },
+  {
+    "asset_id": "S105-0143",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Medium Wooden Rattle Fast.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_medium_wooden_rattle_fast.wav",
+    "sha256": "34babf041c7e7abb62ee4ef23f3ab5782751bbf14bedb82382fa92b3b13025db"
+  },
+  {
+    "asset_id": "S105-0144",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Medium Wooden Rattle Slow.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_medium_wooden_rattle_slow.wav",
+    "sha256": "620f4ef210a592e600d82d174abf4b5299cd4070ba2b74d01d1270d4849bf0fc"
+  },
+  {
+    "asset_id": "S105-0145",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Sequence Short To Long.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_sequence_short_to_long.wav",
+    "sha256": "c042b476915fadf03fd1f5f48025eedbf6d9fd5f447590563bdac76a30b1d227"
+  },
+  {
+    "asset_id": "S105-0146",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Sequence.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_sequence.wav",
+    "sha256": "46301f8a646ad11cfc583543309e3286d99cf1fb042738af8cb4dbc7d3a280fd"
+  },
+  {
+    "asset_id": "S105-0147",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Small Constant Open Close Long.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_small_constant_open_close_long.wav",
+    "sha256": "cc249d7c6390499216d440eca44486f4e29c4c747bffd0c88e6af16dd4ce96d2"
+  },
+  {
+    "asset_id": "S105-0148",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Small Single Open Close.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_small_single_open_close.wav",
+    "sha256": "defd6a415e5dfe0a5009d6c27d930a592751bd4a13c94b206fe443974006e68b"
+  },
+  {
+    "asset_id": "S105-0149",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Wood Long to Short Squeaky.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_wood_long_to_short_squeaky.wav",
+    "sha256": "5a691a8479c912c8cf4b85c9fe2994e3f3f21b6dca953a733089f5f7bc2661e8"
+  },
+  {
+    "asset_id": "S105-0150",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Wood Long to Short.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_wood_long_to_short.wav",
+    "sha256": "cb90ecd736accb209f7c6689b6c06c28085a7a8f513bdac90782a0d3583b19cc"
+  },
+  {
+    "asset_id": "S105-0151",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Wood Long.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_wood_long.wav",
+    "sha256": "cb31c566aafd548fd2f7dd47bce5446e1c940e97e958e66c9b15e2cdcd0310a7"
+  },
+  {
+    "asset_id": "S105-0152",
+    "original_relative_path": "机械_ ck_01_03/Ratchet Wood Short.wav",
+    "relative_path": "机械_ ck_01_03/ratchet_wood_short.wav",
+    "sha256": "54ef0926d3e7e087a444a76951c315cf7c38d97e5f9d1886e709948fe5cd6b23"
+  },
+  {
+    "asset_id": "S105-0153",
+    "original_relative_path": "机械_ ck_01_03/Ratchet.wav",
+    "relative_path": "机械_ ck_01_03/ratchet.wav",
+    "sha256": "6ab03cd7d9dac6e6153e4018884eaf88c35f2ed060225fa31c9c88a01c13cbf6"
+  },
+  {
+    "asset_id": "S105-0154",
+    "original_relative_path": "机械_ ck_01_03/Ring Out Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/ring_out_calculating_machine_triumphator.wav",
+    "sha256": "a0b06260bfaf6ea20c385160eb84160d37a1deb4af04a20da5cc9403de14d8c3"
+  },
+  {
+    "asset_id": "S105-0155",
+    "original_relative_path": "机械_ ck_01_03/Road Bike Gear Shift.wav",
+    "relative_path": "机械_ ck_01_03/road_bike_gear_shift.wav",
+    "sha256": "7a11c34e521b3c5a80bd7f64dc707b30f2496a318f375792b8162e886ccc3749"
+  },
+  {
+    "asset_id": "S105-0156",
+    "original_relative_path": "机械_ ck_01_03/Roll Snap Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/roll_snap_typewriter_adler.wav",
+    "sha256": "fa48c4331793bdeda5d0545467bb50218fe9af49f3985e335c981a5d51dcabf2"
+  },
+  {
+    "asset_id": "S105-0157",
+    "original_relative_path": "机械_ ck_01_03/Rolling Chain.wav",
+    "relative_path": "机械_ ck_01_03/rolling_chain.wav",
+    "sha256": "a48cdff4a47d2866aa60e6a88d13c59eb05c259e38b718036cfd702def9fbe34"
+  },
+  {
+    "asset_id": "S105-0158",
+    "original_relative_path": "机械_ ck_01_03/Sawblade Iron Rattling Resonating.wav",
+    "relative_path": "机械_ ck_01_03/sawblade_iron_rattling_resonating.wav",
+    "sha256": "46d640ef609fcae7567b095e8d9bbe575d6a0ace1550aff4aa44dad446633f49"
+  },
+  {
+    "asset_id": "S105-0159",
+    "original_relative_path": "机械_ ck_01_03/Scissors Handling Scrape Whistling.wav",
+    "relative_path": "机械_ ck_01_03/scissors_handling_scrape_whistling.wav",
+    "sha256": "bf9adecfeb35afd72b0a474a1ade5e2d9079d620bf5ec1ab1e2501fc0d153988"
+  },
+  {
+    "asset_id": "S105-0160",
+    "original_relative_path": "机械_ ck_01_03/Scrape Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/scrape_typewriter_adler.wav",
+    "sha256": "af6f94db6ac77113356156b2f109f93f14c4ababc336fb5881279fad6f9450d3"
+  },
+  {
+    "asset_id": "S105-0161",
+    "original_relative_path": "机械_ ck_01_03/Screwdriver Fast.wav",
+    "relative_path": "机械_ ck_01_03/screwdriver_fast.wav",
+    "sha256": "02656afb8a195aaf98c1f5ad6de17efabc59cfac6609973a49dd6c7cd4265082"
+  },
+  {
+    "asset_id": "S105-0162",
+    "original_relative_path": "机械_ ck_01_03/Screwdriver Slow.wav",
+    "relative_path": "机械_ ck_01_03/screwdriver_slow.wav",
+    "sha256": "04705ac655a48478c76d8f21566128d6255eb5b820d4a3ce1fe293b518e6ee99"
+  },
+  {
+    "asset_id": "S105-0163",
+    "original_relative_path": "机械_ ck_01_03/Sequence Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/sequence_calculating_machine_triumphator.wav",
+    "sha256": "7a72cd9efd5002cb3a697ecc84cf321db5d979776bdf0a7ae2d37724f56112dc"
+  },
+  {
+    "asset_id": "S105-0164",
+    "original_relative_path": "机械_ ck_01_03/Sequence Typewriter Ceta.wav",
+    "relative_path": "机械_ ck_01_03/sequence_typewriter_ceta.wav",
+    "sha256": "95f89ff03886c11a84ec4bdfbe31db53483262cb774abea864cf17caac0cfdb3"
+  },
+  {
+    "asset_id": "S105-0165",
+    "original_relative_path": "机械_ ck_01_03/Sequence Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_01_03/sequence_typewriter_valentine.wav",
+    "sha256": "1eb43550f0da8e41da97c0bc06774521388d303d33993146af69329db0afee15"
+  },
+  {
+    "asset_id": "S105-0166",
+    "original_relative_path": "机械_ ck_01_03/Ski Boot Buckle Handling High.wav",
+    "relative_path": "机械_ ck_01_03/ski_boot_buckle_handling_high.wav",
+    "sha256": "57c0ce75b7e07c6e9a6067726716fbbdbbdbe036bce26a7915c96a5d665f477d"
+  },
+  {
+    "asset_id": "S105-0167",
+    "original_relative_path": "机械_ ck_01_03/Ski Boot Buckle Handling Low.wav",
+    "relative_path": "机械_ ck_01_03/ski_boot_buckle_handling_low.wav",
+    "sha256": "e8dba5bfbc4c383b256def80f8bc4b359f3a98065f037796a694631618c13062"
+  },
+  {
+    "asset_id": "S105-0168",
+    "original_relative_path": "机械_ ck_01_03/Ski Boot Buckle Handling Squeaky.wav",
+    "relative_path": "机械_ ck_01_03/ski_boot_buckle_handling_squeaky.wav",
+    "sha256": "c92f0f10da5d10625ab989e1527209ab15a91c772b11de94eb02b2d30982915a"
+  },
+  {
+    "asset_id": "S105-0169",
+    "original_relative_path": "机械_ ck_01_03/Slide Bell Ring Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_01_03/slide_bell_ring_typewriter_remington_noiseless.wav",
+    "sha256": "0f4f55ae4b4926db4a605c608e9c9b9e29e7eae6142281c47738ce2abf275c32"
+  },
+  {
+    "asset_id": "S105-0170",
+    "original_relative_path": "机械_ ck_01_03/Slide Bell Ring Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_01_03/slide_bell_ring_typewriter_underwood.wav",
+    "sha256": "0999757963725cfaf0e7c75c1d8464e0debe264c6cf2172c4e8d90fc992b9ee7"
+  },
+  {
+    "asset_id": "S105-0171",
+    "original_relative_path": "机械_ ck_01_03/Slide Click Snap Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/slide_click_snap_typewriter_mercedes_five.wav",
+    "sha256": "42733ee0af017d5b2cf48a8463bce5a64bba78be09d4b7100e09fa963eab7a1a"
+  },
+  {
+    "asset_id": "S105-0172",
+    "original_relative_path": "机械_ ck_01_03/Slide Fast Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_01_03/slide_fast_typewriter_kanzler.wav",
+    "sha256": "0a68d3e9d40639e80c7af1202e3163a86f9f00ef784f2799b589466c922e1243"
+  },
+  {
+    "asset_id": "S105-0173",
+    "original_relative_path": "机械_ ck_01_03/Slide Sequence Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/slide_sequence_typewriter_mercedes_five.wav",
+    "sha256": "c6699513055e6ad39c5e2f66fc9cc6ed90ea3e9a1a27374c80518b8759b5817c"
+  },
+  {
+    "asset_id": "S105-0174",
+    "original_relative_path": "机械_ ck_01_03/Slide Snap Bell Typewriter Standard.wav",
+    "relative_path": "机械_ ck_01_03/slide_snap_bell_typewriter_standard.wav",
+    "sha256": "2f666ce2af49bfe4305f12b037604f7848ed78830da1627571580e88d5959ae5"
+  },
+  {
+    "asset_id": "S105-0175",
+    "original_relative_path": "机械_ ck_01_03/Slide Snap Long Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/slide_snap_long_typewriter_mercedes_five.wav",
+    "sha256": "b356cc563354b362d7982dd3323b75b2c9e58e3e81d19580ff5c5be9bb433fce"
+  },
+  {
+    "asset_id": "S105-0176",
+    "original_relative_path": "机械_ ck_01_03/Slide Snap Ring Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/slide_snap_ring_typewriter_aeg_mignon.wav",
+    "sha256": "1718566282359cf8b87fe35aa2a131ed3f848960e775915bcac72ddc5db70434"
+  },
+  {
+    "asset_id": "S105-0177",
+    "original_relative_path": "机械_ ck_01_03/Slide Snap Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/slide_snap_typewriter_aeg_mignon_a.wav",
+    "sha256": "71e9039ecd539df8a927332976ae6efd951fdf221ac81e72d7096a86c8e8b46a"
+  },
+  {
+    "asset_id": "S105-0178",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Bajazzo.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_bajazzo.wav",
+    "sha256": "108202d3b3c0073145ffca3dd91c096c6d39f227d04ef2b69799580bfb65aa73"
+  },
+  {
+    "asset_id": "S105-0179",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Bergmann Stollwerck.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_bergmann_stollwerck.wav",
+    "sha256": "bd8354d20060605a14553ced5271a249f1fd95b3f083bbc0cf0c4d8cc0a28e07"
+  },
+  {
+    "asset_id": "S105-0180",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Hermes Stollwerck.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_hermes_stollwerck.wav",
+    "sha256": "8072152408eaf2c39a3fe2d2e0ad88099b18a6cfdddebd4c2072f3f6c43bd8aa"
+  },
+  {
+    "asset_id": "S105-0181",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Mum Hen.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_mum_hen.wav",
+    "sha256": "cc7d48482f8113598f157d697e5d2ea36c3c21790ec364bf9a82a762a3b9d194"
+  },
+  {
+    "asset_id": "S105-0182",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Mum Stork.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_mum_stork.wav",
+    "sha256": "ca1c156aa19ffdc079500a182e021e235c91a85cb33e47f68497edafd407e71c"
+  },
+  {
+    "asset_id": "S105-0183",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Reicherts Hexenhaus 01.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_reicherts_hexenhaus_a.wav",
+    "sha256": "e6d8605079b8a7e9486695799910edccebb37161ae893deea8f71c391f0c4d93"
+  },
+  {
+    "asset_id": "S105-0184",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Coin Insert Reicherts Hexenhaus 02.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_coin_insert_reicherts_hexenhaus_b.wav",
+    "sha256": "d8704aae4c49a6849d5468cc9dd6456d4d60da676614aed9a435a78b9d9e2e65"
+  },
+  {
+    "asset_id": "S105-0185",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Lever Bajazzo.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_lever_bajazzo.wav",
+    "sha256": "e6f820364f1f23dfcfd7f0c416eacb56839b0e264b5c43c2d106080e630784a9"
+  },
+  {
+    "asset_id": "S105-0186",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Lever Bergmann Stollwerck.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_lever_bergmann_stollwerck.wav",
+    "sha256": "d9ec46d8c8d297058a6ed37bbab074c538675a0dd4b0ea43115b445cda85e726"
+  },
+  {
+    "asset_id": "S105-0187",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Lever Hermes Stollwerck.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_lever_hermes_stollwerck.wav",
+    "sha256": "7db36d0561ded32b68004739da87ae444a6ce72fca137cdddadf1ef43f03c922"
+  },
+  {
+    "asset_id": "S105-0188",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Lever Reicherts Hexenhaus 01.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_lever_reicherts_hexenhaus_a.wav",
+    "sha256": "582b18e69e4b989c6a6439ad09d7939666980265d36cbb503689da18ef855d37"
+  },
+  {
+    "asset_id": "S105-0189",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Lever Reicherts Hexenhaus 02.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_lever_reicherts_hexenhaus_b.wav",
+    "sha256": "6a70d9ffacca43b49bf8485973e1d9b7d2794e4b0610c1e8e6ddf6e0e385188a"
+  },
+  {
+    "asset_id": "S105-0190",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Sequence 01 Bajazzo.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_sequence_bajazzo_a.wav",
+    "sha256": "7938269749dcb63dce924816f6b6d17dcf9c4c9bd139a693d66bf737ee3dab58"
+  },
+  {
+    "asset_id": "S105-0191",
+    "original_relative_path": "机械_ ck_01_03/Slot Machine Sequence 02 Bajazzo.wav",
+    "relative_path": "机械_ ck_01_03/slot_machine_sequence_bajazzo_b.wav",
+    "sha256": "5cddc45c1227af81e94dc085f561b74f6942dcb1804839023e635dccb8c0565c"
+  },
+  {
+    "asset_id": "S105-0192",
+    "original_relative_path": "机械_ ck_01_03/Snap Button Calculating Machine Mercedes.wav",
+    "relative_path": "机械_ ck_01_03/snap_button_calculating_machine_mercedes.wav",
+    "sha256": "b65e6d566d34643270b05fd1c8868bb6ac547b82db772b7954aa14eb80103d42"
+  },
+  {
+    "asset_id": "S105-0193",
+    "original_relative_path": "机械_ ck_01_03/Snap Button Tight Calculating Machine Mercedes.wav",
+    "relative_path": "机械_ ck_01_03/snap_button_tight_calculating_machine_mercedes.wav",
+    "sha256": "a68a0a104e99b3b9174e62c795eee50b56b41e6a04d0be3d949b2db5ceeaf1fb"
+  },
+  {
+    "asset_id": "S105-0194",
+    "original_relative_path": "机械_ ck_01_03/Snap Calculating Machine Badenia.wav",
+    "relative_path": "机械_ ck_01_03/snap_calculating_machine_badenia_a.wav",
+    "sha256": "834825f304d1a3180611221b7b635e2b262329d3efb9a1066f01b5b13df2c6ee"
+  },
+  {
+    "asset_id": "S105-0195",
+    "original_relative_path": "机械_ ck_01_03/Snap Calculating Machine Resulta.wav",
+    "relative_path": "机械_ ck_01_03/snap_calculating_machine_resulta_a.wav",
+    "sha256": "bb7665bbd47774717cce569ea58a9d257c34081d6e30397cf18d0dedec65bea0"
+  },
+  {
+    "asset_id": "S105-0196",
+    "original_relative_path": "机械_ ck_01_03/Snap Calculating Machine Victor Champion.wav",
+    "relative_path": "机械_ ck_01_03/snap_calculating_machine_victor_champion.wav",
+    "sha256": "71f0d9271062976b879d14e4522cb99685df8f95abe9c11deeb2121bca786a53"
+  },
+  {
+    "asset_id": "S105-0197",
+    "original_relative_path": "机械_ ck_01_03/Snap Checkwriter Abbot.wav",
+    "relative_path": "机械_ ck_01_03/snap_checkwriter_abbot.wav",
+    "sha256": "d4e6798dcaf84356460a9bc4d71546b628a40ba6480e435f228ee0828f62a492"
+  },
+  {
+    "asset_id": "S105-0198",
+    "original_relative_path": "机械_ ck_01_03/Snap Constant Calculating Machine Mech Accountant.wav",
+    "relative_path": "机械_ ck_01_03/snap_constant_calculating_machine_mech_accountant.wav",
+    "sha256": "e6d76214417f139d258b2429d7badf1814eaa66185fb73b8da187ab19069edad"
+  },
+  {
+    "asset_id": "S105-0199",
+    "original_relative_path": "机械_ ck_01_03/Snap Constant Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/snap_constant_typewriter_aeg_mignon.wav",
+    "sha256": "d130795c8f2ebdd8ba04d41981c515b32968dbaca30316a5a27f3c774cd180b4"
+  },
+  {
+    "asset_id": "S105-0200",
+    "original_relative_path": "机械_ ck_01_03/Snap Constant Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_01_03/snap_constant_typewriter_kanzler.wav",
+    "sha256": "26868b7fe008f1aa393f968e3794008a05dfc62f53b728c76ecbaedc418d41bf"
+  },
+  {
+    "asset_id": "S105-0201",
+    "original_relative_path": "机械_ ck_01_03/Snap Double Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/snap_double_typewriter_adler.wav",
+    "sha256": "4b242af71a0c1cdac4e738200f3c616eef228f3cbe03ee94e0c9edebcdc41ee6"
+  },
+  {
+    "asset_id": "S105-0202",
+    "original_relative_path": "机械_ ck_01_03/Snap Fast Calculating Machine Badenia.wav",
+    "relative_path": "机械_ ck_01_03/snap_fast_calculating_machine_badenia.wav",
+    "sha256": "c78477b2b0313459af249ff3ee3e7c46f4f74ff2c6ddee6e2ec824e283ce6e42"
+  },
+  {
+    "asset_id": "S105-0203",
+    "original_relative_path": "机械_ ck_01_03/Snap Sequence Printing Machine.wav",
+    "relative_path": "机械_ ck_01_03/snap_sequence_printing_machine.wav",
+    "sha256": "c87b498d30acce4ce8b1af22f9b969cf0202d56857a185b056316da84419d7d4"
+  },
+  {
+    "asset_id": "S105-0204",
+    "original_relative_path": "机械_ ck_01_03/Snap Sequence Typewriter Adler.wav",
+    "relative_path": "机械_ ck_01_03/snap_sequence_typewriter_adler.wav",
+    "sha256": "273c4d3e0bdfef7b3b82dc142116590800072a169e078c7df4a56be120e7d0f6"
+  },
+  {
+    "asset_id": "S105-0205",
+    "original_relative_path": "机械_ ck_01_03/Snap Sequence Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_01_03/snap_sequence_typewriter_mercedes_five.wav",
+    "sha256": "170125985d21cb6bb0a123be1397b4fa59b04b1c4ddb5668e34169e0e7e587b0"
+  },
+  {
+    "asset_id": "S105-0206",
+    "original_relative_path": "机械_ ck_01_03/Snap Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/snap_typewriter_aeg_mignon.wav",
+    "sha256": "9d08a308cf3cc157c995c9971a9d6358569a3205f901f45355fe72626d918b78"
+  },
+  {
+    "asset_id": "S105-0207",
+    "original_relative_path": "机械_ ck_01_03/Snap Typewriter Remington.wav",
+    "relative_path": "机械_ ck_01_03/snap_typewriter_remington.wav",
+    "sha256": "a8aec4ab98389d7dcdfe820400dfe1fe42011ed02ae5904dadcaba3935e1b689"
+  },
+  {
+    "asset_id": "S105-0208",
+    "original_relative_path": "机械_ ck_01_03/Snap Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_01_03/snap_typewriter_underwood.wav",
+    "sha256": "e5bbfc39bfa29399e16bfe7ccadad7872cfef498888334806d77eb27e13f6d8c"
+  },
+  {
+    "asset_id": "S105-0209",
+    "original_relative_path": "机械_ ck_01_03/Snowboard Binding Handling Long.wav",
+    "relative_path": "机械_ ck_01_03/snowboard_binding_handling_long.wav",
+    "sha256": "c8227544f5760c25dae681e4ea59060473fd52a6f3c49b1e6904e1c64595be74"
+  },
+  {
+    "asset_id": "S105-0210",
+    "original_relative_path": "机械_ ck_01_03/Snowboard Binding Handling Short.wav",
+    "relative_path": "机械_ ck_01_03/snowboard_binding_handling_short.wav",
+    "sha256": "4f0d53ce86371ea6262cd2cc711692610bb0f0a940a94a7872f7d0606ec8477b"
+  },
+  {
+    "asset_id": "S105-0211",
+    "original_relative_path": "机械_ ck_01_03/Stapler Loading Sequence Long.wav",
+    "relative_path": "机械_ ck_01_03/stapler_loading_sequence_long.wav",
+    "sha256": "2b1db90f37bc227c9bb368d3a795c0a92df1c63df880f75986ad474a4284f9ee"
+  },
+  {
+    "asset_id": "S105-0212",
+    "original_relative_path": "机械_ ck_01_03/Stapler Loading Sequence Short.wav",
+    "relative_path": "机械_ ck_01_03/stapler_loading_sequence_short.wav",
+    "sha256": "6827c8340dd1ba2e51a6482dc49bd7ca0f824a90193b0bd1228d3005373272a6"
+  },
+  {
+    "asset_id": "S105-0213",
+    "original_relative_path": "机械_ ck_01_03/Stapler Open Close Sequence.wav",
+    "relative_path": "机械_ ck_01_03/stapler_open_close_sequence.wav",
+    "sha256": "4c5b27411503caa596a6580a626d849f9b9a0a915bd6b94c4fce7f816cc8ff1d"
+  },
+  {
+    "asset_id": "S105-0214",
+    "original_relative_path": "机械_ ck_01_03/Stapler Resonant Sequence.wav",
+    "relative_path": "机械_ ck_01_03/stapler_resonant_sequence.wav",
+    "sha256": "792d6ca72a5dbe1337d3df8ded28a35fb71bd2ff954a271b3a2ba8f4a7ac3cf9"
+  },
+  {
+    "asset_id": "S105-0215",
+    "original_relative_path": "机械_ ck_01_03/Tin Spintop Multiple Turns.wav",
+    "relative_path": "机械_ ck_01_03/tin_spintop_multiple_turns.wav",
+    "sha256": "9bcfa0702a1103a37c9bcb85cd047da1ad3bb86f4956f863b6aa02059cf29e67"
+  },
+  {
+    "asset_id": "S105-0216",
+    "original_relative_path": "机械_ ck_01_03/Tin Spintop Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/tin_spintop_turning_sequence.wav",
+    "sha256": "fefd8eef76be2bccac81ceaed79d11c3ce35c61b95b548d8cc25283ad40a3e70"
+  },
+  {
+    "asset_id": "S105-0217",
+    "original_relative_path": "机械_ ck_01_03/Toothed Wheels Calculating Machine Squeak Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/toothed_wheels_calculating_machine_squeak_triumphator.wav",
+    "sha256": "610c0c40e16299f537ba3d495de7a5201d54af1d635af858558c40130fc728a5"
+  },
+  {
+    "asset_id": "S105-0218",
+    "original_relative_path": "机械_ ck_01_03/Toothed Wheels Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_01_03/toothed_wheels_calculating_machine_triumphator.wav",
+    "sha256": "ee5aa53b589aea6c4ea73cd792597bf7cde1a816882b0a7a687c7360ca72c4b6"
+  },
+  {
+    "asset_id": "S105-0219",
+    "original_relative_path": "机械_ ck_01_03/Torque Wrench Turning Constant.wav",
+    "relative_path": "机械_ ck_01_03/torque_wrench_turning_constant.wav",
+    "sha256": "55a7695d628a3acb6a3f657419ef054ae8eefb8fb79f11cb4177d0d24984e599"
+  },
+  {
+    "asset_id": "S105-0220",
+    "original_relative_path": "机械_ ck_01_03/Torque Wrench Turning Sequence.wav",
+    "relative_path": "机械_ ck_01_03/torque_wrench_turning_sequence.wav",
+    "sha256": "16cf9e21b732e58a18ada8d36e3d5697167e7a1414ce86b717c7107ce4569634"
+  },
+  {
+    "asset_id": "S105-0221",
+    "original_relative_path": "机械_ ck_01_03/Torque Wrench Turning Single.wav",
+    "relative_path": "机械_ ck_01_03/torque_wrench_turning_single.wav",
+    "sha256": "6e151fd0e17d375447d18e3927e34697ee99a360c379f063b547531cfaa0098c"
+  },
+  {
+    "asset_id": "S105-0222",
+    "original_relative_path": "机械_ ck_01_03/Turn Calculating Machine Brunsviga.wav",
+    "relative_path": "机械_ ck_01_03/turn_calculating_machine_brunsviga.wav",
+    "sha256": "c8960c22165386fb138e3e86ab24d0f2c093b53109f3c4c5f40b3756fb87f1fd"
+  },
+  {
+    "asset_id": "S105-0223",
+    "original_relative_path": "机械_ ck_01_03/Turn Click Radiation Detector.wav",
+    "relative_path": "机械_ ck_01_03/turn_click_radiation_detector.wav",
+    "sha256": "fbec5f5bfd6ea0ac127840e0a18c078c6ab9af07175f64623e7b8564e2638640"
+  },
+  {
+    "asset_id": "S105-0224",
+    "original_relative_path": "机械_ ck_01_03/Turn Constant Checkwriter Unknown.wav",
+    "relative_path": "机械_ ck_01_03/turn_constant_checkwriter_unknown.wav",
+    "sha256": "cce7ea1cc2f6edcc11854d765203a4eea2bee03ae660c100ec18ac300969b5ce"
+  },
+  {
+    "asset_id": "S105-0225",
+    "original_relative_path": "机械_ ck_01_03/Turn Constant Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/turn_constant_typewriter_aeg_mignon.wav",
+    "sha256": "9c16b5eeab3068dc12086c2e7acbe707cba05b21416695ca7f67fbdbbe577747"
+  },
+  {
+    "asset_id": "S105-0226",
+    "original_relative_path": "机械_ ck_01_03/Turn Telephone Dial.wav",
+    "relative_path": "机械_ ck_01_03/turn_telephone_dial.wav",
+    "sha256": "a6d9afcff6de6dd3b98c180d96b67a1c9b76403582367e68e201db7e527ec821"
+  },
+  {
+    "asset_id": "S105-0227",
+    "original_relative_path": "机械_ ck_01_03/Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_01_03/typewriter_aeg_mignon.wav",
+    "sha256": "f4f7fed7b6eba3e3110ae6202f8f43f4b3143bcaf5f1fefdc08a20bcedc88bc7"
+  },
+  {
+    "asset_id": "S105-0228",
+    "original_relative_path": "机械_ ck_01_03/Typewriter Standard.wav",
+    "relative_path": "机械_ ck_01_03/typewriter_standard.wav",
+    "sha256": "3a81964d67c9d62880d337ca38627b6956acf9ead22e9b363129ddb6848631c0"
+  },
+  {
+    "asset_id": "S105-0229",
+    "original_relative_path": "机械_ ck_01_03/Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_01_03/typewriter_the_oliver.wav",
+    "sha256": "06a5c91ba9f82657cce21ea9e45208023861a0278cc120d8102c475b387d4f98"
+  },
+  {
+    "asset_id": "S105-0230",
+    "original_relative_path": "机械_ ck_01_03/Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_01_03/typewriter_underwood.wav",
+    "sha256": "02e3c33a3ae80bc334d632991b91316e4d9945ff1bb0a1a13e17e3c361411b4b"
+  },
+  {
+    "asset_id": "S105-0231",
+    "original_relative_path": "机械_ ck_01_03/Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_01_03/typewriter_valentine.wav",
+    "sha256": "77634bbec42c62d2ca96debbb7b316a7a695f415b628ef1d75b0fa35f3c9bb27"
+  },
+  {
+    "asset_id": "S105-0232",
+    "original_relative_path": "机械_ ck_01_03/Umbrella.wav",
+    "relative_path": "机械_ ck_01_03/umbrella.wav",
+    "sha256": "dcb1d73267417f9ca0dd8dd539038b8ed80478b73b1b3423024ef0ed22111636"
+  },
+  {
+    "asset_id": "S105-0233",
+    "original_relative_path": "机械_ ck_01_03/Wall Clock Chime Sequence.wav",
+    "relative_path": "机械_ ck_01_03/wall_clock_chime_sequence.wav",
+    "sha256": "8153859e734821d82c411241a8ce85c5af3de6786efce9673b4805bd313174d3"
+  },
+  {
+    "asset_id": "S105-0234",
+    "original_relative_path": "机械_ ck_01_03/Wall Clock Handling Various Clicks.wav",
+    "relative_path": "机械_ ck_01_03/wall_clock_handling_various_clicks.wav",
+    "sha256": "9069bab826e0224d77f4aa75a3d55642c6e0029895154eca2e6e51412e6a1ac8"
+  },
+  {
+    "asset_id": "S105-0235",
+    "original_relative_path": "机械_ ck_01_03/Wood Gramophone Start Stop.wav",
+    "relative_path": "机械_ ck_01_03/wood_gramophone_start_stop.wav",
+    "sha256": "89d1165d3af7b7b986db2d33af06ff4454df8e68fe47239895b78e6b4c8a5b2f"
+  },
+  {
+    "asset_id": "S105-0236",
+    "original_relative_path": "机械_ ck_01_03/Wood Ratchet Wrench Fast.wav",
+    "relative_path": "机械_ ck_01_03/wood_ratchet_wrench_fast.wav",
+    "sha256": "b6950424946131f1a4b2706fc1d10c0eb07a5db490c1977a062bfcc9957bfd2b"
+  },
+  {
+    "asset_id": "S105-0237",
+    "original_relative_path": "机械_ ck_01_03/Wood Ratchet Wrench Slow.wav",
+    "relative_path": "机械_ ck_01_03/wood_ratchet_wrench_slow.wav",
+    "sha256": "afad4cbe5e3786eec515e6839e4ed0c3bfe01f00e9c46af05ea787a6a7296019"
+  },
+  {
+    "asset_id": "S105-0238",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning Hollow.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_hollow.wav",
+    "sha256": "0bd14ce63417bf2385c024af3ad7cfedf71ee57b219f3b16482d16265822bc11"
+  },
+  {
+    "asset_id": "S105-0239",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning on Bell.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_on_bell.wav",
+    "sha256": "e21749c6c192adc8a96e2a0d439718f83e2f8e07f00984e311f15b38a7bd13d0"
+  },
+  {
+    "asset_id": "S105-0240",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning on Brake Disc Rattling.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_on_brake_disc_rattling.wav",
+    "sha256": "1babefb785d411a1fc23f5cdf09c43988a9ccd5815cd3d96501775a5717fe3e8"
+  },
+  {
+    "asset_id": "S105-0241",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning on Brake Disc Resonating.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_on_brake_disc_resonating.wav",
+    "sha256": "c20039317d77176d08967d38a5ba1b4f261680eff265e4858df255c6bf658f0c"
+  },
+  {
+    "asset_id": "S105-0242",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning Resonating.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_resonating.wav",
+    "sha256": "d342cd2ef59d259928b2dbbe1ab484e075d0466029dc8975f68b17193f83cae7"
+  },
+  {
+    "asset_id": "S105-0243",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning Ringing.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning_ringing.wav",
+    "sha256": "293b0a6926699ca2e3f89fe9689248e19389728f69c603bb209ca3b65e32deab"
+  },
+  {
+    "asset_id": "S105-0244",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Washers Spinning.wav",
+    "relative_path": "机械_ ck_02_03/movement_washers_spinning.wav",
+    "sha256": "92a8d452a2ce2eb7b1bd009a29ab1baa017542713eb1c635c18b44a6f3ea16bf"
+  },
+  {
+    "asset_id": "S105-0245",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wheel and Axle Clattering.wav",
+    "relative_path": "机械_ ck_02_03/movement_wheel_and_axle_clattering.wav",
+    "sha256": "5c52f86353b654cacb29cf74143a3f7032be9b67affea2efd2e7e07c23dca6db"
+  },
+  {
+    "asset_id": "S105-0246",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wooden Box Locking Apparatus Big Open Close.wav",
+    "relative_path": "机械_ ck_02_03/movement_wooden_box_locking_apparatus_big_open_close.wav",
+    "sha256": "8c0f7552f261770e5cfbc85feae09d8700fdf128bb58931fe23c06a1e32dfc14"
+  },
+  {
+    "asset_id": "S105-0247",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wooden Box Locking Apparatus Small Open Close High.wav",
+    "relative_path": "机械_ ck_02_03/movement_wooden_box_locking_apparatus_small_open_close_high.wav",
+    "sha256": "1acfe6fde599de05d6107e081fa770fe989722228bcc393d595b63d23223a43d"
+  },
+  {
+    "asset_id": "S105-0248",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wooden Box Locking Apparatus Small Open Close Low.wav",
+    "relative_path": "机械_ ck_02_03/movement_wooden_box_locking_apparatus_small_open_close_low.wav",
+    "sha256": "988b4d43c68a6012e37af8582a4a810e5c929402279cbf96ece42c96ca27701e"
+  },
+  {
+    "asset_id": "S105-0249",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wooden Box Locking Apparatus Small Open Close Short.wav",
+    "relative_path": "机械_ ck_02_03/movement_wooden_box_locking_apparatus_small_open_close_short.wav",
+    "sha256": "b56866529e251413fc310d01e97b0af107202686993324f673897a6a805c86ab"
+  },
+  {
+    "asset_id": "S105-0250",
+    "original_relative_path": "机械_ ck_02_03/MECK MOVEMENT Wooden Box Locking Apparatus Small Open Close.wav",
+    "relative_path": "机械_ ck_02_03/movement_wooden_box_locking_apparatus_small_open_close.wav",
+    "sha256": "51c6558c3f789949ac9f48a50e9b480c61b9a4b24e290ae705c601f79a5bf801"
+  },
+  {
+    "asset_id": "S105-0251",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Bicycle Cardboard And Bell On Spokes With Pedaling.wav",
+    "relative_path": "机械_ ck_02_03/rattle_bicycle_cardboard_and_bell_on_spokes_with_pedaling.wav",
+    "sha256": "e5f9a311054dbabc0b86735ca9c00deb8eda50db4c75535e56647fc5f32d3edd"
+  },
+  {
+    "asset_id": "S105-0252",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Bicycle Cardboard And Bells On Spokes With Pedaling.wav",
+    "relative_path": "机械_ ck_02_03/rattle_bicycle_cardboard_and_bells_on_spokes_with_pedaling.wav",
+    "sha256": "f9974bfafb5658429fce4026c0d9473c84df7b1fedf02b6e5d730a6fa609c43b"
+  },
+  {
+    "asset_id": "S105-0253",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Bicycle Pedaling.wav",
+    "relative_path": "机械_ ck_02_03/rattle_bicycle_pedaling.wav",
+    "sha256": "61bfbbfc9a0aedd7c9c62b9e135262fe47c66c2e8742a22c6c9087ba6a480c74"
+  },
+  {
+    "asset_id": "S105-0254",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Bicycle Plastic On Spokes With Pedaling 01.wav",
+    "relative_path": "机械_ ck_02_03/rattle_bicycle_plastic_on_spokes_with_pedaling_a.wav",
+    "sha256": "64bc0852b1ce8b76c215671dc87249216d2af09cb6e63a494e10b7f95b6f70cb"
+  },
+  {
+    "asset_id": "S105-0255",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Bicycle Plastic On Spokes With Pedaling 02.wav",
+    "relative_path": "机械_ ck_02_03/rattle_bicycle_plastic_on_spokes_with_pedaling_b.wav",
+    "sha256": "d0421262cac27e04a2a7ef4160db6cb1401b728425229c4245a8d9a71e5baac7"
+  },
+  {
+    "asset_id": "S105-0256",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Channeled Sheet Scrape.wav",
+    "relative_path": "机械_ ck_02_03/rattle_channeled_sheet_scrape.wav",
+    "sha256": "d40c26db077986bdc24a68bd493a7be661a4a3a8d534bc51ca45f46ad5259d7f"
+  },
+  {
+    "asset_id": "S105-0257",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Channeled Sheet Squeak.wav",
+    "relative_path": "机械_ ck_02_03/rattle_channeled_sheet_squeak.wav",
+    "sha256": "346c6730ff361fcf79394509b0a506bfa7c50e361bb960a0cbc500c7275f48a0"
+  },
+  {
+    "asset_id": "S105-0258",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Coffee Grinder Empty Sequence.wav",
+    "relative_path": "机械_ ck_02_03/rattle_coffee_grinder_empty_sequence.wav",
+    "sha256": "9a27d41bb7b8dcd09087a13f46f68df1e61c1a686405fdd917c746872a509583"
+  },
+  {
+    "asset_id": "S105-0259",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Crosscut Ringing High.wav",
+    "relative_path": "机械_ ck_02_03/rattle_crosscut_ringing_high.wav",
+    "sha256": "f097fea564ef10ec714d463e8e3def2c2cf8b4977296f8442c7addf0e9b84be2"
+  },
+  {
+    "asset_id": "S105-0260",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Crosscut Ringing Hollow.wav",
+    "relative_path": "机械_ ck_02_03/rattle_crosscut_ringing_hollow.wav",
+    "sha256": "b4c2e20c2d887a341a6ce5fd38ec6826759b8d7289c016ed0f76a78832eb2cd2"
+  },
+  {
+    "asset_id": "S105-0261",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Crosscut Ringing Low.wav",
+    "relative_path": "机械_ ck_02_03/rattle_crosscut_ringing_low.wav",
+    "sha256": "4a6255813d43bead6aeaddd6108e801b173b1dd31ef009125f51d17cffae4432"
+  },
+  {
+    "asset_id": "S105-0262",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Folding Bike Pedaling Sequence.wav",
+    "relative_path": "机械_ ck_02_03/rattle_folding_bike_pedaling_sequence.wav",
+    "sha256": "2112369f23bf3c089e19cf829b7143b9383114e4cc46277a5566128d6164d8d6"
+  },
+  {
+    "asset_id": "S105-0263",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Iron Winch Clatter.wav",
+    "relative_path": "机械_ ck_02_03/rattle_iron_winch_clatter.wav",
+    "sha256": "381b4b6970f315a8783921e10397cdd7e64ce504015251a03f868b49d2b03b54"
+  },
+  {
+    "asset_id": "S105-0264",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Manual Bread Slicing Machine Modified Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/rattle_manual_bread_slicing_machine_modified_turning_sequence.wav",
+    "sha256": "740b97c0595e5dc88e2cf6643f5e3cfc391fa86cb4698387792f21b0656dc6f0"
+  },
+  {
+    "asset_id": "S105-0265",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Manual Bread Slicing Machine Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/rattle_manual_bread_slicing_machine_turning_sequence.wav",
+    "sha256": "a7bfaac8f19371c7539418e9a795af565116b263104301ecf241ad1af819aa43"
+  },
+  {
+    "asset_id": "S105-0266",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Metal Petrol Lamp Squeak Fast.wav",
+    "relative_path": "机械_ ck_02_03/rattle_metal_petrol_lamp_squeak_fast.wav",
+    "sha256": "bee3b2a737b2a182864d6001784e48f29b624fda2deb2b49046ed11ef664f86b"
+  },
+  {
+    "asset_id": "S105-0267",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Metal Petrol Lamp Squeak.wav",
+    "relative_path": "机械_ ck_02_03/rattle_metal_petrol_lamp_squeak.wav",
+    "sha256": "ff18854e3e5051c40a9612cbb1769008c0e9fe791ad1cf5469bdd8a0a0696a69"
+  },
+  {
+    "asset_id": "S105-0268",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Rusty Metal Slide Small.wav",
+    "relative_path": "机械_ ck_02_03/rattle_rusty_metal_slide_small.wav",
+    "sha256": "09bfe82b50a17d5c462d4a897a5d58a48f0bbc50fe5e1c2784f8d6a75ce17e27"
+  },
+  {
+    "asset_id": "S105-0269",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Squeak Checkwriter Chequepunch.wav",
+    "relative_path": "机械_ ck_02_03/rattle_squeak_checkwriter_chequepunch.wav",
+    "sha256": "3c24974b624b22432dcc62d4997bd20c228666b7e273e7dc1ddaebecbbf79443"
+  },
+  {
+    "asset_id": "S105-0270",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Umbrella Open.wav",
+    "relative_path": "机械_ ck_02_03/rattle_umbrella_open.wav",
+    "sha256": "0ad38b42f94c8f821db952377e9368465f06e8d658d46e32c2c6ae4e95fb54ec"
+  },
+  {
+    "asset_id": "S105-0271",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Vintage Manual Sewing Machine Sequence.wav",
+    "relative_path": "机械_ ck_02_03/rattle_vintage_manual_sewing_machine_sequence.wav",
+    "sha256": "e127f1470dcace6da73dcb9341b5f0ebc40b68cf32f17e9a10bde706b5501535"
+  },
+  {
+    "asset_id": "S105-0272",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Washers Clattering.wav",
+    "relative_path": "机械_ ck_02_03/rattle_washers_clattering.wav",
+    "sha256": "d4b1d6f5bc6710fad648e82263766518bad755288ede8370dc2f1d7d3af7f008"
+  },
+  {
+    "asset_id": "S105-0273",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Washers Grinding Fast.wav",
+    "relative_path": "机械_ ck_02_03/rattle_washers_grinding_fast.wav",
+    "sha256": "fc54c9764021e930e4772b02f5a53a7a59b2b564a992d8348bed390676e5d0dd"
+  },
+  {
+    "asset_id": "S105-0274",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Washers Grinding Resonating.wav",
+    "relative_path": "机械_ ck_02_03/rattle_washers_grinding_resonating.wav",
+    "sha256": "8dc034bfd4a9166dea06e43359096cfab2e0f9339dd003d0c08673f65709e1cf"
+  },
+  {
+    "asset_id": "S105-0275",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Washers Grinding Slow.wav",
+    "relative_path": "机械_ ck_02_03/rattle_washers_grinding_slow.wav",
+    "sha256": "7aef7f9247d323c9c81dd4c4d36f3ed8dee6cafa029f3b1de2108e95c6c8bf22"
+  },
+  {
+    "asset_id": "S105-0276",
+    "original_relative_path": "机械_ ck_02_03/MECK RATTLE Wood Winch.wav",
+    "relative_path": "机械_ ck_02_03/rattle_wood_winch.wav",
+    "sha256": "cf63577d0c5ad128c89a9778186afadd7da5e80179d64038e26bd09cec512ccd"
+  },
+  {
+    "asset_id": "S105-0277",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Caddy Constant.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_caddy_constant.wav",
+    "sha256": "dc7e958d415a93fe4a488778e54c82206c4e10cba5ef3ed2806cf531b5da845b"
+  },
+  {
+    "asset_id": "S105-0278",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Caddy Out.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_caddy_out.wav",
+    "sha256": "0d0b85c839c2caf626901db874085c57fc3d5f8e7dc6d15129be3e85dd672718"
+  },
+  {
+    "asset_id": "S105-0279",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Caddy Short.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_caddy_short.wav",
+    "sha256": "18d2ad196dec3a40a656808956d55ec5c1aa0bd2d8acd80804775153262e4bcd"
+  },
+  {
+    "asset_id": "S105-0280",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Take Up Large.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_take_up_large.wav",
+    "sha256": "a862e9795d7d093ed9a9d81f4d938620c58c6a2ab00a33e6f50deda7319f5add"
+  },
+  {
+    "asset_id": "S105-0281",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Take Up Medium.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_take_up_medium.wav",
+    "sha256": "0a49c7350e18aebd02a2fff698e04fb543d33296bcdca049c6d3d92fae082340"
+  },
+  {
+    "asset_id": "S105-0282",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Take Up Small.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_take_up_small.wav",
+    "sha256": "caaf3c891b7ada47e6699d9b551d63bb5589bd512534efaa6a9662f7b4fb8055"
+  },
+  {
+    "asset_id": "S105-0283",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Cable Winch Tin Rolling.wav",
+    "relative_path": "机械_ ck_02_03/roll_cable_winch_tin_rolling.wav",
+    "sha256": "abd1f924320d4ba12abd97e171839edd272a33b9d22230c259d6d8b2b1ba8de6"
+  },
+  {
+    "asset_id": "S105-0284",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Click Snap Constant Calculating Machine Felix B3.wav",
+    "relative_path": "机械_ ck_02_03/roll_click_snap_constant_calculating_machine_felix.wav",
+    "sha256": "5fc4b7bc3c8d42ea2c5b31ef48045eb8b815c971c8ac51442bfc72b313d80c9b"
+  },
+  {
+    "asset_id": "S105-0285",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Click Snap Ring Out Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_02_03/roll_click_snap_ring_out_calculating_machine_triumphator.wav",
+    "sha256": "2929794c9e96ce9dd418165dc4ebce2d48ffcb48b056c987955346713920263b"
+  },
+  {
+    "asset_id": "S105-0286",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Coffee Grinder Empty Swing Sequence.wav",
+    "relative_path": "机械_ ck_02_03/roll_coffee_grinder_empty_swing_sequence.wav",
+    "sha256": "cd25f1e60637b90ab7025bebdf68ba46aad26bdd55d6fc12e200b371554f3bbe"
+  },
+  {
+    "asset_id": "S105-0287",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Coffee Grinder Empty Turn Sequence.wav",
+    "relative_path": "机械_ ck_02_03/roll_coffee_grinder_empty_turn_sequence.wav",
+    "sha256": "4c9efb6a528baef915db1094a2fd993162d847e9e1ef46d2af67a3745610a8a4"
+  },
+  {
+    "asset_id": "S105-0288",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Coffee Grinder Medium Single Turn.wav",
+    "relative_path": "机械_ ck_02_03/roll_coffee_grinder_medium_single_turn.wav",
+    "sha256": "7938bb6f4196b30a571d1dd1e6347dd813a48fea37ecbf4a7e86a7e6dfee8443"
+  },
+  {
+    "asset_id": "S105-0289",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Coffee Grinder Medium Spins.wav",
+    "relative_path": "机械_ ck_02_03/roll_coffee_grinder_medium_spins.wav",
+    "sha256": "2107beb893847807555ebacead68e851f38bb4843e1fb2d474889bd34d1ae29f"
+  },
+  {
+    "asset_id": "S105-0290",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Coffee Grinder Medium Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/roll_coffee_grinder_medium_turning_sequence.wav",
+    "sha256": "2438426c970d90bcd7c21e791b752302dc2bc74e29c8e1f14d3c3fbac4b9e8b0"
+  },
+  {
+    "asset_id": "S105-0291",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Guide Roller Small Short.wav",
+    "relative_path": "机械_ ck_02_03/roll_guide_roller_small_short.wav",
+    "sha256": "a0d48faf744a4a42771c59a5d18b8b716108b3209a186bff8ae7118fa0cd2d1a"
+  },
+  {
+    "asset_id": "S105-0292",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Massive Metal Crane Winch Spin.wav",
+    "relative_path": "机械_ ck_02_03/roll_massive_metal_crane_winch_spin.wav",
+    "sha256": "ff74d8e950c990bbae3f530624038319448a4d09b836c9696bc9b5d6e934e37c"
+  },
+  {
+    "asset_id": "S105-0293",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Mincing Machine Single Turn.wav",
+    "relative_path": "机械_ ck_02_03/roll_mincing_machine_single_turn.wav",
+    "sha256": "25cf1d0f79048329331f05ad57680ded15166f68fde480e7f2eb2c213f14fcc0"
+  },
+  {
+    "asset_id": "S105-0294",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Mincing Machine Turning Sequence Small.wav",
+    "relative_path": "机械_ ck_02_03/roll_mincing_machine_turning_sequence_small.wav",
+    "sha256": "9146d02e2d912248b19140417c3703cc49660f5365b31cd3c382f2ec15f50926"
+  },
+  {
+    "asset_id": "S105-0295",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Mincing Machine Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/roll_mincing_machine_turning_sequence.wav",
+    "sha256": "a742082010311f162d3ff5f1e61dc22b54e724f8f70bd9dbffd9a68fdd76e042"
+  },
+  {
+    "asset_id": "S105-0296",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Roller Skates Fast.wav",
+    "relative_path": "机械_ ck_02_03/roll_roller_skates_fast.wav",
+    "sha256": "59a1a47e3bef0e277a564b01e1fb35a377fae8bc79f67896105ce615f8324a81"
+  },
+  {
+    "asset_id": "S105-0297",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Roller Skates Slow.wav",
+    "relative_path": "机械_ ck_02_03/roll_roller_skates_slow.wav",
+    "sha256": "677d6d1b3805edc96c4d58cdd5e5258954877af9aa66c175eea746d8c0e36f8b"
+  },
+  {
+    "asset_id": "S105-0298",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Thread Wooden Spinning.wav",
+    "relative_path": "机械_ ck_02_03/roll_thread_wooden_spinning.wav",
+    "sha256": "c24e90a980c9564e74906791dc58607f17bfcd78de50c540c17086f9b4060daf"
+  },
+  {
+    "asset_id": "S105-0299",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Washers Down Studding.wav",
+    "relative_path": "机械_ ck_02_03/roll_washers_down_studding.wav",
+    "sha256": "b3b9e201008ba835372c0fe8c86a4486e8149df5eced2101e79434d9171baab4"
+  },
+  {
+    "asset_id": "S105-0300",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Wooden Box Wheel Spinning Loose.wav",
+    "relative_path": "机械_ ck_02_03/roll_wooden_box_wheel_spinning_loose.wav",
+    "sha256": "dcb08c3fefe4f9abae5f16df64c9f81ac3f81f16a587de868865ab6a3e709832"
+  },
+  {
+    "asset_id": "S105-0301",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Wooden Box Wheel Spinning Tight.wav",
+    "relative_path": "机械_ ck_02_03/roll_wooden_box_wheel_spinning_tight.wav",
+    "sha256": "3b989647d370ae5179dd9f5eadb68ad9bee742bd78f5c27a0320ec382359f781"
+  },
+  {
+    "asset_id": "S105-0302",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Wooden Box Wheel Spinning.wav",
+    "relative_path": "机械_ ck_02_03/roll_wooden_box_wheel_spinning.wav",
+    "sha256": "231cba40f06d4b2115102519de6035b7d673f878d18505ddb60864a53c6636a1"
+  },
+  {
+    "asset_id": "S105-0303",
+    "original_relative_path": "机械_ ck_02_03/MECK ROLL Wooden Box Wheel Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/roll_wooden_box_wheel_turning_sequence.wav",
+    "sha256": "679ad13964f6a2aa0861b91353c584b244a172b2d73e855e849d7864ef57d691"
+  },
+  {
+    "asset_id": "S105-0304",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Brake Disk Heavy 01.wav",
+    "relative_path": "机械_ ck_02_03/slide_brake_disk_heavy_a.wav",
+    "sha256": "775c64409159abce20d38ec2bff9c979ebeebe6ba5753dcc0aff492b842de7f3"
+  },
+  {
+    "asset_id": "S105-0305",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Brake Disk Heavy 02.wav",
+    "relative_path": "机械_ ck_02_03/slide_brake_disk_heavy_b.wav",
+    "sha256": "720197a93fe953d3576beb6b447374763cd8efa02f111917963daef111db9004"
+  },
+  {
+    "asset_id": "S105-0306",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Chain Rattle on Tub.wav",
+    "relative_path": "机械_ ck_02_03/slide_chain_rattle_on_tub.wav",
+    "sha256": "a8b4b0986d9238c64a76dc2e7b08acd39596dfaa1a0b3095a4ad9f8fd27f891e"
+  },
+  {
+    "asset_id": "S105-0307",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Cylinder Scraping.wav",
+    "relative_path": "机械_ ck_02_03/slide_cylinder_scraping.wav",
+    "sha256": "affdc6c1de148ec79495dc500d24fbdcd99090523d7f22a1d02a34d7893105d8"
+  },
+  {
+    "asset_id": "S105-0308",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Extendible Pole Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_extendible_pole_sequence.wav",
+    "sha256": "708572e30d4871cdbb68e74e35eba6938f55465a1ab633369fe3c3fcac716b8b"
+  },
+  {
+    "asset_id": "S105-0309",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Extendible Pole.wav",
+    "relative_path": "机械_ ck_02_03/slide_extendible_pole.wav",
+    "sha256": "a0650a9c18b4e57b6b60d1fbd6dbca3e7849011e53efc0039307548073ef77f3"
+  },
+  {
+    "asset_id": "S105-0310",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Grind Rippled Pole Tub Resonant Long.wav",
+    "relative_path": "机械_ ck_02_03/slide_grind_rippled_pole_tub_resonant_long.wav",
+    "sha256": "d967aed91f2060d10064dbe8cc0167399cb5dc433f7cd389f58bae368cd0c198"
+  },
+  {
+    "asset_id": "S105-0311",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Grind Rippled Pole Tub Resonant Short.wav",
+    "relative_path": "机械_ ck_02_03/slide_grind_rippled_pole_tub_resonant_short.wav",
+    "sha256": "235faec9897834b10c2f5427b849127f1e6488d9016534fc52f8a64853c0ab5c"
+  },
+  {
+    "asset_id": "S105-0312",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hand Driven Drill Single Turn.wav",
+    "relative_path": "机械_ ck_02_03/slide_hand_driven_drill_single_turn.wav",
+    "sha256": "c55a822a598915af6f0a07a11305737fd75a0fb7387657fc3ad278bc72c0bc67"
+  },
+  {
+    "asset_id": "S105-0313",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hand Driven Drill Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_hand_driven_drill_turning_sequence.wav",
+    "sha256": "d76ad2df4c1f855c8851562240ded0dcda609281da9a9a4f81e1c7a67797277c"
+  },
+  {
+    "asset_id": "S105-0314",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hand Mixer Single Turn.wav",
+    "relative_path": "机械_ ck_02_03/slide_hand_mixer_single_turn.wav",
+    "sha256": "4db8dcf760675579f01f6078a7c4cf096d6b9f310d975b815fbfe516ebab1142"
+  },
+  {
+    "asset_id": "S105-0315",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hand Mixer Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_hand_mixer_turning_sequence.wav",
+    "sha256": "4a95b9f5af1a7e0cfe03db82bf1a5d44d410f9cd3893857b475518542bae96b4"
+  },
+  {
+    "asset_id": "S105-0316",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hinge Heavy Grinding Long.wav",
+    "relative_path": "机械_ ck_02_03/slide_hinge_heavy_grinding_long.wav",
+    "sha256": "525eb5b85fb95e59be376fbe86139905a07a59ff8c108ccd41f319e101292ed4"
+  },
+  {
+    "asset_id": "S105-0317",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hinge Heavy Grinding Short.wav",
+    "relative_path": "机械_ ck_02_03/slide_hinge_heavy_grinding_short.wav",
+    "sha256": "97030c743c576fe8bf5794b5155c1041403a4d457b555994c2cdd53a78942aa5"
+  },
+  {
+    "asset_id": "S105-0318",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hinge Loose Grinding Long.wav",
+    "relative_path": "机械_ ck_02_03/slide_hinge_loose_grinding_long.wav",
+    "sha256": "59009792ce525782e3b47fca901d7b06b50cee0f91673766ba882ad2282816af"
+  },
+  {
+    "asset_id": "S105-0319",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Hinge Loose Grinding Short.wav",
+    "relative_path": "机械_ ck_02_03/slide_hinge_loose_grinding_short.wav",
+    "sha256": "8328d87d603537ae592d0e92de37052678577fd13cebd5cf6bb79b05ccfc6c8d"
+  },
+  {
+    "asset_id": "S105-0320",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Iron Bar Grinding Hollow Long.wav",
+    "relative_path": "机械_ ck_02_03/slide_iron_bar_grinding_hollow_long.wav",
+    "sha256": "7e8b8964fd532a76599a1cb32a9f20446768c901e6cb827848ffeabd0933922e"
+  },
+  {
+    "asset_id": "S105-0321",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Iron Bar Grinding Hollow Short.wav",
+    "relative_path": "机械_ ck_02_03/slide_iron_bar_grinding_hollow_short.wav",
+    "sha256": "c767c9d8d8c88abf66d913fd1882e44ba9b8015ae784e0f9df98685707be1c1d"
+  },
+  {
+    "asset_id": "S105-0322",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Iron Bar Grinding Long.wav",
+    "relative_path": "机械_ ck_02_03/slide_iron_bar_grinding_long.wav",
+    "sha256": "d07fd22af178096c3009521481cd2c881d2cdfb91a9c158f41cbd2433e197210"
+  },
+  {
+    "asset_id": "S105-0323",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Iron Bar Grinding Short.wav",
+    "relative_path": "机械_ ck_02_03/slide_iron_bar_grinding_short.wav",
+    "sha256": "29694f18daf503daf529625a26505405b2be4c65e61bf8b7af0c79d7829a6020"
+  },
+  {
+    "asset_id": "S105-0324",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Iron Nut Scraping Light Turning Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_iron_nut_scraping_light_turning_sequence.wav",
+    "sha256": "9f99aa02a4902d747fb5b0ec498383c9816744242496ddf2c6c5fe5558f2f3e3"
+  },
+  {
+    "asset_id": "S105-0325",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Large Wooden Thread Turning.wav",
+    "relative_path": "机械_ ck_02_03/slide_large_wooden_thread_turning.wav",
+    "sha256": "f4247ce1d62b5841124b56714da1206c92a55a86608c0056602b944f91e74c72"
+  },
+  {
+    "asset_id": "S105-0326",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Bar Lever Scrape.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_bar_lever_scrape.wav",
+    "sha256": "89b296f7acaa2945b457a20da2d870620d1619150700a092824db277f7a71d4c"
+  },
+  {
+    "asset_id": "S105-0327",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Bar Lever Screech.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_bar_lever_screech.wav",
+    "sha256": "d89d40a3579633be367bf4817d1b002f85eb8650c98517f5d0b774279a36e659"
+  },
+  {
+    "asset_id": "S105-0328",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Bar Scrape Soft.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_bar_scrape_soft.wav",
+    "sha256": "fc96b989756a467cabac20aca19e1199e3064a515dea36c82007d4132306c7fb"
+  },
+  {
+    "asset_id": "S105-0329",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Checkwriter Squeak Slow.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_checkwriter_squeak_slow.wav",
+    "sha256": "fee73faeef4aefe5d3f8d51bdd99e42a480ae851f93e827b5d13d3df2631b4fa"
+  },
+  {
+    "asset_id": "S105-0330",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Coal Lamp.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_coal_lamp.wav",
+    "sha256": "9f5653e53d4666773ead31bf9937a704c0c9e4b619ec8a1bbd4afb947577bb8d"
+  },
+  {
+    "asset_id": "S105-0331",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 01 Grinding.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_grinding.wav",
+    "sha256": "ac9cbf2b0e7f88ff10dce8a5bab34e4ac3d2f2c3bd866c127a9f4943aa012642"
+  },
+  {
+    "asset_id": "S105-0332",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 01 High Squeak.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_high_squeak.wav",
+    "sha256": "6478db1b46ec561602d09b95dec1377504f5951ac874ba20947a28e43c1a5df9"
+  },
+  {
+    "asset_id": "S105-0333",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 02 Grinding Screech.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_grinding_screech.wav",
+    "sha256": "c56cb9a8db0cdd1654721ec625663b7f69741c8223f6f9eb6f8b32630aa58432"
+  },
+  {
+    "asset_id": "S105-0334",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 03 Sliding.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_sliding.wav",
+    "sha256": "eab831c1b5221283600f8f05ad83f4fd0ab40b1d574637855a023be48818d852"
+  },
+  {
+    "asset_id": "S105-0335",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 04 Screech.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_screech.wav",
+    "sha256": "59658ac4dc2ec8b8685651672d0a5997622456d58cda12ccd07b959d644a1c5e"
+  },
+  {
+    "asset_id": "S105-0336",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction 05 Screech Hollow Back and Forth.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction_screech_hollow_back_and_forth.wav",
+    "sha256": "5c201f6571c4e150669896e16759b26e43f05ff7f4364efee284ee8eb18c5662"
+  },
+  {
+    "asset_id": "S105-0337",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Friction.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_friction.wav",
+    "sha256": "e494c4206d5abdff3f9cdf36ec8bc6ff610bdf22518f47618f83179ca973ec8e"
+  },
+  {
+    "asset_id": "S105-0338",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Rail Scrape Back and Forth.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_rail_scrape_back_and_forth.wav",
+    "sha256": "6a97129a3c8720428ca97d8277f7ac30e965e58b4c2366ca1ee39cf502958b08"
+  },
+  {
+    "asset_id": "S105-0339",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Sheet Heavy.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_sheet_heavy.wav",
+    "sha256": "fdfe10a672525708054e2ad030f41d97f12c2606db524cff1707e1fb67f31254"
+  },
+  {
+    "asset_id": "S105-0340",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Metal Singing Screech.wav",
+    "relative_path": "机械_ ck_02_03/slide_metal_singing_screech.wav",
+    "sha256": "dbbe203cb85bbdf68aa8a04e78395153d50b0697ff5d5f47d3e86cc682445061"
+  },
+  {
+    "asset_id": "S105-0341",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Rusty Metal Scraping.wav",
+    "relative_path": "机械_ ck_02_03/slide_rusty_metal_scraping.wav",
+    "sha256": "150287d25639a5ef1e0ea2b6ad642063a0dbd399945e29355b231824ee904bac"
+  },
+  {
+    "asset_id": "S105-0342",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Rusty Scrape Whining.wav",
+    "relative_path": "机械_ ck_02_03/slide_rusty_scrape_whining.wav",
+    "sha256": "ca9f4a7994288de98fed5a95e44b5054ca12c7b8dcc1933765a5d3b6558fcd2c"
+  },
+  {
+    "asset_id": "S105-0343",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Sawblade Scraping Resonating.wav",
+    "relative_path": "机械_ ck_02_03/slide_sawblade_scraping_resonating.wav",
+    "sha256": "b617017203c46e135b312ac1330cb234bde5383ea8a859af84a455cea6930cf9"
+  },
+  {
+    "asset_id": "S105-0344",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Scrape Squeal Hollow.wav",
+    "relative_path": "机械_ ck_02_03/slide_scrape_squeal_hollow.wav",
+    "sha256": "a6e43bcc19ac78dbc2f4b6ae2a0fb0c0c8ddfe38fa343097816f063c9996c072"
+  },
+  {
+    "asset_id": "S105-0345",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Scrape Steel Bar.wav",
+    "relative_path": "机械_ ck_02_03/slide_scrape_steel_bar.wav",
+    "sha256": "a357f7331b14bb9245a73286b935cdb86d4a754b7633aaab4dd0f8cf733f8da2"
+  },
+  {
+    "asset_id": "S105-0346",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Back And Forth Typewriter Adler.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_back_and_forth_typewriter_adler.wav",
+    "sha256": "555832a8cf51c963b0d19b80d32f4c8bb6fd6d15a70479d261b187b471b5f1fc"
+  },
+  {
+    "asset_id": "S105-0347",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Calculating Machine Victor Champion.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_calculating_machine_victor_champion.wav",
+    "sha256": "1f9088bbce5a6d2bcd73811cbdc606a3b46f81be449e81863ac04db80f49f47a"
+  },
+  {
+    "asset_id": "S105-0348",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Calculating Machine Victor.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_calculating_machine_victor.wav",
+    "sha256": "4111f73c9efcbb2eb46484ebdfdd395ce34b1f0bc40ac2bdb0576a2c0302d4f2"
+  },
+  {
+    "asset_id": "S105-0349",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Short Typewriter Ceta.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_short_typewriter_ceta.wav",
+    "sha256": "e443798630ae2aaa78ad8c140ecb8987a779aeae49d43c84de6f94c263c2c652"
+  },
+  {
+    "asset_id": "S105-0350",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Short Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_short_typewriter_mercedes_five.wav",
+    "sha256": "90813befb29c8d91a48a609814b7e26c65b43aaebdd1cac76557bf27f755d6da"
+  },
+  {
+    "asset_id": "S105-0351",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewrite Remington Noiseless.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewrite_remington_noiseless.wav",
+    "sha256": "be41fa69a7b431d02e6dff358f1d9aeb9e8f32bf73e97ee717473e032b2dc875"
+  },
+  {
+    "asset_id": "S105-0352",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_aeg_mignon_b.wav",
+    "sha256": "f05919f816dfbe378cd6ad74339d41c5570b2035486633fd8ac9d14304ce9e79"
+  },
+  {
+    "asset_id": "S105-0353",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Ceta 01.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_ceta_a.wav",
+    "sha256": "b83710b2e223ca108e6fd3add48321d9ce480800164a1124f28ec836b7da3a6d"
+  },
+  {
+    "asset_id": "S105-0354",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Ceta 02.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_ceta_b.wav",
+    "sha256": "a6fcf248f70155bc22d87e11b3e0bbb0525af01602f155746362b411d1da980c"
+  },
+  {
+    "asset_id": "S105-0355",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_kanzler.wav",
+    "sha256": "b23d8c2ee2a2cf3363a25afc6df7ba5b577e5ec6453201734bf6c1e6f0fb90e9"
+  },
+  {
+    "asset_id": "S105-0356",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_remington_noiseless.wav",
+    "sha256": "d3f6d68dabd61f59e980df5aa09e5af47ce6295151f03b15f13be80f8aa9de7b"
+  },
+  {
+    "asset_id": "S105-0357",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Standard.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_standard.wav",
+    "sha256": "7888e9839d2ad98de91c077729e3a1f9deb163753832bbd5d0e4770b7c0bee36"
+  },
+  {
+    "asset_id": "S105-0358",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Underwood 02.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_underwood_a.wav",
+    "sha256": "0a194583843e9a2938c5ba103e9cae1677137d35eefb0df37a7a7c47c27cb039"
+  },
+  {
+    "asset_id": "S105-0359",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_underwood_b.wav",
+    "sha256": "7bf20efaddf93dc6cbed3ff1ea58ef0cde8661bf4bf7deda4040ed0664accb84"
+  },
+  {
+    "asset_id": "S105-0360",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Snap Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_02_03/slide_snap_typewriter_valentine.wav",
+    "sha256": "3d82b35495794d8365c7eb6f7f4b5f922faf079b28249bf6cf7a0f6402c8adcc"
+  },
+  {
+    "asset_id": "S105-0361",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Steel Girder Grinding.wav",
+    "relative_path": "机械_ ck_02_03/slide_steel_girder_grinding.wav",
+    "sha256": "f80c94755f2aa8547677f61c935507af2bd12aefb9e5c06e2647c27d7b8b6f8d"
+  },
+  {
+    "asset_id": "S105-0362",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Steel Girder Hollow Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_steel_girder_hollow_sequence.wav",
+    "sha256": "4730cc0d3d055709a804b26cfdd66e3b193d7f1d77c3fc53425c398ccf15f6d2"
+  },
+  {
+    "asset_id": "S105-0363",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Steel Girder Resonating.wav",
+    "relative_path": "机械_ ck_02_03/slide_steel_girder_resonating.wav",
+    "sha256": "ca4ea73ec7f328c32cdd1a50f4c7713fec6cdcc5516e275a8a79fb209ca4b006"
+  },
+  {
+    "asset_id": "S105-0364",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Steel Pipe Sharp.wav",
+    "relative_path": "机械_ ck_02_03/slide_steel_pipe_sharp.wav",
+    "sha256": "c1364668b4e52dce13559614815ba145c3b2084756f9cd1da220ca49a010b811"
+  },
+  {
+    "asset_id": "S105-0365",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Threaded Rod Dull.wav",
+    "relative_path": "机械_ ck_02_03/slide_threaded_rod_dull.wav",
+    "sha256": "d112b069f2251fe2b45750cf8aa01fc0f57e623a231cf3559c6ae565f6a6b9b9"
+  },
+  {
+    "asset_id": "S105-0366",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Threaded Rod High.wav",
+    "relative_path": "机械_ ck_02_03/slide_threaded_rod_high.wav",
+    "sha256": "6e38ea59382bf95d8d78b5cc1f4a8a3c6675d1b64337eac555fee7bc883b483b"
+  },
+  {
+    "asset_id": "S105-0367",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Threaded Rod Hollow.wav",
+    "relative_path": "机械_ ck_02_03/slide_threaded_rod_hollow.wav",
+    "sha256": "b2b4e82b7583e9a2982d003d4917b1d4f159098dec550a1c7afa0192f9f7954a"
+  },
+  {
+    "asset_id": "S105-0368",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Tin Tub Grind.wav",
+    "relative_path": "机械_ ck_02_03/slide_tin_tub_grind.wav",
+    "sha256": "1f6ce219c7fc6893544b8c312c734219a37aa7eb46247f1edfd6262ed37bb509"
+  },
+  {
+    "asset_id": "S105-0369",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Turn Snap Fast Typewriter Lambert.wav",
+    "relative_path": "机械_ ck_02_03/slide_turn_snap_fast_typewriter_lambert.wav",
+    "sha256": "3f6afc67564b887eb24fbe4e729cb40b2ea41cb3eefe82a1fdcbfa12c91a2a69"
+  },
+  {
+    "asset_id": "S105-0370",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Turn Snap Typewriter Lambert.wav",
+    "relative_path": "机械_ ck_02_03/slide_turn_snap_typewriter_lambert.wav",
+    "sha256": "90f8405aa990f18b7be45433a6e75124abade6846e3f308755fa62e07630f54e"
+  },
+  {
+    "asset_id": "S105-0371",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_02_03/slide_typewriter_remington_noiseless.wav",
+    "sha256": "d337b47e692e716980825e5eac6906509203312128c0ab0a3b8e3725659349f2"
+  },
+  {
+    "asset_id": "S105-0372",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Vacuum Cleaner Pipe.wav",
+    "relative_path": "机械_ ck_02_03/slide_vacuum_cleaner_pipe.wav",
+    "sha256": "de709d4c868d97bb0617d90922e3292ab736fc0e488a7ccca5332615bd66bb21"
+  },
+  {
+    "asset_id": "S105-0373",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Wheelbarrow Resonant.wav",
+    "relative_path": "机械_ ck_02_03/slide_wheelbarrow_resonant.wav",
+    "sha256": "2ccf3ed8714f631b563d4b33ec202486639f9c7b962fc91be590897c350ee194"
+  },
+  {
+    "asset_id": "S105-0374",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Wheelbarrow.wav",
+    "relative_path": "机械_ ck_02_03/slide_wheelbarrow.wav",
+    "sha256": "6135158f7aadb3231954db4fc94323e922b5732b4c892c914db4a9f10266e5c4"
+  },
+  {
+    "asset_id": "S105-0375",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE With Stop Vacuum Cleaner Pipe.wav",
+    "relative_path": "机械_ ck_02_03/slide_with_stop_vacuum_cleaner_pipe.wav",
+    "sha256": "c0e90bd7485fe0de3b290dc65dfeb66cfc74481f0113a8ad0601b4cfa7bc2e72"
+  },
+  {
+    "asset_id": "S105-0376",
+    "original_relative_path": "机械_ ck_02_03/MECK SLIDE Wooden Thread Sequence.wav",
+    "relative_path": "机械_ ck_02_03/slide_wooden_thread_sequence.wav",
+    "sha256": "2eee504f1209df40c1310e6cb409c5ed6cd609e41720cd6f2af58ba7e60dd7d3"
+  },
+  {
+    "asset_id": "S105-0377",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Agricultural Tool 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_agricultural_tool_a.wav",
+    "sha256": "4ece57bb51b7976cb64ec08c97dd0b64cc32c16e1bcb19a760e3d8aaeb1ff7d8"
+  },
+  {
+    "asset_id": "S105-0378",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Agricultural Tool 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_agricultural_tool_b.wav",
+    "sha256": "4854a819d6b1da585551415ca08e3237e133d70fc0cba8fbbb382d419d9730f1"
+  },
+  {
+    "asset_id": "S105-0379",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Agricultural Tool Double.wav",
+    "relative_path": "机械_ ck_03_03/snap_agricultural_tool_double.wav",
+    "sha256": "c2e1ed044471fb5979a379cf2533b4f6235a661ce47a005ec1b03319acf6a11c"
+  },
+  {
+    "asset_id": "S105-0380",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Bell Calculating Machine Kontometer.wav",
+    "relative_path": "机械_ ck_03_03/snap_bell_calculating_machine_kontometer.wav",
+    "sha256": "e24365cbcf5791b9beeff7a8022c1b8be02b277f352c90d428a6229cd4399f65"
+  },
+  {
+    "asset_id": "S105-0381",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Close 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_close_a.wav",
+    "sha256": "facda0730c7ed609209f54943f2f11962961f08972112d3512dfc72442b8fe6c"
+  },
+  {
+    "asset_id": "S105-0382",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Close 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_close_b.wav",
+    "sha256": "3b394fffde434ad93df9e43829c8ca6160cf101faf9e166813183f88aab4178f"
+  },
+  {
+    "asset_id": "S105-0383",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Multiple 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_multiple_a.wav",
+    "sha256": "fc33678f2cde90d8538de8e019c2701e549d1220ec03d38d863381bc9de14213"
+  },
+  {
+    "asset_id": "S105-0384",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Multiple 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_multiple_b.wav",
+    "sha256": "33ea22055da3c3a546faa9977045c13e64dd5732a196925f4e7c24ababe3e7b2"
+  },
+  {
+    "asset_id": "S105-0385",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Multiple 03.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_multiple_c.wav",
+    "sha256": "f72062a9710538323648eb4cccc4358c54bed91ba59dd99326956ced8e66d541"
+  },
+  {
+    "asset_id": "S105-0386",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Breech Action Open.wav",
+    "relative_path": "机械_ ck_03_03/snap_breech_action_open.wav",
+    "sha256": "683a31dab18f22581e96568013e51c15f72fd82ac55791d7633900f54e4a1ec8"
+  },
+  {
+    "asset_id": "S105-0387",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Buckle Medium Resonant.wav",
+    "relative_path": "机械_ ck_03_03/snap_buckle_medium_resonant.wav",
+    "sha256": "8b071ea071eac11cbb0e3878ce43fc52ebaa80dc208d2b6d05d7d910b625f12f"
+  },
+  {
+    "asset_id": "S105-0388",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Buckle Medium.wav",
+    "relative_path": "机械_ ck_03_03/snap_buckle_medium.wav",
+    "sha256": "c4596479db189f4782925b7609f0000ba00cf883ed774cd85ad6858572bdcb79"
+  },
+  {
+    "asset_id": "S105-0389",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Buckle Small.wav",
+    "relative_path": "机械_ ck_03_03/snap_buckle_small.wav",
+    "sha256": "02efbc2dde2949415becfd826908185213cddb3423e857b62a0e19b623dea321"
+  },
+  {
+    "asset_id": "S105-0390",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Buckle Tiny.wav",
+    "relative_path": "机械_ ck_03_03/snap_buckle_tiny.wav",
+    "sha256": "fd46d9d4bfcf597bf068b73be933a0073b64120f424f70e6e4d738daa43d9054"
+  },
+  {
+    "asset_id": "S105-0391",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Button Calculating Machine Victor.wav",
+    "relative_path": "机械_ ck_03_03/snap_button_calculating_machine_victor.wav",
+    "sha256": "f675df8a342b4bc16d4e4fc113b6a98f7960fa597078a3c5d4d57f4a450696f0"
+  },
+  {
+    "asset_id": "S105-0392",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Badenia.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_badenia_b.wav",
+    "sha256": "2f6d8015f2ca8e864b461d99e63e14ced671a227e3f1c6d07512840bc803ffdf"
+  },
+  {
+    "asset_id": "S105-0393",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Fazit.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_fazit.wav",
+    "sha256": "c7f4c425f591c915bb2ce1b179dddfe40926c1e9fe340dc655a107c0562b398b"
+  },
+  {
+    "asset_id": "S105-0394",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Hamann.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_hamann.wav",
+    "sha256": "13fc67a55f290f233378fd7da69933604225ba302ae4442f649f2c1369178167"
+  },
+  {
+    "asset_id": "S105-0395",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Kontometer.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_kontometer.wav",
+    "sha256": "564909e1f7b59860f0277e4861fe0c745c564463063392462f4e444f308dc0fd"
+  },
+  {
+    "asset_id": "S105-0396",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Mech Accountant.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_mech_accountant.wav",
+    "sha256": "a65b36b9f0933d6a774363e99a725b9c61c397e263a2be86a47e49dce172a314"
+  },
+  {
+    "asset_id": "S105-0397",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Resonant Triumphator.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_resonant_triumphator.wav",
+    "sha256": "e9b3844b1b8211c85900911bbb23c7aac0f2dbfd449eea5c02408c47bededbfe"
+  },
+  {
+    "asset_id": "S105-0398",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Resulta BS.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_resulta_bs.wav",
+    "sha256": "acfd21e21402fcb31a2b959b4d603338ab7ca4f582e0ae481f4f04505ca32123"
+  },
+  {
+    "asset_id": "S105-0399",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Resulta.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_resulta_b.wav",
+    "sha256": "a68480b127fee7c481d0d760674578d0b2251636d9584a0d68aec795c3f53839"
+  },
+  {
+    "asset_id": "S105-0400",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Rogli 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_rogli_a.wav",
+    "sha256": "f6de7fa12b212849d60fb24f0c44cb7b64e74f1ccfab9e6e5d3e3d4aa31726b9"
+  },
+  {
+    "asset_id": "S105-0401",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Rogli 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_rogli_b.wav",
+    "sha256": "c3bcaff6e22b161d441cb147f5fd8abed5888f4a2fd6cf02abc8e09336535ec2"
+  },
+  {
+    "asset_id": "S105-0402",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Rogli 03.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_rogli_c.wav",
+    "sha256": "93f33b6af96975d792e04532a0f164fb70abcddd817469b76e421993e7cb1df4"
+  },
+  {
+    "asset_id": "S105-0403",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Rogli.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_rogli_d.wav",
+    "sha256": "62872176d7c042396e5f58c44e8d64b34f55b20ea2c52409c1e1281e138cf8f5"
+  },
+  {
+    "asset_id": "S105-0404",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Triumphator 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_triumphator_a.wav",
+    "sha256": "39f02a0df5a75ebab10d16cd3f72c1e14a749a958085acfa099ed50265fb2ef9"
+  },
+  {
+    "asset_id": "S105-0405",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Triumphator 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_triumphator_b.wav",
+    "sha256": "707329828f6506bc77b6c1fda6df36f36300c8c928cb5237aeba308a8046cfc7"
+  },
+  {
+    "asset_id": "S105-0406",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine VEB.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_veb.wav",
+    "sha256": "c961224b582edb1a4faef0af845c19ce6b7619434f2a12b4652866802dc59acc"
+  },
+  {
+    "asset_id": "S105-0407",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Calculating Machine Victor.wav",
+    "relative_path": "机械_ ck_03_03/snap_calculating_machine_victor.wav",
+    "sha256": "ea066a2c681836af1b37f4b6d348398dd04fde35419bb1c51cc3c33fd33dc10a"
+  },
+  {
+    "asset_id": "S105-0408",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Carabiner Clasp.wav",
+    "relative_path": "机械_ ck_03_03/snap_carabiner_clasp.wav",
+    "sha256": "b4b66f6790e121b564cc0f95c68e0adeba60f26247e2d96263332b42d6191868"
+  },
+  {
+    "asset_id": "S105-0409",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Automatic Bank Punch.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_automatic_bank_punch.wav",
+    "sha256": "e3686d3510829c11711e1dca67c752c8a03b6030e089b3688b91cc1d9405bcde"
+  },
+  {
+    "asset_id": "S105-0410",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Cheque Punch Corp.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_cheque_punch_corp.wav",
+    "sha256": "8517d32d9ef9df1cf05adc83a3857b4445313a2068f9036149ddac5938b745b0"
+  },
+  {
+    "asset_id": "S105-0411",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Lightning.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_lightning.wav",
+    "sha256": "99a5f1e9edef0a905a4db6a2ef38411bf70c9d9a8cd45b9e9517fa86e6208517"
+  },
+  {
+    "asset_id": "S105-0412",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter New Era.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_new_era.wav",
+    "sha256": "3f774ebc7c47f9c691e042cefe8710422e6bf3770effa71b03ff4147b27dda1b"
+  },
+  {
+    "asset_id": "S105-0413",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Protectograph.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_protectograph.wav",
+    "sha256": "17c019ceca18776e96309b2c1c819b2b44cf218f23491548045aea11b374379c"
+  },
+  {
+    "asset_id": "S105-0414",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Unknown 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_unknown_a.wav",
+    "sha256": "7353993673a97a1d112860a4ce997a58de44f7cb368645cc0cb77e6e8cc4592d"
+  },
+  {
+    "asset_id": "S105-0415",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Unknown 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_unknown_b.wav",
+    "sha256": "2e4b99786b0871ce63e0e1e8f85645b7d3d0c26e64ef8eb6f77c7f1846c455c0"
+  },
+  {
+    "asset_id": "S105-0416",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Checkwriter Unknown.wav",
+    "relative_path": "机械_ ck_03_03/snap_checkwriter_unknown_c.wav",
+    "sha256": "9b716d30edf860fc129357fefe1e48f4ccd39f0756241e29e540822421a56f97"
+  },
+  {
+    "asset_id": "S105-0417",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Chunky Latch Lock Sequence 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_chunky_latch_lock_sequence_a.wav",
+    "sha256": "2d0bb6f6ed110465819f6c28bd4681eb4d90a5140e1fb2e57714217aea2133ff"
+  },
+  {
+    "asset_id": "S105-0418",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Chunky Latch Lock Sequence 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_chunky_latch_lock_sequence_b.wav",
+    "sha256": "8e5b18e0e24f919a019c900f3c75b39e0d826b4f9b6aaab79c57b93f5b8b37b2"
+  },
+  {
+    "asset_id": "S105-0419",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Clam Cleat Resonant.wav",
+    "relative_path": "机械_ ck_03_03/snap_clam_cleat_resonant.wav",
+    "sha256": "478efc5cebb320ee5ed907cc344020d63a12cb4fe6d539bc222854d8a24e0125"
+  },
+  {
+    "asset_id": "S105-0420",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Clam Cleat.wav",
+    "relative_path": "机械_ ck_03_03/snap_clam_cleat.wav",
+    "sha256": "195dbe432db25344e857582c8af7d24e593e655f2ed0925594b4cf35ea47687e"
+  },
+  {
+    "asset_id": "S105-0421",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Click Calculating Machine Victor Champion.wav",
+    "relative_path": "机械_ ck_03_03/snap_click_calculating_machine_victor_champion.wav",
+    "sha256": "99d9afbaf6916737d0a1052612d402d39aa1ded87af622d99a8db74c7c24ec3f"
+  },
+  {
+    "asset_id": "S105-0422",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Clunky Calculating Machine Madas.wav",
+    "relative_path": "机械_ ck_03_03/snap_clunky_calculating_machine_madas.wav",
+    "sha256": "fb917608af420062c97011bcd75d73538ea04267daec5dc60cbddc17d097308f"
+  },
+  {
+    "asset_id": "S105-0423",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Calculating Machine Rogli.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_calculating_machine_rogli.wav",
+    "sha256": "b63fd52efa1176056e4a1f5794d1f1903728698c2f2311ff812b1a98ff46d6dd"
+  },
+  {
+    "asset_id": "S105-0424",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Checkwriter Chequepunch.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_checkwriter_chequepunch.wav",
+    "sha256": "43ec8c26256e65efcb97549906c8aa99f9cdbbe9fedde246f9e10e05a82faabe"
+  },
+  {
+    "asset_id": "S105-0425",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Double Typewriter Calligraph.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_double_typewriter_calligraph.wav",
+    "sha256": "907f2699a5f9d9b5bdac4b72a5df651b49a4f9e87e42156b0920f390eb1a47b9"
+  },
+  {
+    "asset_id": "S105-0426",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Squeak Typewriter AEG Mignon.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_squeak_typewriter_aeg_mignon.wav",
+    "sha256": "10c69f5edf622e1cf0f419c4e128824a950b146a1a85758a98a68707c77a4194"
+  },
+  {
+    "asset_id": "S105-0427",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Typewriter Adler.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_typewriter_adler.wav",
+    "sha256": "e0091be6c510d6a59f7b6ba4383fceef29265f8c40899139dc34e1c477112d76"
+  },
+  {
+    "asset_id": "S105-0428",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Typewriter Calligraph.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_typewriter_calligraph.wav",
+    "sha256": "018bfec3c5116ae02a3cf16d43f85c9dfbecda45b73ef877095f2197cad46f35"
+  },
+  {
+    "asset_id": "S105-0429",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Typewriter Lambert.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_typewriter_lambert.wav",
+    "sha256": "0ba99517151cf4764b31d63341b6404ae901c43b9b83f46b107c6c18807a5625"
+  },
+  {
+    "asset_id": "S105-0430",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_typewriter_mercedes_five.wav",
+    "sha256": "713ff32fc6beb4c9d0ee59e9ffc98a5288b9c93a55fe87fe89d02ce50777c43a"
+  },
+  {
+    "asset_id": "S105-0431",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Constant Typewriter Standard.wav",
+    "relative_path": "机械_ ck_03_03/snap_constant_typewriter_standard.wav",
+    "sha256": "2ffc3c3ba890ee4f856b837a82589f767fa05ba29805ae55c14003adca565907"
+  },
+  {
+    "asset_id": "S105-0432",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Cooking Pot Multiple 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_cooking_pot_multiple_a.wav",
+    "sha256": "7708bef3150daa5a6143949f568b0d0bffced744b8db5e46f79ae2a87fc4fd4a"
+  },
+  {
+    "asset_id": "S105-0433",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Cooking Pot Multiple 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_cooking_pot_multiple_b.wav",
+    "sha256": "df0572c483541f7f6031a27bbe7e384b89038761c70b46da7d53470dc7f76044"
+  },
+  {
+    "asset_id": "S105-0434",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Cooking Pot.wav",
+    "relative_path": "机械_ ck_03_03/snap_cooking_pot.wav",
+    "sha256": "ab0f2b290f29d5db5c38be2ba73ef5d44f0a5226bd37f4ab33dd991a6ec42358"
+  },
+  {
+    "asset_id": "S105-0435",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 01 Double.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_double.wav",
+    "sha256": "7ef12d2f188fec4a3a496e7aa377785096734411f549076f4951668cac87e7aa"
+  },
+  {
+    "asset_id": "S105-0436",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 01 Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_sequence.wav",
+    "sha256": "5434c4f33f0c87917a6ed5bf1739aa86b7a172438123c002fd35ab3e474cd6d4"
+  },
+  {
+    "asset_id": "S105-0437",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 01 Single.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_single.wav",
+    "sha256": "2630c60036e1cfc7ee31f4bbfc78ddd19a2dc76f3fcd148273e4e8c6b30f9cb0"
+  },
+  {
+    "asset_id": "S105-0438",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 02 Clack Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_open_close_a.wav",
+    "sha256": "bc32697aded8885f4a0745fddfb5aa240748233947f84391bb9dba2512047009"
+  },
+  {
+    "asset_id": "S105-0439",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 02 Clack Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_sequence_a.wav",
+    "sha256": "932a644e594bdfc95640185b7e85bc5b1b65d3ce6a2170355a1c2b37d698cd35"
+  },
+  {
+    "asset_id": "S105-0440",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 02 Clack Slam.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_slam_a.wav",
+    "sha256": "4bd85b885fd5bb602e80a5c2f575cbfc0d058754bfdbd269cf92dc0d52f00967"
+  },
+  {
+    "asset_id": "S105-0441",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 03 Clack Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_open_close_b.wav",
+    "sha256": "a1960ee7e236030b776bccc2a051f2c4db0d596e193e9efbeb5d50246c6f1e55"
+  },
+  {
+    "asset_id": "S105-0442",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 03 Clack Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_sequence_b.wav",
+    "sha256": "86da9d9dd610cc2851c19704548f9bcb483d7ff47b0f1932b4ebaeca667bd041"
+  },
+  {
+    "asset_id": "S105-0443",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 04 Clack Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_open_close_c.wav",
+    "sha256": "8a3a9e01a05f7b58b4f2c23b7bb03cf9f245f5cd9449ada6449cfe13dc4cfa82"
+  },
+  {
+    "asset_id": "S105-0444",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 04 Clack Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_sequence_c.wav",
+    "sha256": "5c2741bc4b98c9b54a162ccfd1ae1f8255cde25c95b140e0fb6503a89c194b14"
+  },
+  {
+    "asset_id": "S105-0445",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Door Handle 04 Clack Slam.wav",
+    "relative_path": "机械_ ck_03_03/snap_door_handle_clack_slam_b.wav",
+    "sha256": "3bcc6b8d208a2a81a9a0d4feeb301985191a0231aac1b5b276ac908c9b376c1b"
+  },
+  {
+    "asset_id": "S105-0446",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Double Small Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_03_03/snap_double_small_typewriter_kanzler.wav",
+    "sha256": "5690381d1550af8687f779edf0783358ee1d9378ccfe218b83153a7c29949b88"
+  },
+  {
+    "asset_id": "S105-0447",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Double Typewriter Calligraph.wav",
+    "relative_path": "机械_ ck_03_03/snap_double_typewriter_calligraph.wav",
+    "sha256": "61a6abb6abed0ef599d12abeae5e186cf45444026e66e273c658ae72255199d1"
+  },
+  {
+    "asset_id": "S105-0448",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Double Typewriter Kanzler.wav",
+    "relative_path": "机械_ ck_03_03/snap_double_typewriter_kanzler.wav",
+    "sha256": "c4d66e463829f41b95481e15398cb6621cbba8401749d9be20dca95519fe1e12"
+  },
+  {
+    "asset_id": "S105-0449",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Double Typewriter The Oliver.wav",
+    "relative_path": "机械_ ck_03_03/snap_double_typewriter_the_oliver.wav",
+    "sha256": "2b676bb45eb406d6324db654ffce332874debb80264ea51b9fa2469234e44ffe"
+  },
+  {
+    "asset_id": "S105-0450",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Fast Typewriter Standard.wav",
+    "relative_path": "机械_ ck_03_03/snap_fast_typewriter_standard.wav",
+    "sha256": "c5ca04adcd884cbfafa84c94c3d87b0caca43b69c69a2ebd852ce458099e1be2"
+  },
+  {
+    "asset_id": "S105-0451",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Gramophone Needle Box.wav",
+    "relative_path": "机械_ ck_03_03/snap_gramophone_needle_box.wav",
+    "sha256": "a7ff3c89636b6ad99af4f6dffbba9151b819277cebde332a8d22d289e2125846"
+  },
+  {
+    "asset_id": "S105-0452",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Guitar Suitcase Handling Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_guitar_suitcase_handling_open_close.wav",
+    "sha256": "35d18398376702760a6bf9417b4283937e469be48293210599389c985e8c06b3"
+  },
+  {
+    "asset_id": "S105-0453",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Large Old Door Handling Impact.wav",
+    "relative_path": "机械_ ck_03_03/snap_large_old_door_handling_impact.wav",
+    "sha256": "f1f8dd5af4eb946ba44645c627abe293871407f04720d51ae224fd16dc3127b7"
+  },
+  {
+    "asset_id": "S105-0454",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Latch Up Down Calculating Machine Fazit.wav",
+    "relative_path": "机械_ ck_03_03/snap_latch_up_down_calculating_machine_fazit.wav",
+    "sha256": "b45bd9300e51e5525e1957476ab5f21626fc02d0e1bfd41db6bc0c2bfbf5789a"
+  },
+  {
+    "asset_id": "S105-0455",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Big Lock And Load.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_big_lock_and_load.wav",
+    "sha256": "612e424d23a54ad3272dd262b870cfa2334adea6b7bb0690f8fe243bf3a1c5f7"
+  },
+  {
+    "asset_id": "S105-0456",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Big Rattle Release.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_big_rattle_release.wav",
+    "sha256": "90556b39d0fc24afec395538a0eaa1a172fdc94f992fe5e611570383a654111e"
+  },
+  {
+    "asset_id": "S105-0457",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Calculating Machine Kontometer.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_calculating_machine_kontometer.wav",
+    "sha256": "e29a5171a2a49fa2842def6fc610c863ae6f91e5f91d0d99534f9981a66214d0"
+  },
+  {
+    "asset_id": "S105-0458",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Chunky Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_chunky_open_close.wav",
+    "sha256": "7659e073831de2d0be8fbf597c1cbc44031c256693c00221e35b3138df03a0f2"
+  },
+  {
+    "asset_id": "S105-0459",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Constant Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_constant_typewriter_underwood.wav",
+    "sha256": "4cb15d8edbbd2ec456fd86b5448a4a54e0e1909d506b524e32bc6c5c29837d05"
+  },
+  {
+    "asset_id": "S105-0460",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Lock And Load Triple.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_lock_and_load_triple.wav",
+    "sha256": "db90cc9f585ef56b681c1759a2d69535bd8796d393adb94cb49aaaf1cbe56b83"
+  },
+  {
+    "asset_id": "S105-0461",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_open_close.wav",
+    "sha256": "d6440425d95cc0b91e32fa9ed38f3e1772c2a059514f9437a84ac488fd3c35ce"
+  },
+  {
+    "asset_id": "S105-0462",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Sequence Typewriter Underwood 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_sequence_typewriter_underwood_a.wav",
+    "sha256": "df7bd90edc2bbdb576202631156cedbc97b01b966a8c94cc9096a63aca2f46b3"
+  },
+  {
+    "asset_id": "S105-0463",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Sequence Typewriter Underwood 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_sequence_typewriter_underwood_b.wav",
+    "sha256": "7dc0ad63ff46b076081a578355f574aa42701df88d149aa85bc4639614e21736"
+  },
+  {
+    "asset_id": "S105-0464",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Squeaky Slow.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_squeaky_slow.wav",
+    "sha256": "1e1bf63e2c69722c97c374fa9301be60e30783ddf4dcf9d7d5db8958406b750e"
+  },
+  {
+    "asset_id": "S105-0465",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Squeaky.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_squeaky.wav",
+    "sha256": "7ae98545b57c48a5f493dc5731846c7429e2618955668c0c9ee87707d3a43a90"
+  },
+  {
+    "asset_id": "S105-0466",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Typewriter Remington Noiseless Release.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_typewriter_remington_noiseless_release.wav",
+    "sha256": "9408f82cb5cf4d434f4652ee6d513fb974de2e97efbd06c492a96ac3e144ea40"
+  },
+  {
+    "asset_id": "S105-0467",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Typewriter Remington Noiseless.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_typewriter_remington_noiseless.wav",
+    "sha256": "6f28a9fea3768d080dd3e5ebc3172f405b0083e8ce44ff8d7885239dcd5b8b14"
+  },
+  {
+    "asset_id": "S105-0468",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_typewriter_underwood.wav",
+    "sha256": "b8a1f92dcd106cff98ed71d2702eebe1ad4027a76c22963c5499814477eb3ee6"
+  },
+  {
+    "asset_id": "S105-0469",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Window Multiple.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_window_multiple.wav",
+    "sha256": "3eda3f83577fb0467c169b0a37bd5c1a50a74d5e4f876b55a987175784cb5185"
+  },
+  {
+    "asset_id": "S105-0470",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Lever Window Single.wav",
+    "relative_path": "机械_ ck_03_03/snap_lever_window_single.wav",
+    "sha256": "bd5fd12d92d6c248e2d95e4a05af0062c765373adfbaabafa4b6c09e3fdb694a"
+  },
+  {
+    "asset_id": "S105-0471",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Hole Puncher Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_hole_puncher_sequence.wav",
+    "sha256": "4b611c392bb5d0636ff1269066bb129bac05e2d1db29945942ef4b04e59c3940"
+  },
+  {
+    "asset_id": "S105-0472",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Hole Puncher.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_hole_puncher.wav",
+    "sha256": "9d09e462a42b2864fe9ec26406715ba4385e96c4f1d184e8c7be9e8292063c61"
+  },
+  {
+    "asset_id": "S105-0473",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Petrol Lamp Handling.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_petrol_lamp_handling.wav",
+    "sha256": "904d4ef9dd0ce9b9dd48e5d2e30b6c2816b3b6b11a9ad2bf0bcd7d71901c19cc"
+  },
+  {
+    "asset_id": "S105-0474",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Petrol Lamp.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_petrol_lamp.wav",
+    "sha256": "a79b1af77d946c1cc50dad5446f4345add249958d27e51a4df688fe4b4a02e12"
+  },
+  {
+    "asset_id": "S105-0475",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Roller Shutter.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_roller_shutter.wav",
+    "sha256": "0fb76c3cdee822f8aa9d9853da6eb2101c526d74faffd41155094f34ebe1ab35"
+  },
+  {
+    "asset_id": "S105-0476",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Scissors Scrape Short Fast.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_scissors_scrape_short_fast.wav",
+    "sha256": "b5434870392610d51ad46245d8ab20300d48e40e3e27539df91aa131a7c3ad91"
+  },
+  {
+    "asset_id": "S105-0477",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Tongs Ring Out.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_tongs_ring_out.wav",
+    "sha256": "5423cc77c801ae48f15d2991b48dcc6c937dd1ff25f3b849efbb594554b36b45"
+  },
+  {
+    "asset_id": "S105-0478",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Tongs Snap Ring Out Resonant Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_tongs_snap_ring_out_resonant_sequence.wav",
+    "sha256": "232f478656a56d1b94a345d14f3b6a8a22aa37843250a4a4bbf7d5a33398cdf7"
+  },
+  {
+    "asset_id": "S105-0479",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Toolbox.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_toolbox.wav",
+    "sha256": "632c63f593e598631aa1b0bfe32e7ec3977315e917fbe9be227b0a6ed04213d0"
+  },
+  {
+    "asset_id": "S105-0480",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Metal Window Handle Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_metal_window_handle_open_close.wav",
+    "sha256": "6db0b38dd0c1d0b97f6e67df80f1774040dedd9d802c5be752ae13a4d2c768b7"
+  },
+  {
+    "asset_id": "S105-0481",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Multiple Checkwriter Protectograph.wav",
+    "relative_path": "机械_ ck_03_03/snap_multiple_checkwriter_protectograph.wav",
+    "sha256": "454a95313a4ba9de270ddcfb23b84f38f33047590114be2cc129610faf80bd93"
+  },
+  {
+    "asset_id": "S105-0482",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Multiple Fast Checkwriter Protectograph.wav",
+    "relative_path": "机械_ ck_03_03/snap_multiple_fast_checkwriter_protectograph.wav",
+    "sha256": "278da46f05d2eb8321afb4046958008966866390cac77a4458b135652cf50939"
+  },
+  {
+    "asset_id": "S105-0483",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Photo Camera Ocular Open Close.wav",
+    "relative_path": "机械_ ck_03_03/snap_photo_camera_ocular_open_close.wav",
+    "sha256": "44339f5b33715a6488ac32872ce982716f3e6f36f26c85068294e83607fde9b5"
+  },
+  {
+    "asset_id": "S105-0484",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Recorder Walkman Flipping Sequence.wav",
+    "relative_path": "机械_ ck_03_03/snap_recorder_walkman_flipping_sequence.wav",
+    "sha256": "862e447ad88ae8f2abd788b20ed4967f4d13b65808705973d94b1f3d3a207d66"
+  },
+  {
+    "asset_id": "S105-0485",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Recorder Walkman Handling.wav",
+    "relative_path": "机械_ ck_03_03/snap_recorder_walkman_handling.wav",
+    "sha256": "42801df177c893e37c57301aeabc1c0a89d52d6cff72ccfcc9770856a0ec3caf"
+  },
+  {
+    "asset_id": "S105-0486",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Rollerblades Multiple.wav",
+    "relative_path": "机械_ ck_03_03/snap_rollerblades_multiple.wav",
+    "sha256": "729703f47f2ad6184f595b1f1d480fde0d5933e7625c95bc37aa0d061242c5d3"
+  },
+  {
+    "asset_id": "S105-0487",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Rollerblades.wav",
+    "relative_path": "机械_ ck_03_03/snap_rollerblades.wav",
+    "sha256": "b77de2cd29068334eef94cf6ece70d59d8e6f76e8b06d353b0109a24dfddc3bf"
+  },
+  {
+    "asset_id": "S105-0488",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Calculating Machine Badenia.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_calculating_machine_badenia.wav",
+    "sha256": "e9c31c4717c85e18307afc0352ccc0fafd027bdc72a1316fa66f0e0792f64006"
+  },
+  {
+    "asset_id": "S105-0489",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Calculating Machine Fazit.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_calculating_machine_fazit.wav",
+    "sha256": "51fdae4b616e2a0186e608853f1c1e9a9d5bfd85f220f9def2661b3b140bd9f1"
+  },
+  {
+    "asset_id": "S105-0490",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Calculating Machine VEB.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_calculating_machine_veb.wav",
+    "sha256": "3d82fb650ed983ec0c58452933287a96608e95a31456d3bbccb8f356abbf0f8a"
+  },
+  {
+    "asset_id": "S105-0491",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Trailer Hatch.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_trailer_hatch.wav",
+    "sha256": "9e49c79e29541e73135e1c7b57d796c24e6e2c52bddb56e176ac6bff35cff9a3"
+  },
+  {
+    "asset_id": "S105-0492",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Typewriter Standard.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_typewriter_standard.wav",
+    "sha256": "639e1c7884de6871e60b5bee1c83b1b2d96e3b9fea72d174a89ab327e3295ea5"
+  },
+  {
+    "asset_id": "S105-0493",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Sequence Typewriter Underwood.wav",
+    "relative_path": "机械_ ck_03_03/snap_sequence_typewriter_underwood.wav",
+    "sha256": "34d8367ec9a147e03af5b66f55c1bb6bb5ced8edbf8d0a72031170e5c6ba29b0"
+  },
+  {
+    "asset_id": "S105-0494",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Single Checkwriter Protectograph.wav",
+    "relative_path": "机械_ ck_03_03/snap_single_checkwriter_protectograph.wav",
+    "sha256": "aaa8c234a1d9c0d88030055f7dae72710876fccfe22ddae756da985a4a23a006"
+  },
+  {
+    "asset_id": "S105-0495",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Slot Machine Mum Hen.wav",
+    "relative_path": "机械_ ck_03_03/snap_slot_machine_mum_hen.wav",
+    "sha256": "8ef4bda705ca2d8c3a2f8e1de9464ebcc8b0383f42af2a48c72ed120ccf43898"
+  },
+  {
+    "asset_id": "S105-0496",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Slot Machine Mum Stork.wav",
+    "relative_path": "机械_ ck_03_03/snap_slot_machine_mum_stork.wav",
+    "sha256": "976800e0e42c567349db4c0eee83755cc448f21360952b0fa73e9cc3fdd6889a"
+  },
+  {
+    "asset_id": "S105-0497",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Slot Machine Treff Glocke 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_slot_machine_treff_glocke_a.wav",
+    "sha256": "55ee549c72050ac38519d607afdcce89babee97c1b0cb08b81a88ecceb923fd0"
+  },
+  {
+    "asset_id": "S105-0498",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Slot Machine Treff Glocke 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_slot_machine_treff_glocke_b.wav",
+    "sha256": "62af5b1871f69af6bc5fb330880ee7508ed41d9fdd54167967cb3bd0d959ada0"
+  },
+  {
+    "asset_id": "S105-0499",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Stamp Machine.wav",
+    "relative_path": "机械_ ck_03_03/snap_stamp_machine.wav",
+    "sha256": "f55f6c4db96b184cf968d2cc6268ccdf5b7a5dca3206d8e165e4c8c714068ed4"
+  },
+  {
+    "asset_id": "S105-0500",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Toothed Wheels Calculating Machine Badenia.wav",
+    "relative_path": "机械_ ck_03_03/snap_toothed_wheels_calculating_machine_badenia.wav",
+    "sha256": "b8af5aa8b09531f03a612d18b5a827b178a92ad91fd6a5738aa4b368bbb81d2d"
+  },
+  {
+    "asset_id": "S105-0501",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Toothed Wheels Calculating Machine Rogli.wav",
+    "relative_path": "机械_ ck_03_03/snap_toothed_wheels_calculating_machine_rogli.wav",
+    "sha256": "bb64be1e833126483588c625a450130a2f1da91ca2f207d27d7cc75b8441fb99"
+  },
+  {
+    "asset_id": "S105-0502",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Toothed Wheels Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_03_03/snap_toothed_wheels_calculating_machine_triumphator.wav",
+    "sha256": "48342bd95c84102ec144f4cbc1cd623feb6c505dce8dfeff9abc4a671480040b"
+  },
+  {
+    "asset_id": "S105-0503",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Toothed Wheels Calculating Machine VEB.wav",
+    "relative_path": "机械_ ck_03_03/snap_toothed_wheels_calculating_machine_veb.wav",
+    "sha256": "3a340217cd2072c55c595953f21c83de70ef17ec674a899113c17ad6eaf551ef"
+  },
+  {
+    "asset_id": "S105-0504",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Toothed Wheels Reset Calculating Machine Rogli.wav",
+    "relative_path": "机械_ ck_03_03/snap_toothed_wheels_reset_calculating_machine_rogli.wav",
+    "sha256": "73044f7b35180dfc12a45d759c4a2c00ab2237c63f2a3d249e74cde1cb27ec88"
+  },
+  {
+    "asset_id": "S105-0505",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Typewriter Lambert.wav",
+    "relative_path": "机械_ ck_03_03/snap_typewriter_lambert.wav",
+    "sha256": "732841b20ba8603aa69b40023fd2a266a2f601dca09364fbca8fd196646062c5"
+  },
+  {
+    "asset_id": "S105-0506",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Typewriter Standard 01.wav",
+    "relative_path": "机械_ ck_03_03/snap_typewriter_standard_a.wav",
+    "sha256": "f791adb313d7034c23e1c0aaa5f9084ba7cf9fc996f9662bdc48e07a655af3f4"
+  },
+  {
+    "asset_id": "S105-0507",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Typewriter Standard 02.wav",
+    "relative_path": "机械_ ck_03_03/snap_typewriter_standard_b.wav",
+    "sha256": "fc9346ae2263e977e1632abf6939524bb5578954252320f10422adf4e3a7e195"
+  },
+  {
+    "asset_id": "S105-0508",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Typewriter Standard 03.wav",
+    "relative_path": "机械_ ck_03_03/snap_typewriter_standard_c.wav",
+    "sha256": "bcab7382905dc8ae573481db76686fea21f04bee6f815497091f13114820f261"
+  },
+  {
+    "asset_id": "S105-0509",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Typewriter Standard.wav",
+    "relative_path": "机械_ ck_03_03/snap_typewriter_standard_d.wav",
+    "sha256": "8af78de647af5f874a32e2a9001f442f6e9041756527ff78fcba847f97822f49"
+  },
+  {
+    "asset_id": "S105-0510",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Umbrella.wav",
+    "relative_path": "机械_ ck_03_03/snap_umbrella.wav",
+    "sha256": "5f44c4514030dd43dddd0e0c66c7de54d88562cf32d4baf508b49a2495398769"
+  },
+  {
+    "asset_id": "S105-0511",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Up Down Checkwriter Chequepunch.wav",
+    "relative_path": "机械_ ck_03_03/snap_up_down_checkwriter_chequepunch.wav",
+    "sha256": "8560fe0e9275914741a2e35262c6663ece3b0dcbe640e6bed8377e5fa526a994"
+  },
+  {
+    "asset_id": "S105-0512",
+    "original_relative_path": "机械_ ck_03_03/MECK SNAP Vaccum Cleaner Switch Attachment.wav",
+    "relative_path": "机械_ ck_03_03/snap_vaccum_cleaner_switch_attachment.wav",
+    "sha256": "74df848eea2e4bf1f5c8eb54dc557fee70be4c9cb776dad8f3f07677c4aa5cce"
+  },
+  {
+    "asset_id": "S105-0513",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Calculating Machine Brunsviga.wav",
+    "relative_path": "机械_ ck_03_03/spring_calculating_machine_brunsviga.wav",
+    "sha256": "936da1775a692a0350d50a3149bfa0a6474056b1f940c795abd28ddeba16e484"
+  },
+  {
+    "asset_id": "S105-0514",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Hanger Press Release.wav",
+    "relative_path": "机械_ ck_03_03/spring_hanger_press_release.wav",
+    "sha256": "38218c5a0b6ca068f7fafc41be8d2a7c3295415efc2e02d3216d12c69036d5c2"
+  },
+  {
+    "asset_id": "S105-0515",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Hanger Slow Quack.wav",
+    "relative_path": "机械_ ck_03_03/spring_hanger_slow_quack.wav",
+    "sha256": "65c9db31fdf8c98adb2f7502ac448cce53939a96fd9aad00c87f475bd029b867"
+  },
+  {
+    "asset_id": "S105-0516",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Hanger Tiny.wav",
+    "relative_path": "机械_ ck_03_03/spring_hanger_tiny.wav",
+    "sha256": "521469a9c9b9ab4e302984f46f630404a34b60b44adf7f9576128ba8a1722ff7"
+  },
+  {
+    "asset_id": "S105-0517",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Medium Squeak Long.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_medium_squeak_long.wav",
+    "sha256": "bac9a17029474af163455e10118468766fb4780142c988f3044f8e54dc5e6812"
+  },
+  {
+    "asset_id": "S105-0518",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Medium Squeak Medium.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_medium_squeak_medium.wav",
+    "sha256": "0c257759cd3e11d615307d9c6adb981d17ef63001a88ff5edd5f07d3abd43630"
+  },
+  {
+    "asset_id": "S105-0519",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Medium Squeak Short.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_medium_squeak_short.wav",
+    "sha256": "89c901164066d03d63b236ea18506c2e25da2b39d14968b85d6c3804733d2580"
+  },
+  {
+    "asset_id": "S105-0520",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Small Squeak Long.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_small_squeak_long.wav",
+    "sha256": "d74f3745ae0c93bacb5e2d8a06ef4ddccdbd0050f1d5a91356ac10762fb2b8d1"
+  },
+  {
+    "asset_id": "S105-0521",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Small Squeak Medium.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_small_squeak_medium.wav",
+    "sha256": "eff1eef53ae5b7c375f86fc627ba38e0c08c98c4cff5fbd76314afb6d356a053"
+  },
+  {
+    "asset_id": "S105-0522",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Perforator Small Squeak Short.wav",
+    "relative_path": "机械_ ck_03_03/spring_perforator_small_squeak_short.wav",
+    "sha256": "3be71adfe1a8f178559b14cd9f7c1a11f3108ac515a7fe722fa2cc6d202443e7"
+  },
+  {
+    "asset_id": "S105-0523",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Photo Camera Shutter Release.wav",
+    "relative_path": "机械_ ck_03_03/spring_photo_camera_shutter_release.wav",
+    "sha256": "7ce8f619a67ace39ea6d168f862603585b10881f5394370f4e1b6e6e22ab489a"
+  },
+  {
+    "asset_id": "S105-0524",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Release Resonant.wav",
+    "relative_path": "机械_ ck_03_03/spring_release_resonant.wav",
+    "sha256": "228f95cb90398439d294263a8205c9a120ad7ba3e264ec34e683c12ea4f4d2b0"
+  },
+  {
+    "asset_id": "S105-0525",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Stretch Resonant.wav",
+    "relative_path": "机械_ ck_03_03/spring_stretch_resonant.wav",
+    "sha256": "04bf92798c5d4b8a5a211ac1fe9cc238c3287f558ff71587e3230bcead705003"
+  },
+  {
+    "asset_id": "S105-0526",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Stretch Tonal Downwards.wav",
+    "relative_path": "机械_ ck_03_03/spring_stretch_tonal_downwards.wav",
+    "sha256": "254ffc446faa663e5ccc713e51692355bd5e682fa431f596edd88819195f7bc7"
+  },
+  {
+    "asset_id": "S105-0527",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Stretch Tonal Upwards.wav",
+    "relative_path": "机械_ ck_03_03/spring_stretch_tonal_upwards.wav",
+    "sha256": "400be6008319ee034bb9438050baa228427d1e217ddea1b7531e5ce7a4af20e7"
+  },
+  {
+    "asset_id": "S105-0528",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Suspension Small Stretch.wav",
+    "relative_path": "机械_ ck_03_03/spring_suspension_small_stretch.wav",
+    "sha256": "aedbeae5d0c9d32cf43d09cd4a6b5832a207812d28e37ec80d63571b2a8be838"
+  },
+  {
+    "asset_id": "S105-0529",
+    "original_relative_path": "机械_ ck_03_03/MECK SPRING Toaster Sliders Wonky Sequence.wav",
+    "relative_path": "机械_ ck_03_03/spring_toaster_sliders_wonky_sequence.wav",
+    "sha256": "f58088348e4f4d5650cfd672cc0fe36b2cff1a7f2672201782f3e681214dd6ed"
+  },
+  {
+    "asset_id": "S105-0530",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Latch Impact.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_latch_impact.wav",
+    "sha256": "cdd332dcefb14bbf12453ee0a595b86515d8133cb8d09f0ea714beb8e0a74655"
+  },
+  {
+    "asset_id": "S105-0531",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Massive Metal Gate Slide Scrape.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_massive_metal_gate_slide_scrape.wav",
+    "sha256": "b583125b94ac339664dcfbca13e0c6eea8ca372d087e9e25e7ab6f210f2b77a8"
+  },
+  {
+    "asset_id": "S105-0532",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Door Slide Rattle Impact.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_door_slide_rattle_impact.wav",
+    "sha256": "c94ac0de9da99db6e81782c7c27716000c64d1624c2a19bfe5cb843144452cb6"
+  },
+  {
+    "asset_id": "S105-0533",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Gate Slide Rattle Impact.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_gate_slide_rattle_impact.wav",
+    "sha256": "9967697d77a3cb4acc5aa3451f36df4bc5a58b09a1c015e9276525c9899ac558"
+  },
+  {
+    "asset_id": "S105-0534",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Lift Door Move Rattle Slide.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_lift_door_move_rattle_slide.wav",
+    "sha256": "286678c6f151ec43cd92d2cff7e53c755fa41a7d2e8490ec76366a622b35594c"
+  },
+  {
+    "asset_id": "S105-0535",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Lift Door Move Slide.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_lift_door_move_slide.wav",
+    "sha256": "e06f93d654cbc2b77f005ab4cf081cb4705909b3e74a8d6b8a40fa63c78e0146"
+  },
+  {
+    "asset_id": "S105-0536",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Lift Door Slide Latch.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_lift_door_slide_latch.wav",
+    "sha256": "e53d476b6a063209b92422e525601c661433d0e63ef8d0987236bfdd5c4242ad"
+  },
+  {
+    "asset_id": "S105-0537",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Scrape Long.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_scrape_long.wav",
+    "sha256": "5305077a4e6fa5cecd68cdf46a7d8c8314779ee69e3d2344f43f127f4be4f738"
+  },
+  {
+    "asset_id": "S105-0538",
+    "original_relative_path": "机械_ ck_03_03/MECK SWEETENER Low End Metal Scrape Short.wav",
+    "relative_path": "机械_ ck_03_03/sweetener_low_end_metal_scrape_short.wav",
+    "sha256": "3fb2a10eb7bb4367b61164786a3be9947d8e8339c638ce1eea7b0ffa5932e064"
+  },
+  {
+    "asset_id": "S105-0539",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Cable Take Up Big.wav",
+    "relative_path": "机械_ ck_03_03/turn_cable_take_up_big.wav",
+    "sha256": "9df5a08452bdf4f21b95f02cac56204434c9ddc57c5a2d83d67ce396bdfa8c59"
+  },
+  {
+    "asset_id": "S105-0540",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Cable Take Up Medium.wav",
+    "relative_path": "机械_ ck_03_03/turn_cable_take_up_medium.wav",
+    "sha256": "419f0e0466d1c38b882ffa910aa33a0a606018e1c897f61803828802f94dd7e3"
+  },
+  {
+    "asset_id": "S105-0541",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Calculating Machine Mercedes.wav",
+    "relative_path": "机械_ ck_03_03/turn_calculating_machine_mercedes.wav",
+    "sha256": "2a8c10289b5e18937571a440f6a164d745f5bf75ab0fc904a9d116c1dc01a2ec"
+  },
+  {
+    "asset_id": "S105-0542",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Calculating Machine Fazit.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_calculating_machine_fazit.wav",
+    "sha256": "77718723faa25979c8dfdda826c1b6623e400e722fafd0e108b8dda34ea10dad"
+  },
+  {
+    "asset_id": "S105-0543",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Calculating Machine Madas.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_calculating_machine_madas.wav",
+    "sha256": "73151b287d9d382d6416bd5beb423304c0e410b3afdf0b36c1f5175468bb81f5"
+  },
+  {
+    "asset_id": "S105-0544",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Checkwriter Cheque Punch Corp.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_checkwriter_cheque_punch_corp.wav",
+    "sha256": "0f15e22ef4fe473c750c9a63a64bf275d024bf6da50567abaf66e333efe5e2e6"
+  },
+  {
+    "asset_id": "S105-0545",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Snap Sequence Adding Machine Burroughs.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_snap_sequence_adding_machine_burroughs.wav",
+    "sha256": "18cc5f707cbf987ad936dda808bb647dd31e96e9e21d85b178877299e55b2323"
+  },
+  {
+    "asset_id": "S105-0546",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Squeak Adding Machine Burroughs.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_squeak_adding_machine_burroughs.wav",
+    "sha256": "722e6e731180448dacff7a2d98e4950e9202d62f1370fd1bdd34f552a3a5c7d5"
+  },
+  {
+    "asset_id": "S105-0547",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Click Typewriter Standard.wav",
+    "relative_path": "机械_ ck_03_03/turn_click_typewriter_standard.wav",
+    "sha256": "348ba8c4b131e2be42d717c7531d80ccbcb3f59d138ff4819eec0dd5dfe40778"
+  },
+  {
+    "asset_id": "S105-0548",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Constant Calculating Machine Brunsviga.wav",
+    "relative_path": "机械_ ck_03_03/turn_constant_calculating_machine_brunsviga.wav",
+    "sha256": "c47582ee2be5899cca9913deaa2035aa30fc5431975a9beffeeb0f10b62ed64d"
+  },
+  {
+    "asset_id": "S105-0549",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Constant Typewriter Mercedes Five.wav",
+    "relative_path": "机械_ ck_03_03/turn_constant_typewriter_mercedes_five.wav",
+    "sha256": "1ca010d727fd937dc6e1d82566d670fa3c70243a9c154908c4e27b10d804117b"
+  },
+  {
+    "asset_id": "S105-0550",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Constant Typewriter Valentine.wav",
+    "relative_path": "机械_ ck_03_03/turn_constant_typewriter_valentine.wav",
+    "sha256": "9ca62f577022ef4a443bc8f7f5a731f74590bd57ffcd139d57e069fe47c585ce"
+  },
+  {
+    "asset_id": "S105-0551",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Pipe Milling Resonating Turning Sequence.wav",
+    "relative_path": "机械_ ck_03_03/turn_pipe_milling_resonating_turning_sequence.wav",
+    "sha256": "b825f7e4af1d9d0e38250a2191b56263b68b09309b8066333e8f85f8e5139cf3"
+  },
+  {
+    "asset_id": "S105-0552",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Hoist Big Roll Long.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_hoist_big_roll_long.wav",
+    "sha256": "9ed26feb9175d1c96e5a7fcd061249d453ec3a666e06f452e6eff92cf1bff4d7"
+  },
+  {
+    "asset_id": "S105-0553",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Hoist Big Roll Very Short Multiple.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_hoist_big_roll_very_short_multiple.wav",
+    "sha256": "405fadd13cea17a44c69c0fc0517a3ce7ce8943e05512293f1ca5762dab61878"
+  },
+  {
+    "asset_id": "S105-0554",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Metal Vocal Resonance Small Long 01.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_metal_vocal_resonance_small_long_a.wav",
+    "sha256": "e94c271dfa43ed17acc316b973eb34f5ffbc298cf89b4dda27c0443077375c74"
+  },
+  {
+    "asset_id": "S105-0555",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Metal Vocal Resonance Small Long 02.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_metal_vocal_resonance_small_long_b.wav",
+    "sha256": "90dc10bb45011442892fedbead8cbf386c1e0651089c1cc5d3d2aa303089e715"
+  },
+  {
+    "asset_id": "S105-0556",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Metal Vocal Resonance Small Short.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_metal_vocal_resonance_small_short.wav",
+    "sha256": "811b6ebd0cb2d32074fd947271082f11ce1d9a73004128a24ac3fe5c1d126208"
+  },
+  {
+    "asset_id": "S105-0557",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Ratchet Metal Vocal Resonance Small Single.wav",
+    "relative_path": "机械_ ck_03_03/turn_ratchet_metal_vocal_resonance_small_single.wav",
+    "sha256": "9b3f9f4ced01526270934759ebb66116eb2dc8972cee8509495333d5dcd1cc78"
+  },
+  {
+    "asset_id": "S105-0558",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Snap Calculating Machine Triumphator.wav",
+    "relative_path": "机械_ ck_03_03/turn_snap_calculating_machine_triumphator.wav",
+    "sha256": "851328c77892964f621b5a0b81830d4a62cedb1005f86ec8ba5d08695784da5e"
+  },
+  {
+    "asset_id": "S105-0559",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Squeak Constant Printing Machine Renum.wav",
+    "relative_path": "机械_ ck_03_03/turn_squeak_constant_printing_machine_renum.wav",
+    "sha256": "3728a735944c988a11cefe27eebd002d9215053f685589d0b511291b7136fac2"
+  },
+  {
+    "asset_id": "S105-0560",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Squeak Constant Printing Machine.wav",
+    "relative_path": "机械_ ck_03_03/turn_squeak_constant_printing_machine.wav",
+    "sha256": "de5c6dbcdb723713c7d2ac5918e0c9e3315a75bbb49771985584c9b8569b30d0"
+  },
+  {
+    "asset_id": "S105-0561",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Squeak Sharpener Constant.wav",
+    "relative_path": "机械_ ck_03_03/turn_squeak_sharpener_constant.wav",
+    "sha256": "7cb79bd8672be50c581b670ac44f704818f4a8ea41be41cd6f95bcabe3f8af8b"
+  },
+  {
+    "asset_id": "S105-0562",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Squeak Sharpener Single.wav",
+    "relative_path": "机械_ ck_03_03/turn_squeak_sharpener_single.wav",
+    "sha256": "748df7d0ce7200f509e312c3b654b6e3e5a0e6df0e9b1f9e9a99ab8883ed432b"
+  },
+  {
+    "asset_id": "S105-0563",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Toothed Wheels Calculating Machine Fazit.wav",
+    "relative_path": "机械_ ck_03_03/turn_toothed_wheels_calculating_machine_fazit.wav",
+    "sha256": "1ff21aa1c330deaa23d9a3784b5ee00a722dc0fc0ac13ca07f9c74c360070ad5"
+  },
+  {
+    "asset_id": "S105-0564",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Toothed Wheels Calculating Machine Felix B3.wav",
+    "relative_path": "机械_ ck_03_03/turn_toothed_wheels_calculating_machine_felix.wav",
+    "sha256": "1382011b59c484bcf760955302039b8cea4c9dea69c147fcf7b8921f87f987ca"
+  },
+  {
+    "asset_id": "S105-0565",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Wood Winnower Model Stopped.wav",
+    "relative_path": "机械_ ck_03_03/turn_wood_winnower_model_stopped.wav",
+    "sha256": "7aa9d052a7a2499290244868f8959804d76103688e0c68f8c1ebe478108dc1e6"
+  },
+  {
+    "asset_id": "S105-0566",
+    "original_relative_path": "机械_ ck_03_03/MECK TURN Wood Winnower Model.wav",
+    "relative_path": "机械_ ck_03_03/turn_wood_winnower_model.wav",
+    "sha256": "482ba5bd8210a76e98e5eec90b0a4c630a735d558db39619c91b2d9eb059c443"
+  }
+]

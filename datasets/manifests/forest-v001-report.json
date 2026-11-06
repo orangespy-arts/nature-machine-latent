@@ -1,0 +1,23 @@
+{
+  "collection": "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】",
+  "files": 46,
+  "bytes": 3649136962,
+  "duration_seconds": 6394.88,
+  "sample_rates": {
+    "96000": 44,
+    "44100": 2
+  },
+  "channels": {
+    "2": 44,
+    "1": 2
+  },
+  "bit_depths": {
+    "24": 46
+  },
+  "folders": {
+    "【SFX】森林自然 林地鸟鸣 长时值音效【DFSJ】": 46
+  },
+  "duplicate_groups": [],
+  "errors": [],
+  "limitations": "PCM structural read and byte-identical duplicate check only. No listening, clipping/silence analysis, perceptual duplicate detection, or license verification."
+}

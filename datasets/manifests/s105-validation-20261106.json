@@ -1,0 +1,16 @@
+{
+  "files": 566,
+  "errors": [],
+  "pending_metadata": {
+    "recording_group": 566,
+    "category": 566,
+    "sound_family": 566,
+    "license": 566,
+    "split": 566
+  },
+  "queue_reviews": {
+    "pending": 78
+  },
+  "files_checked": true,
+  "limitations": "Metadata and optional file existence checks only. No audio decoding, hash recomputation, listening, license verification, or confirmation of recording groups. Nonempty metadata is not proof of training readiness."
+}

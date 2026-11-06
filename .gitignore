@@ -27,14 +27,17 @@ lightning_logs/
 *.onnx
 events.out.tfevents.*
 
-# 声音素材默认独立存储；需提交示例时先制定 Git LFS 规则
-*.wav
-*.flac
-*.aiff
-*.aif
-*.mp3
-*.ogg
-*.m4a
+# 本地音频素材不进入 Git（含大小写扩展名）；清单与说明保留
+*.[wW][aA][vV]
+*.[fF][lL][aA][cC]
+*.[aA][iI][fF][fF]
+*.[aA][iI][fF]
+*.[mM][pP]3
+*.[oO][gG][gG]
+*.[mM]4[aA]
+*.[aA][aA][cC]
+*.[oO][pP][uU][sS]
+*.[wW][mM][aA]
 
 # 系统临时文件
 .DS_Store
