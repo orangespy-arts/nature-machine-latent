@@ -30,12 +30,6 @@ datasets/
 - 按“自然素材／素材批次”归档。鸟鸣、虫鸣、风叶、雨声等细分类待试听后写入清单，不仅凭文件名移动分类。
 - 素材共 46 个 WAV；来源、许可、录音分组和训练划分尚待确认。详见 [素材报告](../docs/materials-forest.md)。
 
-在项目根目录校验：
-
-```powershell
-python scripts/validate_manifest.py --manifest datasets/manifests/forest-v001.csv --root datasets/raw/nature/forest-v001
-```
-
 ## 机械素材
 
 - 566 个 S105 音效已从下载目录移入 `datasets/raw/machine/s105-v001/`，下载目录不再保留这一份素材。
@@ -44,9 +38,6 @@ python scripts/validate_manifest.py --manifest datasets/manifests/forest-v001.cs
 - 清理前元数据保存在 `raw/machine/s105-tag-backup-v2/`；[清理报告](manifests/s105-tags-cleaned.json) 记录修改前后文件 SHA-256 和不变的 PCM 校验值。`s105-tag-backup/` 是首次因写入权限失败而留下的单文件备份，不是完整备份集。
 - 主清单使用清理后的文件哈希；重命名映射、首次扫描报告保留历史记录，不作为当前完整文件哈希使用。
 
-```powershell
-python scripts/validate_manifest.py --manifest datasets/manifests/s105-v001.csv --queue datasets/manifests/s105-listening-queue-v001.csv --root datasets/raw/machine/s105-v001
-```
 
 ## 森林素材预处理版本 forest-v001-44k1-mono
 

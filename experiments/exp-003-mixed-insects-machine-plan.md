@@ -1,7 +1,45 @@
 # exp-003：自然虫鸣＋机械声混合训练计划
 
-日期：2026-11-11。状态：计划已建立，尚未选片、预处理或启动训练。
+日期：2026-11-11。状态：数据已划分并预处理，测速完成，**等待正式启动训练**。
 用户决定这一轮改用自然与机械混合素材训练。[exp-002 纯机械计划](exp-002-mechanical-insects-plan.md) 保留并暂停，不与本实验混用素材或结论。
+
+## 实际执行（2026-11-11 更新，取代下文第 2 节的“只取虫鸣”建议）
+
+**数据**：用户在笔记本上准备的 [forest-s105ck01-v001](../docs/processing-forest-s105ck01-v001.md)：全部 46 个森林素材＋按声学特征匹配的 188 个 S105 机械素材，均为 44.1 kHz 单声道 24-bit。自然侧不只虫鸣，还含鸟、雨、风、水、夜间森林。
+
+**划分**：[forest-s105ck01-v001-split.csv](../datasets/manifests/forest-s105ck01-v001-split.csv)，由 [`make_split_forest_s105ck01.py`](../scripts/make_split_forest_s105ck01.py) 生成。按录音组整组留出，无组跨两边；分组依据文件名，未经试听。
+
+| | 训练文件 | 训练块数（5.944 秒） | 训练原始时长 | 留出 |
+| --- | --- | --- | --- | --- |
+| 机械 | 178 | 934 | 101.3 分钟 | 10 个文件，313.5 秒（打字机 Underwood、计算器 HD Seven、棘轮杆、扭力扳手、投币机 Mum Hen、链条） |
+| 自然 | 39 | 936 | 94.8 分钟 | 7 个文件，706.3 秒（night_forest_a、birdsong_d/e、stream_birdsong、forest_light_rain、无编号的蟋蟀＋鸟鸣与风叶＋鸟鸣） |
+
+- 平衡口径：用户要求“模型实际听到的声音两边一样”→ 按 RAVE 实际使用的块数 1:1（934 : 936）。机械文件较短、切块丢尾更多，所以按原始时长机械多约 6.5 分钟。
+- 已知偏差：机械侧停顿多，处理记录估算有声时间约为森林侧的 58%；块数相等不代表“有声内容”相等。
+- 检验集中的虫声只有 forest_crickets_birdsong（混有鸟鸣）；唯一纯蟋蟀 night_crickets 以及 birdsong_crickets、birdsong_insects、bees_birdsong 都留在训练中。
+
+**位置（4070）**：`E:\nature-machine-latent-data\processed\forest-s105ck01-v001\{train,heldout}\{machine,nature}`（234 个副本 SHA-256 已核对），数据库 `...\db`：1870 条，约 3 小时 5 分钟；`--max_db_size 3`，实际数据 942 MB。
+
+**测速（v2_small，batch 8，单声道）**
+
+| 阶段 | 速度 | 显存（整卡，含桌面约 0.9–1.1 GiB） |
+| --- | --- | --- |
+| 第一阶段（cuDNN 开） | 约 13.5 步/秒 | 峰值约 3.9 GiB |
+| 第二阶段（cuDNN 关，见下） | 约 5.1–5.6 步/秒 | 未单独采样，待正式训练记录 |
+
+**第二阶段崩溃与对策**：官方 `rave train` 在切换到对抗训练后的第一步报 `CUDA error: an illegal memory access`（判别器反向传播，rave/model.py:404；`CUDA_LAUNCH_BLOCKING=1` 下稳定复现）。关闭 cuDNN 后通过。改用 [`rave_train_windows.py`](../scripts/rave_train_windows.py)（仅在进入第二阶段时关闭 cuDNN）和 [`run_training_windows.ps1`](../scripts/run_training_windows.ps1)（异常退出后从最新检查点自动续训，最多重试 5 次）。已验证：越过切换、从第二阶段检查点恢复、通过 runner 自动续接。
+
+**预计时间**：第一阶段 1,000,000 步 ÷ 13.5 ≈ **20.6 小时**；第二阶段每 50 万步约 **26 小时**（按 5.3 步/秒）。第二阶段长度按试听决定，计划先跑到 1,500,000 步（总计约 2 天）后评估。检查点在每次验证时保存（每 10,000 步：第一阶段约 12 分钟、第二阶段约 31 分钟一次），崩溃最多损失这么多进度。
+
+**正式运行命令（待用户确认后执行）**：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_training_windows.ps1 `
+  -Name exp003-forest-s105ck01 `
+  -DbPath E:\nature-machine-latent-data\processed\forest-s105ck01-v001\db `
+  -OutPath E:\nature-machine-latent-data\checkpoints\exp-003 `
+  -ExtraArgs "--max_steps 1500000"
+```
 
 ## 1. 实验要回答什么
 
@@ -17,7 +55,7 @@
 - 潜在插值、轨迹编排由外围程序实现，不是模型自身行为。
 - 教程提示：声音类型差异过大时模型可能学不全。两类之间的差异正是本实验的风险点，因此各自只选一个声音家族，并尽量挑选在节奏、频段或颗粒感上有共同点的素材（例如细密、重复的摩擦／棘轮与持续虫鸣）。
 
-## 2. 素材与比例（建议，待用户确认）
+## 2. 素材与比例（最初建议，已被上方“实际执行”取代）
 
 | 部分 | 来源 | 训练（原始片段） | 检验（不同原始录音，不参与训练） |
 | --- | --- | --- | --- |

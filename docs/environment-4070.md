@@ -54,11 +54,17 @@ $env:PATH = "E:\envs\rave-2.3.1\Scripts;$env:PATH"   # 或运行 E:\envs\rave-2.
    - 实测 `rave preprocess`：默认 protobuf（upb）后端在第 3 个片段报 `EncodeError: Failed to serialize proto`；强制纯 Python 后端则在约 18 个片段后停滞。同样的数据在主进程串行写入完全正常，问题出在其 `multiprocessing.Pool` + `Manager().Queue` 并行读取。
    - 源码中 `search_for_audios` 同时匹配 `*.wav` 和 `*.WAV`；Windows 路径不分大小写，每个文件会被收录两次（重复片段会进入训练和内部验证）。
    - 包装脚本直接调用已安装 RAVE 的预处理函数，只把并行读取改为串行、按路径去重；数据库格式与 `metadata.yaml` 不变。合成数据：20 个 30 秒文件 → 100 条，无重复。
-2. **LMDB 写入期间按 `--max_db_size` 预占磁盘**：报错中断的那次运行留下的 `data.mdb` 为 2048 MB（= `--max_db_size 2`）；正常结束的运行关闭数据库后只有 50.4 MB（100 条）。即写入时需要至少这么多空闲磁盘，异常中断会留下满额文件。默认 100 GB 不可用；每次按数据量显式设置并留余量（每条约 0.5 MB / 5.9 秒，单声道 44.1 kHz）。
+2. **LMDB 预处理后按 `--max_db_size` 占满磁盘**：forest-s105ck01-v001 用 `--max_db_size 3` 预处理后 `data.mdb` 为 3072 MB，实际数据仅 942 MB（LMDB `last_pgno` 统计）。smoke 数据库从 2048 MB 缩到 50.4 MB 发生在训练打开它之后（修改时间与恢复训练同时），推测训练端以只读方式打开时按实际大小截断，未逐项验证。结论：预处理时需要至少 `--max_db_size` 的空闲磁盘，之后文件可能保持满额。默认 100 GB 不可用；按数据量显式设置并留余量（每条约 0.5 MB / 5.9 秒，单声道 44.1 kHz）。
 3. **GPU 自动选择失败**：[`rave.core.setup_gpu`](https://github.com/acids-ircam/RAVE/blob/v2.3.1/rave/core.py) 只选择显存占用低于 5% 的 GPU；本机桌面已占用约 9%，因此报 `Trainer(devices=[])`。训练时必须加 `--gpu 0`。
-4. [`train.py`](https://github.com/acids-ircam/RAVE/blob/v2.3.1/scripts/train.py) 在 Windows 上强制 `num_workers=0`，数据在主进程加载。正式测速时观察 GPU 利用率是否受限。
-5. 默认 `--max_steps 6000000`、`--val_every 10000`、`--save_every 500000`；smoke 运行需显式限制步数。
-6. 当日调试时有一个停滞的预处理进程（PID 28920，17:49 启动）未能由 Claude 结束（自动模式拒绝终止进程），需用户在任务管理器中结束或重启后消失。
+4. **第二阶段（对抗训练）一开始就崩溃** → 用 [`scripts/rave_train_windows.py`](../scripts/rave_train_windows.py)（或自动续训的 [`run_training_windows.ps1`](../scripts/run_training_windows.ps1)）代替 `rave train`。
+   - 实测：`--override PHASE_1_DURATION=500` 时，第 500 步判别器反向传播报 `CUDA error: an illegal memory access`（rave/model.py:404），`CUDA_LAUNCH_BLOCKING=1` 下稳定复现。torch 2.5.0+cu121 内置 cuDNN 9.1.0。
+   - 关闭 cuDNN 即可通过。第一阶段关闭 cuDNN 会从约 13.5 降到 10.6 步/秒，所以包装只在 `warmed_up` 后关闭；第二阶段约 5.1–5.6 步/秒。
+   - 根因是 cuDNN 内核还是 torch／驱动组合，未进一步区分；升级 torch 受 nn-tilde 固定 `torch==2.5` 限制。
+   - 默认 `PHASE_1_DURATION` 为 1,000,000，未用包装时正式训练会在约 20 小时后崩溃。
+5. **检查点只在验证时保存**（每 `--val_every` 步，默认 10,000），不是每个 epoch；中断最多损失到上一次验证之后的进度。另每 `--save_every`（默认 500,000）步额外保留一个检查点。
+6. [`train.py`](https://github.com/acids-ircam/RAVE/blob/v2.3.1/scripts/train.py) 在 Windows 上强制 `num_workers=0`，数据在主进程加载。正式测速时观察 GPU 利用率是否受限。
+7. 默认 `--max_steps 6000000`、`--val_every 10000`、`--save_every 500000`；smoke 运行需显式限制步数。
+8. 当日调试时留下的停滞预处理进程（PID 28920）已由用户结束。
 
 ## Smoke 验证（合成音频，非真实素材）
 

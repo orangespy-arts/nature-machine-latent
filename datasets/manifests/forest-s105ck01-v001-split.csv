@@ -195,7 +195,7 @@ nature/birdsong_b.wav,FOREST-0041,nature,鸟鸣,forest:S08AM.33-34,train,111.264
 nature/birdsong_c.wav,FOREST-0042,nature,鸟鸣,forest:S08AM.33-34,train,149.317,25,dc1435c673877a3a56d7179fcdf7be4fcab5731f625f5a334997be4f3cb58a7d
 nature/birdsong_crickets.wav,FOREST-0046,nature,鸟鸣与蟋蟀,forest:SFXB.71,train,120.128,20,61a9d0df8c7424af66ca169188d9ba1db37ef13629c697273bb4b4c14fca5aa9
 nature/birdsong_d.wav,FOREST-0043,nature,鸟鸣,forest:SFXB.72,heldout,60.075,10,f8465cfc582edd8e06cba3752e13a63b2849f93286f984ccd2e43d2b80d5146a
-nature/birdsong_e.wav,FOREST-0044,nature,鸟鸣,forest:SFXB.73,train,120.139,20,4c8346000ac18f02aba1cb4f08aaa154b8b94d1497f7d4c02cd4cb9234ee639b
+nature/birdsong_e.wav,FOREST-0044,nature,鸟鸣,forest:SFXB.73,heldout,120.139,20,4c8346000ac18f02aba1cb4f08aaa154b8b94d1497f7d4c02cd4cb9234ee639b
 nature/birdsong_insects.wav,FOREST-0045,nature,鸟鸣与昆虫声,forest:ZA01.309,train,134.853,22,a547f513b19f07585b96a7c08e125ab4e5a0d0ed4caa85133550fe00717fe6a3
 nature/dawn_birdsong_a.wav,FOREST-0031,nature,清晨鸟鸣,forest:SFXB.75-76,train,133.979,22,d31ab07822349bc560e8b3c3e476dd592d88c089cddba792225f2b8c72c27f76
 nature/dawn_birdsong_b.wav,FOREST-0032,nature,清晨鸟鸣,forest:SFXB.75-76,train,157.125,26,9bd19ecc2bce41582784317daaef598c30ff353cb210edec8e64f8fcf2a3a1a2
@@ -230,6 +230,6 @@ nature/night_forest_f.wav,FOREST-0006,nature,夜晚森林,forest:BW.1757-1761,tr
 nature/night_forest_g.wav,FOREST-0007,nature,夜晚森林,forest:BW.60985-60988,train,132.965,22,0dc029a184022ff122f1395fe941d257a976faca552408ec8ade32ad3980a337
 nature/night_forest_river_a.wav,FOREST-0008,nature,夜晚森林河流,forest:BW.60985-60988,train,200.629,33,7073113c3d20f215d7c3147cd4ab53989b6010d1ebcb2c747b4b062b935ceb20
 nature/night_forest_river_b.wav,FOREST-0009,nature,夜晚森林河流,forest:BW.60985-60988,train,151.888,25,57dd831498c5dc21b52daa0f5b90cfe9eed35ea5550d5121c79002c4be5daf49
-nature/stream_birdsong.wav,FOREST-0011,nature,小溪鸟鸣,forest:SFXB.74,train,119.797,20,4c57e2c1e9af66ad1fb4523ee683d0cd13a160126bca5fba6f1336cafeb03479
+nature/stream_birdsong.wav,FOREST-0011,nature,小溪鸟鸣,forest:SFXB.74,heldout,119.797,20,4c57e2c1e9af66ad1fb4523ee683d0cd13a160126bca5fba6f1336cafeb03479
 nature/wind.wav,FOREST-0037,nature,风声,forest:BW.1753,train,119.989,20,286e83589321b1f4a9742b16fc49da7114a12fa24b63134f49295fcc1cf47528
 nature/wind_leaves.wav,FOREST-0036,nature,风吹树叶声,forest:ZA01.310,train,130.491,21,b7545870f48bd03f8709ae0117244ad6c995511630cf93257009ff8e76e4bfae

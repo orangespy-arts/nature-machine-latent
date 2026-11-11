@@ -3,6 +3,20 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-11｜exp-003 划分定稿、预处理、测速，修复第二阶段崩溃
+
+- 用户确认平衡口径为“模型实际听到的声音两边一样”：按 RAVE 训练块数 1:1。自然侧另留出 birdsong_e、stream_birdsong，最终训练机械 934 块、自然 936 块；划分定稿为 [forest-s105ck01-v001-split.csv](../datasets/manifests/forest-s105ck01-v001-split.csv)，生成脚本 `scripts/make_split_forest_s105ck01.py`（可逐字节复现）。
+- 4070 上复制 train／heldout 并核对哈希，预处理得到 1870 条（约 3 小时 5 分钟）。
+- 测速：第一阶段约 13.5 步/秒；官方 `rave train` 在进入第二阶段第一步因 cuDNN 报 CUDA illegal memory access。新增 `scripts/rave_train_windows.py`（第二阶段关闭 cuDNN，约 5.1–5.6 步/秒）和 `scripts/run_training_windows.ps1`（崩溃后自动从最新检查点续训，最多 5 次），均已验证。
+- 更正：检查点只在验证时保存（每 10,000 步），不是每个 epoch；LMDB 预处理后 `data.mdb` 可能保持 `--max_db_size` 大小。
+- 估时：第一阶段约 20.6 小时；第二阶段每 50 万步约 26 小时。详见 [exp-003](../experiments/exp-003-mixed-insects-machine-plan.md)。正式训练待用户确认后启动。
+
+## 2026-11-11｜删除清单校验脚本
+
+- 按用户要求删除 `scripts/validate_manifest.py` 及其测试 `scripts/test_validate_manifest.py`，并移除 `scripts/README.md`、`datasets/README.md` 中的用法说明。
+- 此后不再有自动的清单结构、许可字段、录音分组／相同哈希跨划分检查；许可栏可保持 unknown 进入训练划分。
+- 历史校验报告 `datasets/manifests/s105-validation-20261106.json` 与本日志早前记录保留不动。
+
 ## 2026-11-11｜公开文档中的素材来源改为中性描述
 
 - 应用户要求，仓库当前文档不再写具体下载路径与商业音效包名称，改为“第三方音效素材，来源见本地私有记录”；涉及 `datasets/README.md`、`docs/materials-forest.md`、`docs/materials-s105.md`、`experiments/exp-002…`、本日志一处。

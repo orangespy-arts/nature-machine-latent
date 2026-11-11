@@ -14,8 +14,7 @@
     E:\\envs\\rave-2.3.1\\Scripts\\python.exe scripts/rave_preprocess_windows.py ^
         --input_path <音频目录> --output_path <数据库目录> --channels 1 --max_db_size 5
 
-注意：Windows 上 LMDB 写入期间会按 --max_db_size 预占磁盘（正常结束后缩回实际大小，
-异常中断则留下满额文件）。请按数据量显式设置，不要使用默认的 100 GB。
+注意：Windows 上 LMDB 会按 --max_db_size 占用磁盘，预处理完成后 data.mdb 可能仍是满额大小。请按数据量显式设置，不要使用默认的 100 GB。
 不支持 --lazy（项目在 Windows 上只使用非 lazy 数据库）。
 """
 
