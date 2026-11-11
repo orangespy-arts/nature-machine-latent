@@ -1,6 +1,6 @@
-param([switch]$Apply)
+param([Parameter(Mandatory = $true)][string]$Root, [switch]$Apply)
 $ErrorActionPreference = 'Stop'
-$root = (Resolve-Path -LiteralPath 'D:\BaiduNetdiskDownload\S105 金属转动碰撞音效').Path
+$root = (Resolve-Path -LiteralPath $Root).Path
 $repo = Split-Path $PSScriptRoot -Parent
 $manifest = Join-Path $repo 'datasets/manifests/s105-v001.csv'
 $queuePath = Join-Path $repo 'datasets/manifests/s105-listening-queue-v001.csv'
