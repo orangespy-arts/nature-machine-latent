@@ -3,6 +3,13 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-11｜exp-003 正式训练启动；E 核降速问题与对策
+
+- 用户 20:27:50 用 `run_training_windows.ps1` 启动正式训练（`--max_steps 1500000`），运行目录 `checkpoints\exp-003\exp003-forest-s105ck01_d744cc98b7\`；第 10,000 步首次验证并保存检查点，未重启。
+- 约 23,600 步起第一阶段从 13.7 降到约 11 步/秒：训练主线程被 Windows 10 调度到 E 核。用户手动把进程限制到 P 核（逻辑核 0–15）后回到 13.55 步/秒。
+- `run_training_windows.ps1` 新增 `-AffinityMask`（默认 65535），续训子进程继承；当前运行中的续训进程也已补设。详见 [4070 环境检查](environment-4070.md) 第 6 条。
+- 按 13.5 步/秒估，第一阶段约在 11-12 傍晚结束。
+
 ## 2026-11-11｜exp-003 划分定稿、预处理、测速，修复第二阶段崩溃
 
 - 用户确认平衡口径为“模型实际听到的声音两边一样”：按 RAVE 训练块数 1:1。自然侧另留出 birdsong_e、stream_birdsong，最终训练机械 934 块、自然 936 块；划分定稿为 [forest-s105ck01-v001-split.csv](../datasets/manifests/forest-s105ck01-v001-split.csv)，生成脚本 `scripts/make_split_forest_s105ck01.py`（可逐字节复现）。

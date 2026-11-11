@@ -63,6 +63,9 @@ $env:PATH = "E:\envs\rave-2.3.1\Scripts;$env:PATH"   # 或运行 E:\envs\rave-2.
    - 默认 `PHASE_1_DURATION` 为 1,000,000，未用包装时正式训练会在约 20 小时后崩溃。
 5. **检查点只在验证时保存**（每 `--val_every` 步，默认 10,000），不是每个 epoch；中断最多损失到上一次验证之后的进度。另每 `--save_every`（默认 500,000）步额外保留一个检查点。
 6. [`train.py`](https://github.com/acids-ircam/RAVE/blob/v2.3.1/scripts/train.py) 在 Windows 上强制 `num_workers=0`，数据在主进程加载。正式测速时观察 GPU 利用率是否受限。
+   - **训练主线程被调度到 E 核会降速**（2026-11-11 exp-003 实测）：第 103 轮（约 23,600 步）起第一阶段从 13.7 突降到约 11 步/秒，GPU 利用率从 71–74% 降到约 60%，GPU 未降频；逐核采样显示主线程主要在逻辑核 23 上（按常规编号 16–23 为 E 核，未逐一核实）。关闭浏览器等程序只回到约 11.5；把进程亲和性限制到逻辑核 0–15（P 核）后立即回到 13.55 步/秒、GPU 73%。
+   - 依据：Intel 说明 Thread Director 针对 Windows 11 优化（[Intel 支持文章](https://www.intel.com/content/www/us/en/support/articles/000091284/processors.html)），Windows 10 只有较简单的 HGS（[AnandTech](https://at-web1.www.anandtech.com/show/16959/intel-innovation-alder-lake-november-4th/3)）；[TechPowerUp](https://techpowerup.com/review/alder-lake-windows-10-performance/8.html) 也观察到程序被错误调度到 E 核。触发原因（例如窗口转入后台）未确认。
+   - 对策：`run_training_windows.ps1` 默认 `-AffinityMask 65535`，启动时限制自身，训练子进程（经过 venv 启动器）继承，已验证。直接运行 `rave_train_windows.py` 时手动设置：`(Get-Process -Id <PID>).ProcessorAffinity = 65535`。
 7. 默认 `--max_steps 6000000`、`--val_every 10000`、`--save_every 500000`；smoke 运行需显式限制步数。
 8. 当日调试时留下的停滞预处理进程（PID 28920）已由用户结束。
 

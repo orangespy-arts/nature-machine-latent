@@ -25,7 +25,7 @@ python scripts/rave_preprocess_windows.py --input_path <音频目录> --output_p
 
 `rave_train_windows.py` 参数与 `rave train` 相同，仅在模型进入第二阶段（对抗训练）时关闭 cuDNN：4070 上 torch 2.5.0+cu121（cuDNN 9.1）在切换后第一步报 CUDA illegal memory access。第一阶段保留 cuDNN 以维持速度。训练须加 `--gpu 0`。
 
-`run_training_windows.ps1` 调用上述包装；异常退出后从同名运行目录（`<Name>_<配置哈希>`）的最新检查点自动续训，最多重试 `-MaxRetries` 次（默认 5），每次退出码写入 `<OutPath>\<Name>-runner.log`。`-ExtraArgs` 是一个按空格拆分的字符串，例如 `-ExtraArgs "--max_steps 1500000"`。用相同参数再次运行即从最新检查点继续。
+`run_training_windows.ps1` 调用上述包装；异常退出后从同名运行目录（`<Name>_<配置哈希>`）的最新检查点自动续训，最多重试 `-MaxRetries` 次（默认 5），每次退出码写入 `<OutPath>\<Name>-runner.log`。`-ExtraArgs` 是一个按空格拆分的字符串，例如 `-ExtraArgs "--max_steps 1500000"`。用相同参数再次运行即从最新检查点继续。`-AffinityMask`（默认 65535，即逻辑核 0–15／13700K 的 P 核；0 为不限制）把训练进程限制在 P 核上，避免 Windows 10 把主线程调度到 E 核而降速。
 
 详见 [4070 环境检查](../docs/environment-4070.md)。
 
