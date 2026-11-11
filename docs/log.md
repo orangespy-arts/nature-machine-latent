@@ -3,6 +3,18 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-11｜4070 台式机环境检查
+
+- 在 4070 台式机只读检查：Windows 10 专业版、i7-13700K、32 GB 内存、RTX 4070 12 GB、驱动 546.33；E: 剩余约 218 GB，C:/D: 空间紧张。
+- 已有 Python 3.12（仅 CPU 版 torch）与 3.11.9；未装 RAVE、torchaudio、FFmpeg、Conda；本机尚无素材音频。
+- 核对 RAVE：master 代码与 2.3.1 相同；2.3.1 固定 scipy 1.10.0，训练环境须用 Python 3.11。v2_small 官方最低 8 GB 显存，本机可作候选；v2 需 16 GB，不适合。
+- 用户确认布局：数据根目录 `E:\nature-machine-latent-data\`，虚拟环境 `E:\envs\rave-2.3.1\`，均在仓库外；本机路径写入 `.env`。
+- 安装 Python 3.11.9 虚拟环境：torch 2.5.0+cu121（受 nn-tilde 固定）、acids-rave 2.3.1、FFmpeg 9.0.2（仅在环境内）。依赖清单：[configs/requirements-4070-rave-2.3.1.txt](../configs/requirements-4070-rave-2.3.1.txt)。
+- 用合成音频验证：预处理 → v2_small 300 步 smoke 训练 → 检查点恢复 → streaming 导出与加载，全部通过；整卡显存峰值约 3.9 GiB。
+- Windows 实测问题：官方 `rave preprocess` 并行读取报错／停滞，且大小写重复收录文件 → 新增 [scripts/rave_preprocess_windows.py](../scripts/rave_preprocess_windows.py) 串行包装；LMDB 写入时按 `--max_db_size` 预占磁盘（中断会留下满额文件，正常结束后缩回实际大小）；训练须加 `--gpu 0`。详见 [4070 环境检查](environment-4070.md)。
+- 在数据目录写入 `E:\nature-machine-latent-data\AGENTS.md`（目录约定、只读原始素材、本机 RAVE 用法）和 `LOG.md`（目录操作日志，记录 smoke 产物位置）；仓库 `AGENTS.md` 增加指向说明。
+- 尚未传入真实素材或正式测速；phase 2 速度与显存未验证。
+
 ## 2026-11-06｜纯机械版本训练计划
 
 - 用户选择先尝试纯机械版本，并要求训练计划。
