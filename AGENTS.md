@@ -15,3 +15,9 @@
 
 - RTX 4070 台式机承担全部训练和训练试跑。
 - RTX 5070 笔记本用于素材准备、试听、项目管理、演奏及装置调试，不进行训练或短训练试跑。
+
+## 4070 台式机的仓库外目录
+
+- 数据：`E:\nature-machine-latent-data\`（raw / processed / checkpoints / exports / listening）。该目录有自己的 `AGENTS.md` 和 `LOG.md`；在其中建立、删除或大量写入内容后，在它的 `LOG.md` 顶部记录，重要决定同时写入本仓库 `docs/log.md`。
+- RAVE 环境：`E:\envs\rave-2.3.1\`。在 Windows 上预处理用 `scripts/rave_preprocess_windows.py`，训练加 `--gpu 0`，显式设置 `--max_db_size`；原因见 `docs/environment-4070.md`。
+- 原始素材只读；删除检查点、数据库或素材前须经用户确认。
