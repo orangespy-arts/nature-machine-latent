@@ -1,0 +1,47 @@
+{
+  "method": "kNN distance in pooled-standardized feature space; whole files, no trimming; signal proxy, not listening",
+  "features": [
+    "active_ratio",
+    "level_spread_db",
+    "onset_rate_hz",
+    "log_centroid",
+    "flatness_db",
+    "band_low",
+    "band_mid",
+    "band_high",
+    "band_air"
+  ],
+  "k": 3,
+  "reference_root": "D:\\Github\\nature-machine-latent\\datasets\\processed\\nature\\forest-v001-44k1-mono",
+  "candidate_root": "D:\\Github\\nature-machine-latent\\datasets\\raw\\machine\\s105-v001\\机械_ ck_01_03",
+  "reference_files": 46,
+  "reference_total_seconds": 6394.88,
+  "candidate_files": 237,
+  "candidate_total_seconds": 7647.95,
+  "target_seconds": 6394.88,
+  "selected_files": 188,
+  "selected_total_seconds": 6392.081,
+  "selected_active_seconds_estimate": 3692.1,
+  "reference_feature_mean": {
+    "active_ratio": 0.9893211554911759,
+    "level_spread_db": 6.136279137238212,
+    "onset_rate_hz": 2.2712368102152665,
+    "log_centroid": 12.15910134716479,
+    "flatness_db": -16.119993728140127,
+    "band_low": 0.050593495320008966,
+    "band_mid": 0.12558441716049382,
+    "band_high": 0.667834054509117,
+    "band_air": 0.15598803670202513
+  },
+  "pooled_feature_std": {
+    "active_ratio": 0.28659358761496206,
+    "level_spread_db": 8.934993725401085,
+    "onset_rate_hz": 2.1118893798822733,
+    "log_centroid": 1.5383650248592968,
+    "flatness_db": 8.93282176810237,
+    "band_low": 0.22002010098597788,
+    "band_mid": 0.14746470978884646,
+    "band_high": 0.24479514729059565,
+    "band_air": 0.2358858034280041
+  }
+}

@@ -47,3 +47,45 @@ python scripts/validate_manifest.py --manifest datasets/manifests/forest-v001.cs
 ```powershell
 python scripts/validate_manifest.py --manifest datasets/manifests/s105-v001.csv --queue datasets/manifests/s105-listening-queue-v001.csv --root datasets/raw/machine/s105-v001
 ```
+
+## 森林素材预处理版本 forest-v001-44k1-mono
+
+- 输出：`datasets/processed/nature/forest-v001-44k1-mono/`（被 Git 忽略），46 个文件，共 6394.88 秒，目录结构与原件相同；原件未修改。
+- 处理：各声道取平均下混为单声道 → soxr VHQ 重采样至 44100 Hz → 24-bit PCM。未做响度归一化、降噪或剪辑。（生成时脚本尚无峰值保护；本批无文件超过 0 dBFS。）
+- 依据：RAVE `scripts/preprocess.py` 默认 `--sampling_rate 44100`、`--channels 1`，且单声道时仅通过 ffmpeg `channelmap` 取第 0 声道，不做下混；因此预先下混，避免只用左声道。
+- 下混前检查过左右声道相关性：最低约 −0.03（`bird_calls_b`），无明显反相抵消；不相关声道平均后电平约降 3 dB。
+- 记录：[forest-v001-44k1-mono.json](manifests/forest-v001-44k1-mono.json) 保存处理参数、源与输出 SHA-256、时长和峰值。
+
+```powershell
+.venv\Scripts\python -I scripts/convert_audio.py --root datasets/raw/nature/forest-v001 --output datasets/processed/nature/forest-v001-44k1-mono --report datasets/manifests/forest-v001-44k1-mono.json
+```
+
+## 机械素材时长匹配初筛 s105-ck01-match-forest-v001
+
+- 从 `机械_ ck_01_03`（237 个文件，7647.95 秒）中选出 188 个整文件，共 6392.08 秒，与 forest-v001 总时长 6394.88 秒相差 2.8 秒。
+- 方法：两组素材都下混单声道、44.1 kHz，计算活动帧比例、电平起伏、起音密度、谱质心、谱平坦度及四个频段能量占比；以两组合并的均值和标准差标准化；对每个机械文件取与最近 3 条森林素材的平均距离作为得分；按得分从低到高累加，直到最接近目标时长。
+- 这是信号特征初筛，**不是试听结论**，也不代表“听起来像自然声”。所有机械文件与森林素材的距离都明显大于森林素材彼此之间的距离。
+- 文件时长不等于有效发声时长：入选文件按“距最响帧 40 dB 以内”估算的活动时长约 3692 秒，森林素材则几乎全程有声。若需要相同的有效时长，应先剪掉静音再匹配。
+- 改用仅以森林素材的统计量标准化（更偏重连续性）时，163 个入选文件中有 147 个与本版重合，差异集中在边缘文件。
+- 清单：[s105-ck01-match-forest-v001.csv](manifests/s105-ck01-match-forest-v001.csv)（全部 237 条，含排名、得分、`selected` 字段、最近的森林素材及特征值）；汇总：[s105-ck01-match-forest-v001.json](manifests/s105-ck01-match-forest-v001.json)。原件未复制、未修改。
+
+```powershell
+.venv\Scripts\python -I scripts/select_matching_audio.py --reference datasets/processed/nature/forest-v001-44k1-mono --candidates "datasets/raw/machine/s105-v001/机械_ ck_01_03" --output datasets/manifests/s105-ck01-match-forest-v001.csv --report datasets/manifests/s105-ck01-match-forest-v001.json
+```
+
+## 自然／机械配对目录 forest-s105ck01-v001
+
+```text
+datasets/processed/forest-s105ck01-v001/   # 被 Git 忽略
+  nature/    # 46 个文件，6394.88 秒：forest-v001-44k1-mono 的逐字节副本（去掉 forest_ambience 子目录）
+  machine/   # 188 个文件，6392.08 秒：s105-ck01-match-forest-v001 中 selected=1 的文件
+```
+
+- 两侧统一为 44.1 kHz、单声道、24-bit PCM。machine 侧由原件经 `convert_audio.py --selection` 生成，处理方式与 nature 侧相同（声道平均下混，soxr VHQ 重采样，无归一化或剪辑）。
+- 例外：18 个机械文件重采样后峰值超过 0.999，被整体衰减 0.011–1.132 dB，以免写入时削波。每个文件的衰减量见 [forest-s105ck01-v001-machine.json](manifests/forest-s105ck01-v001-machine.json) 中的 `gain_applied_db`。
+- 已核对：nature 副本哈希与 [forest-v001-44k1-mono.json](manifests/forest-v001-44k1-mono.json) 一致；machine 文件集与选片清单一致，源文件哈希与 `s105-v001.csv` 一致。
+- 两侧文件时长相当，但实际发声时长不对等：machine 侧估算约 3692 秒有声，nature 侧几乎全程有声。选片仅为特征初筛，未经试听。
+
+```powershell
+.venv\Scripts\python -I scripts/convert_audio.py --root "datasets/raw/machine/s105-v001/机械_ ck_01_03" --selection datasets/manifests/s105-ck01-match-forest-v001.csv --output datasets/processed/forest-s105ck01-v001/machine --report datasets/manifests/forest-s105ck01-v001-machine.json
+```
