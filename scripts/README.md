@@ -37,5 +37,13 @@ python scripts/rave_preprocess_windows.py --input_path <音频目录> --output_p
 python scripts/render_listening.py --model <model.ts> --input <heldout 目录> --output <listening 目录>
 ```
 
+## Max 延迟测量（Mac）
+
+`measure_max_latency.py` 读取 `instrument/max/exp-003/` 测试 patch 录下的双声道 WAV（左＝原声，右＝nn~ 输出），按 1 ms 包络互相关估计模型在 Max 信号链内的延迟（模型＋nn~ 缓冲），不含声卡输入／输出延迟。只用 Python 标准库。用 4070 生成的 typewriter 原声／重建拼成双声道验证：测得 239 ms，与 `render_listening.py` 的 238 ms 一致。
+
+```bash
+python3 scripts/measure_max_latency.py <录音.wav> [--max-lag-ms 1000]
+```
+
 后续在此添加音频质量检查、训练与导出脚本。
 脚本应通过参数接收本机路径，避免写死盘符；处理后的音频应输出到新目录，保留原始录音。
