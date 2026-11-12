@@ -3,6 +3,13 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-12｜exp-003 进入第二阶段；导出第一阶段模型
+
+- 17:01 到达第 1,000,000 步，`rave_train_windows.py` 按预期关闭 cuDNN 进入对抗训练，未崩溃、未重启；第二阶段约 5.4 步/秒，整卡显存约 7.5 GB（第一阶段约 4 GB）。预计 11-13 约 18:45 完成。
+- 应用户要求导出第一阶段模型（`epoch_1000000.ckpt`，streaming），4070 `exports\exp-003\exp003-forest-s105ck01-p1-step1000000_streaming.ts`，SHA-256 `b2b4e1fa…26fb7a2`；latent_size 4（fidelity 0.95）。两段 heldout 音频 encode/decode 运行正常，**尚未试听**。
+- 新增 `scripts/render_listening.py`，用该模型重建 17 个 heldout 文件，输出到 4070 `listening\exp-003\p1-step1000000\`（原电平、统一响度、A/B 对照、summary.csv）。streaming 延迟约 238 ms（各文件一致）。尚未试听。
+- 用途：提前试听重建、探索潜在空间。第二阶段冻结编码器（RAVE 2.3.1 `blocks.py` 中 `warmed_up` 后 `z.detach()`），潜在结构此后不变，但解码音质会变，结论需用最终模型复核。
+
 ## 2026-11-11｜exp-003 正式训练启动；E 核降速问题与对策
 
 - 用户 20:27:50 用 `run_training_windows.ps1` 启动正式训练（`--max_steps 1500000`），运行目录 `checkpoints\exp-003\exp003-forest-s105ck01_d744cc98b7\`；第 10,000 步首次验证并保存检查点，未重启。
