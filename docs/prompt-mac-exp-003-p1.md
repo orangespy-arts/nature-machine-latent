@@ -24,7 +24,7 @@
 ## 这次请做
 
 1. **核对拷贝**：在包含 `exports/` 和 `listening/` 的数据根目录下运行
-   `sed 's#\\#/#g' listening/exp-003/p1-step1000000/SHA256SUMS.txt | shasum -a 256 -c`
+   `tr '\134' '/' < listening/exp-003/p1-step1000000/SHA256SUMS.txt | tr -d '\r' | shasum -a 256 -c`
    （清单为 Windows 路径，共 88 个文件）。报告不一致或缺失的文件。
 2. **陪我试听**：我会听 `level-matched` 下的 `__ab.wav`，把听感告诉你。帮我整理成表（文件、类别、节奏/音色是否保留、闷/糊/杂音、是否出现跨类特征），写进 `experiments/exp-003-mixed-insects-machine-plan.md` 新的一节“第一阶段模型试听（2026-11-12）”，并在 `docs/log.md` 顶部记一条。只记录我的听感，不替我下结论。
 3. **Max 加载测试**（我确认后再做）：
