@@ -14,6 +14,8 @@ venv/
 data/
 datasets/raw/
 datasets/processed/
+# 从 4070 拷来的试听包（模型、音频、清单），留在本机不进 Git
+datasets/mac-exp003-p1/
 checkpoints/
 exports/
 logs/
