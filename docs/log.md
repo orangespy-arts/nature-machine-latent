@@ -3,6 +3,14 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-13｜exp-003 训练完成；导出最终模型并生成试听文件
+
+- 18:29 到达 1,500,000 步正常结束（runner 记 exit code 0，全程 1 次运行、未重启）；第二阶段约 5.3–5.4 步/秒。
+- `best.ckpt` 停在第一阶段（11-12 16:42）：第二阶段验证不再改善，不能代表最终模型。最终模型用 `epoch_1500000.ckpt`（SHA-256 `3785047F…24FB286`）导出：4070 `exports\exp-003\exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `c902955f…b8799c`；导出仍在 CPU 上进行，latent 4 维。
+- `scripts/render_listening.py` 新增 `--device`；用 GPU 重建同一批 17 个 heldout 文件（14 秒），输出到 4070 `listening\exp-003inal-step1500000\`，可与 `p1-step1000000\` 逐一对比。
+- 数据上（未试听）：机械与较响的自然素材重建电平比第一阶段更接近原声；但两个很安静的自然文件（forest_crickets_birdsong −56 dBFS、forest_wind_leaves_birdsong −54 dBFS）重建约 −38／−40 dBFS，比原声响 15–18 dB，而第一阶段模型对它们的重建比原声更安静。CPU 重跑结果相同，排除 GPU 推理差异。是否为解码器在安静输入上加入的噪声底，需要试听确认。
+- 给 Mac 的交接说明见 [prompt-mac-exp-003-final.md](prompt-mac-exp-003-final.md)；4070 上整理了拷贝包 `handoff\mac-exp003-final\`（约 605 MB，88 个文件核对一致）。
+
 ## 2026-11-12｜设备分工调整；Mac 上 nn~ 载入第一阶段模型
 
 - **设备分工**（用户决定，已写入 `AGENTS.md`）：

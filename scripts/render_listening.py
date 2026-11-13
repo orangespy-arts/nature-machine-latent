@@ -14,7 +14,7 @@
 - 每个文件重新加载模型：streaming 模型的卷积缓存会跨调用保留，不重载会把上一文件的尾部带进下一文件开头。
 - 输入末尾补静音到 2048 的整数倍再加 1 秒，避免 streaming 延迟截掉结尾；重建保存全长。
 - 延迟用原声与重建前 60 秒对数 RMS 包络的互相关估计，只用于对齐 __ab.wav 和写入 summary，不改动 __recon.wav。
-- 只做推理，CPU 运行（可用 CUDA_VISIBLE_DEVICES= 隐藏 GPU）。
+- 只做推理。默认 CPU；--device cuda 用 GPU（训练进行中请留在 CPU，并用 CUDA_VISIBLE_DEVICES= 隐藏 GPU）。
 
 示例：
   python scripts/render_listening.py --model <model.ts> --input <heldout 目录> --output <listening 目录>
@@ -80,6 +80,7 @@ def main():
     ap.add_argument('--peak_dbfs', type=float, default=-1.0)
     ap.add_argument('--ab_seconds', type=float, default=10.0)
     ap.add_argument('--threads', type=int, default=8)
+    ap.add_argument('--device', default='cpu', help='cpu 或 cuda')
     args = ap.parse_args()
 
     torch.set_num_threads(args.threads)
@@ -89,12 +90,12 @@ def main():
         group = wav.parent.name
         x, sr = sf.read(str(wav), dtype='float32', always_2d=True)
         x = x[:, 0]
-        model = torch.jit.load(args.model).eval()
+        model = torch.jit.load(args.model, map_location=args.device).eval()
         pad = (-len(x)) % 2048 + 2048 * int(np.ceil(sr / 2048))
         xp = np.concatenate([x, np.zeros(pad, np.float32)])
         with torch.no_grad():
-            z = model.encode(torch.from_numpy(xp)[None, None])
-            y = model.decode(z)[0, 0].numpy().astype(np.float32)
+            z = model.encode(torch.from_numpy(xp)[None, None].to(args.device))
+            y = model.decode(z)[0, 0].cpu().numpy().astype(np.float32)
         lag, corr = estimate_delay(x, y, sr)
 
         g_rms = 10 ** (args.target_dbfs / 20) / max(rms(x), 1e-9)
