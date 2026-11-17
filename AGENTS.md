@@ -18,6 +18,7 @@
 - RTX 4070 台式机承担全部训练和训练试跑，以及模型导出、生成试听文件。
 - Mac（Apple M1，8 GB）负责声音：素材准备、试听、Max／nn~ patch 与潜在空间探索；Arduino 接在 Mac 上，传感器与 Max 的联调在 Mac 上进行。环境见 `docs/environment-mac.md`。
 - RTX 5070 笔记本负责 3D 建模、切片，并连接 3D 打印机；不进行训练或短训练试跑。
+- 2026-11-17 用户选定：实时 AI 画面（StreamDiffusion）在 4070 上运行与测试，见 `docs/concept-visual-reveal.md`；与训练共用 GPU，需错开时间。
 - 演出用哪台设备暂不决定。项目管理（文档、Git）各台均可。
 
 ## 4070 台式机的仓库外目录

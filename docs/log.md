@@ -3,6 +3,18 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-17｜整理本机已有的 StreamDiffusionTD 到 E 盘
+
+- 只读检查发现本机 2025-02 装过 StreamDiffusionTD（`D:\StreamDiffusion-main\`，三套 venv，其中一套可用、一套重复、一套不完整），sd-turbo 与 taesd 已缓存在 C 盘，另有 TouchDesigner 2023.11600、NDI 6、CUDA 11.8。
+- 经用户同意，复制可用的一套到 `E:\envs\streamdiffusion-td\`、模型缓存到 `E:\hf-cache\`（设用户变量 `HF_HOME`），改写写死路径；离线验证通过，img2img 512×512 约 19.3 fps（无 TensorRT）。细节见 [4070 环境检查](environment-4070.md)。
+- 经用户确认，永久删除原件：`D:\StreamDiffusion-main`（16.89 GB）、空的 `D:\StreamDifussionTDBase`、`C:\Users\Administrator\.cache\huggingface`（4.82 GB）。删除后重跑离线验证，结果相同（19.3 fps）。`E:\` 根目录与 `E:\Download\` 中的 `.tox` 原件未动。
+
+## 2026-11-17｜视听装置：画面路线选定为 4070 上 StreamDiffusion 实时生成
+
+- 用户提出视听装置：固定布局（四角“虫”、中央“机械”、之间“混合体”），平时黑屏，摄像头追踪一个标记，标记所在处才出现画面，且每次移动画面不同。
+- 比较了预生成素材、按位置混合、StyleGAN、StreamDiffusion、FluxRT、Daydream Scope 等路线；FluxRT、Scope 视频模型、Self-Forcing 需 20–32 GB 显存，本地不可行。用户选定 **StreamDiffusion 实时生成，在 4070 上运行**；演出时 4070 需作为画面主机，最终演出设备仍未定。
+- 记录与资料依据：[概念草案：摄像头定位揭示的 AI 画面](concept-visual-reveal.md)。尚未安装或测试；4070 台式机帧率、闪烁、端到端延迟均待测。
+
 ## 2026-11-17｜exp-003 第 12 步：生成自然↔机械插值与原声混合对照
 
 - 修正两份日志中被 `\f` 转义吃掉的路径（`listening\exp-003\final-step1500000\`）和数据目录 `LOG.md` 中断行的 Mac 核对命令；`docs/training-steps-exp-003.md` 第 7–11 步标为完成，第 12 步进行中。
