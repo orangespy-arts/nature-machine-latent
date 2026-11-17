@@ -37,6 +37,13 @@ python scripts/rave_preprocess_windows.py --input_path <音频目录> --output_p
 python scripts/render_listening.py --model <model.ts> --input <heldout 目录> --output <listening 目录>
 ```
 
+`render_interpolation.py` 生成自然↔机械潜在插值试听文件（exp-003 第 12 步）：一段自然与一段机械留出素材调到同一 RMS 后编码，按 a = 0／0.25／0.5／0.75／1 线性插值 4 维潜在轨迹再解码；同时输出同比例直接混合原声的对照组、0→1 sweep 和连续试听序列。导出模型的 encode／decode 含随机采样，用 `--seed` 固定后可逐字节复现。
+
+```powershell
+python scripts/render_interpolation.py --model <model.ts> --input <heldout 目录> --output <listening 目录> `
+  --pair night_forest_a.wav@3.5 torque_wrench_turning_constant.wav@2 --device cuda
+```
+
 ## Max 延迟测量（Mac）
 
 `measure_max_latency.py` 读取 `instrument/max/exp-003/` 测试 patch 录下的双声道 WAV（左＝原声，右＝nn~ 输出），按 1 ms 包络互相关估计模型在 Max 信号链内的延迟（模型＋nn~ 缓冲），不含声卡输入／输出延迟。只用 Python 标准库。用 4070 生成的 typewriter 原声／重建拼成双声道验证：测得 239 ms，与 `render_listening.py` 的 238 ms 一致。

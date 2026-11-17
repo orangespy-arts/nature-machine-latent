@@ -3,11 +3,19 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-17｜exp-003 第 12 步：生成自然↔机械插值与原声混合对照
+
+- 修正两份日志中被 `\f` 转义吃掉的路径（`listening\exp-003\final-step1500000\`）和数据目录 `LOG.md` 中断行的 Mac 核对命令；`docs/training-steps-exp-003.md` 第 7–11 步标为完成，第 12 步进行中。
+- 核对 RAVE 2.3.1 源码（`scripts/export.py` `VariationalScriptedRAVE`、`rave/blocks.py` `VariationalEncoder.reparametrize`）：导出模型的 `encode` 对后验随机采样，经 PCA 只保留前 4 维；`decode` 给其余维度补随机噪声。所以潜在插值只作用于这 4 维，结果带随机性。
+- 新增 `scripts/render_interpolation.py`：两段等长留出素材先调到同一 RMS，按 a = 0／0.25／0.5／0.75／1 线性插值 z 后 decode，并输出同比例直接混合原声的对照组、0→1 sweep 和连续试听序列；`--seed` 固定后重跑逐字节相同（已验证）。
+- 4070 GPU 生成三对（初选，未试听）：night_forest_a ↔ torque_wrench_turning_constant、night_forest_a ↔ ratchet_lever_snap_open_close_sequence_slow、birdsong_d ↔ rolling_chain，各 10 秒；输出 4070 `listening\exp-003\final-step1500000-interp\`（93 MB，49 项 SHA256SUMS 核对通过，含 README.txt）。
+- 数据上：插值中间点的 RMS 比两端低约 2–4 dB（直接混合也有类似下降）；一对在 a=0.75／1 有 2／4 个样本削波。中间点是否构成“过渡”、是否比直接混合更有价值，**待 Mac 试听**。
+
 ## 2026-11-13｜exp-003 训练完成；导出最终模型并生成试听文件
 
 - 18:29 到达 1,500,000 步正常结束（runner 记 exit code 0，全程 1 次运行、未重启）；第二阶段约 5.3–5.4 步/秒。
 - `best.ckpt` 停在第一阶段（11-12 16:42）：第二阶段验证不再改善，不能代表最终模型。最终模型用 `epoch_1500000.ckpt`（SHA-256 `3785047F…24FB286`）导出：4070 `exports\exp-003\exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `c902955f…b8799c`；导出仍在 CPU 上进行，latent 4 维。
-- `scripts/render_listening.py` 新增 `--device`；用 GPU 重建同一批 17 个 heldout 文件（14 秒），输出到 4070 `listening\exp-003inal-step1500000\`，可与 `p1-step1000000\` 逐一对比。
+- `scripts/render_listening.py` 新增 `--device`；用 GPU 重建同一批 17 个 heldout 文件（14 秒），输出到 4070 `listening\exp-003\final-step1500000\`，可与 `p1-step1000000\` 逐一对比。
 - 数据上（未试听）：机械与较响的自然素材重建电平比第一阶段更接近原声；但两个很安静的自然文件（forest_crickets_birdsong −56 dBFS、forest_wind_leaves_birdsong −54 dBFS）重建约 −38／−40 dBFS，比原声响 15–18 dB，而第一阶段模型对它们的重建比原声更安静。CPU 重跑结果相同，排除 GPU 推理差异。是否为解码器在安静输入上加入的噪声底，需要试听确认。
 - 给 Mac 的交接说明见 [prompt-mac-exp-003-final.md](prompt-mac-exp-003-final.md)；4070 上整理了拷贝包 `handoff\mac-exp003-final\`（约 605 MB，88 个文件核对一致）。
 
