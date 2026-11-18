@@ -31,6 +31,7 @@
   - exp-003 第一阶段：`exp003-forest-s105ck01-p1-step1000000_streaming.ts`，SHA-256 `b2b4e1fa…26fb7a2`，与 4070 导出的一致。
 - **兼容性**：模型在 Windows 上用 torch 2.5.0 导出，nn~ 用 torch 2.5.1 构建。实测 `forward` 能载入并出声。
 - **试听包**：从 4070 拷来，放在仓库内的 `datasets/mac-exp003-p1/`（已加入 `.gitignore`），88 个文件的 SHA-256 全部一致。
+  - 最终模型试听包（2026-11-13）：`datasets/mac-exp003-final/`（已加入 `.gitignore`），88 个文件的 SHA-256 全部一致；模型 SHA-256 `c902955f…8799c`。尚未复制到 `nn_tilde/models/`。
 - **测试 patch**：见 [instrument/max/exp-003](../instrument/max/exp-003/README.md)。
 
 ## 注意

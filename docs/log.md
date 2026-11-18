@@ -3,6 +3,14 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-18｜素材来源更正：全部为作者本人的田野录音
+
+- 用户确认：森林（forest-v001，46 个）与机械（S105，566 个）两批素材**全部是作者本人的田野录音**，版权归作者。此前文档中的“第三方音效素材／来源待确认／许可 unknown”为错误记录。
+- 已更新当前文档：README、`datasets/README.md`、`docs/materials-forest.md`、`docs/materials-s105.md`、`docs/processing-forest-s105ck01-v001.md`、`docs/concept-mechanical-insects.md`、exp-001／002／003。清单 `s105-v001.csv`（566 条）与 `forest-v001.csv`（46 条）的 source 改为 “Author's own field recording (…)”，license 改为 `author-owned`。
+- 未改：本日志早先条目、首次扫描报告与重命名映射（`*-report.json`、`*-renames.json`）作为历史记录保留，其中的原文件夹名与原文件名照旧。
+- 待用户自己处理：4070 `E:\nature-machine-latent-data\SOURCES.md` 与本次更正保持一致。
+- 用途：本项目计划投 xCoAx 2027（截止 2027-01-31），并作为博士研究计划中声音引擎的技术基础。
+
 ## 2026-11-17｜整理本机已有的 StreamDiffusionTD 到 E 盘
 
 - 只读检查发现本机 2025-02 装过 StreamDiffusionTD（`D:\StreamDiffusion-main\`，三套 venv，其中一套可用、一套重复、一套不完整），sd-turbo 与 taesd 已缓存在 C 盘，另有 TouchDesigner 2023.11600、NDI 6、CUDA 11.8。

@@ -1,11 +1,12 @@
-# exp-003 第一阶段模型 · Max 测试 patch
+# exp-003 · Max 测试 patch
 
-用于在 Mac 上测试 exp-003 第一阶段模型能否在 Max 中实时运行，并初步试探 4 个潜在维度。这里只有测试 patch，还不是演奏乐器。
+用于在 Mac 上测试 exp-003 第一阶段模型和最终模型能否在 Max 中实时运行，并初步试探 4 个潜在维度。这里只有测试 patch，还不是演奏乐器。
 
 | 文件 | 信号链 |
 | --- | --- |
 | `exp003-p1-forward-test.maxpat` | `sfplay~` → `nn~ … forward 2048` → 监听切换（原声／重建）→ 音量 → `ezdac~` |
 | `exp003-p1-latent-test.maxpat` | `sfplay~` → `nn~ … encode 2048` → 每维 `z × 缩放 + 偏移` → `nn~ … decode 2048` → 音量 → `ezdac~` |
+| `exp003-final-forward-test.maxpat`、`exp003-final-latent-test.maxpat` | 与上面两个相同，只把模型换成最终模型（2026-11-13 复制，只改模型名和说明文字） |
 
 两个 patch 都带有：
 - 双声道录音（`sfrecord~ 2`，左声道录原声、右声道录模型输出），用来测延迟；
@@ -14,6 +15,7 @@
 ## 环境
 
 - **模型**：`exp003-forest-s105ck01-p1-step1000000_streaming.ts`，SHA-256 `b2b4e1fa…26fb7a2`。patch 只写模型名，要求模型位于 `~/Documents/Max 9/Packages/nn_tilde/models/`。模型和音频都不进 Git。
+- **最终模型**：`exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `c902955f…8799c`，2026-11-13 已放入同一目录，校验一致。**在 Max 中能否载入尚未实测。** 试听音频用 `listening/exp-003/final-step1500000/level-matched/` 下的 `__orig.wav`；其中 forest_crickets_birdsong、forest_wind_leaves_birdsong 的重建比原声响 15–18 dB，先调低音量。
 - **已确认（2026-11-12）**：Mac 配置为 macOS 14.4.1、Apple M1、8 GB 内存，Max 9.0.9 以原生 arm64 运行，没有经过 Rosetta。在这台 Mac 上，nn~ v1.6.0 能载入该模型的 `forward` 方法。
 - **试听音频**：用 heldout 的 `__orig.wav`，目录在数据根目录下的 `listening/exp-003/p1-step1000000/level-matched/`。
 
