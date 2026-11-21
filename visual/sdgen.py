@@ -15,6 +15,8 @@ import numpy as np
 import torch
 from PIL import Image
 
+torch.set_num_threads(int(os.environ.get('VISUAL_CPU_THREADS', '4')))  # 见 reveal.py 顶部说明
+
 SD_ROOT = Path(os.environ.get('STREAMDIFFUSION_ROOT', r'E:\envs\streamdiffusion-td'))
 sys.path.insert(0, str(SD_ROOT))
 
@@ -132,8 +134,8 @@ class Generator:
         s.init_noise = torch.randn(s.init_noise.shape, generator=gen).to(device=s.device, dtype=s.dtype)
         self.seed = int(seed)
 
-    def weights(self, x, y):
-        return region_weights(self.regions, x, y, self.power, self.aspect)
+    def weights(self, x, y, power=None):
+        return region_weights(self.regions, x, y, self.power if power is None else power, self.aspect)
 
     @torch.no_grad()
     def generate(self, weights):

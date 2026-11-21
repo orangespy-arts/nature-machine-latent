@@ -45,5 +45,7 @@
     "min_area_px": 150,
     "smoothing": 0.5
   },
-  "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal"}
+  "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal", "mix_power": 6.0, "seed_on": "appear",
+          "_seed_on_note": "appear：只在标记出现时发 /seed（两源各跳到随机位置），按住移动时声音连续；move：画面每换种子就发（旧行为，按住时约每秒重新起播一次）（2026-11-21）",
+          "_mix_power_note": "声音机械比例 a 的反距离指数，只影响 /mix，画面混合仍用 generation.blend_power。2 → 6 后屏幕中央 a 约 0.71 → 0.97，区域之间的中点仍为 0.25／0.75（2026-11-21）"}
 }

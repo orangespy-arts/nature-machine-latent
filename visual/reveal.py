@@ -16,13 +16,22 @@ c 摄像头调试窗（camera 模式）
 """
 import argparse
 import json
+import os
 import random
 import threading
 import time
 from pathlib import Path
 
-import cv2
-import numpy as np
+# 限制 CPU 线程池（须在导入 numpy／cv2／torch 之前设）。2026-11-21 在 5070 上实测：不限制时生成画面占约 20／24 核，
+# 与 Max nn~（CPU 推理）抢 CPU，按住时声音卡顿。VISUAL_CPU_THREADS 可改，默认 4。
+CPU_THREADS = os.environ.get('VISUAL_CPU_THREADS', '4')
+for _k in ('OMP_NUM_THREADS', 'MKL_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'NUMEXPR_NUM_THREADS'):
+    os.environ.setdefault(_k, CPU_THREADS)
+
+import cv2  # noqa: E402
+import numpy as np  # noqa: E402
+
+cv2.setNumThreads(int(CPU_THREADS))
 
 HERE = Path(__file__).resolve().parent
 
@@ -265,6 +274,8 @@ def main():
         cv2.setMouseCallback('monitor', on_monitor_click)
     n, t0, dfps = 0, time.time(), 0.0
     last_osc, last_region = 0.0, None
+    seed_on = layout['osc'].get('seed_on', 'move')
+    sound_seed, was_visible = None, False
     t_prev = time.time()
 
     while True:
@@ -283,7 +294,11 @@ def main():
             seed = random.randrange(2 ** 31)
             new_seed, anchor, seed_t = seed, (x, y), now
         worker.set_target(w, visible, new_seed)
-        was_present = present
+        # 声音跳位（/seed）：seed_on = "appear" 时只在标记出现（visible 由 0 变 1）时发，
+        # 按住移动时声音连续播放；"move" 为旧行为，画面每换种子就发（Max 端限每秒一次）。
+        if new_seed is not None and (seed_on == 'move' or (visible and not was_visible)):
+            sound_seed = new_seed
+        was_present, was_visible = present, visible
 
         rate = dt / max(disp['fade_in_s'] if visible else disp['fade_out_s'], 1e-3)
         alpha = min(1.0, alpha + rate) if visible else max(0.0, alpha - rate)
@@ -298,7 +313,10 @@ def main():
             patch = cv2.resize(worker.image[..., ::-1], (disp['patch_px'], disp['patch_px']))
             paste(canvas, patch, mask, x * W, y * H, alpha)
 
-        mix_a = float(np.dot(w, [r['a'] for r in regions]))
+        # 声音的机械比例单独用更大的反距离指数，靠近区域中心时 a 更快趋近该区域的值（画面混合仍用 blend_power）
+        mix_power = layout['osc'].get('mix_power', g['blend_power'])
+        w_mix = w if mix_power == g['blend_power'] else worker.gen.weights(x, y, mix_power)
+        mix_a = float(np.dot(w_mix, [r['a'] for r in regions]))
         region = regions[int(np.argmax(w))]['name']
         if osc and now - last_osc > 1 / 30:
             osc.send_message(f'{pre}/present', int(visible))
@@ -307,8 +325,9 @@ def main():
             if region != last_region:
                 osc.send_message(f'{pre}/region', region)
                 last_region = region
-            if new_seed is not None:
-                osc.send_message(f'{pre}/seed', int(new_seed))
+            if sound_seed is not None:
+                osc.send_message(f'{pre}/seed', int(sound_seed))
+                sound_seed = None
             last_osc = now
 
         n += 1

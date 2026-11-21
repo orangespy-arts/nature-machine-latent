@@ -9,7 +9,19 @@
 - 该 pip 包没有 dotsimulate 版的 `utils/wrapper.py`；`visual/sdgen.py` 新增 `CoreWrapper`，导入不到 `utils.wrapper` 时改用 `streamdiffusion.StreamDiffusion` 核心类，按原 wrapper 的方式构建（StableDiffusionPipeline fp16 → cfg_type none → taesd → prepare → 预热 10 次）。4070 上能导入 wrapper，仍走原路径。
 - 启动：`SD_ACCELERATION=none`、`HF_HUB_OFFLINE=1`、`reveal.py --input demo --windowed --no_osc --debug`。模型离线载入成功，显存约 3.0 GB，用户确认窗口出现、有画面。退出时：显示帧率中位数 20.5 fps，生成 10.0 fps（97 ms/帧，标记可见时）；4070 同条件为 27／13.9 fps。
 - 经用户同意，`pip install --no-deps python-osc`（1.10.3）装入 `C:\AI\sdtest`，未改动其他包。开启 OSC 再跑 demo，`osc_monitor.py --host 127.0.0.1 --seconds 150` 收到全部 5 种消息：present／pos／mix 各 2464 条（稳定后每秒约 14–26 条），region 283 条，seed 726 条（每秒最多约 10 次；Max patch 中有每秒一次的限速）。
-- 未测：与 4070 画面是否一致、鼠标／摄像头输入、声音（5070 未装 Max 9 与 nn~，交接包未拷到本机）。
+- 开 OSC 时显示 18.3／生成 10.5 fps，与不开时相近。
+- 交接包由用户用 U 盘拷来，放在 `D:\nature-machine-latent-5070-reveal\`（31 个文件 SHA256 一致）。用户装了 Max 9.0.8（`C:\Program Files\Max 9\`）；经同意下载 nn~ v1.6.0 Windows 版（SHA-256 与 4070 相同），装入 `文档\Max 9\Packages\nn_tilde\`，并把 exp-003 最终模型复制到 `models\`（哈希一致）。见 [5070 环境](environment-5070.md)。
+- 声音：Max 打开 `reveal-sound-5070.maxpat` 后自动开音频，sr 44100；未出现标记时 env／level 为 0（正常）。
+- 声画联动（demo 输入，`sound_status.py` 记录 120 秒）：a 在 0–0.77 变化，env 在 0–1 间淡入淡出，输出电平最高 0.42（音量 0.5，无削波），说明 nn~ 已载入模型并出声。同时画面显示 19.9／生成 11.0 fps，与只开画面时相近。Max `adstatus cpu` 读数只在 0、1、100 间跳，不能作为 CPU 占用参考。
+- 未测：听感、爆音断续、声画延迟差、与 4070 画面是否一致、鼠标／摄像头输入、Max Console 是否有报错（未查看）。
+
+## 2026-11-21｜5070 鼠标试听：声音映射与卡顿修正（影响 4070 共用的 visual 程序）
+
+- 用户反馈 1：画面中央有齿轮，但声音不像机械。实测 `a` 最高 0.83：反距离权重（指数 2）下，机械点在 (0.433, 0.432) 而非屏幕正中，正中 a≈0.71。单独渲染 9 区域中的虫／混合体／机械各 3 个种子，画面区分正常，不是 5070 生成问题。用户决定改映射：`layout.json` 新增 `osc.mix_power: 6.0`，只用于 `/mix`，画面仍用 2。计算：正中 a 0.71 → 0.97，区域间中点仍为 0.25／0.75；实测中央 a 达 0.99–1.00、四角 0.00–0.05。
+- 用户反馈 2：按住鼠标时像在反复播一段录音的开头，松开淡出时才完整。先按设计改为 `osc.seed_on: "appear"`（`/seed` 只在标记出现时发，原为画面每换种子就发，Max 端每秒最多跳一次），用户反馈仍卡。A/B 测试（画面 `--no_osc`，Max 手动淡入）：只在按住生成画面时卡。CPU 采样：生成时画面程序占约 20／24 核（Intel Core Ultra 9 275HX），Max nn~ 为 CPU 推理，被挤占。
+- 修正：`reveal.py`／`sdgen.py` 在导入前把 OMP／MKL／OpenBLAS／numexpr、OpenCV、torch 线程限制为 `VISUAL_CPU_THREADS`（默认 4）。复测生成时画面程序约 4.9 核（最高 5.6），用户确认声音不再卡。本次复测时 Max 设为 High、画面设为 BelowNormal 优先级（仅本次进程，未写入程序）；不改优先级是否也不卡未单独测。
+- nn~ 用 GPU：v1.6.0 源码有 `@gpu` 属性（[nn_base.h](https://github.com/acids-ircam/nn_tilde/blob/v1.6.0/src/frontend/maxmsp/shared/nn_base.h#L171)），无 CUDA 时退回 CPU（[backend.cpp](https://github.com/acids-ircam/nn_tilde/blob/v1.6.0/src/backend/backend.cpp#L474)）；官方 Windows 包只带 `torch_cpu.dll`，所以这台不能用 GPU 跑 nn~，需自行用 CUDA 12.8+ libtorch 编译，未尝试。
+- 未测：限制线程后的生成帧率、4070 上新映射与 4 线程的效果、听感细节、声画延迟差。
 
 ## 2026-11-21｜整理 5070 声画联动拷贝包
 

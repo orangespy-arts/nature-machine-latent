@@ -6,7 +6,7 @@
 
 在 4070 上用 `E:\envs\streamdiffusion-td\venv`（StreamDiffusion、OpenCV、python-osc 均已在内），模型在 `E:\hf-cache`（`HF_HOME`）。
 
-其他机器：环境变量 `STREAMDIFFUSION_ROOT` 指向含 `utils\wrapper.py` 的 StreamDiffusion 目录（默认 `E:\envs\streamdiffusion-td`）；`SD_ACCELERATION`（或 `layout.json` 的 `generation.acceleration`）可设 `xformers`（默认）／`none`／`tensorrt`。RTX 50 系列（sm_120）上 xformers 可能不支持，可改 `none`。
+其他机器：环境变量 `STREAMDIFFUSION_ROOT` 指向含 `utils\wrapper.py` 的 StreamDiffusion 目录（默认 `E:\envs\streamdiffusion-td`）；`SD_ACCELERATION`（或 `layout.json` 的 `generation.acceleration`）可设 `xformers`（默认）／`none`／`tensorrt`。RTX 50 系列（sm_120）上 xformers 可能不支持，可改 `none`。找不到 `utils\wrapper.py` 时（如 5070 上 pip 装的 streamdiffusion 0.1.1）自动改用 `sdgen.CoreWrapper`。`VISUAL_CPU_THREADS`（默认 4）限制 OpenMP／torch／OpenCV 的 CPU 线程，避免与 Max nn~（CPU 推理）抢 CPU。
 
 ```powershell
 $py = "E:\envs\streamdiffusion-td\venv\Scripts\python.exe"
@@ -61,7 +61,7 @@ $py = "E:\envs\streamdiffusion-td\venv\Scripts\python.exe"
 - `generation.reseed_distance`：标记移动超过此距离（画布高度的比例）就换种子；标记重新出现也换。`reseed_interval_s` > 0 时停留不动也定时换。
 - `regions[].base`：底图路径（相对 `visual/`）；`null` 用占位色块。底图比提示词更能控制每个区域的样子。
 - `camera.mode`：`aruco`（默认）或 `color`。`camera.hsv_*`：颜色模式的范围；本机点选结果在 `visual/local/marker.json` 中覆盖它。
-- `osc`：发往 `host:port`，地址 `<prefix>/present`（0/1）、`/pos`（x y，0–1）、`/mix`（机械比例 a，按区域 a 值反距离加权）、`/region`（最近区域名）、`/seed`。默认本机 7400；接 Mac 时改为 Mac 的 IP。
+- `osc`：发往 `host:port`，地址 `<prefix>/present`（0/1）、`/pos`（x y，0–1）、`/mix`（机械比例 a，按区域 a 值反距离加权，指数为 `osc.mix_power`，默认同 `generation.blend_power`）、`/region`（最近区域名）、`/seed`（`osc.seed_on`：`appear` 只在标记出现时发，`move` 每次画面换种子都发）。默认本机 7400；接 Mac 时改为 Mac 的 IP。
 
 ## v0 实测（2026-11-17，RTX 4070，2048×1152 窗口，demo 输入）
 

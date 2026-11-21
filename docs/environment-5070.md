@@ -30,6 +30,39 @@
 2026-11-12 起：笔记本改为负责 3D 建模、切片并连接 3D 打印机；素材准备、试听与 Max／Arduino 调试改到 Mac（见 [Mac 环境](environment-mac.md)）。下方“待完成”中与素材、演奏相关的条目随之转到 Mac。
 无需为训练安装 PyTorch、torchaudio、RAVE 或 WSL。后续演奏运行环境按所选宿主与模型格式另行确定。
 
+## 声画联动（reveal）环境（2026-11-21）
+
+2026-11-21 用户决定 5070 也要能运行声画联动（仍不训练）。
+
+| 项目 | 结果 |
+| --- | --- |
+| 画面 Python 环境 | `C:\AI\sdtest`（2026-06 为本机装的）：Python 3.11.9，torch 2.11.0+cu128，capability (12, 0) 可用；streamdiffusion 0.1.1（pip，无 `utils/wrapper.py`），diffusers 0.24.0；无 xformers |
+| python-osc | 1.10.3，经用户同意 `pip install --no-deps` 装入 `C:\AI\sdtest` |
+| 模型缓存 | `%USERPROFILE%\.cache\huggingface\hub`（未设 `HF_HOME`）：sd-turbo、taesd 已在 |
+| 画面运行 | `visual/sdgen.py` 自动改用 `CoreWrapper`；`SD_ACCELERATION=none`。demo：显示 20.5／生成 10.0 fps（无 OSC），18.3／10.5 fps（开 OSC），显存约 3.0 GB |
+| 交接包 | U 盘拷自 4070，放在 `D:\nature-machine-latent-5070-reveal\`，31 个文件 SHA256 全部一致。其中 `nature-machine-latent\` 是旧副本，画面程序用本仓库 |
+| Max | 9.0.8，`C:\Program Files\Max 9\Max.exe`（用户安装） |
+| nn~ | v1.6.0 `nn_max_msp_windows_x64.tar.gz`（经用户同意下载，332,296,372 字节，SHA-256 `aced3dfb…e48d8b92`，与 4070 相同），装在 `C:\Users\wangz\Documents\Max 9\Packages\nn_tilde\`，约 1.2 GB |
+| RAVE 模型 | `nn_tilde\models\exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `C902955F…B8799C` |
+
+运行画面（在本仓库根目录）：
+
+```powershell
+$env:SD_ACCELERATION = "none"; $env:HF_HUB_OFFLINE = "1"; C:\AI\sdtest\Scripts\python.exe visual\reveal.py --input demo --windowed --debug
+```
+
+打开声音：
+
+```powershell
+Start-Process "C:\Program Files\Max 9\Max.exe" "D:\nature-machine-latent-5070-reveal\max\reveal-sound-5070.maxpat"
+```
+
+2026-11-21 实测（demo 输入）：patch 自动开音频，sr 44100；声画联动时 a 0–0.77、env 0–1、输出电平最高 0.42，nn~ 载入模型并出声。`adstatus cpu` 读数只在 0／1／100 间跳，不能作参考。
+
+鼠标输入下按住时声音卡顿：画面生成占约 20／24 核，与 nn~（CPU 推理）抢 CPU。`visual/reveal.py` 现默认把 CPU 线程限制为 4（`VISUAL_CPU_THREADS`），生成时约 4.9 核，用户确认不再卡；当时 Max 另设为 High 优先级。这台的 nn~ 不能用 GPU（官方 Windows 包只有 CPU libtorch），见 [log](log.md) 2026-11-21。
+
+未测：音频驱动与 vector size、摄像头输入、声画延迟差、不调优先级时是否仍流畅。
+
 ## 待完成
 
 - [ ] 建立素材目录与独立备份。
