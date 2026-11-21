@@ -52,16 +52,60 @@ def load_base(region, index, root, size=512):
     return placeholder_base(region, index, size)
 
 
+class CoreWrapper:
+    """没有 utils/wrapper.py 时（如 5070 上 pip 装的 streamdiffusion 0.1.1）的替代。
+
+    只实现 Generator 用到的部分：.stream、prepare()、__call__(image) -> PIL。
+    构建方式照 StreamDiffusionWrapper：StableDiffusionPipeline → StreamDiffusion(cfg_type) → taesd → prepare → 预热。
+    """
+
+    def __init__(self, model_id_or_path, t_index_list, acceleration='none', vae_id='madebyollin/taesd',
+                 cfg_type='none', width=512, height=512, warmup=10, seed=0, device='cuda', **_):
+        from diffusers import AutoencoderTiny, StableDiffusionPipeline
+        from streamdiffusion import StreamDiffusion
+
+        try:
+            pipe = StableDiffusionPipeline.from_pretrained(model_id_or_path, torch_dtype=torch.float16, variant='fp16')
+        except (OSError, ValueError):
+            pipe = StableDiffusionPipeline.from_pretrained(model_id_or_path, torch_dtype=torch.float16)
+        pipe = pipe.to(device=device, dtype=torch.float16)
+        if acceleration == 'xformers':
+            pipe.enable_xformers_memory_efficient_attention()
+        elif acceleration not in ('none', None, ''):
+            raise ValueError(f'CoreWrapper 不支持 acceleration={acceleration!r}（只支持 none／xformers）')
+        self.stream = StreamDiffusion(pipe, t_index_list=t_index_list, torch_dtype=torch.float16,
+                                      width=width, height=height, cfg_type=cfg_type)
+        self.stream.vae = AutoencoderTiny.from_pretrained(vae_id).to(device=pipe.device, dtype=pipe.dtype)
+        self.warmup, self.seed = warmup, seed
+
+    def prepare(self, prompt, num_inference_steps=50, guidance_scale=1.0, negative_prompt='', delta=1.0):
+        self.stream.prepare(prompt=prompt, negative_prompt=negative_prompt, num_inference_steps=num_inference_steps,
+                            guidance_scale=guidance_scale, delta=delta, generator=torch.Generator(), seed=self.seed)
+
+    def __call__(self, image):
+        from streamdiffusion.image_utils import postprocess_image
+        return postprocess_image(self.stream(image), output_type='pil')[0]
+
+
+def _make_wrapper(**kw):
+    try:
+        from utils.wrapper import StreamDiffusionWrapper  # noqa: E402
+        return StreamDiffusionWrapper(**kw)
+    except ModuleNotFoundError as e:
+        if e.name not in ('utils', 'utils.wrapper'):
+            raise
+        print('utils/wrapper.py not found; using installed streamdiffusion core (CoreWrapper)')
+        return CoreWrapper(**kw)
+
+
 class Generator:
     def __init__(self, layout, root, device='cuda'):
-        from utils.wrapper import StreamDiffusionWrapper  # noqa: E402
-
         g = layout['generation']
         self.size = g['size']
         self.regions = layout['regions']
         self.power = g['blend_power']
         self.aspect = layout['canvas']['width'] / layout['canvas']['height']
-        self.w = StreamDiffusionWrapper(
+        self.w = _make_wrapper(
             model_id_or_path=g['model'], t_index_list=[g['t_index']], mode='img2img',
             acceleration=os.environ.get('SD_ACCELERATION', g.get('acceleration', 'xformers')), use_lcm_lora=False, use_tiny_vae=True, vae_id='madebyollin/taesd',
             cfg_type='none', width=self.size, height=self.size, warmup=10, seed=0, device=device,
@@ -70,6 +114,10 @@ class Generator:
         self.prompts = [f"{r['prompt']}, {style}" if style else r['prompt'] for r in self.regions]
         self.w.prepare(prompt=self.prompts[0], num_inference_steps=g['num_inference_steps'], guidance_scale=1.0)
         s = self.w.stream
+        if isinstance(self.w, CoreWrapper):  # 原 wrapper 在构造时预热；这里 prepare 后再预热
+            warm = Image.fromarray(np.zeros((self.size, self.size, 3), np.uint8))
+            for _ in range(self.w.warmup):
+                self.w(warm)
         with torch.no_grad():
             self.embeds = torch.stack([
                 s.pipe.encode_prompt(prompt=p, device=s.device, num_images_per_prompt=1,

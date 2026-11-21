@@ -3,6 +3,14 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-21｜5070 上画面工具用本机已装的 StreamDiffusion 跑通（demo，无 OSC）
+
+- 用户决定在 5070 上用本机已装的 StreamDiffusion：`C:\AI\sdtest`（Python 3.11.9，torch 2.11.0+cu128，GPU sm_120 可用，streamdiffusion 0.1.1 pip 包，diffusers 0.24.0；无 xformers、无 python-osc），sd-turbo 与 taesd 已在 `%USERPROFILE%\.cache\huggingface` 缓存。
+- 该 pip 包没有 dotsimulate 版的 `utils/wrapper.py`；`visual/sdgen.py` 新增 `CoreWrapper`，导入不到 `utils.wrapper` 时改用 `streamdiffusion.StreamDiffusion` 核心类，按原 wrapper 的方式构建（StableDiffusionPipeline fp16 → cfg_type none → taesd → prepare → 预热 10 次）。4070 上能导入 wrapper，仍走原路径。
+- 启动：`SD_ACCELERATION=none`、`HF_HUB_OFFLINE=1`、`reveal.py --input demo --windowed --no_osc --debug`。模型离线载入成功，显存约 3.0 GB，用户确认窗口出现、有画面。退出时：显示帧率中位数 20.5 fps，生成 10.0 fps（97 ms/帧，标记可见时）；4070 同条件为 27／13.9 fps。
+- 经用户同意，`pip install --no-deps python-osc`（1.10.3）装入 `C:\AI\sdtest`，未改动其他包。开启 OSC 再跑 demo，`osc_monitor.py --host 127.0.0.1 --seconds 150` 收到全部 5 种消息：present／pos／mix 各 2464 条（稳定后每秒约 14–26 条），region 283 条，seed 726 条（每秒最多约 10 次；Max patch 中有每秒一次的限速）。
+- 未测：与 4070 画面是否一致、鼠标／摄像头输入、声音（5070 未装 Max 9 与 nn~，交接包未拷到本机）。
+
 ## 2026-11-21｜整理 5070 声画联动拷贝包
 
 - 用户决定在 5070 笔记本上也运行声画联动（画面＋声音，5070 上已有 CUDA 与 StreamDiffusion，之后装 Max 与 nn~）；仍不在 5070 上训练。
