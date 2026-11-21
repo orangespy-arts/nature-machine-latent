@@ -19,6 +19,8 @@
 - Mac（Apple M1，8 GB）负责声音：素材准备、试听、Max／nn~ patch 与潜在空间探索；Arduino 接在 Mac 上，传感器与 Max 的联调在 Mac 上进行。环境见 `docs/environment-mac.md`。
 - RTX 5070 笔记本负责 3D 建模、切片，并连接 3D 打印机；不进行训练或短训练试跑。
 - 2026-11-17 用户选定：实时 AI 画面（StreamDiffusion）在 4070 上运行与测试，见 `docs/concept-visual-reveal.md`；与训练共用 GPU，需错开时间。
+- 2026-11-18 用户决定：声画联动（画面工具＋Max／nn~ 声音 patch）都在 4070 上运行，OSC 走本机；4070 已装 Max 9 与 nn~，见 `docs/environment-4070.md`。Mac 仍可用于声音探索。
+- 2026-11-21 用户决定：5070 笔记本也要能运行声画联动（StreamDiffusion 画面＋Max／nn~ 声音，本机 OSC），仍不训练；拷贝包与环境检查说明见 `E:\nature-machine-latent-data\handoff\5070-reveal\PROMPT-5070.md`。
 - 演出用哪台设备暂不决定。项目管理（文档、Git）各台均可。
 
 ## 4070 台式机的仓库外目录

@@ -3,6 +3,14 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-21｜整理 5070 声画联动拷贝包
+
+- 用户决定在 5070 笔记本上也运行声画联动（画面＋声音，5070 上已有 CUDA 与 StreamDiffusion，之后装 Max 与 nn~）；仍不在 5070 上训练。
+- `make_reveal_sound_patch.py` 新增 `--target 5070`：两个源只写文件名，WAV 与 patch 放在同一文件夹（Max 先在已打开 patch 所在文件夹找文件，[search path 文档](https://docs.cycling74.com/max8/vignettes/search_path)）。
+- `visual/sdgen.py` 的加速方式改为可配置：`SD_ACCELERATION` 环境变量或 `layout.json` 的 `generation.acceleration`，默认仍为 xformers。原因：RTX 50 系列（sm_120）需 torch ≥2.7 且 CUDA ≥12.8 构建，xformers 有不支持 sm_120 的报告（[PyTorch 论坛](https://discuss.pytorch.org/t/rtx-5050-sm-120-support-timeline-when-in-stable-pytorch/224288)、[xformers 报告](https://discuss.pytorch.org/t/use-xformers-with-rtx50-series/224056)）。4070 上的 torch 2.1.0+cu118 环境不能搬到 5070。
+- 拷贝包 `E:\nature-machine-latent-data\handoff\5070-reveal\`（74.5 MB，31 个文件＋SHA256SUMS）：`PROMPT-5070.md`（本机环境检查：GPU／torch／xformers／StreamDiffusion 接口／模型缓存／Max／nn~，再按顺序做声音、画面、联动测试，结果写 `RESULTS-5070.md`）、`max\`（5070 patch、模型、4 个源 WAV）、`nature-machine-latent\`（visual、instrument/max/reveal、两份文档的副本）。
+- 4070 上从包内 `max\` 打开 5070 patch 测试：两个源按文件名自动载入，发 OSC 后输出电平最高 0.25，a 与包络正常。未测：5070 上的一切。
+
 ## 2026-11-18｜素材来源更正：全部为作者本人的田野录音
 
 - 用户确认：森林（forest-v001，46 个）与机械（S105，566 个）两批素材**全部是作者本人的田野录音**，版权归作者。此前文档中的“第三方音效素材／来源待确认／许可 unknown”为错误记录。
@@ -10,6 +18,35 @@
 - 未改：本日志早先条目、首次扫描报告与重命名映射（`*-report.json`、`*-renames.json`）作为历史记录保留，其中的原文件夹名与原文件名照旧。
 - 待用户自己处理：4070 `E:\nature-machine-latent-data\SOURCES.md` 与本次更正保持一致。
 - 用途：本项目计划投 xCoAx 2027（截止 2027-01-31），并作为博士研究计划中声音引擎的技术基础。
+
+## 2026-11-18｜声画联动在 4070 上跑通（Max 9 ＋ nn~ Windows）
+
+- 用户在 4070 上装了 Max 9.0.8，决定画面与声音都在 4070 上运行（OSC 走 127.0.0.1）。经同意下载 nn~ v1.6.0 Windows 版（CPU libtorch），装入 Max 9 Packages，复制 exp-003 最终模型；见 [environment-4070.md](environment-4070.md)。
+- `make_reveal_sound_patch.py` 新增 `--target 4070`，生成 `reveal-sound-4070.maxpat`：打开后自动载入两个源（night_forest_a／torque_wrench_turning_constant）、自动开音频。两版 patch 都把状态（输出峰值、a、包络、CPU、采样率）用 OSC 发到 7401；新增 `sound_status.py` 读取，不看屏幕即可检查。
+- 联动实测（画面 demo 输入 75 秒、状态记录 55 秒）：`route` 能直接匹配 OSC 地址；a 随位置在 0–0.97 变化，包络随 present 淡入淡出（0.21–1.0），输出峰值 0.005–0.38（音量 0.5，无削波）；画面帧率不受影响（显示 27、生成 13.9 fps）；Max DSP CPU 读数 0 与 35–54 % 之间跳动。
+- 未验证：听感（插值是否好听、跳位是否突兀）、有无爆音断续、声画延迟差、摄像头输入下的联动。
+
+## 2026-11-17｜声音部分 v1：画面 OSC → Max 潜在插值（未在 Mac 测试）
+
+- 新增 [instrument/max/reveal](../instrument/max/reveal/README.md)：`reveal-sound.maxpat`（由 `make_reveal_sound_patch.py` 生成）。两路源 `sfplay~` → 各自 `nn~ encode` → 每维按 OSC `/reveal/mix` a 线性插值 → `nn~ decode`；`/reveal/present` 控制淡入 400 ms／淡出 800 ms（同画面）；`/reveal/pos` x 控制等功率声像；`/reveal/seed` 使两源随机跳位（限每秒一次）。映射为人为设计。
+- 4070 上验证画面工具确实发出 5 种 OSC 消息（每秒约 15–25 条；demo 中 seed 可达每秒 11 次，故加限速）；新增 `visual/osc_monitor.py`。patch 连接端口号已用脚本校验（87 个对象、86 条连线），但尚未在 Max 中打开。
+- 待 Mac：`route` 能否匹配 OSC 地址、两个 encode＋一个 decode 在 M1 上的 CPU、声画延迟差、听感。
+
+## 2026-11-17｜画面工具：标记改为 ArUco（应对展厅光线不确定）
+
+- 实测颜色标记不可靠：同一红色纸盒在两种光线下 HSV 从（H 1–3，S≈235）变为（H 3–6，S≈130），后者与手掌几乎相同；收紧阈值会漏掉纸盒，放宽会把手当成标记。另加了点选颜色功能（`visual/local/marker.json`），并拒绝过灰的取样。
+- 讨论了不依赖光线的方案（自控照明、红外 LED＋滤光、ArUco、可见 LED＋低曝光）；用户选 ArUco。本机 OpenCV 4.11 自带 `cv2.aruco`；摄像头手动曝光设置部分生效（亮度 84→60，−7 与 −10 无差别）。
+- `visual/tracker.py` 新增 ArUco 模式并设为默认；`visual/make_markers.py` 生成可打印标记（`visual/markers/`，PDF＋300 dpi PNG）。合成测试（暗、过曝、偏色、不均匀光、模糊、25–120 px）全部识别，每帧约 3.5 ms；未经实物实测。
+- 5 分钟完整测试中摄像头插在主机背板端口，全程未掉线（约 7–8 fps，暗光下曝光长）。
+- ArUco 实物测试（手机屏幕显示 ID 3，5 分钟）：前 230 秒约 97% 识别，之后室内变亮、屏幕过曝时约 65%；离线比较后 `polygonalApproxAccuracyRate` 设为 0.06、ID 限定 0–3。最初只看了前 84 张截图（80 张识别），生成画面跟随位置正常。之后按用户要求放大画面：画面块 640 → 1000 px、柔边 0.35 → 0.25、风格词加入特写“主体充满画面”；显示帧率约 41 → 26 fps。
+
+## 2026-11-17｜自制画面工具 v0（不用 TouchDesigner）
+
+- 用户决定不用 TouchDesigner，做自己的工具。新增 [visual/](../visual/README.md)：Python＋OpenCV＋StreamDiffusion，用 `E:\envs\streamdiffusion-td` 环境，无新下载。
+- 功能：黑屏；标记（鼠标／演示路径／摄像头颜色追踪＋4 点校准）所在处生成画面；9 个区域按草图布局，位置的反距离权重混合各区域提示词 embedding 与底图；移动超过阈值或重新出现时换种子；OSC 发送位置、机械比例 a、区域、种子供 Max 使用。
+- 加噪强度对照（占位底图）：t_index 0–5 主体清楚、种子间差异明显，15–20 为模糊色团；默认 5。“混合体”出图偏昆虫，机械感弱。
+- demo 输入实测：显示约 41 fps，生成约 13 fps（75 ms/帧），无 TensorRT。
+- 接上 USB 摄像头（CAMERA - UAC）：MJPG 下 1280×720 约 27 fps；使用中多次掉线，已加自动重连。红色纸盒识别稳定；收紧 HSV 阈值后排除了手掌与背景橙红物体的误判（33 张截图复核）。摄像头→画面的完整联动与端到端延迟尚未测。
 
 ## 2026-11-17｜整理本机已有的 StreamDiffusionTD 到 E 盘
 

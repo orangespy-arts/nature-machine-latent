@@ -100,6 +100,19 @@ $env:PATH = "E:\envs\rave-2.3.1\Scripts;$env:PATH"   # 或运行 E:\envs\rave-2.
 - 验证（`HF_HUB_OFFLINE=1`，无下载）：从 E 盘导入、识别 RTX 4070、离线加载 sd-turbo＋taesd；img2img 512×512、xformers、无 TensorRT 约 19.3 fps（51.8 ms/帧），显存 2.58 GiB。此为管线可用性检查，`t_index_list=[32]` 输出几乎等于输入，画面效果与参数待正式测试。
 - 未装 TensorRT。TouchDesigner 中组件的安装路径需改为 `E:\envs\streamdiffusion-td`（尚未在 TD 中操作）。
 
+## Max 9 ＋ nn~（声音，2026-11-18）
+
+2026-11-18 用户在本机装了 Max 9 并决定画面与声音都在 4070 上跑（OSC 走本机）。
+
+| 内容 | 位置／版本 |
+| --- | --- |
+| Max | 9.0.8，`D:\MaxMsp\Max.exe` |
+| nn~ | v1.6.0（与 Mac 同版本，torch 2.5.1 构建，**CPU libtorch**，不占 GPU），`C:\Users\Administrator\Documents\Max 9\Packages\nn_tilde\`，约 1.2 GB |
+| 模型 | `nn_tilde\models\exp003-forest-s105ck01-final-step1500000_streaming.ts`（从 `exports\exp-003\` 复制，SHA-256 `c902955f…b8799c`，与交接包一致） |
+
+- 来源（经用户同意下载）：[nn_tilde v1.6.0 releases](https://github.com/acids-ircam/nn_tilde/releases/tag/v1.6.0) 的 `nn_max_msp_windows_x64.tar.gz`，332,296,372 字节（与 GitHub 标注一致），SHA-256 `aced3dfb…e48d8b92`。原包留在 `E:\downloads-nn\`，可删。
+- 实测：Max 自带的采样率为 44100（与模型一致）；`reveal-sound-4070.maxpat` 两个 encode＋一个 decode 运行时 `adstatus cpu` 读数在 0 与 35–54 % 之间跳动（nn~ 按块在线程里算，读数不平稳）；同时运行 StreamDiffusion 画面，画面帧率不变（显示 27 fps、生成 13.9 fps）。听感、爆音与音频设备驱动未检查。
+
 ## 待完成
 
 - [x] 安装环境并记录依赖版本。

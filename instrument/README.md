@@ -6,3 +6,5 @@
 Max/MSP 与 Pure Data 的选择待原型阶段确认。
 
 测试 patch：[max/exp-003](max/exp-003/README.md)（exp-003 第一阶段模型的 forward 与潜在空间测试）。
+
+画面联动声音：[max/reveal](max/reveal/README.md)（接收画面工具 OSC，按区域机械比例对两路源做潜在插值；v1，2026-11-18 在 4070 上与画面联动跑通，听感未评）。
