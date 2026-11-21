@@ -1,0 +1,49 @@
+{
+  "_note": "坐标为画布归一化位置 (0–1)，按用户 2026-11-17 草图量取；a 为该区域的机械比例（0 自然虫、1 机械），用于混合声音比例。prompt 与底图均为占位，待替换。",
+  "canvas": {"width": 2048, "height": 1152},
+  "style": "extreme close-up macro photograph, the subject fills the whole frame, isolated on pure black background, dramatic rim light, highly detailed",
+  "negative": "",
+  "regions": [
+    {"name": "insect_tl", "kind": "insect",  "a": 0.0, "x": 0.066, "y": 0.079, "prompt": "a cricket, natural insect, translucent wings", "base": null},
+    {"name": "insect_tr", "kind": "insect",  "a": 0.0, "x": 0.777, "y": 0.073, "prompt": "a beetle, natural insect, iridescent shell", "base": null},
+    {"name": "insect_bl", "kind": "insect",  "a": 0.0, "x": 0.066, "y": 0.780, "prompt": "a cicada, natural insect, veined wings", "base": null},
+    {"name": "insect_br", "kind": "insect",  "a": 0.0, "x": 0.799, "y": 0.763, "prompt": "a grasshopper, natural insect, green legs", "base": null},
+    {"name": "hybrid_tl", "kind": "hybrid",  "a": 0.5, "x": 0.266, "y": 0.267, "prompt": "a half-mechanical cricket, brass gears in its body, insect wings", "base": null},
+    {"name": "hybrid_tr", "kind": "hybrid",  "a": 0.5, "x": 0.581, "y": 0.286, "prompt": "a half-mechanical beetle, clockwork joints, iridescent shell", "base": null},
+    {"name": "hybrid_bl", "kind": "hybrid",  "a": 0.5, "x": 0.333, "y": 0.612, "prompt": "a half-mechanical cicada, metal ribs and veined wings", "base": null},
+    {"name": "hybrid_br", "kind": "hybrid",  "a": 0.5, "x": 0.632, "y": 0.593, "prompt": "a half-mechanical grasshopper, steel springs as legs", "base": null},
+    {"name": "machine",   "kind": "machine", "a": 1.0, "x": 0.433, "y": 0.432, "prompt": "an intricate clockwork mechanism, brass gears, ratchets and springs", "base": null}
+  ],
+  "generation": {
+    "model": "stabilityai/sd-turbo",
+    "t_index": 5,
+    "num_inference_steps": 50,
+    "size": 512,
+    "blend_power": 2.0,
+    "reseed_distance": 0.08,
+    "reseed_interval_s": 0
+  },
+  "display": {
+    "patch_px": 1000,
+    "feather": 0.25,
+    "fade_in_s": 0.4,
+    "fade_out_s": 0.8,
+    "lost_after_s": 0.25
+  },
+  "camera": {
+    "mode": "aruco",
+    "aruco": {"dictionary": "DICT_4X4_50", "ids": [0, 1, 2, 3], "params": {"polygonalApproxAccuracyRate": 0.06}},
+    "index": 0,
+    "width": 1280,
+    "height": 720,
+    "fourcc": "MJPG",
+    "mirror": false,
+    "hsv_low": [0, 200, 90],
+    "hsv_high": [4, 255, 255],
+    "hsv_low2": [175, 200, 90],
+    "hsv_high2": [180, 255, 255],
+    "min_area_px": 150,
+    "smoothing": 0.5
+  },
+  "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal"}
+}

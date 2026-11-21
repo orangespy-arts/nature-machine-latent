@@ -31,10 +31,17 @@ python scripts/rave_preprocess_windows.py --input_path <音频目录> --output_p
 
 ## 试听文件生成
 
-`render_listening.py` 用导出的 `.ts` 模型重建输入目录各子文件夹（如 `machine/`、`nature/`）里的 WAV，输出原电平与统一响度两套原声／重建、A/B 对照（最响的 10 秒原声 → 1 秒静音 → 对齐后的重建）和 `summary.csv`。只推理，CPU 即可；训练进行中在 4070 上运行时，建议限制到 E 核、低优先级并隐藏 GPU（`CUDA_VISIBLE_DEVICES=`），以免影响训练。
+`render_listening.py` 用导出的 `.ts` 模型重建输入目录各子文件夹（如 `machine/`、`nature/`）里的 WAV，输出原电平与统一响度两套原声／重建、A/B 对照（最响的 10 秒原声 → 1 秒静音 → 对齐后的重建）和 `summary.csv`。只推理，默认 CPU，加 `--device cuda` 用 GPU（训练结束后可用）；训练进行中在 4070 上运行时，建议限制到 E 核、低优先级并隐藏 GPU（`CUDA_VISIBLE_DEVICES=`），以免影响训练。
 
 ```powershell
 python scripts/render_listening.py --model <model.ts> --input <heldout 目录> --output <listening 目录>
+```
+
+`render_interpolation.py` 生成自然↔机械潜在插值试听文件（exp-003 第 12 步）：一段自然与一段机械留出素材调到同一 RMS 后编码，按 a = 0／0.25／0.5／0.75／1 线性插值 4 维潜在轨迹再解码；同时输出同比例直接混合原声的对照组、0→1 sweep 和连续试听序列。导出模型的 encode／decode 含随机采样，用 `--seed` 固定后可逐字节复现。
+
+```powershell
+python scripts/render_interpolation.py --model <model.ts> --input <heldout 目录> --output <listening 目录> `
+  --pair night_forest_a.wav@3.5 torque_wrench_turning_constant.wav@2 --device cuda
 ```
 
 ## Max 延迟测量（Mac）

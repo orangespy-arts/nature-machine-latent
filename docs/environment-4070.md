@@ -83,6 +83,36 @@ $env:PATH = "E:\envs\rave-2.3.1\Scripts;$env:PATH"   # 或运行 E:\envs\rave-2.
 
 未验证：phase 2 对抗训练阶段的速度与显存、真实素材的预处理时长、长时间训练稳定性、导出模型在 5070 笔记本或 Max/PD 中的加载。
 
+## StreamDiffusion（实时画面，2026-11-17 整理）
+
+本机早在 2025-02 装过 dotsimulate 的 StreamDiffusionTD（安装脚本由 TouchDesigner 组件生成），原位置 `D:\StreamDiffusion-main\`。2026-11-17 整理到 E 盘，不重新下载；验证后经用户确认已删除 D 盘原件和 C 盘旧模型缓存：
+
+| 内容 | 位置 |
+| --- | --- |
+| 代码＋虚拟环境 | `E:\envs\streamdiffusion-td\`（`venv\`：Python 3.11.9、torch 2.1.0+cu118、xformers、diffusers 0.24.0、streamdiffusion 0.1.1 来自 `dotsimulate/StreamDiffusion@9df629c`） |
+| TouchDesigner 组件 | `E:\envs\streamdiffusion-td\tox\`（StreamDiffusionTD 0.1.9、0.2.0 的副本） |
+| 模型缓存 | `E:\hf-cache\`（用户环境变量 `HF_HOME`）：stabilityai/sd-turbo、madebyollin/taesd、openai/clip-vit-large-patch14 配置 |
+| TouchDesigner | `D:\TouchDesigner\`，2023.11600（未移动） |
+
+- 做法：robocopy 复制（缓存用 `/SL` 保留相对符号链接），再把文本中写死的 `D:\StreamDiffusion-main\StreamDiffusion` 改为新路径：`easy-install.pth`、`streamdiffusion.egg-link`、`activate`／`activate.bat`、`Scripts\*-script.py` 首行、`pyvenv.cfg`、`Install_StreamDiffusion.bat`、`stream_config.json`。Python 官方说明 venv 不可移动，这是变通做法；出问题时按 `Install_StreamDiffusion.bat` 重建（需下载）。
+- `Scripts\` 下 19 个 `.exe` 启动器（`pip.exe` 等）内嵌旧路径，未改：一律用 `venv\Scripts\python.exe -m pip …`。
+- StreamDiffusionTD 通过 `HF_HOME` 找模型（`StreamDiffusionTD\wrapper_td.py`）；`stream_config.json` 的 `hf_cache` 只用于显示。
+- 验证（`HF_HUB_OFFLINE=1`，无下载）：从 E 盘导入、识别 RTX 4070、离线加载 sd-turbo＋taesd；img2img 512×512、xformers、无 TensorRT 约 19.3 fps（51.8 ms/帧），显存 2.58 GiB。此为管线可用性检查，`t_index_list=[32]` 输出几乎等于输入，画面效果与参数待正式测试。
+- 未装 TensorRT。TouchDesigner 中组件的安装路径需改为 `E:\envs\streamdiffusion-td`（尚未在 TD 中操作）。
+
+## Max 9 ＋ nn~（声音，2026-11-18）
+
+2026-11-18 用户在本机装了 Max 9 并决定画面与声音都在 4070 上跑（OSC 走本机）。
+
+| 内容 | 位置／版本 |
+| --- | --- |
+| Max | 9.0.8，`D:\MaxMsp\Max.exe` |
+| nn~ | v1.6.0（与 Mac 同版本，torch 2.5.1 构建，**CPU libtorch**，不占 GPU），`C:\Users\Administrator\Documents\Max 9\Packages\nn_tilde\`，约 1.2 GB |
+| 模型 | `nn_tilde\models\exp003-forest-s105ck01-final-step1500000_streaming.ts`（从 `exports\exp-003\` 复制，SHA-256 `c902955f…b8799c`，与交接包一致） |
+
+- 来源（经用户同意下载）：[nn_tilde v1.6.0 releases](https://github.com/acids-ircam/nn_tilde/releases/tag/v1.6.0) 的 `nn_max_msp_windows_x64.tar.gz`，332,296,372 字节（与 GitHub 标注一致），SHA-256 `aced3dfb…e48d8b92`。原包留在 `E:\downloads-nn\`，可删。
+- 实测：Max 自带的采样率为 44100（与模型一致）；`reveal-sound-4070.maxpat` 两个 encode＋一个 decode 运行时 `adstatus cpu` 读数在 0 与 35–54 % 之间跳动（nn~ 按块在线程里算，读数不平稳）；同时运行 StreamDiffusion 画面，画面帧率不变（显示 27 fps、生成 13.9 fps）。听感、爆音与音频设备驱动未检查。
+
 ## 待完成
 
 - [x] 安装环境并记录依赖版本。

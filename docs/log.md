@@ -3,6 +3,79 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-21｜整理 5070 声画联动拷贝包
+
+- 用户决定在 5070 笔记本上也运行声画联动（画面＋声音，5070 上已有 CUDA 与 StreamDiffusion，之后装 Max 与 nn~）；仍不在 5070 上训练。
+- `make_reveal_sound_patch.py` 新增 `--target 5070`：两个源只写文件名，WAV 与 patch 放在同一文件夹（Max 先在已打开 patch 所在文件夹找文件，[search path 文档](https://docs.cycling74.com/max8/vignettes/search_path)）。
+- `visual/sdgen.py` 的加速方式改为可配置：`SD_ACCELERATION` 环境变量或 `layout.json` 的 `generation.acceleration`，默认仍为 xformers。原因：RTX 50 系列（sm_120）需 torch ≥2.7 且 CUDA ≥12.8 构建，xformers 有不支持 sm_120 的报告（[PyTorch 论坛](https://discuss.pytorch.org/t/rtx-5050-sm-120-support-timeline-when-in-stable-pytorch/224288)、[xformers 报告](https://discuss.pytorch.org/t/use-xformers-with-rtx50-series/224056)）。4070 上的 torch 2.1.0+cu118 环境不能搬到 5070。
+- 拷贝包 `E:\nature-machine-latent-data\handoff\5070-reveal\`（74.5 MB，31 个文件＋SHA256SUMS）：`PROMPT-5070.md`（本机环境检查：GPU／torch／xformers／StreamDiffusion 接口／模型缓存／Max／nn~，再按顺序做声音、画面、联动测试，结果写 `RESULTS-5070.md`）、`max\`（5070 patch、模型、4 个源 WAV）、`nature-machine-latent\`（visual、instrument/max/reveal、两份文档的副本）。
+- 4070 上从包内 `max\` 打开 5070 patch 测试：两个源按文件名自动载入，发 OSC 后输出电平最高 0.25，a 与包络正常。未测：5070 上的一切。
+
+## 2026-11-18｜素材来源更正：全部为作者本人的田野录音
+
+- 用户确认：森林（forest-v001，46 个）与机械（S105，566 个）两批素材**全部是作者本人的田野录音**，版权归作者。此前文档中的“第三方音效素材／来源待确认／许可 unknown”为错误记录。
+- 已更新当前文档：README、`datasets/README.md`、`docs/materials-forest.md`、`docs/materials-s105.md`、`docs/processing-forest-s105ck01-v001.md`、`docs/concept-mechanical-insects.md`、exp-001／002／003。清单 `s105-v001.csv`（566 条）与 `forest-v001.csv`（46 条）的 source 改为 “Author's own field recording (…)”，license 改为 `author-owned`。
+- 未改：本日志早先条目、首次扫描报告与重命名映射（`*-report.json`、`*-renames.json`）作为历史记录保留，其中的原文件夹名与原文件名照旧。
+- 待用户自己处理：4070 `E:\nature-machine-latent-data\SOURCES.md` 与本次更正保持一致。
+- 用途：本项目计划投 xCoAx 2027（截止 2027-01-31），并作为博士研究计划中声音引擎的技术基础。
+
+## 2026-11-18｜声画联动在 4070 上跑通（Max 9 ＋ nn~ Windows）
+
+- 用户在 4070 上装了 Max 9.0.8，决定画面与声音都在 4070 上运行（OSC 走 127.0.0.1）。经同意下载 nn~ v1.6.0 Windows 版（CPU libtorch），装入 Max 9 Packages，复制 exp-003 最终模型；见 [environment-4070.md](environment-4070.md)。
+- `make_reveal_sound_patch.py` 新增 `--target 4070`，生成 `reveal-sound-4070.maxpat`：打开后自动载入两个源（night_forest_a／torque_wrench_turning_constant）、自动开音频。两版 patch 都把状态（输出峰值、a、包络、CPU、采样率）用 OSC 发到 7401；新增 `sound_status.py` 读取，不看屏幕即可检查。
+- 联动实测（画面 demo 输入 75 秒、状态记录 55 秒）：`route` 能直接匹配 OSC 地址；a 随位置在 0–0.97 变化，包络随 present 淡入淡出（0.21–1.0），输出峰值 0.005–0.38（音量 0.5，无削波）；画面帧率不受影响（显示 27、生成 13.9 fps）；Max DSP CPU 读数 0 与 35–54 % 之间跳动。
+- 未验证：听感（插值是否好听、跳位是否突兀）、有无爆音断续、声画延迟差、摄像头输入下的联动。
+
+## 2026-11-17｜声音部分 v1：画面 OSC → Max 潜在插值（未在 Mac 测试）
+
+- 新增 [instrument/max/reveal](../instrument/max/reveal/README.md)：`reveal-sound.maxpat`（由 `make_reveal_sound_patch.py` 生成）。两路源 `sfplay~` → 各自 `nn~ encode` → 每维按 OSC `/reveal/mix` a 线性插值 → `nn~ decode`；`/reveal/present` 控制淡入 400 ms／淡出 800 ms（同画面）；`/reveal/pos` x 控制等功率声像；`/reveal/seed` 使两源随机跳位（限每秒一次）。映射为人为设计。
+- 4070 上验证画面工具确实发出 5 种 OSC 消息（每秒约 15–25 条；demo 中 seed 可达每秒 11 次，故加限速）；新增 `visual/osc_monitor.py`。patch 连接端口号已用脚本校验（87 个对象、86 条连线），但尚未在 Max 中打开。
+- 待 Mac：`route` 能否匹配 OSC 地址、两个 encode＋一个 decode 在 M1 上的 CPU、声画延迟差、听感。
+
+## 2026-11-17｜画面工具：标记改为 ArUco（应对展厅光线不确定）
+
+- 实测颜色标记不可靠：同一红色纸盒在两种光线下 HSV 从（H 1–3，S≈235）变为（H 3–6，S≈130），后者与手掌几乎相同；收紧阈值会漏掉纸盒，放宽会把手当成标记。另加了点选颜色功能（`visual/local/marker.json`），并拒绝过灰的取样。
+- 讨论了不依赖光线的方案（自控照明、红外 LED＋滤光、ArUco、可见 LED＋低曝光）；用户选 ArUco。本机 OpenCV 4.11 自带 `cv2.aruco`；摄像头手动曝光设置部分生效（亮度 84→60，−7 与 −10 无差别）。
+- `visual/tracker.py` 新增 ArUco 模式并设为默认；`visual/make_markers.py` 生成可打印标记（`visual/markers/`，PDF＋300 dpi PNG）。合成测试（暗、过曝、偏色、不均匀光、模糊、25–120 px）全部识别，每帧约 3.5 ms；未经实物实测。
+- 5 分钟完整测试中摄像头插在主机背板端口，全程未掉线（约 7–8 fps，暗光下曝光长）。
+- ArUco 实物测试（手机屏幕显示 ID 3，5 分钟）：前 230 秒约 97% 识别，之后室内变亮、屏幕过曝时约 65%；离线比较后 `polygonalApproxAccuracyRate` 设为 0.06、ID 限定 0–3。最初只看了前 84 张截图（80 张识别），生成画面跟随位置正常。之后按用户要求放大画面：画面块 640 → 1000 px、柔边 0.35 → 0.25、风格词加入特写“主体充满画面”；显示帧率约 41 → 26 fps。
+
+## 2026-11-17｜自制画面工具 v0（不用 TouchDesigner）
+
+- 用户决定不用 TouchDesigner，做自己的工具。新增 [visual/](../visual/README.md)：Python＋OpenCV＋StreamDiffusion，用 `E:\envs\streamdiffusion-td` 环境，无新下载。
+- 功能：黑屏；标记（鼠标／演示路径／摄像头颜色追踪＋4 点校准）所在处生成画面；9 个区域按草图布局，位置的反距离权重混合各区域提示词 embedding 与底图；移动超过阈值或重新出现时换种子；OSC 发送位置、机械比例 a、区域、种子供 Max 使用。
+- 加噪强度对照（占位底图）：t_index 0–5 主体清楚、种子间差异明显，15–20 为模糊色团；默认 5。“混合体”出图偏昆虫，机械感弱。
+- demo 输入实测：显示约 41 fps，生成约 13 fps（75 ms/帧），无 TensorRT。
+- 接上 USB 摄像头（CAMERA - UAC）：MJPG 下 1280×720 约 27 fps；使用中多次掉线，已加自动重连。红色纸盒识别稳定；收紧 HSV 阈值后排除了手掌与背景橙红物体的误判（33 张截图复核）。摄像头→画面的完整联动与端到端延迟尚未测。
+
+## 2026-11-17｜整理本机已有的 StreamDiffusionTD 到 E 盘
+
+- 只读检查发现本机 2025-02 装过 StreamDiffusionTD（`D:\StreamDiffusion-main\`，三套 venv，其中一套可用、一套重复、一套不完整），sd-turbo 与 taesd 已缓存在 C 盘，另有 TouchDesigner 2023.11600、NDI 6、CUDA 11.8。
+- 经用户同意，复制可用的一套到 `E:\envs\streamdiffusion-td\`、模型缓存到 `E:\hf-cache\`（设用户变量 `HF_HOME`），改写写死路径；离线验证通过，img2img 512×512 约 19.3 fps（无 TensorRT）。细节见 [4070 环境检查](environment-4070.md)。
+- 经用户确认，永久删除原件：`D:\StreamDiffusion-main`（16.89 GB）、空的 `D:\StreamDifussionTDBase`、`C:\Users\Administrator\.cache\huggingface`（4.82 GB）。删除后重跑离线验证，结果相同（19.3 fps）。`E:\` 根目录与 `E:\Download\` 中的 `.tox` 原件未动。
+
+## 2026-11-17｜视听装置：画面路线选定为 4070 上 StreamDiffusion 实时生成
+
+- 用户提出视听装置：固定布局（四角“虫”、中央“机械”、之间“混合体”），平时黑屏，摄像头追踪一个标记，标记所在处才出现画面，且每次移动画面不同。
+- 比较了预生成素材、按位置混合、StyleGAN、StreamDiffusion、FluxRT、Daydream Scope 等路线；FluxRT、Scope 视频模型、Self-Forcing 需 20–32 GB 显存，本地不可行。用户选定 **StreamDiffusion 实时生成，在 4070 上运行**；演出时 4070 需作为画面主机，最终演出设备仍未定。
+- 记录与资料依据：[概念草案：摄像头定位揭示的 AI 画面](concept-visual-reveal.md)。尚未安装或测试；4070 台式机帧率、闪烁、端到端延迟均待测。
+
+## 2026-11-17｜exp-003 第 12 步：生成自然↔机械插值与原声混合对照
+
+- 修正两份日志中被 `\f` 转义吃掉的路径（`listening\exp-003\final-step1500000\`）和数据目录 `LOG.md` 中断行的 Mac 核对命令；`docs/training-steps-exp-003.md` 第 7–11 步标为完成，第 12 步进行中。
+- 核对 RAVE 2.3.1 源码（`scripts/export.py` `VariationalScriptedRAVE`、`rave/blocks.py` `VariationalEncoder.reparametrize`）：导出模型的 `encode` 对后验随机采样，经 PCA 只保留前 4 维；`decode` 给其余维度补随机噪声。所以潜在插值只作用于这 4 维，结果带随机性。
+- 新增 `scripts/render_interpolation.py`：两段等长留出素材先调到同一 RMS，按 a = 0／0.25／0.5／0.75／1 线性插值 z 后 decode，并输出同比例直接混合原声的对照组、0→1 sweep 和连续试听序列；`--seed` 固定后重跑逐字节相同（已验证）。
+- 4070 GPU 生成三对（初选，未试听）：night_forest_a ↔ torque_wrench_turning_constant、night_forest_a ↔ ratchet_lever_snap_open_close_sequence_slow、birdsong_d ↔ rolling_chain，各 10 秒；输出 4070 `listening\exp-003\final-step1500000-interp\`（93 MB，49 项 SHA256SUMS 核对通过，含 README.txt）。
+- 数据上：插值中间点的 RMS 比两端低约 2–4 dB（直接混合也有类似下降）；一对在 a=0.75／1 有 2／4 个样本削波。中间点是否构成“过渡”、是否比直接混合更有价值，**待 Mac 试听**。
+
+## 2026-11-13｜exp-003 训练完成；导出最终模型并生成试听文件
+
+- 18:29 到达 1,500,000 步正常结束（runner 记 exit code 0，全程 1 次运行、未重启）；第二阶段约 5.3–5.4 步/秒。
+- `best.ckpt` 停在第一阶段（11-12 16:42）：第二阶段验证不再改善，不能代表最终模型。最终模型用 `epoch_1500000.ckpt`（SHA-256 `3785047F…24FB286`）导出：4070 `exports\exp-003\exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `c902955f…b8799c`；导出仍在 CPU 上进行，latent 4 维。
+- `scripts/render_listening.py` 新增 `--device`；用 GPU 重建同一批 17 个 heldout 文件（14 秒），输出到 4070 `listening\exp-003\final-step1500000\`，可与 `p1-step1000000\` 逐一对比。
+- 数据上（未试听）：机械与较响的自然素材重建电平比第一阶段更接近原声；但两个很安静的自然文件（forest_crickets_birdsong −56 dBFS、forest_wind_leaves_birdsong −54 dBFS）重建约 −38／−40 dBFS，比原声响 15–18 dB，而第一阶段模型对它们的重建比原声更安静。CPU 重跑结果相同，排除 GPU 推理差异。是否为解码器在安静输入上加入的噪声底，需要试听确认。
+- 给 Mac 的交接说明见 [prompt-mac-exp-003-final.md](prompt-mac-exp-003-final.md)；4070 上整理了拷贝包 `handoff\mac-exp003-final\`（约 605 MB，88 个文件核对一致）。
+
 ## 2026-11-12｜落地装置去掉花盆；乐器方向改为“虫—机械耦合体＋Max 调和”
 
 - 用户决定去掉花盆，植物和土壤湿度传感器一并去掉。[落地装置原型概念](concept-installation-prototype.md) 已更新，原内容移到第 7 节备查。Blender 草图 proto-v1、proto-v3 中的花盆未改动。
