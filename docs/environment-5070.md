@@ -45,6 +45,8 @@
 | nn~ | v1.6.0 `nn_max_msp_windows_x64.tar.gz`（经用户同意下载，332,296,372 字节，SHA-256 `aced3dfb…e48d8b92`，与 4070 相同），装在 `C:\Users\wangz\Documents\Max 9\Packages\nn_tilde\`，约 1.2 GB |
 | RAVE 模型 | `nn_tilde\models\exp003-forest-s105ck01-final-step1500000_streaming.ts`，SHA-256 `C902955F…B8799C` |
 
+完整启动步骤见 [5070 启动指南](guide-run-reveal-5070.md)。
+
 运行画面（在本仓库根目录）：
 
 ```powershell
