@@ -56,6 +56,15 @@ eveal.py --input light --windowed --debug --monitor # 完整运行
 
 `--camera_index N` 可临时换摄像头（不改 `layout.json`）。5070 笔记本（2026-11-23，插着 USB 摄像头时）：index 0 内置摄像头（返回 Windows 锁形占位图，隐私设置已允许，原因未查明），index 1 USB 摄像头（用这个），index 2 OBS 虚拟摄像头；插拔后编号可能变，用 `--list_cameras` 再看。
 
+## 黑屏提示动画（`prompt`，2026-11-23）
+
+没有检测到光斑（或标记、鼠标未按下）`prompt.idle_after_s`（默认 2 秒）后，黑屏上淡入提示：一团暖白柔光在画面上半部缓慢游走（像有人拿手电在找），下方文字“拿起桌上的手电筒／照向桌面／Pick up the torch and shine it on the table”缓慢明暗呼吸。检测到光斑就在 0.3 秒内淡出，交给揭示画面；光斑短暂丢失（< 2 秒）不会让提示闪回。所有输入模式都有效，`--no_prompt` 关闭，`python visual/prompt.py <目录>` 出预览图。
+
+- 文字、字体（默认微软雅黑 `C:/Windows/Fonts/msyh.ttc`，OpenCV 不能画中文，改用 Pillow 预渲染）、字号、颜色、亮度、光团大小都在 `layout.json` 的 `prompt`。Mac 上需改 `font`。
+- 时序（模拟逐帧调用）：无光斑 → 1.5 秒淡入；光斑出现 → 0.3 秒内消失；光斑离开 → 2 秒后再淡入。
+- 实机（5070，75 秒，期间未打开手电）：提示正常显示、游走、呼吸，显示约 31 fps。**手电打开时提示淡出、画面接上这一段未在实机上看到**，待测。
+- 风险：若投影落在摄像头看的区域，提示本身可能被当成手电。模拟（把输出缩到 640×480 叠在暗背景上）：按原亮度看到时 14 帧中 1 帧误判，亮度 ×0.6 以下 0／14。实际要看投影亮度和摄像头曝光，未测；出现误判时调低 `glow_brightness`／`text_brightness`。
+
 ## 标记：颜色（`camera.mode = "color"`）
 
 **点选标记颜色**：在对照窗左边（或 `--camera_test` 窗口左边）的摄像头画面上点一下标记，程序取该处颜色作为识别目标，保存到 `visual/local/marker.json`（本机，不进 Git），下次启动自动读取。光线或标记变了就再点一次。实测：同一红色纸盒在不同光线下 HSV 从（H 1–3，S≈235）变为（H 3–6，S≈130），后者与皮肤几乎相同——**红色标记容易与手混淆，建议改用绿色或蓝色标记**。
@@ -75,6 +84,7 @@ eveal.py --input light --windowed --debug --monitor # 完整运行
 | `layout.json` | 画布尺寸、9 个区域（位置按 2026-11-17 草图量取、提示词、底图、机械比例 a）、生成／显示／摄像头／OSC 参数 |
 | `reveal.py` | 主程序：输入 → 区域权重 → 生成线程 → 黑色画布上贴柔边圆形画面 → 全屏；发 OSC |
 | `sdgen.py` | StreamDiffusion 封装：按权重混合提示词 embedding 与底图，换种子 |
+| `prompt.py` | 黑屏提示动画（光团＋中英文提示） |
 | `tracker.py` | 鼠标／演示／摄像头输入，ArUco 或 HSV 颜色追踪，4 点透视校准，点选颜色 |
 | `make_markers.py`／`markers/` | 生成并存放可打印的 ArUco 标记（PNG 300 dpi 与 PDF） |
 | `sweep_strength.py` | 出对照图挑参数 |

@@ -201,6 +201,7 @@ def main():
     ap.add_argument('--marker', default=str(HERE / 'local' / 'marker.json'), help='点选保存的标记颜色')
     ap.add_argument('--windowed', action='store_true')
     ap.add_argument('--no_osc', action='store_true')
+    ap.add_argument('--no_prompt', action='store_true', help='不显示黑屏时的提示动画（layout.json prompt）')
     ap.add_argument('--debug', action='store_true', help='启动时即显示调试信息（左上角绿字）')
     ap.add_argument('--guide', action='store_true', help='启动时即显示区域位置标签（灰点＋名称）')
     ap.add_argument('--monitor', action='store_true', help='另开对照窗：左 摄像头原画面，右 输出画面（m 键切换）')
@@ -264,6 +265,10 @@ def main():
         Path(args.snapshot_dir).mkdir(parents=True, exist_ok=True)
 
     mask = feather_mask(disp['patch_px'], disp['feather'])
+    idle = None
+    if layout.get('prompt', {}).get('enabled', False) and not args.no_prompt:
+        from prompt import IdlePrompt
+        idle = IdlePrompt(layout['prompt'], W, H)
     alpha, last_seen, was_present = 0.0, 0.0, False
     anchor, seed_t, seed = None, time.time(), 0
     show_debug, show_guide, show_cam = args.debug, args.guide, False
@@ -318,6 +323,9 @@ def main():
                 p = (int(r['x'] * W), int(r['y'] * H))
                 cv2.circle(canvas, p, 6, (80, 80, 80), -1)
                 cv2.putText(canvas, r['name'], (p[0] + 10, p[1] + 5), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (80, 80, 80), 1)
+        if idle is not None:  # 黑屏提示：一段时间没检测到光斑就淡入，检测到就淡出
+            idle.update(now - last_seen, dt)
+            idle.draw(canvas, now - t_start)
         if worker.image is not None and alpha > 0:
             patch = cv2.resize(worker.image[..., ::-1], (disp['patch_px'], disp['patch_px']))
             paste(canvas, patch, mask, x * W, y * H, alpha)

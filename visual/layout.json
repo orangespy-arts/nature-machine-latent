@@ -47,6 +47,11 @@
               "_note": "--input light：黑幕布上的手电光斑。阈值 = max(min_v, 背景+min_contrast, 背景+(峰值−背景)×rel)，背景 = 亮度中位数；光斑面积 < min_area_frac×画面 视为无；亮像素占轮廓面积 < min_fill（空心图形、细线）不算。width／height：光斑模式的摄像头分辨率（5070 的 USB 摄像头 1280×720 只有 7.7 fps，640×480 为 30 fps）；exposure：null 自动曝光，数值为手动曝光（DirectShow log2 秒，如 -6）（2026-11-23）"},
     "smoothing": 0.5
   },
+  "prompt": {"enabled": true, "idle_after_s": 2.0, "fade_in_s": 1.5, "fade_out_s": 0.3,
+             "lines": ["拿起桌上的手电筒", "照向桌面"], "sub": "Pick up the torch and shine it on the table",
+             "font": "C:/Windows/Fonts/msyh.ttc", "font_px": 88, "sub_font_px": 40, "line_gap": 24, "text_y": 0.68,
+             "text_rgb": [235, 225, 205], "text_brightness": 0.75, "glow_rgb": [255, 236, 200], "glow_px": 520, "glow_brightness": 0.28,
+             "_note": "黑屏提示动画（2026-11-23）：光斑消失 idle_after_s 秒后淡入，检测到光斑就在 fade_out_s 内淡出。光团在画面上半部游走，文字在下部呼吸。--no_prompt 关闭。若投影落在摄像头看到的区域，光团／文字可能被当成手电光斑，glow_brightness／text_brightness 调低或把 enabled 设为 false"},
   "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal", "mix_power": 6.0, "seed_on": "appear",
           "_seed_on_note": "appear：只在标记出现时发 /seed（两源各跳到随机位置），按住移动时声音连续；move：画面每换种子就发（旧行为，按住时约每秒重新起播一次）（2026-11-21）",
           "_mix_power_note": "声音机械比例 a 的反距离指数，只影响 /mix，画面混合仍用 generation.blend_power。2 → 6 后屏幕中央 a 约 0.71 → 0.97，区域之间的中点仍为 0.25／0.75（2026-11-21）"}
