@@ -1,9 +1,10 @@
-"""黑屏时的提示动画（无文字）：线描手电筒从桌上被拿起、打开、照向桌面，再放回。
+"""黑屏时的提示动画（无文字）：一只线描的手伸进来，拿起桌上的手电筒，打开，照向桌面，再放回、离开。
 
-约 10 秒一循环：
-  静置（镜头上一点微光呼吸）→ 沿弧线抬起并朝下倾斜 → 像真手电一样闪两下点亮，暖光锥落到桌面
+约 11 秒一循环：
+  手电静置（镜头一点微光呼吸）→ 手臂从左上方伸入，手指张开 → 握住 → 沿弧线抬起并朝下倾斜
+  → 拇指按下开关，像真手电一样闪两下点亮，暖光锥落到桌面
   → 光圈左右缓慢扫动：光圈里浮现细线图案（左半是弯曲的叶脉，右半是直线齿轮齿，对应“自然—机械”），
-  光锥里有浮尘 → 熄灭 → 放回桌上 → 停顿。
+  光锥里有浮尘 → 拇指再按，熄灭 → 放回桌上 → 手指张开，手臂收回 → 停顿。
 一段时间没检测到光斑就淡入，检测到就淡出（update()）。
 
 绘制：线条在 1/2 分辨率上用 OpenCV 抗锯齿画；光（光锥、光圈、镜头光晕）在 1/4 分辨率上填充后模糊，
@@ -31,9 +32,19 @@ _BODY = np.array([(-0.50, -0.070), (0.16, -0.070), (0.29, -0.125), (0.50, -0.125
 _RINGS = [-0.40, -0.35, -0.30]          # 握把上的环纹
 _BUTTON = np.array([(-0.06, -0.070), (-0.06, -0.098), (0.06, -0.098), (0.06, -0.070)], np.float32)
 
+# 手（握住时的局部坐标，同手电）：手掌、拇指（压在开关上方）、四指（两节，张开↔握拢）
+_PALM = np.array([(-0.40, -0.075), (-0.30, -0.125), (-0.10, -0.130), (0.00, -0.105), (0.035, -0.02),
+                  (0.03, 0.075), (-0.30, 0.085), (-0.42, 0.03)], np.float32)
+_KNUCKLES = [(-0.25, 0.075), (-0.165, 0.080), (-0.08, 0.080), (0.005, 0.072)]
+_FINGER_LEN = (0.085, 0.065)          # 近节、远节
+_FINGER_W = 0.052                      # 手指粗细
+_THUMB = ((-0.17, -0.125), (-0.02, -0.112))   # 拇指根 → 指尖（按下时指尖下移）
+_WRIST = (-0.39, -0.02)
+_ARM_W = 0.20
+
 
 class IdlePrompt:
-    PERIOD = 10.0
+    PERIOD = 11.0
 
     def __init__(self, cfg, W, H):
         self.cfg, self.W, self.H = cfg, W, H
@@ -58,31 +69,34 @@ class IdlePrompt:
 
     # ---------- 场景状态 ----------
     def _state(self, t):
-        """返回 (筒中心 x,y, 角度 rad, 光强 0–1, 微光 0–1)，坐标为 1/2 分辨率像素。"""
+        """当前时刻的场景状态（坐标为 1/2 分辨率像素）。"""
         hw, hh = self.hw, self.hh
         L = hh * self.cfg.get('torch_len', 0.30)
         table_y = hh * self.cfg.get('table_y', 0.74)
         rest = (hw * 0.5 + 0.10 * L, table_y - 0.125 * L - 2, math.radians(-4))
         up = (hw * 0.5 - 0.48 * L, table_y - 1.55 * L, math.radians(60))
         T = t % self.PERIOD
-        lift = _ease(_seg(T, 1.2, 2.7)) - _ease(_seg(T, 7.5, 8.9))
+        lift = _ease(_seg(T, 2.3, 3.6)) - _ease(_seg(T, 8.3, 9.5))
         x = rest[0] + (up[0] - rest[0]) * lift
         y = rest[1] + (up[1] - rest[1]) * lift - math.sin(math.pi * lift) * 0.25 * L  # 弧线
         ang = rest[2] + (up[2] - rest[2]) * lift
         # 扫动（只在亮着时）
-        sweep = _seg(T, 2.9, 3.6) * (1 - _seg(T, 6.8, 7.3))
-        ang += sweep * math.radians(6) * math.sin(2 * math.pi * (T - 2.9) / 3.6)
-        x += sweep * 0.10 * L * math.sin(2 * math.pi * (T - 2.9) / 3.6 + 0.6)
-        # 开灯：两次闪烁后稳定；关灯：渐暗
-        if T < 2.75:
+        sweep = _seg(T, 4.2, 4.9) * (1 - _seg(T, 7.4, 7.9))
+        ang += sweep * math.radians(6) * math.sin(2 * math.pi * (T - 4.2) / 3.4)
+        x += sweep * 0.10 * L * math.sin(2 * math.pi * (T - 4.2) / 3.4 + 0.6)
+        # 开灯：拇指按下后两次闪烁再稳定；关灯：拇指再按，渐暗
+        if T < 3.8:
             on = 0.0
-        elif T < 3.15:
-            k = (T - 2.75) / 0.4
-            on = [0.9, 0.15, 1.0, 0.45, 1.0][min(int(k * 5), 4)]
+        elif T < 4.2:
+            on = [0.9, 0.15, 1.0, 0.45, 1.0][min(int((T - 3.8) / 0.4 * 5), 4)]
         else:
-            on = 1.0 - _seg(T, 7.0, 7.45)
-        glint = (1 - lift) * (0.5 + 0.5 * math.sin(2 * math.pi * T / 1.6)) * (1 - on)
-        return x, y, ang, on, glint, L, table_y
+            on = 1.0 - _seg(T, 7.95, 8.35)
+        press = max(math.sin(math.pi * _seg(T, 3.6, 3.85)), math.sin(math.pi * _seg(T, 7.75, 8.0)))
+        # 手：伸入（reach 1→0 为离手电的远近）、握拢（grip 0 张开 → 1 握住）
+        reach = 1 - _ease(_seg(T, 0.8, 1.9)) + _ease(_seg(T, 9.8, 10.7))
+        grip = _ease(_seg(T, 1.9, 2.3)) - _ease(_seg(T, 9.5, 9.8))
+        glint = (1 - lift) * (0.5 + 0.5 * math.sin(2 * math.pi * T / 1.6)) * (1 - on) * (1 - grip)
+        return dict(x=x, y=y, ang=ang, on=on, glint=glint, L=L, ty=table_y, press=press, reach=reach, grip=grip, T=T)
 
     # ---------- 绘制 ----------
     def draw(self, canvas, t):
@@ -91,7 +105,8 @@ class IdlePrompt:
         if getattr(self, 't0', None) is None:
             self.t0 = t
         t = t - self.t0
-        x, y, ang, on, glint, L, ty = self._state(t)
+        st = self._state(t)
+        x, y, ang, on, glint, L, ty = (st[k] for k in ('x', 'y', 'ang', 'on', 'glint', 'L', 'ty'))
         ca, sa = math.cos(ang), math.sin(ang)
         R = np.array([[ca, -sa], [sa, ca]], np.float32)
 
@@ -154,6 +169,7 @@ class IdlePrompt:
             cv2.line(lines, tuple(p[0]), tuple(p[1]), tuple(int(c * 0.6) for c in col), 1, cv2.LINE_AA)
         lens_col = tuple(int(min(255, c * (0.8 + 0.5 * on))) for c in col)
         cv2.line(lines, tuple(lens_a.astype(int)), tuple(lens_b.astype(int)), lens_col, 3, cv2.LINE_AA)
+        self._hand(lines, st, R)
 
         # 合成：光层模糊（柔光＋大范围光晕）后放大
         soft = cv2.GaussianBlur(light, (0, 0), 2.2)
@@ -167,6 +183,75 @@ class IdlePrompt:
         if k < 1:
             layer = cv2.convertScaleAbs(layer, alpha=k)
         cv2.add(canvas, layer, dst=canvas)
+
+    def _hand(self, img, st, R):
+        """线描的手：所有部件先用线色画“加粗版”、再用黑色画本体，得到一条连贯的外轮廓，并遮住后面的手电。"""
+        if st['reach'] >= 0.999:
+            return
+        L, col = st['L'], self.line_bgr
+        # 握点坐标系 = 手电坐标系，沿手臂方向（朝左上方肩部）后退 reach
+        shoulder = np.array([-0.30 * self.hw, -0.45 * self.hh], np.float32)
+        wrist0 = np.array(_WRIST, np.float32) @ R.T * L + np.array([st['x'], st['y']], np.float32)
+        away = shoulder - wrist0
+        away /= np.linalg.norm(away) + 1e-6
+        off = away * st['reach'] * 1.3 * self.hw
+        # 伸入时手稍微转动，握住时与手电对齐
+        a = st['reach'] * 0.5
+        Rh = R @ np.array([[math.cos(a), -math.sin(a)], [math.sin(a), math.cos(a)]], np.float32)
+
+        def P(pts):
+            return (np.asarray(pts, np.float32) @ Rh.T * L + np.array([st['x'], st['y']], np.float32) + off)
+
+        w = 2  # 轮廓线宽（1/2 分辨率像素）
+        strokes = []  # (点列, 粗细 px)
+        wrist = P([_WRIST])[0]
+        self._arm(img, wrist, away, L)
+        g = st['grip']
+        for kx, ky in _KNUCKLES:
+            a1 = math.radians(65 + (102 - 65) * g)     # 近节：张开时斜向前下，握住时朝下
+            a2 = a1 + math.radians(0 + 75 * g)         # 远节：握住时向后弯
+            p1 = (kx + _FINGER_LEN[0] * math.cos(a1), ky + _FINGER_LEN[0] * math.sin(a1))
+            p2 = (p1[0] + _FINGER_LEN[1] * math.cos(a2), p1[1] + _FINGER_LEN[1] * math.sin(a2))
+            strokes.append((P([(kx, ky - 0.02), p1, p2]), _FINGER_W * L))
+        tip = (_THUMB[1][0], _THUMB[1][1] + 0.022 * st['press'])
+        strokes.append((P([_THUMB[0], tip]), 0.050 * L))
+        palm = P(_PALM).astype(np.int32)
+
+        def stroke(pts, th, c):
+            pts = pts.astype(np.int32)
+            for a, b in zip(pts[:-1], pts[1:]):
+                cv2.line(img, tuple(a), tuple(b), c, max(int(th), 1), cv2.LINE_AA)
+
+        for pts, th in strokes:
+            stroke(pts, th + 2 * w, col)
+        cv2.polylines(img, [palm], True, col, 2 * w + 1, cv2.LINE_AA)
+        for pts, th in strokes:
+            stroke(pts, th, (0, 0, 0))
+        cv2.fillPoly(img, [palm], (0, 0, 0), cv2.LINE_AA)
+        # 细节：拇指指甲、指节折痕
+        dim = tuple(int(c * 0.55) for c in col)
+        nail = P([(tip[0] - 0.035, tip[1] - 0.012), (tip[0] - 0.008, tip[1] - 0.012)]).astype(np.int32)
+        cv2.line(img, tuple(nail[0]), tuple(nail[1]), dim, 1, cv2.LINE_AA)
+        for kx, ky in _KNUCKLES[:3]:
+            c2 = P([(kx + 0.042, ky - 0.035), (kx + 0.042, ky - 0.005)]).astype(np.int32)
+            cv2.line(img, tuple(c2[0]), tuple(c2[1]), dim, 1, cv2.LINE_AA)
+
+    def _arm(self, img, wrist, away, L):
+        """前臂：从手腕向肩部方向变宽，轮廓线逐渐隐入黑暗（不画到屏幕边，避免像一根杆子）。"""
+        n = np.array([-away[1], away[0]], np.float32)
+        length, w0, w1 = 1.9 * L, 0.5 * _ARM_W * L, 0.75 * _ARM_W * L
+        far = wrist + away * length
+        poly = np.array([wrist + n * w0, far + n * w1, far - n * w1, wrist - n * w0], np.float32)
+        cv2.fillPoly(img, [poly.astype(np.int32)], (0, 0, 0), cv2.LINE_AA)
+        steps = 24
+        for side in (1, -1):
+            for i in range(steps):
+                u0, u1 = i / steps, (i + 1) / steps
+                f = (1 - u0) ** 1.6
+                c = tuple(int(v * f) for v in self.line_bgr)
+                a = wrist + away * length * u0 + side * n * (w0 + (w1 - w0) * u0)
+                b = wrist + away * length * u1 + side * n * (w0 + (w1 - w0) * u1)
+                cv2.line(img, tuple(a.astype(int)), tuple(b.astype(int)), c, 2, cv2.LINE_AA)
 
     def _table(self, ty, L):
         """桌面：一条细线，两端渐隐；下面一条更淡的线表示桌面厚度（静态，只画一次）。"""
@@ -210,7 +295,7 @@ class IdlePrompt:
                         tuple(int(c * 0.5) for c in col), 1, cv2.LINE_AA)
         # 只在光圈内，边缘渐隐；图案在开灯后约 0.8 秒才浮现
         T = t % self.PERIOD
-        k = on * _seg(T, 3.1, 4.0) * 0.8
+        k = on * _seg(T, 4.1, 5.0) * 0.8
         x0, x1 = max(int(cx - ax) - 20, 0), min(int(cx + ax) + 20, lines.shape[1])
         y0, y1 = max(int(cy - by) - 20, 0), min(int(cy + by) + 20, lines.shape[0])
         if x0 < x1 and y0 < y1 and k > 0:
@@ -248,13 +333,13 @@ if __name__ == '__main__':  # 预览：python visual/prompt.py [输出目录]：
     out.mkdir(parents=True, exist_ok=True)
     vw = cv2.VideoWriter(str(out / 'prompt_preview.mp4'), cv2.VideoWriter_fourcc(*'mp4v'), 30, (W // 2, H // 2))
     ms = []
-    for i in range(300):
+    for i in range(330):
         c = np.zeros((H, W, 3), np.uint8)
         t0 = time.perf_counter()
         p.draw(c, i / 30)
         ms.append(1000 * (time.perf_counter() - t0))
         vw.write(cv2.resize(c, (W // 2, H // 2), interpolation=cv2.INTER_AREA))
-        if i in (15, 60, 120, 165, 200):
+        if i in (15, 45, 63, 90, 112, 150, 200, 270, 300 - 1):
             cv2.imwrite(str(out / f'prompt_{i / 30:04.1f}s.png'), c)
     vw.release()
     print(f'saved previews to {out}; draw {np.median(ms):.1f} ms median, {max(ms):.1f} ms max')
