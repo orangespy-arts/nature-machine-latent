@@ -32,15 +32,63 @@ _BODY = np.array([(-0.50, -0.070), (0.16, -0.070), (0.29, -0.125), (0.50, -0.125
 _RINGS = [-0.40, -0.35, -0.30]          # 握把上的环纹
 _BUTTON = np.array([(-0.06, -0.070), (-0.06, -0.098), (0.06, -0.098), (0.06, -0.070)], np.float32)
 
-# 手（握住时的局部坐标，同手电）：手掌、拇指（压在开关上方）、四指（两节，张开↔握拢）
-_PALM = np.array([(-0.40, -0.075), (-0.30, -0.125), (-0.10, -0.130), (0.00, -0.105), (0.035, -0.02),
-                  (0.03, 0.075), (-0.30, 0.085), (-0.42, 0.03)], np.float32)
-_KNUCKLES = [(-0.25, 0.075), (-0.165, 0.080), (-0.08, 0.080), (0.005, 0.072)]
-_FINGER_LEN = (0.085, 0.065)          # 近节、远节
-_FINGER_W = 0.052                      # 手指粗细
-_THUMB = ((-0.17, -0.125), (-0.02, -0.112))   # 拇指根 → 指尖（按下时指尖下移）
-_WRIST = (-0.39, -0.02)
-_ARM_W = 0.20
+# 手（局部坐标同手电，单位 = 筒长）：一条平滑的外轮廓（拳头＋拇指），四指并排包住握把，
+# 指尖在下方成扇贝形；张开时手指绕指根向前下方伸直。轮廓从手腕下沿绕一圈到手腕上沿，前臂接着向外延伸。
+_FINGERS = [(-0.300, -0.222), (-0.222, -0.142), (-0.142, -0.060), (-0.060, 0.025)]   # 小指 → 食指的 x 范围
+_FINGER_LEN = [0.060, 0.072, 0.076, 0.070]
+_FINGER_BASE_Y = 0.055
+_WRIST_TOP, _WRIST_BOT = (-0.50, -0.085), (-0.52, 0.060)
+
+
+def _catmull(pts, n=8):
+    """开放 Catmull-Rom 样条：过所有控制点的平滑曲线。"""
+    p = np.asarray(pts, np.float32)
+    p = np.vstack([p[:1], p, p[-1:]])
+    out = []
+    for i in range(1, len(p) - 2):
+        p0, p1, p2, p3 = p[i - 1], p[i], p[i + 1], p[i + 2]
+        for t in np.linspace(0, 1, n, endpoint=False):
+            t2, t3 = t * t, t * t * t
+            out.append(0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2
+                              + (-p0 + 3 * p1 - 3 * p2 + p3) * t3))
+    out.append(p[-2])
+    return np.array(out, np.float32)
+
+
+def _hand_shape(g, press):
+    """返回 (轮廓控制点, 指缝线列表, 拇指甲线)。g：0 张开 → 1 握拢；press：拇指按下 0–1。"""
+    def lerp(a, b):
+        return a + (b - a) * g
+    pts = [_WRIST_BOT, (-0.42, 0.072), (-0.33, 0.080)]
+    ang = math.radians(lerp(58, 92))          # 手指方向：张开斜向前下，握住朝下（包住握把）
+    d = np.array([math.cos(ang), math.sin(ang)], np.float32)
+    n = np.array([-d[1], d[0]], np.float32)   # 指宽方向
+    creases, tips = [], []
+    for k, ((x0, x1), ln) in enumerate(zip(_FINGERS, _FINGER_LEN)):
+        base = np.array([(x0 + x1) / 2, _FINGER_BASE_Y], np.float32)
+        w = (x1 - x0) / 2
+        L = lerp(2.3, 1.0) * ln
+        tip_c = base + d * L
+        tips.append((tip_c, w))
+    for k, (tip_c, w) in enumerate(tips):
+        # 每根手指：一侧 → 指尖 → 另一侧（轮廓按从小指到食指的顺序走，在画面里是从后往前）
+        pts += [tuple(tip_c + n * w * 0.95 - d * 0.004), tuple(tip_c + (n * 0.68 + d * 0.62) * w),
+                tuple(tip_c + d * w * 0.85), tuple(tip_c + (-n * 0.68 + d * 0.62) * w), tuple(tip_c - n * w * 0.95 - d * 0.004)]
+        if k < 3:
+            nxt = tips[k + 1][0]
+            notch = (tip_c + nxt) / 2 - d * 0.012
+            pts.append(tuple(notch))
+            creases.append((tuple(notch), tuple(notch - d * lerp(0.10, 0.06))))
+    # 食指前沿 → 拇指（握住时压在开关上方，按下时指尖下移）
+    py = 0.02 * press
+    th_tip = (lerp(0.075, 0.050), lerp(-0.16, -0.103) + py)
+    pts += [(0.050, -0.010), (0.045, -0.075),
+            (th_tip[0] - 0.010, th_tip[1] + 0.014), (th_tip[0] + 0.006, th_tip[1] - 0.006),
+            (th_tip[0] - 0.020, th_tip[1] - 0.026),
+            (-0.07, lerp(-0.165, -0.138)), (-0.17, -0.148), (-0.29, -0.138), (-0.40, -0.112), _WRIST_TOP]
+    nail = ((th_tip[0] - 0.045, th_tip[1] - 0.020), (th_tip[0] - 0.012, th_tip[1] - 0.012))
+    under = ((th_tip[0] - 0.012, th_tip[1] + 0.012), (-0.06, lerp(-0.12, -0.092)))   # 拇指与食指的分界
+    return pts, creases, nail, under
 
 
 class IdlePrompt:
@@ -185,73 +233,46 @@ class IdlePrompt:
         cv2.add(canvas, layer, dst=canvas)
 
     def _hand(self, img, st, R):
-        """线描的手：所有部件先用线色画“加粗版”、再用黑色画本体，得到一条连贯的外轮廓，并遮住后面的手电。"""
+        """线描的手：一条平滑外轮廓（黑色填充，遮住被握住的手电），前臂沿肩部方向渐隐。"""
         if st['reach'] >= 0.999:
             return
         L, col = st['L'], self.line_bgr
-        # 握点坐标系 = 手电坐标系，沿手臂方向（朝左上方肩部）后退 reach
         shoulder = np.array([-0.30 * self.hw, -0.45 * self.hh], np.float32)
-        wrist0 = np.array(_WRIST, np.float32) @ R.T * L + np.array([st['x'], st['y']], np.float32)
+        org = np.array([st['x'], st['y']], np.float32)
+        wrist0 = np.array(_WRIST_TOP, np.float32) @ R.T * L + org
         away = shoulder - wrist0
         away /= np.linalg.norm(away) + 1e-6
         off = away * st['reach'] * 1.3 * self.hw
-        # 伸入时手稍微转动，握住时与手电对齐
-        a = st['reach'] * 0.5
+        a = st['reach'] * 0.5   # 伸入时手稍微转动，握住时与手电对齐
         Rh = R @ np.array([[math.cos(a), -math.sin(a)], [math.sin(a), math.cos(a)]], np.float32)
 
         def P(pts):
-            return (np.asarray(pts, np.float32) @ Rh.T * L + np.array([st['x'], st['y']], np.float32) + off)
+            return np.asarray(pts, np.float32) @ Rh.T * L + org + off
 
-        w = 2  # 轮廓线宽（1/2 分辨率像素）
-        strokes = []  # (点列, 粗细 px)
-        wrist = P([_WRIST])[0]
-        self._arm(img, wrist, away, L)
-        g = st['grip']
-        for kx, ky in _KNUCKLES:
-            a1 = math.radians(65 + (102 - 65) * g)     # 近节：张开时斜向前下，握住时朝下
-            a2 = a1 + math.radians(0 + 75 * g)         # 远节：握住时向后弯
-            p1 = (kx + _FINGER_LEN[0] * math.cos(a1), ky + _FINGER_LEN[0] * math.sin(a1))
-            p2 = (p1[0] + _FINGER_LEN[1] * math.cos(a2), p1[1] + _FINGER_LEN[1] * math.sin(a2))
-            strokes.append((P([(kx, ky - 0.02), p1, p2]), _FINGER_W * L))
-        tip = (_THUMB[1][0], _THUMB[1][1] + 0.022 * st['press'])
-        strokes.append((P([_THUMB[0], tip]), 0.050 * L))
-        palm = P(_PALM).astype(np.int32)
-
-        def stroke(pts, th, c):
-            pts = pts.astype(np.int32)
-            for a, b in zip(pts[:-1], pts[1:]):
-                cv2.line(img, tuple(a), tuple(b), c, max(int(th), 1), cv2.LINE_AA)
-
-        for pts, th in strokes:
-            stroke(pts, th + 2 * w, col)
-        cv2.polylines(img, [palm], True, col, 2 * w + 1, cv2.LINE_AA)
-        for pts, th in strokes:
-            stroke(pts, th, (0, 0, 0))
-        cv2.fillPoly(img, [palm], (0, 0, 0), cv2.LINE_AA)
-        # 细节：拇指指甲、指节折痕
-        dim = tuple(int(c * 0.55) for c in col)
-        nail = P([(tip[0] - 0.035, tip[1] - 0.012), (tip[0] - 0.008, tip[1] - 0.012)]).astype(np.int32)
-        cv2.line(img, tuple(nail[0]), tuple(nail[1]), dim, 1, cv2.LINE_AA)
-        for kx, ky in _KNUCKLES[:3]:
-            c2 = P([(kx + 0.042, ky - 0.035), (kx + 0.042, ky - 0.005)]).astype(np.int32)
-            cv2.line(img, tuple(c2[0]), tuple(c2[1]), dim, 1, cv2.LINE_AA)
-
-    def _arm(self, img, wrist, away, L):
-        """前臂：从手腕向肩部方向变宽，轮廓线逐渐隐入黑暗（不画到屏幕边，避免像一根杆子）。"""
-        n = np.array([-away[1], away[0]], np.float32)
-        length, w0, w1 = 1.9 * L, 0.5 * _ARM_W * L, 0.75 * _ARM_W * L
-        far = wrist + away * length
-        poly = np.array([wrist + n * w0, far + n * w1, far - n * w1, wrist - n * w0], np.float32)
-        cv2.fillPoly(img, [poly.astype(np.int32)], (0, 0, 0), cv2.LINE_AA)
+        ctrl, creases, nail, under = _hand_shape(st['grip'], st['press'])
+        curve = P(_catmull(ctrl))
+        wb, wt = curve[0], curve[-1]
+        # 前臂：从手腕两端沿肩部方向延伸、略变宽
+        length = 1.9 * L
+        nrm = np.array([-away[1], away[0]], np.float32)
+        widen = 0.05 * L
+        side_t = 1.0 if np.dot(wt - wb, nrm) > 0 else -1.0
+        far_t = wt + away * length + nrm * side_t * widen
+        far_b = wb + away * length - nrm * side_t * widen
+        fill = np.vstack([curve, far_t[None], far_b[None]]).astype(np.int32)
+        cv2.fillPoly(img, [fill], (0, 0, 0), cv2.LINE_AA)
+        cv2.polylines(img, [curve.astype(np.int32)], False, col, 2, cv2.LINE_AA)
         steps = 24
-        for side in (1, -1):
+        for a0, a1 in ((wt, far_t), (wb, far_b)):
             for i in range(steps):
                 u0, u1 = i / steps, (i + 1) / steps
-                f = (1 - u0) ** 1.6
-                c = tuple(int(v * f) for v in self.line_bgr)
-                a = wrist + away * length * u0 + side * n * (w0 + (w1 - w0) * u0)
-                b = wrist + away * length * u1 + side * n * (w0 + (w1 - w0) * u1)
-                cv2.line(img, tuple(a.astype(int)), tuple(b.astype(int)), c, 2, cv2.LINE_AA)
+                c = tuple(int(v * (1 - u0) ** 1.6) for v in col)
+                cv2.line(img, tuple((a0 + (a1 - a0) * u0).astype(int)), tuple((a0 + (a1 - a0) * u1).astype(int)),
+                         c, 2, cv2.LINE_AA)
+        dim = tuple(int(v * 0.5) for v in col)
+        for seg in creases + [nail, under]:
+            q = P(seg).astype(np.int32)
+            cv2.line(img, tuple(q[0]), tuple(q[1]), dim, 1, cv2.LINE_AA)
 
     def _table(self, ty, L):
         """桌面：一条细线，两端渐隐；下面一条更淡的线表示桌面厚度（静态，只画一次）。"""
