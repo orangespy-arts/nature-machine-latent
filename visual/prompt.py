@@ -351,8 +351,8 @@ class IdlePrompt:
             cv2.polylines(img, [P(_catmull(seg, 6)).astype(np.int32)], False, dim, 2, cv2.LINE_AA)
 
     def _table(self, ty, L):
-        """长方形黑色桌子（略俯视的透视）：桌面梯形、前沿厚度、四条腿；手电和光圈落在桌面中部的 ty 处。
-        桌面填很暗的灰（后暗前亮一点），与纯黑背景区分；线条为暗淡的线色。静态，只画一次。"""
+        """盖着黑色桌布的长方形桌子（略俯视的透视）：梯形桌面，桌布从前沿和两侧垂下，下摆微微外展、
+        带波浪和几道柔和的竖褶；看不到桌腿。手电和光圈落在桌面中部的 ty 处。静态，只画一次。"""
         if getattr(self, '_table_img', None) is None:
             hw, hh = self.hw, self.hh
             img = np.zeros((hh, hw, 3), np.uint8)
@@ -360,33 +360,54 @@ class IdlePrompt:
             yb, yf = ty - c.get('table_back', 0.11) * hh, ty + c.get('table_front', 0.08) * hh
             bx0, bx1 = hw * 0.25, hw * 0.75           # 后沿（远，短）
             fx0, fx1 = hw * 0.13, hw * 0.87           # 前沿（近，长）
-            th = 0.028 * hh                           # 桌面厚度
-            floor = min(hh - 4, yf + th + 0.21 * hh)  # 前腿落地
-            top = np.array([(bx0, yb), (bx1, yb), (fx1, yf), (fx0, yf)], np.float32)
-            # 桌面：后暗前亮的极暗灰
-            m = np.zeros((hh, hw), np.uint8)
-            cv2.fillPoly(m, [top.astype(np.int32)], 255, cv2.LINE_AA)
-            g = np.clip((np.arange(hh, dtype=np.float32) - yb) / max(yf - yb, 1), 0, 1)[:, None]
-            shade = (9 + 9 * g) * (m.astype(np.float32) / 255)
-            img[:] = np.clip(shade[..., None] * np.array([1.0, 1.0, 1.1], np.float32), 0, 255).astype(np.uint8)
+            hem = min(hh - 6, yf + 0.22 * hh)          # 前面桌布下摆
+            hem_b = hem - 0.075 * hh                   # 侧面桌布在后角处的下摆（更远，更高）
+            flare = 0.012 * hw
             edge = tuple(int(v * 0.50) for v in self.line_bgr)
-            dim = tuple(int(v * 0.30) for v in self.line_bgr)
-            # 前沿厚度（正面一条窄带）
-            face = np.array([(fx0, yf), (fx1, yf), (fx1, yf + th), (fx0, yf + th)], np.float32)
-            cv2.fillPoly(img, [face.astype(np.int32)], (6, 6, 7), cv2.LINE_AA)
-            # 腿：前腿在前沿两端内侧，后腿在后沿两端下方、较短（更远）
-            lw = 0.012 * hw
-            legs = [((fx0 + 0.02 * hw, yf + th), floor, edge), ((fx1 - 0.02 * hw - lw, yf + th), floor, edge),
-                    ((bx0 + 0.01 * hw, yf + th), floor - 0.08 * hh, dim), ((bx1 - 0.01 * hw - lw * 0.8, yf + th), floor - 0.08 * hh, dim)]
-            for (lx, ly), lb, col in legs[2:] + legs[:2]:   # 先画后腿
-                w = lw if col is edge else lw * 0.8
-                cv2.rectangle(img, (int(lx), int(ly)), (int(lx + w), int(lb)), (5, 5, 6), -1)
-                cv2.line(img, (int(lx), int(ly)), (int(lx), int(lb)), col, 1, cv2.LINE_AA)
-                cv2.line(img, (int(lx + w), int(ly)), (int(lx + w), int(lb)), col, 1, cv2.LINE_AA)
-            cv2.polylines(img, [face.astype(np.int32)], True, dim, 1, cv2.LINE_AA)
+            dim = tuple(int(v * 0.26) for v in self.line_bgr)
+            rng = np.random.default_rng(3)
+
+            def wavy(x0, x1, y0, y1, n=60, amp=0.006 * hh, waves=7.0, ph=0.0):
+                xs = np.linspace(x0, x1, n)
+                ys = np.linspace(y0, y1, n) + amp * np.sin(np.linspace(0, waves * np.pi, n) + ph)
+                return np.stack([xs, ys], 1)
+
+            def fill_grad(poly, top_v, bot_v, y0, y1):
+                m = np.zeros((hh, hw), np.uint8)
+                cv2.fillPoly(m, [poly.astype(np.int32)], 255, cv2.LINE_AA)
+                g = np.clip((np.arange(hh, dtype=np.float32) - y0) / max(y1 - y0, 1), 0, 1)[:, None]
+                v = (top_v + (bot_v - top_v) * g) * (m.astype(np.float32) / 255)
+                a = (m.astype(np.float32) / 255)[..., None]
+                img[:] = np.clip(img * (1 - a) + v[..., None] * np.array([1.0, 1.0, 1.1], np.float32), 0, 255).astype(np.uint8)
+
+            # 两侧垂布（先画，在前面垂布之后）
+            for (cb, cf, sgn) in (((bx0, yb), (fx0, yf), -1), ((bx1, yb), (fx1, yf), 1)):
+                h_side = wavy(cf[0] + sgn * flare, cb[0] + sgn * flare * 0.6, hem, hem_b, n=30, amp=0.004 * hh, waves=4)
+                side = np.vstack([[cb, cf], h_side])
+                fill_grad(side, 10, 4, yb, hem)
+                cv2.polylines(img, [side[[0, 1]].astype(np.int32)], False, edge, 1, cv2.LINE_AA)
+                cv2.polylines(img, [h_side.astype(np.int32)], False, dim, 1, cv2.LINE_AA)
+                cv2.line(img, tuple(np.int32(cb)), tuple(np.int32(h_side[-1])), dim, 1, cv2.LINE_AA)
+            # 前面垂布：从前沿垂到下摆，下摆外展、波浪
+            h_front = wavy(fx1 + flare, fx0 - flare, hem, hem, n=80, amp=0.007 * hh, waves=9)
+            front = np.vstack([[(fx0, yf), (fx1, yf)], h_front])
+            fill_grad(front, 16, 5, yf, hem)
+            # 竖褶：几道很淡的弧线，从前沿往下渐显，落在下摆波谷处
+            for k in range(9):
+                x = fx0 + (fx1 - fx0) * (k + 0.5 + rng.uniform(-0.2, 0.2)) / 9
+                pts = [(x + 2 * math.sin(u * 2.5), yf + 0.02 * hh + (hem - yf - 0.03 * hh) * u) for u in np.linspace(0, 1, 12)]
+                for (a0, a1), u in zip(zip(pts[:-1], pts[1:]), np.linspace(0, 1, 11)):
+                    col = tuple(int(v * 0.16 * (0.3 + 0.7 * u)) for v in self.line_bgr)
+                    cv2.line(img, (int(a0[0]), int(a0[1])), (int(a1[0]), int(a1[1])), col, 1, cv2.LINE_AA)
+            cv2.polylines(img, [h_front.astype(np.int32)], False, dim, 1, cv2.LINE_AA)
+            cv2.line(img, (int(fx0), int(yf)), (int(h_front[-1][0]), int(h_front[-1][1])), dim, 1, cv2.LINE_AA)
+            cv2.line(img, (int(fx1), int(yf)), (int(h_front[0][0]), int(h_front[0][1])), dim, 1, cv2.LINE_AA)
+            # 桌面（桌布顶面）：后暗前亮的极暗灰
+            top = np.array([(bx0, yb), (bx1, yb), (fx1, yf), (fx0, yf)], np.float32)
+            fill_grad(top, 9, 18, yb, yf)
             cv2.polylines(img, [top.astype(np.int32)], True, edge, 1, cv2.LINE_AA)
-            # 前沿上缘稍亮，像一点反光
-            cv2.line(img, (int(fx0), int(yf)), (int(fx1), int(yf)), tuple(int(v * 0.65) for v in self.line_bgr), 1, cv2.LINE_AA)
+            # 前沿（桌布折过桌边处）稍亮，像一点反光
+            cv2.line(img, (int(fx0), int(yf)), (int(fx1), int(yf)), tuple(int(v * 0.62) for v in self.line_bgr), 1, cv2.LINE_AA)
             self._table_img = img
         return self._table_img
 
