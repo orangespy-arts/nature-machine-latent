@@ -180,8 +180,6 @@ class IdlePrompt:
             ax = min(abs(hits[1] - hits[0]) / 2, 0.75 * L)
             by = ax * 0.30
             pool = (cx, ty, ax, by)
-            # 光圈里不画桌面线（光落在桌面上，线会把光圈切成两半）
-            cv2.ellipse(lines, (int(cx), int(ty)), (int(ax * 1.05), int(by * 1.6)), 0, 0, 360, (0, 0, 0), -1, cv2.LINE_AA)
             # 光锥（1/4 分辨率）：镜头两端 → 光圈左右两端，亮度随距离衰减
             cone = np.zeros((self.qh, self.qw), np.uint8)
             poly = np.array([lens_a, lens_b, (cx + ax, ty), (cx, ty + by), (cx - ax, ty)], np.float32) * q
@@ -353,16 +351,42 @@ class IdlePrompt:
             cv2.polylines(img, [P(_catmull(seg, 6)).astype(np.int32)], False, dim, 2, cv2.LINE_AA)
 
     def _table(self, ty, L):
-        """桌面：一条细线，两端渐隐；下面一条更淡的线表示桌面厚度（静态，只画一次）。"""
+        """长方形黑色桌子（略俯视的透视）：桌面梯形、前沿厚度、四条腿；手电和光圈落在桌面中部的 ty 处。
+        桌面填很暗的灰（后暗前亮一点），与纯黑背景区分；线条为暗淡的线色。静态，只画一次。"""
         if getattr(self, '_table_img', None) is None:
-            img = np.zeros((self.hh, self.hw, 3), np.uint8)
-            x0, x1 = int(self.hw * 0.16), int(self.hw * 0.84)
-            for xs in range(x0, x1, 6):
-                f = math.sin(math.pi * (xs - x0) / (x1 - x0)) ** 0.7
-                col = tuple(int(c * 0.55 * f) for c in self.line_bgr)
-                cv2.line(img, (xs, int(ty)), (min(xs + 6, x1), int(ty)), col, 1, cv2.LINE_AA)
-                col2 = tuple(int(c * 0.18 * f) for c in self.line_bgr)
-                cv2.line(img, (xs, int(ty + 0.06 * L)), (min(xs + 6, x1), int(ty + 0.06 * L)), col2, 1, cv2.LINE_AA)
+            hw, hh = self.hw, self.hh
+            img = np.zeros((hh, hw, 3), np.uint8)
+            c = self.cfg
+            yb, yf = ty - c.get('table_back', 0.11) * hh, ty + c.get('table_front', 0.08) * hh
+            bx0, bx1 = hw * 0.25, hw * 0.75           # 后沿（远，短）
+            fx0, fx1 = hw * 0.13, hw * 0.87           # 前沿（近，长）
+            th = 0.028 * hh                           # 桌面厚度
+            floor = min(hh - 4, yf + th + 0.21 * hh)  # 前腿落地
+            top = np.array([(bx0, yb), (bx1, yb), (fx1, yf), (fx0, yf)], np.float32)
+            # 桌面：后暗前亮的极暗灰
+            m = np.zeros((hh, hw), np.uint8)
+            cv2.fillPoly(m, [top.astype(np.int32)], 255, cv2.LINE_AA)
+            g = np.clip((np.arange(hh, dtype=np.float32) - yb) / max(yf - yb, 1), 0, 1)[:, None]
+            shade = (9 + 9 * g) * (m.astype(np.float32) / 255)
+            img[:] = np.clip(shade[..., None] * np.array([1.0, 1.0, 1.1], np.float32), 0, 255).astype(np.uint8)
+            edge = tuple(int(v * 0.50) for v in self.line_bgr)
+            dim = tuple(int(v * 0.30) for v in self.line_bgr)
+            # 前沿厚度（正面一条窄带）
+            face = np.array([(fx0, yf), (fx1, yf), (fx1, yf + th), (fx0, yf + th)], np.float32)
+            cv2.fillPoly(img, [face.astype(np.int32)], (6, 6, 7), cv2.LINE_AA)
+            # 腿：前腿在前沿两端内侧，后腿在后沿两端下方、较短（更远）
+            lw = 0.012 * hw
+            legs = [((fx0 + 0.02 * hw, yf + th), floor, edge), ((fx1 - 0.02 * hw - lw, yf + th), floor, edge),
+                    ((bx0 + 0.01 * hw, yf + th), floor - 0.08 * hh, dim), ((bx1 - 0.01 * hw - lw * 0.8, yf + th), floor - 0.08 * hh, dim)]
+            for (lx, ly), lb, col in legs[2:] + legs[:2]:   # 先画后腿
+                w = lw if col is edge else lw * 0.8
+                cv2.rectangle(img, (int(lx), int(ly)), (int(lx + w), int(lb)), (5, 5, 6), -1)
+                cv2.line(img, (int(lx), int(ly)), (int(lx), int(lb)), col, 1, cv2.LINE_AA)
+                cv2.line(img, (int(lx + w), int(ly)), (int(lx + w), int(lb)), col, 1, cv2.LINE_AA)
+            cv2.polylines(img, [face.astype(np.int32)], True, dim, 1, cv2.LINE_AA)
+            cv2.polylines(img, [top.astype(np.int32)], True, edge, 1, cv2.LINE_AA)
+            # 前沿上缘稍亮，像一点反光
+            cv2.line(img, (int(fx0), int(yf)), (int(fx1), int(yf)), tuple(int(v * 0.65) for v in self.line_bgr), 1, cv2.LINE_AA)
             self._table_img = img
         return self._table_img
 
