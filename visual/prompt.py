@@ -233,10 +233,15 @@ class IdlePrompt:
         cv2.add(canvas, layer, dst=canvas)
 
     def _hand(self, img, st, R):
-        """线描的手：一条平滑外轮廓（黑色填充，遮住被握住的手电），前臂沿肩部方向渐隐。"""
-        if st['reach'] >= 0.999:
+        """手。layout.json prompt.hand_style：
+        filled  ——填色的卡通连指手（暖肤色＋柔和明暗，深色描边），袖子是另一种颜色、向后渐隐；
+        shadow  ——没有描边的深色剪影，只有朝向镜头光的边缘被照亮；
+        outline ——只有线条（黑色填充）；
+        none    ——不画手，手电自己被“拿起”。"""
+        style = self.cfg.get('hand_style', 'filled')
+        if st['reach'] >= 0.999 or style == 'none':
             return
-        L, col = st['L'], self.line_bgr
+        L = st['L']
         shoulder = np.array([-0.30 * self.hw, -0.45 * self.hh], np.float32)
         org = np.array([st['x'], st['y']], np.float32)
         wrist0 = np.array(_WRIST_TOP, np.float32) @ R.T * L + org
@@ -251,24 +256,98 @@ class IdlePrompt:
 
         ctrl, deco = _hand_shape(st['grip'], st['press'])
         curve = P(_catmull(ctrl))
-        wb, wt = curve[0], curve[-1]
-        # 前臂：从手腕两端沿肩部方向延伸、略变宽
-        length = 1.5 * L
         nrm = np.array([-away[1], away[0]], np.float32)
-        widen = 0.04 * L
+        up = (np.array([0.0, -1.0], np.float32) @ Rh.T)        # 手背方向（局部 -y）
+        if style == 'outline':
+            self._hand_outline(img, curve, deco, P, away, nrm, L)
+            return
+        # 袖子：从袖口沿肩部方向延伸，比手腕宽，向后渐隐
+        c_top, c_bot = P([(-0.45, -0.150)])[0], P([(-0.47, 0.125)])[0]
+        length, widen = 1.6 * L, 0.06 * L
+        side = 1.0 if np.dot(c_top - c_bot, nrm) > 0 else -1.0
+        sleeve = np.array([c_top, c_top + away * length + nrm * side * widen,
+                           c_bot + away * length - nrm * side * widen, c_bot], np.float32)
+        if style == 'filled':
+            k = 0.78
+            skin = np.array([160, 190, 232], np.float32) * k        # BGR
+            cloth = np.array([150, 118, 96], np.float32) * 0.62
+            ink = (52, 66, 92)
+            self._fill(img, sleeve, cloth, up, fade=(c_top * 0.5 + c_bot * 0.5, away, length))
+            for e0 in (c_top, c_bot):
+                self._fade_line(img, e0, e0 + away * length + nrm * side * widen * (1 if e0 is c_top else -1),
+                                ink, 2)
+            self._fill(img, curve, skin, up)
+            cv2.polylines(img, [curve.astype(np.int32)], False, ink, 2, cv2.LINE_AA)
+            # 袖口：一条弧线；拇指分界、手背高光
+            cuff = P(_catmull([(-0.45, -0.150), (-0.475, -0.01), (-0.47, 0.125)], 6)).astype(np.int32)
+            cv2.polylines(img, [cuff], False, ink, 2, cv2.LINE_AA)
+            thumb, shine = deco[2], deco[3]
+            cv2.polylines(img, [P(_catmull(thumb, 6)).astype(np.int32)], False, tuple(int(v * 0.9) for v in ink), 2, cv2.LINE_AA)
+            cv2.polylines(img, [P(_catmull(shine, 6)).astype(np.int32)], False,
+                          tuple(int(min(255, v * 1.25)) for v in skin), 2, cv2.LINE_AA)
+            return
+        # shadow：深色剪影，边缘按朝向镜头的程度被照亮
+        dark = np.array([24, 24, 27], np.float32)
+        self._fill(img, sleeve, dark, up, fade=(c_top * 0.5 + c_bot * 0.5, away, length), shade=0.0)
+        self._fill(img, curve, dark, up, shade=0.0)
+        lens = np.array([0.5, 0.0], np.float32) @ R.T * L + org
+        light = self.light_rgb[::-1]
+        center = curve.mean(0)
+        for p0, p1 in zip(curve[:-1], curve[1:]):
+            mid = (p0 + p1) / 2
+            tng = p1 - p0
+            n_out = np.array([tng[1], -tng[0]], np.float32)
+            if np.dot(n_out, mid - center) < 0:
+                n_out = -n_out
+            n_out /= np.linalg.norm(n_out) + 1e-6
+            to_l = lens - mid
+            dist = np.linalg.norm(to_l) + 1e-6
+            facing = max(0.0, float(np.dot(n_out, to_l / dist)))
+            b = 0.10 + 0.9 * st['on'] * facing * min(1.0, 0.9 * L / dist) + 0.25 * facing * (1 - st['on'])
+            cv2.line(img, tuple(p0.astype(int)), tuple(p1.astype(int)), tuple(int(v * min(b, 1.0)) for v in light),
+                     2, cv2.LINE_AA)
+
+    def _fill(self, img, poly, bgr, up, fade=None, shade=0.22):
+        """多边形填色（不透明，遮住后面的线），沿 up 方向上亮下暗；fade=(起点, 方向, 长度) 时向后渐隐成黑。"""
+        H, W = img.shape[:2]
+        x0, y0 = np.floor(poly.min(0)).astype(int) - 2
+        x1, y1 = np.ceil(poly.max(0)).astype(int) + 2
+        x0, y0, x1, y1 = max(x0, 0), max(y0, 0), min(x1, W), min(y1, H)
+        if x0 >= x1 or y0 >= y1:
+            return
+        m = np.zeros((y1 - y0, x1 - x0), np.uint8)
+        cv2.fillPoly(m, [(poly - [x0, y0]).astype(np.int32)], 255, cv2.LINE_AA)
+        m = m.astype(np.float32)[..., None] / 255
+        yy, xx = np.mgrid[y0:y1, x0:x1].astype(np.float32)
+        c = poly.mean(0)
+        size = float(np.ptp(poly, 0).max()) / 2 + 1e-3
+        t = ((xx - c[0]) * up[0] + (yy - c[1]) * up[1]) / size
+        col = np.ones_like(m) * np.asarray(bgr, np.float32) * (1 + shade * np.clip(t, -1, 1))[..., None]
+        if fade is not None:
+            o, d, ln = fade
+            u = ((xx - o[0]) * d[0] + (yy - o[1]) * d[1]) / ln
+            col *= (np.clip(1 - u, 0, 1) ** 1.4)[..., None]
+        roi = img[y0:y1, x0:x1].astype(np.float32)
+        img[y0:y1, x0:x1] = np.clip(roi * (1 - m) + col * m, 0, 255).astype(np.uint8)
+
+    def _fade_line(self, img, a0, a1, bgr, th, steps=20):
+        for i in range(steps):
+            u0, u1 = i / steps, (i + 1) / steps
+            c = tuple(int(v * (1 - u0) ** 1.6) for v in bgr)
+            cv2.line(img, tuple((a0 + (a1 - a0) * u0).astype(int)), tuple((a0 + (a1 - a0) * u1).astype(int)),
+                     c, th, cv2.LINE_AA)
+
+    def _hand_outline(self, img, curve, deco, P, away, nrm, L):
+        col = self.line_bgr
+        wb, wt = curve[0], curve[-1]
+        length, widen = 1.5 * L, 0.04 * L
         side_t = 1.0 if np.dot(wt - wb, nrm) > 0 else -1.0
         far_t = wt + away * length + nrm * side_t * widen
         far_b = wb + away * length - nrm * side_t * widen
-        fill = np.vstack([curve, far_t[None], far_b[None]]).astype(np.int32)
-        cv2.fillPoly(img, [fill], (0, 0, 0), cv2.LINE_AA)
+        cv2.fillPoly(img, [np.vstack([curve, far_t[None], far_b[None]]).astype(np.int32)], (0, 0, 0), cv2.LINE_AA)
         cv2.polylines(img, [curve.astype(np.int32)], False, col, 3, cv2.LINE_AA)
-        steps = 24
-        for a0, a1 in ((wt, far_t), (wb, far_b)):
-            for i in range(steps):
-                u0, u1 = i / steps, (i + 1) / steps
-                c = tuple(int(v * (1 - u0) ** 1.6) for v in col)
-                cv2.line(img, tuple((a0 + (a1 - a0) * u0).astype(int)), tuple((a0 + (a1 - a0) * u1).astype(int)),
-                         c, 2, cv2.LINE_AA)
+        self._fade_line(img, wt, far_t, col, 2)
+        self._fade_line(img, wb, far_b, col, 2)
         dim = tuple(int(v * 0.55) for v in col)
         for seg in deco:
             cv2.polylines(img, [P(_catmull(seg, 6)).astype(np.int32)], False, dim, 2, cv2.LINE_AA)
