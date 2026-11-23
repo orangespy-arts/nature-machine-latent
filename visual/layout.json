@@ -48,9 +48,9 @@
     "smoothing": 0.5
   },
   "prompt": {"enabled": true, "idle_after_s": 2.0, "fade_in_s": 1.5, "fade_out_s": 0.3,
-             "table_y": 0.74, "torch_len": 0.30, "beam_deg": 15, "dust": 46, "hand_style": "filled",
+             "table_y": 0.74, "torch_len": 0.30, "beam_deg": 15, "dust": 46, "hand_style": "none",
              "line_rgb": [214, 204, 186], "light_rgb": [255, 214, 150], "light_brightness": 0.55,
-             "_note": "黑屏提示动画（无文字，2026-11-23）：线描手电筒约 10 秒一循环——静置微光 → 抬起倾斜 → 闪两下点亮、光锥落到桌面 → 左右扫动，光圈里浮现叶脉／齿轮细线、光锥里有浮尘 → 熄灭放回。光斑消失 idle_after_s 秒后淡入（从静置开始），检测到光斑 fade_out_s 内淡出。table_y、torch_len 为画布高度比例。hand_style：filled（填色卡通手＋蓝袖子，2026-11-23 用户选定）／shadow（深色剪影，只被手电光照亮边缘）／outline（线描）／none（不画手）。--no_prompt 关闭。若投影落在摄像头视野内，光可能被当成手电，light_brightness 调低"},
+             "_note": "黑屏提示动画（无文字，2026-11-23）：线描手电筒约 10 秒一循环——静置微光 → 抬起倾斜 → 闪两下点亮、光锥落到桌面 → 左右扫动，光圈里浮现叶脉／齿轮细线、光锥里有浮尘 → 熄灭放回。光斑消失 idle_after_s 秒后淡入（从静置开始），检测到光斑 fade_out_s 内淡出。table_y、torch_len 为画布高度比例。hand_style：none（不画手，2026-11-23 用户最终选定）／filled（填色卡通手＋蓝袖子）／shadow（深色剪影，只被手电光照亮边缘）／outline（线描）。--no_prompt 关闭。若投影落在摄像头视野内，光可能被当成手电，light_brightness 调低"},
   "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal", "mix_power": 6.0, "seed_on": "appear",
           "_seed_on_note": "appear：只在标记出现时发 /seed（两源各跳到随机位置），按住移动时声音连续；move：画面每换种子就发（旧行为，按住时约每秒重新起播一次）（2026-11-21）",
           "_mix_power_note": "声音机械比例 a 的反距离指数，只影响 /mix，画面混合仍用 generation.blend_power。2 → 6 后屏幕中央 a 约 0.71 → 0.97，区域之间的中点仍为 0.25／0.75（2026-11-21）"}
