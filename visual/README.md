@@ -19,6 +19,8 @@ $py = "E:\envs\streamdiffusion-td\venv\Scripts\python.exe"
 & $py visual\make_markers.py                 # 生成可打印的 ArUco 标记（visual/markers/）
 ```
 
+全屏与外接显示器（2026-11-23）：不加 `--windowed` 即全屏（无标题栏）。`--display auto`（默认）在接了外接显示器时把画面放到第一个外接显示器上，否则放主屏；`--display 0` 主屏、`1` 第二个……，`--list_displays` 列出显示器。对照窗（`--monitor`）留在主屏。全屏且非鼠标输入时隐藏鼠标光标。画布 16:9，显示器比例不同时两侧／上下留黑边。外接显示器上的放置未实测（当时只接了笔记本屏幕）。
+
 按键：`q`／`Esc` 退出，`f` 全屏，`d` 调试信息（帧率、区域、机械比例、种子；`--debug` 启动时默认开），`g` 显示区域位置（`--guide` 启动时默认开），`m` 对照窗，`c` 摄像头调试窗（画面＋颜色掩膜）。
 
 ## 标记：ArUco（默认）

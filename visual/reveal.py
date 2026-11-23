@@ -37,6 +37,44 @@ cv2.setNumThreads(int(CPU_THREADS))
 HERE = Path(__file__).resolve().parent
 
 
+def list_monitors():
+    """Windows：返回 [(名称, x, y, 宽, 高, 是否主屏)]，坐标为物理像素（进程设为 DPI 感知）。其他系统返回空表。"""
+    if os.name != 'nt':
+        return []
+    import ctypes
+    from ctypes import wintypes
+    try:
+        ctypes.windll.shcore.SetProcessDpiAwareness(2)  # 每显示器 DPI 感知：坐标与全屏尺寸按物理像素
+    except (OSError, AttributeError):
+        pass
+
+    class MONITORINFOEXW(ctypes.Structure):
+        _fields_ = [('cbSize', wintypes.DWORD), ('rcMonitor', wintypes.RECT), ('rcWork', wintypes.RECT),
+                    ('dwFlags', wintypes.DWORD), ('szDevice', wintypes.WCHAR * 32)]
+    mons = []
+
+    def cb(h, hdc, rect, data):
+        mi = MONITORINFOEXW()
+        mi.cbSize = ctypes.sizeof(mi)
+        ctypes.windll.user32.GetMonitorInfoW(h, ctypes.byref(mi))
+        r = mi.rcMonitor
+        mons.append((mi.szDevice, r.left, r.top, r.right - r.left, r.bottom - r.top, bool(mi.dwFlags & 1)))
+        return True
+    proto = ctypes.WINFUNCTYPE(ctypes.c_int, wintypes.HMONITOR, wintypes.HDC, ctypes.POINTER(wintypes.RECT), wintypes.LPARAM)
+    ctypes.windll.user32.EnumDisplayMonitors(None, None, proto(cb), 0)
+    return sorted(mons, key=lambda m: (not m[5], m[1], m[2]))  # 主屏排第一
+
+
+def pick_monitor(mons, display):
+    """display：auto（有外接显示器就用第一个外接的，否则主屏）或编号（0 = 主屏，1、2… = 其他）。"""
+    if not mons:
+        return None
+    if display == 'auto':
+        return mons[1] if len(mons) > 1 else mons[0]
+    i = int(display)
+    return mons[i] if 0 <= i < len(mons) else mons[0]
+
+
 class Worker(threading.Thread):
     def __init__(self, layout):
         super().__init__(daemon=True)
@@ -200,6 +238,9 @@ def main():
     ap.add_argument('--calibration', default=str(HERE / 'local' / 'calibration.json'))
     ap.add_argument('--marker', default=str(HERE / 'local' / 'marker.json'), help='点选保存的标记颜色')
     ap.add_argument('--windowed', action='store_true')
+    ap.add_argument('--display', default='auto',
+                    help='全屏放在哪个显示器：auto（默认：有外接显示器就用外接的）、0 = 主屏、1 = 第二个……；--list_displays 查看')
+    ap.add_argument('--list_displays', action='store_true', help='列出显示器')
     ap.add_argument('--no_osc', action='store_true')
     ap.add_argument('--no_prompt', action='store_true', help='不显示黑屏时的提示动画（layout.json prompt）')
     ap.add_argument('--debug', action='store_true', help='启动时即显示调试信息（左上角绿字）')
@@ -219,6 +260,10 @@ def main():
         layout['camera']['mode'] = 'light'
     if args.camera_index is not None:
         layout['camera']['index'] = args.camera_index
+    if args.list_displays:
+        for i, m in enumerate(list_monitors()):
+            print(f'{i}: {m[0]}  {m[3]}x{m[4]} at ({m[1]},{m[2]}){"  primary" if m[5] else ""}')
+        return
     if args.list_cameras:
         cams = tracker.list_cameras()
         print('cameras:', cams if cams else 'none found')
@@ -247,11 +292,22 @@ def main():
     worker.start()
 
     win = 'reveal'
+    mons = list_monitors()
+    mon = pick_monitor(mons, args.display)
     cv2.namedWindow(win, cv2.WINDOW_NORMAL)
     fullscreen = not args.windowed
+    if mon is not None:
+        # 先把窗口移到目标显示器，再设全屏：OpenCV 的全屏铺满窗口当前所在的显示器（无标题栏）
+        cv2.moveWindow(win, mon[1] + 40, mon[2] + 40)
+        print(f'display: {mon[0]} {mon[3]}x{mon[4]}' + (f' (of {len(mons)})' if len(mons) > 1 else ''), flush=True)
     cv2.setWindowProperty(win, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN if fullscreen else cv2.WINDOW_NORMAL)
     if not fullscreen:
         cv2.resizeWindow(win, W // 2, H // 2)
+    hide_cursor = fullscreen and args.input != 'mouse' and os.name == 'nt'
+    if hide_cursor:
+        import ctypes
+        while ctypes.windll.user32.ShowCursor(False) >= 0:
+            pass
     if args.input == 'mouse':
         src = tracker.MouseInput(win, W, H)
     elif args.input == 'demo':
@@ -277,6 +333,8 @@ def main():
     if show_monitor:
         cv2.namedWindow('monitor', cv2.WINDOW_NORMAL)
         cv2.resizeWindow('monitor', 1600, 470)
+        if mons and mon is not None and mon != mons[0]:
+            cv2.moveWindow('monitor', mons[0][1] + 20, mons[0][2] + 60)  # 对照窗留在主屏（笔记本）上
 
         def on_monitor_click(event, mx, my, flags, param):
             f = getattr(src, 'frame', None)
@@ -401,6 +459,10 @@ def main():
             break
 
     worker.running = False
+    if hide_cursor:
+        import ctypes
+        while ctypes.windll.user32.ShowCursor(True) < 0:
+            pass
     src.close()
     cv2.destroyAllWindows()
     if len(stats) > 3:
