@@ -1,4 +1,4 @@
-"""黑屏时的提示动画（无文字）：一只线描的手伸进来，拿起桌上的手电筒，打开，照向桌面，再放回、离开。
+"""黑屏时的提示动画（无文字）：一只圆圆的、没有手指的大手伸进来，拿起桌上的手电筒，打开，照向桌面，再放回、离开。
 
 约 11 秒一循环：
   手电静置（镜头一点微光呼吸）→ 手臂从左上方伸入，手指张开 → 握住 → 沿弧线抬起并朝下倾斜
@@ -32,12 +32,31 @@ _BODY = np.array([(-0.50, -0.070), (0.16, -0.070), (0.29, -0.125), (0.50, -0.125
 _RINGS = [-0.40, -0.35, -0.30]          # 握把上的环纹
 _BUTTON = np.array([(-0.06, -0.070), (-0.06, -0.098), (0.06, -0.098), (0.06, -0.070)], np.float32)
 
-# 手（局部坐标同手电，单位 = 筒长）：一条平滑的外轮廓（拳头＋拇指），四指并排包住握把，
-# 指尖在下方成扇贝形；张开时手指绕指根向前下方伸直。轮廓从手腕下沿绕一圈到手腕上沿，前臂接着向外延伸。
-_FINGERS = [(-0.300, -0.222), (-0.222, -0.142), (-0.142, -0.060), (-0.060, 0.025)]   # 小指 → 食指的 x 范围
-_FINGER_LEN = [0.060, 0.072, 0.076, 0.070]
-_FINGER_BASE_Y = 0.055
-_WRIST_TOP, _WRIST_BOT = (-0.50, -0.085), (-0.52, 0.060)
+# 手（局部坐标同手电，单位 = 筒长）：没有手指的圆润大手（连指手套形），一团包住握把，
+# 上方一个圆圆的拇指包压在开关上；手腕有袖口。轮廓从手腕下沿绕一圈到手腕上沿，前臂接着向外延伸。
+_WRIST_TOP, _WRIST_BOT = (-0.50, -0.095), (-0.52, 0.075)
+# (握住时的点, 张开时的偏移)
+_MITTEN = [
+    ((-0.52, 0.075), (0.00, 0.00)),     # 手腕下沿
+    ((-0.41, 0.110), (0.00, 0.02)),     # 掌根
+    ((-0.26, 0.150), (0.05, 0.08)),     # 下方圆肚（四指合在一起）
+    ((-0.11, 0.158), (0.09, 0.12)),
+    ((0.015, 0.130), (0.12, 0.12)),
+    ((0.068, 0.068), (0.13, 0.08)),     # 前端圆头
+    ((0.075, 0.000), (0.11, 0.03)),
+    ((0.052, -0.062), (0.07, 0.00)),
+    ((0.050, -0.088), (0.04, -0.04)),   # 拇指：从下侧伸向前，圆头，压在开关上
+    ((0.105, -0.096), (0.04, -0.06)),
+    ((0.122, -0.122), (0.04, -0.07)),
+    ((0.095, -0.146), (0.03, -0.07)),
+    ((0.000, -0.152), (0.02, -0.05)),
+    ((-0.09, -0.146), (0.00, -0.02)),
+    ((-0.22, -0.148), (0.00, 0.00)),    # 手背
+    ((-0.35, -0.142), (0.00, 0.00)),
+    ((-0.44, -0.122), (0.00, 0.00)),
+    ((-0.50, -0.095), (0.00, 0.00)),    # 手腕上沿
+]
+_THUMB_IDX = (8, 9, 10, 11, 12)
 
 
 def _catmull(pts, n=8):
@@ -56,39 +75,20 @@ def _catmull(pts, n=8):
 
 
 def _hand_shape(g, press):
-    """返回 (轮廓控制点, 指缝线列表, 拇指甲线)。g：0 张开 → 1 握拢；press：拇指按下 0–1。"""
-    def lerp(a, b):
-        return a + (b - a) * g
-    pts = [_WRIST_BOT, (-0.42, 0.072), (-0.33, 0.080)]
-    ang = math.radians(lerp(58, 92))          # 手指方向：张开斜向前下，握住朝下（包住握把）
-    d = np.array([math.cos(ang), math.sin(ang)], np.float32)
-    n = np.array([-d[1], d[0]], np.float32)   # 指宽方向
-    creases, tips = [], []
-    for k, ((x0, x1), ln) in enumerate(zip(_FINGERS, _FINGER_LEN)):
-        base = np.array([(x0 + x1) / 2, _FINGER_BASE_Y], np.float32)
-        w = (x1 - x0) / 2
-        L = lerp(2.3, 1.0) * ln
-        tip_c = base + d * L
-        tips.append((tip_c, w))
-    for k, (tip_c, w) in enumerate(tips):
-        # 每根手指：一侧 → 指尖 → 另一侧（轮廓按从小指到食指的顺序走，在画面里是从后往前）
-        pts += [tuple(tip_c + n * w * 0.95 - d * 0.004), tuple(tip_c + (n * 0.68 + d * 0.62) * w),
-                tuple(tip_c + d * w * 0.85), tuple(tip_c + (-n * 0.68 + d * 0.62) * w), tuple(tip_c - n * w * 0.95 - d * 0.004)]
-        if k < 3:
-            nxt = tips[k + 1][0]
-            notch = (tip_c + nxt) / 2 - d * 0.012
-            pts.append(tuple(notch))
-            creases.append((tuple(notch), tuple(notch - d * lerp(0.10, 0.06))))
-    # 食指前沿 → 拇指（握住时压在开关上方，按下时指尖下移）
-    py = 0.02 * press
-    th_tip = (lerp(0.075, 0.050), lerp(-0.16, -0.103) + py)
-    pts += [(0.050, -0.010), (0.045, -0.075),
-            (th_tip[0] - 0.010, th_tip[1] + 0.014), (th_tip[0] + 0.006, th_tip[1] - 0.006),
-            (th_tip[0] - 0.020, th_tip[1] - 0.026),
-            (-0.07, lerp(-0.165, -0.138)), (-0.17, -0.148), (-0.29, -0.138), (-0.40, -0.112), _WRIST_TOP]
-    nail = ((th_tip[0] - 0.045, th_tip[1] - 0.020), (th_tip[0] - 0.012, th_tip[1] - 0.012))
-    under = ((th_tip[0] - 0.012, th_tip[1] + 0.012), (-0.06, lerp(-0.12, -0.092)))   # 拇指与食指的分界
-    return pts, creases, nail, under
+    """返回 (轮廓控制点, 装饰线列表)。g：0 张开 → 1 握住；press：拇指按下 0–1。"""
+    pts = []
+    for k, ((x, y), (ox, oy)) in enumerate(_MITTEN):
+        x, y = x + ox * (1 - g), y + oy * (1 - g)
+        if k in _THUMB_IDX:
+            y += 0.025 * press
+        pts.append((x, y))
+    # 袖口：手腕处两条弧线；拇指与手掌的分界；手背一小段高光弧
+    cuff = [[(-0.445, -0.138), (-0.462, -0.02), (-0.445, 0.112)],
+            [(-0.485, -0.112), (-0.498, -0.01), (-0.485, 0.088)]]
+    o = (1 - g)
+    thumb = [(pts[8][0] - 0.005, pts[8][1]), (0.00 + 0.02 * o, -0.112 - 0.03 * o + 0.02 * press), (-0.07, -0.128 - 0.01 * o)]
+    shine = [(-0.30, -0.115), (-0.23, -0.123), (-0.16, -0.118)]
+    return pts, cuff + [thumb, shine]
 
 
 class IdlePrompt:
@@ -249,19 +249,19 @@ class IdlePrompt:
         def P(pts):
             return np.asarray(pts, np.float32) @ Rh.T * L + org + off
 
-        ctrl, creases, nail, under = _hand_shape(st['grip'], st['press'])
+        ctrl, deco = _hand_shape(st['grip'], st['press'])
         curve = P(_catmull(ctrl))
         wb, wt = curve[0], curve[-1]
         # 前臂：从手腕两端沿肩部方向延伸、略变宽
-        length = 1.9 * L
+        length = 1.5 * L
         nrm = np.array([-away[1], away[0]], np.float32)
-        widen = 0.05 * L
+        widen = 0.04 * L
         side_t = 1.0 if np.dot(wt - wb, nrm) > 0 else -1.0
         far_t = wt + away * length + nrm * side_t * widen
         far_b = wb + away * length - nrm * side_t * widen
         fill = np.vstack([curve, far_t[None], far_b[None]]).astype(np.int32)
         cv2.fillPoly(img, [fill], (0, 0, 0), cv2.LINE_AA)
-        cv2.polylines(img, [curve.astype(np.int32)], False, col, 2, cv2.LINE_AA)
+        cv2.polylines(img, [curve.astype(np.int32)], False, col, 3, cv2.LINE_AA)
         steps = 24
         for a0, a1 in ((wt, far_t), (wb, far_b)):
             for i in range(steps):
@@ -269,10 +269,9 @@ class IdlePrompt:
                 c = tuple(int(v * (1 - u0) ** 1.6) for v in col)
                 cv2.line(img, tuple((a0 + (a1 - a0) * u0).astype(int)), tuple((a0 + (a1 - a0) * u1).astype(int)),
                          c, 2, cv2.LINE_AA)
-        dim = tuple(int(v * 0.5) for v in col)
-        for seg in creases + [nail, under]:
-            q = P(seg).astype(np.int32)
-            cv2.line(img, tuple(q[0]), tuple(q[1]), dim, 1, cv2.LINE_AA)
+        dim = tuple(int(v * 0.55) for v in col)
+        for seg in deco:
+            cv2.polylines(img, [P(_catmull(seg, 6)).astype(np.int32)], False, dim, 2, cv2.LINE_AA)
 
     def _table(self, ty, L):
         """桌面：一条细线，两端渐隐；下面一条更淡的线表示桌面厚度（静态，只画一次）。"""
