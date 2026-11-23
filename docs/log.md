@@ -10,7 +10,7 @@
 - 实现：`camera.mode = "light"`（`tracker.detect_light`），`--input light` 只把摄像头模式改为 light，其余流程不变；默认 `camera.mode` 仍为 aruco，旧命令行为不变。阈值随背景与峰值亮度自适应，取最大的实心亮块的质心；新增 `--camera_index`。
 - 离线合成测试全部识别、中心误差约 1 px、无手电时无误报（详见 [visual/README.md](../visual/README.md)）。5070 上 index 0 内置摄像头返回 Windows“已禁用”占位图，index 1 是 OBS 虚拟摄像头，当时未接 USB 摄像头。
 - 实物测试（同日，USB 摄像头，灰墙、开灯）：完整联动手电 → 生成画面跑通（显示 23.5／生成 10.5 fps）。摄像头 1280×720 只有 7.7 fps（不支持 MJPG）→ 光斑模式默认 640×480（29 fps）；复测 60 秒 29 张截图全部正确。开灯的灰墙上白色开关面板、被照亮的手、金属筒身曾被误识别，黑幕布暗室下未验证。内置摄像头（index 0）一直返回锁形占位图，隐私设置为允许，原因未查。
-- 声画联动（同日，手电＋Max）：第一次 Max 没出声——Console 显示 `admme: unable to open wave output device`（插上 USB 摄像头后发生，原因未确认），DSP 打开后自动关闭。Max 音频驱动改为 `ad_directsound`、输出设备“扬声器 (Realtek(R) Audio)”后正常（这是 Max 本机偏好设置，会保留）。复测 90 秒：`sound_status.py` 显示 env 随光斑出现／消失在 0–1.0 间淡入淡出，a 在 0.00–0.99 间随位置变化，输出电平最高约 0.20；画面同时生成 9.4 fps。听感（是否卡顿、声画延迟）待用户确认。
+- 声画联动（同日，手电＋Max）：第一次 Max 没出声——Console 显示 `admme: unable to open wave output device`（插上 USB 摄像头后发生，原因未确认），DSP 打开后自动关闭。Max 音频驱动改为 `ad_directsound`、输出设备“扬声器 (Realtek(R) Audio)”后正常（这是 Max 本机偏好设置，会保留）。复测 90 秒：`sound_status.py` 显示 env 随光斑出现／消失在 0–1.0 间淡入淡出，a 在 0.00–0.99 间随位置变化，输出电平最高约 0.20；画面同时生成 9.4 fps。用户确认听感正常、不卡。未测：黑幕布暗室、声画延迟的具体数值。
 - 风险（未测）：投影若打在同一块幕布上，摄像头会看到生成画面本身；环境中其他光源会被当成光斑。
 
 ## 2026-11-21｜5070 上画面工具用本机已装的 StreamDiffusion 跑通（demo，无 OSC）
