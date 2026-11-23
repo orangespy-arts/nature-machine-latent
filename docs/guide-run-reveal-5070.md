@@ -115,6 +115,10 @@ eveal.py --input light --windowed --monitor
    - `env` 一直是 0：画面没发出 present（画面程序没开、或加了 `--no_osc`）。
    - 这里的 `cpu` 读数在这台只会在 0／1／100 之间跳，不用看。
 
+**Max Console 显示 `admme: unable to open wave output device`，Audio 自己关掉**
+
+2026-11-23 插上 USB 摄像头后出现。Options → Audio Status：Audio Driver 改为 `ad_directsound`，Output Device 选“扬声器 (Realtek(R) Audio)”（不要选“耳机”，没插耳机时打不开），再点右下角电源按钮（变蓝＝开）。
+
 **按住时声音卡、像在反复播一段开头**
 
 nn~ 在 CPU 上运行，画面生成时会和它抢 CPU。画面程序已默认只用 4 个 CPU 线程（2026-11-21 修正后用户确认不卡）。如果又出现：
