@@ -43,8 +43,8 @@
     "hsv_low2": [175, 200, 90],
     "hsv_high2": [180, 255, 255],
     "min_area_px": 150,
-    "light": {"min_contrast": 40, "rel": 0.5, "min_v": 60, "blur": 0.012, "min_area_frac": 0.002, "min_fill": 0.6, "exposure": null,
-              "_note": "--input light：黑幕布上的手电光斑。阈值 = max(min_v, 背景+min_contrast, 背景+(峰值−背景)×rel)，背景 = 亮度中位数；光斑面积 < min_area_frac×画面 视为无；亮像素占轮廓面积 < min_fill（空心图形、细线）不算。exposure：null 自动曝光，数值为手动曝光（DirectShow log2 秒，如 -6）（2026-11-23）"},
+    "light": {"width": 640, "height": 480, "min_contrast": 40, "rel": 0.5, "min_v": 60, "blur": 0.012, "min_area_frac": 0.002, "min_fill": 0.6, "exposure": null,
+              "_note": "--input light：黑幕布上的手电光斑。阈值 = max(min_v, 背景+min_contrast, 背景+(峰值−背景)×rel)，背景 = 亮度中位数；光斑面积 < min_area_frac×画面 视为无；亮像素占轮廓面积 < min_fill（空心图形、细线）不算。width／height：光斑模式的摄像头分辨率（5070 的 USB 摄像头 1280×720 只有 7.7 fps，640×480 为 30 fps）；exposure：null 自动曝光，数值为手动曝光（DirectShow log2 秒，如 -6）（2026-11-23）"},
     "smoothing": 0.5
   },
   "osc": {"enabled": true, "host": "127.0.0.1", "port": 7400, "prefix": "/reveal", "mix_power": 6.0, "seed_on": "appear",

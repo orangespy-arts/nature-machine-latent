@@ -228,8 +228,11 @@ def open_camera(cfg):
         raise SystemExit(f"打不开摄像头 index={cfg['index']}；用 --list_cameras 查看，或重插 USB")
     if cfg.get('fourcc'):
         cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*cfg['fourcc']))
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, cfg['width'])
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, cfg['height'])
+    # light 模式默认 640×480：5070 上的 USB 摄像头（VID 2BCF）不支持 MJPG，1280×720 YUY2 只有 7.7 fps，
+    # 640×480 为 30 fps（2026-11-23 实测）；光斑追踪不需要高分辨率（参数都按画面比例）。
+    lc = cfg.get('light', {}) if cfg.get('mode') == 'light' else {}
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, lc.get('width', cfg['width']))
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, lc.get('height', cfg['height']))
     # 手动曝光（可选）：自动曝光在黑幕布上会把增益拉高，光斑出现时又整体压暗，阈值会跟着跳。
     # DirectShow：AUTO_EXPOSURE 0.25 = 手动；exposure 为 log2 秒（如 -6 ≈ 1/64 s），具体可用范围取决于摄像头驱动。
     exp = cfg.get('light', {}).get('exposure') if cfg.get('mode') == 'light' else cfg.get('exposure')

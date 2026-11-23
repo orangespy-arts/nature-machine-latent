@@ -62,14 +62,17 @@ cd D:\Github\nature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFF
 
 ```powershell
 cd D:\Github
-ature-machine-latent; C:\AI\sdtest\Scripts\python.exe visualeveal.py --input light --camera_test
+ature-machine-latent; C:\AI\sdtest\Scripts\python.exe visual
+eveal.py --input light --camera_test
 ```
 
 ```powershell
 cd D:\Github
-ature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFFLINE='1'; C:\AI\sdtest\Scripts\python.exe visualeveal.py --input light --windowed --monitor
+ature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFFLINE='1'; C:\AI\sdtest\Scripts\python.exe visual
+eveal.py --input light --windowed --monitor
 ```
 
+- `--camera_index 1` 是 USB 摄像头（2026-11-23）；拔插后编号可能变，用 `--list_cameras` 或 `--camera_test` 看是哪一个。
 - 摄像头画面是灰底锁形图标：Windows **设置 → 隐私和安全性 → 摄像头** 里允许桌面应用使用摄像头，或打开笔记本的摄像头物理开关。
 - 光斑识别不到：手电太弱或环境太亮，把 `visual/layout.json` 里 `camera.light.min_contrast` 调小（如 25）。识别到别处：让摄像头只拍幕布。说明见 [visual/README.md](../visual/README.md)。
 
