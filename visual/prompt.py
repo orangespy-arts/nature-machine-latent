@@ -1,6 +1,6 @@
 """黑屏时的提示动画（无文字）：一只圆圆的、没有手指的大手伸进来，拿起桌上的手电筒，打开，照向桌面，再放回、离开。
 
-约 11 秒一循环：
+约 13 秒一循环（亮着约 6 秒）：
   手电静置（镜头一点微光呼吸）→ 手臂从左上方伸入，手指张开 → 握住 → 沿弧线抬起并朝下倾斜
   → 拇指按下开关，像真手电一样闪两下点亮，暖光锥落到桌面
   → 光圈左右缓慢扫动：光圈里浮现细线图案（左半是弯曲的叶脉，右半是直线齿轮齿，对应“自然—机械”），
@@ -92,7 +92,7 @@ def _hand_shape(g, press):
 
 
 class IdlePrompt:
-    PERIOD = 11.0
+    PERIOD = 13.0
 
     def __init__(self, cfg, W, H):
         self.cfg, self.W, self.H = cfg, W, H
@@ -124,12 +124,12 @@ class IdlePrompt:
         rest = (hw * 0.5 + 0.10 * L, table_y - 0.125 * L - 2, math.radians(-4))
         up = (hw * 0.5 - 0.48 * L, table_y - 1.55 * L, math.radians(60))
         T = t % self.PERIOD
-        lift = _ease(_seg(T, 2.3, 3.6)) - _ease(_seg(T, 8.3, 9.5))
+        lift = _ease(_seg(T, 2.3, 3.6)) - _ease(_seg(T, 10.3, 11.5))
         x = rest[0] + (up[0] - rest[0]) * lift
         y = rest[1] + (up[1] - rest[1]) * lift - math.sin(math.pi * lift) * 0.25 * L  # 弧线
         ang = rest[2] + (up[2] - rest[2]) * lift
         # 扫动（只在亮着时）
-        sweep = _seg(T, 4.2, 4.9) * (1 - _seg(T, 7.4, 7.9))
+        sweep = _seg(T, 4.2, 4.9) * (1 - _seg(T, 9.4, 9.9))
         ang += sweep * math.radians(6) * math.sin(2 * math.pi * (T - 4.2) / 3.4)
         x += sweep * 0.10 * L * math.sin(2 * math.pi * (T - 4.2) / 3.4 + 0.6)
         # 开灯：拇指按下后两次闪烁再稳定；关灯：拇指再按，渐暗
@@ -138,11 +138,11 @@ class IdlePrompt:
         elif T < 4.2:
             on = [0.9, 0.15, 1.0, 0.45, 1.0][min(int((T - 3.8) / 0.4 * 5), 4)]
         else:
-            on = 1.0 - _seg(T, 7.95, 8.35)
-        press = max(math.sin(math.pi * _seg(T, 3.6, 3.85)), math.sin(math.pi * _seg(T, 7.75, 8.0)))
+            on = 1.0 - _seg(T, 9.95, 10.35)
+        press = max(math.sin(math.pi * _seg(T, 3.6, 3.85)), math.sin(math.pi * _seg(T, 9.75, 10.0)))
         # 手：伸入（reach 1→0 为离手电的远近）、握拢（grip 0 张开 → 1 握住）
-        reach = 1 - _ease(_seg(T, 0.8, 1.9)) + _ease(_seg(T, 9.8, 10.7))
-        grip = _ease(_seg(T, 1.9, 2.3)) - _ease(_seg(T, 9.5, 9.8))
+        reach = 1 - _ease(_seg(T, 0.8, 1.9)) + _ease(_seg(T, 11.8, 12.7))
+        grip = _ease(_seg(T, 1.9, 2.3)) - _ease(_seg(T, 11.5, 11.8))
         glint = (1 - lift) * (0.5 + 0.5 * math.sin(2 * math.pi * T / 1.6)) * (1 - on) * (1 - grip)
         return dict(x=x, y=y, ang=ang, on=on, glint=glint, L=L, ty=table_y, press=press, reach=reach, grip=grip, T=T)
 
@@ -432,7 +432,7 @@ if __name__ == '__main__':  # 预览：python visual/prompt.py [输出目录]：
     out.mkdir(parents=True, exist_ok=True)
     vw = cv2.VideoWriter(str(out / 'prompt_preview.mp4'), cv2.VideoWriter_fourcc(*'mp4v'), 30, (W // 2, H // 2))
     ms = []
-    for i in range(330):
+    for i in range(390):
         c = np.zeros((H, W, 3), np.uint8)
         t0 = time.perf_counter()
         p.draw(c, i / 30)
