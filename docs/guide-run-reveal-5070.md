@@ -58,6 +58,21 @@ cd D:\Github\nature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFF
 cd D:\Github\nature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFFLINE='1'; C:\AI\sdtest\Scripts\python.exe visual\reveal.py --input camera --windowed
 ```
 
+**摄像头＋手电光斑**（2026-11-23 新增；摄像头对着黑幕布，手电照到哪里，哪里出画面）。先只看识别，绿圈跟着光斑走再开完整版：
+
+```powershell
+cd D:\Github
+ature-machine-latent; C:\AI\sdtest\Scripts\python.exe visualeveal.py --input light --camera_test
+```
+
+```powershell
+cd D:\Github
+ature-machine-latent; $env:SD_ACCELERATION='none'; $env:HF_HUB_OFFLINE='1'; C:\AI\sdtest\Scripts\python.exe visualeveal.py --input light --windowed --monitor
+```
+
+- 摄像头画面是灰底锁形图标：Windows **设置 → 隐私和安全性 → 摄像头** 里允许桌面应用使用摄像头，或打开笔记本的摄像头物理开关。
+- 光斑识别不到：手电太弱或环境太亮，把 `visual/layout.json` 里 `camera.light.min_contrast` 调小（如 25）。识别到别处：让摄像头只拍幕布。说明见 [visual/README.md](../visual/README.md)。
+
 - 去掉 `--windowed` 就是全屏；加 `--guide` 显示各区域的灰点和名字，加 `--debug` 显示左上角调试信息。
 - 退出时终端会打印帧率。2026-11-21 实测（demo）：显示约 18–20 fps，生成约 10–11 fps（4070 约 27／14 fps）。
 

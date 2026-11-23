@@ -3,6 +3,14 @@
 按日期记录重要决定、完成的工作和下一步。新记录放在最上方。
 具体训练参数与试听结果另存于 `experiments/`，并从这里链接对应实验。
 
+## 2026-11-23｜手电光斑输入（`--input light`）
+
+- 用户要求：先保存上一版，再做新版——摄像头看黑色幕布，用手电照，光斑的位置像鼠标／标记一样触发画面，画面与最新版完全相同；光线强弱未定，但光斑是明显比周围亮的圆。
+- 保存：Git 标签 `reveal-v0-mouse`（指向 `d78a29e`，本地，未推送）。
+- 实现：`camera.mode = "light"`（`tracker.detect_light`），`--input light` 只把摄像头模式改为 light，其余流程不变；默认 `camera.mode` 仍为 aruco，旧命令行为不变。阈值随背景与峰值亮度自适应，取最大的实心亮块的质心；新增 `--camera_index`。
+- 离线合成测试全部识别、中心误差约 1 px、无手电时无误报（详见 [visual/README.md](../visual/README.md)）。5070 上 index 0 内置摄像头返回 Windows“已禁用”占位图，index 1 是 OBS 虚拟摄像头，**未用真实手电与幕布测试**。
+- 风险（未测）：投影若打在同一块幕布上，摄像头会看到生成画面本身；环境中其他光源会被当成光斑。
+
 ## 2026-11-21｜5070 上画面工具用本机已装的 StreamDiffusion 跑通（demo，无 OSC）
 
 - 用户决定在 5070 上用本机已装的 StreamDiffusion：`C:\AI\sdtest`（Python 3.11.9，torch 2.11.0+cu128，GPU sm_120 可用，streamdiffusion 0.1.1 pip 包，diffusers 0.24.0；无 xformers、无 python-osc），sd-turbo 与 taesd 已在 `%USERPROFILE%\.cache\huggingface` 缓存。

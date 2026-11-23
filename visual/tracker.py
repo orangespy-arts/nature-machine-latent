@@ -2,7 +2,8 @@
 
 都输出画布归一化坐标 (x, y) 与是否存在。摄像头两种模式（layout.json camera.mode）：
 - aruco：黑白 ArUco 方块标记（OpenCV 4.11 cv2.aruco），只看明暗对比，不受光线颜色影响，且能分辨标记 ID；
-- color：HSV 阈值 → 最大连通块 → 最小外接圆圆心（受光线／白平衡影响大，见 README 实测）。
+- color：HSV 阈值 → 最大连通块 → 最小外接圆圆心（受光线／白平衡影响大，见 README 实测）；
+- light：黑幕布上的手电光斑。亮度（HSV 的 V，彩色手电也算）→ 相对背景的自适应阈值 → 最大亮块 → 质心。
 都
 用 4 点校准（投影区域四角：左上、右上、右下、左下）做透视变换，把摄像头坐标映射到画布。
 """
@@ -154,9 +155,53 @@ def detect_aruco(frame, cfg):
     return best, dbg
 
 
+def detect_light(frame, cfg):
+    """黑幕布上的手电光斑：返回最大亮块 (cx, cy, r, None)，r 为等面积圆半径。
+
+    光线强弱未定，所以阈值随画面自适应：thr = max(min_v, 背景 + min_contrast, 背景 + (峰值 − 背景) × rel)。
+    背景取模糊后亮度的中位数（黑幕布占画面大部分时即幕布亮度）。峰值与背景差不到 min_contrast 视为没有光斑。
+    mask 为调试图：阈值后的二值图。"""
+    lc = cfg.get('light', {})
+    v = frame.max(axis=2)  # = HSV 的 V；彩色手电（偏黄／偏蓝）也按亮度算
+    hgt, wid = v.shape
+    k = max(3, int(round(wid * lc.get('blur', 0.012))) | 1)
+    v = cv2.GaussianBlur(v, (k, k), 0)
+    bg = float(np.median(v[::4, ::4]))
+    peak = float(v.max())
+    if peak - bg < lc.get('min_contrast', 40):
+        return None, np.zeros_like(v)
+    thr = max(lc.get('min_v', 60), bg + lc.get('min_contrast', 40), bg + (peak - bg) * lc.get('rel', 0.5))
+    mask = (v >= thr).astype(np.uint8) * 255
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    cnts, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return None, mask
+    min_area = lc.get('min_area_frac', 0.002) * hgt * wid
+    best = None
+    for c in sorted(cnts, key=cv2.contourArea, reverse=True):
+        area = cv2.contourArea(c)
+        if area < min_area:
+            break
+        # 光斑是实心亮块；空心轮廓、细线（如屏幕图标、物体边缘反光）亮像素占比低。2026-11-23 摄像头被系统禁用时
+        # 画面是灰底白线锁形图标，无此检查会被当成光斑。
+        x, y, w, h = cv2.boundingRect(c)
+        fill = cv2.countNonZero(mask[y:y + h, x:x + w]) / max(area, 1)
+        if fill >= lc.get('min_fill', 0.6):
+            best = c
+            break
+    if best is None:
+        return None, mask
+    c, area = best, cv2.contourArea(best)
+    m = cv2.moments(c)
+    return (m['m10'] / m['m00'], m['m01'] / m['m00'], float(np.sqrt(area / np.pi)), None), mask
+
+
 def detect(frame, cfg):
-    if cfg.get('mode', 'color') == 'aruco':
+    mode = cfg.get('mode', 'color')
+    if mode == 'aruco':
         return detect_aruco(frame, cfg)
+    if mode == 'light':
+        return detect_light(frame, cfg)
     return detect_color(frame, cfg)
 
 
@@ -185,6 +230,12 @@ def open_camera(cfg):
         cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*cfg['fourcc']))
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, cfg['width'])
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, cfg['height'])
+    # 手动曝光（可选）：自动曝光在黑幕布上会把增益拉高，光斑出现时又整体压暗，阈值会跟着跳。
+    # DirectShow：AUTO_EXPOSURE 0.25 = 手动；exposure 为 log2 秒（如 -6 ≈ 1/64 s），具体可用范围取决于摄像头驱动。
+    exp = cfg.get('light', {}).get('exposure') if cfg.get('mode') == 'light' else cfg.get('exposure')
+    if exp is not None:
+        cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
+        cap.set(cv2.CAP_PROP_EXPOSURE, float(exp))
     return cap
 
 

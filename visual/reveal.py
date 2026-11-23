@@ -4,6 +4,7 @@
   python visual/reveal.py --windowed         窗口模式
   python visual/reveal.py --input demo       标记自动沿曲线移动、出现／消失（无摄像头时演示）
   python visual/reveal.py --input camera     摄像头颜色追踪（先 --calibrate 校准）
+  python visual/reveal.py --input light      摄像头看黑幕布，手电光斑的位置代替标记（同 camera，camera.mode 改为 light）
   python visual/reveal.py --list_cameras     列出可用摄像头
   python visual/reveal.py --calibrate        摄像头画面中点投影区域四角，存 visual/local/calibration.json
 
@@ -102,7 +103,7 @@ def monitor_view(frame, hit, canvas, present, x, y, h=450, pick_hint=False):
         if hit:
             s = h / frame.shape[0]
             cv2.circle(left, (int(hit[0] * s), int(hit[1] * s)), max(int(hit[2] * s), 4), (0, 255, 0), 2)
-        label = 'camera: ' + (('marker FOUND' + (f' (id {hit[3]})' if len(hit) > 3 and hit[3] is not None else '')) if hit else 'no marker')
+        label = 'camera: ' + (('FOUND' + (f' (id {hit[3]})' if len(hit) > 3 and hit[3] is not None else '')) if hit else 'no marker')
     else:
         left = np.zeros((h, int(h * 16 / 9), 3), np.uint8)
         label = 'camera: no frame (not connected / mouse / demo input)'
@@ -127,6 +128,7 @@ def camera_test(cfg, seconds, snapshot_dir=None, marker_path=None):
     cv2.namedWindow(win, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(win, 1280, 360)
     t0, n, hits, last_snap, radii = time.time(), 0, 0, 0.0, []
+    hint = '(click marker to set colour)' if marker_path else ''
     cap, fails, events = None, 0, []
 
     def on_click(event, mx, my, flags, param):
@@ -171,7 +173,7 @@ def camera_test(cfg, seconds, snapshot_dir=None, marker_path=None):
             hits += 1
             radii.append(hit[2])
             cv2.circle(f, (int(hit[0]), int(hit[1])), int(hit[2]), (0, 255, 0), 3)
-        msg = f'{"FOUND" if hit else "no marker"}   {seconds - el:.0f} s left   (click marker to set colour)'
+        msg = f'{"FOUND" if hit else "no marker"}   {seconds - el:.0f} s left   {hint}'
         cv2.putText(f, msg, (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 0) if hit else (0, 255, 255), 3)
         view = np.concatenate([f, cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)], 1)
         cv2.imshow(win, view)
@@ -194,7 +196,7 @@ def camera_test(cfg, seconds, snapshot_dir=None, marker_path=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--layout', default=str(HERE / 'layout.json'))
-    ap.add_argument('--input', choices=['mouse', 'demo', 'camera'], default='mouse')
+    ap.add_argument('--input', choices=['mouse', 'demo', 'camera', 'light'], default='mouse')
     ap.add_argument('--calibration', default=str(HERE / 'local' / 'calibration.json'))
     ap.add_argument('--marker', default=str(HERE / 'local' / 'marker.json'), help='点选保存的标记颜色')
     ap.add_argument('--windowed', action='store_true')
@@ -202,6 +204,7 @@ def main():
     ap.add_argument('--debug', action='store_true', help='启动时即显示调试信息（左上角绿字）')
     ap.add_argument('--guide', action='store_true', help='启动时即显示区域位置标签（灰点＋名称）')
     ap.add_argument('--monitor', action='store_true', help='另开对照窗：左 摄像头原画面，右 输出画面（m 键切换）')
+    ap.add_argument('--camera_index', type=int, default=None, help='覆盖 layout.json 的 camera.index')
     ap.add_argument('--calibrate', action='store_true')
     ap.add_argument('--list_cameras', action='store_true')
     ap.add_argument('--camera_test', action='store_true', help='只看摄像头与颜色识别（左：画面，右：掩膜），q 退出')
@@ -211,6 +214,10 @@ def main():
 
     layout = json.loads(Path(args.layout).read_text(encoding='utf-8'))
     import tracker
+    if args.input == 'light':  # 手电光斑：其余与 camera 完全相同（同一画面、声音、OSC）
+        layout['camera']['mode'] = 'light'
+    if args.camera_index is not None:
+        layout['camera']['index'] = args.camera_index
     if args.list_cameras:
         cams = tracker.list_cameras()
         print('cameras:', cams if cams else 'none found')
@@ -219,7 +226,8 @@ def main():
         tracker.calibrate(layout['camera'], args.calibration)
         return
     if args.camera_test:
-        camera_test(layout['camera'], args.max_seconds or 90, args.snapshot_dir, args.marker)
+        camera_test(layout['camera'], args.max_seconds or 90, args.snapshot_dir,
+                    args.marker if layout['camera'].get('mode') == 'color' else None)
         return
 
     W, H = layout['canvas']['width'], layout['canvas']['height']
@@ -248,7 +256,8 @@ def main():
     elif args.input == 'demo':
         src = tracker.DemoInput()
     else:
-        tracker.load_marker(layout['camera'], args.marker)
+        if layout['camera'].get('mode') == 'color':
+            tracker.load_marker(layout['camera'], args.marker)
         src = tracker.CameraTracker(layout['camera'], args.calibration)
     t_start, last_snap, stats = time.time(), 0.0, []
     if args.snapshot_dir:
@@ -269,7 +278,7 @@ def main():
             if event != cv2.EVENT_LBUTTONDOWN or f is None:
                 return
             s = 450 / f.shape[0]
-            if mx < f.shape[1] * s:  # 点在左边摄像头画面上
+            if mx < f.shape[1] * s and pick_hint:  # 颜色模式下点在左边摄像头画面上
                 tracker.save_marker(src.cfg, tracker.hsv_range_from_patch(f, mx / s, my / s), args.marker)
         cv2.setMouseCallback('monitor', on_monitor_click)
     n, t0, dfps = 0, time.time(), 0.0
@@ -356,7 +365,7 @@ def main():
             cv2.imwrite(str(Path(args.snapshot_dir) / f'snap_{now - t_start:05.1f}s.jpg'), shot)
             last_snap = now
 
-        if show_cam and args.input == 'camera' and src.frame is not None:
+        if show_cam and args.input in ('camera', 'light') and src.frame is not None:
             f = src.frame.copy()
             if src.hit:
                 cv2.circle(f, (int(src.hit[0]), int(src.hit[1])), int(src.hit[2]), (0, 255, 0), 2)
@@ -376,7 +385,7 @@ def main():
             show_monitor = not show_monitor
             if not show_monitor:
                 cv2.destroyWindow('monitor')
-        if k == ord('c') and args.input == 'camera':
+        if k == ord('c') and args.input in ('camera', 'light'):
             show_cam = not show_cam
             if not show_cam:
                 cv2.destroyWindow('camera')
