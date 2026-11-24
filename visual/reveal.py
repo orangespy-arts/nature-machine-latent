@@ -65,6 +65,17 @@ def list_monitors():
     return sorted(mons, key=lambda m: (not m[5], m[1], m[2]))  # 主屏排第一
 
 
+def keep_awake(on=True):
+    """Windows：运行期间不让显示器息屏、系统睡眠（SetThreadExecutionState，ES_CONTINUOUS | ES_DISPLAY_REQUIRED |
+    ES_SYSTEM_REQUIRED）。不改电源设置；程序退出或 on=False 后恢复系统原有的计时。"""
+    if os.name != 'nt':
+        return
+    import ctypes
+    ES_CONTINUOUS, ES_SYSTEM_REQUIRED, ES_DISPLAY_REQUIRED = 0x80000000, 0x00000001, 0x00000002
+    flags = ES_CONTINUOUS | (ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED if on else 0)
+    ctypes.windll.kernel32.SetThreadExecutionState(ctypes.c_uint(flags))
+
+
 def pick_monitor(mons, display):
     """display：auto（有外接显示器就用第一个外接的，否则主屏）或编号（0 = 主屏，1、2… = 其他）。"""
     if not mons:
@@ -292,6 +303,7 @@ def main():
     worker.start()
 
     win = 'reveal'
+    keep_awake(True)  # 2026-11-24 用户反馈：运行一会儿后息屏
     mons = list_monitors()
     mon = pick_monitor(mons, args.display)
     cv2.namedWindow(win, cv2.WINDOW_NORMAL)
@@ -459,6 +471,7 @@ def main():
             break
 
     worker.running = False
+    keep_awake(False)
     if hide_cursor:
         import ctypes
         while ctypes.windll.user32.ShowCursor(True) < 0:
